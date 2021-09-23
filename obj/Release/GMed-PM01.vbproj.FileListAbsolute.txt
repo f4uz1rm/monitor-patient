@@ -1,0 +1,17 @@
+C:\Medical\GMed-PM01\obj\Release\GMed-PM01.vbproj.AssemblyReference.cache
+C:\Medical\GMed-PM01\obj\Release\GMed_PM01.AddPatient.resources
+C:\Medical\GMed-PM01\obj\Release\GMed_PM01.AlarmHistory.resources
+C:\Medical\GMed-PM01\obj\Release\GMed_PM01.MonitoringDisplay.resources
+C:\Medical\GMed-PM01\obj\Release\GMed_PM01.ParameterSetup.resources
+C:\Medical\GMed-PM01\obj\Release\GMed_PM01.PatientInformation.resources
+C:\Medical\GMed-PM01\obj\Release\GMed_PM01.SplashScreen1.resources
+C:\Medical\GMed-PM01\obj\Release\GMed_PM01.Resources.resources
+C:\Medical\GMed-PM01\obj\Release\GMed-PM01.vbproj.GenerateResource.cache
+C:\Medical\GMed-PM01\obj\Release\GMed-PM01.vbproj.CoreCompileInputs.cache
+C:\Medical\GMed-PM01\bin\Release\GMed-PM01.exe.config
+C:\Medical\GMed-PM01\bin\Release\GMed-PM01.exe
+C:\Medical\GMed-PM01\bin\Release\GMed-PM01.pdb
+C:\Medical\GMed-PM01\bin\Release\GMed-PM01.xml
+C:\Medical\GMed-PM01\obj\Release\GMed-PM01.exe
+C:\Medical\GMed-PM01\obj\Release\GMed-PM01.xml
+C:\Medical\GMed-PM01\obj\Release\GMed-PM01.pdb

@@ -1,0 +1,221 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GMed-PM01
+</name>
+</assembly>
+<members>
+<member name="T:GMed_PM01.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_add_patient">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_add_patient_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_alarm_limits">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_alarm_limits_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_auto_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_colors">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_colors_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_default_setup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_default_setup_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_lamp_brightness">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_lamp_brightness_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_manual_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_parameter_setup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_parameter_setup_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_screen_brightness">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_screen_brightness_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_screen_setup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_screen_setup_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_sound_level">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_sound_level_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_sound_volume">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_sound_volume_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_view_patient">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.sidebar_view_patient_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.splash1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.splash2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.splashscreen">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_alarm_history">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_alarm_history_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_alarm_setup">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_alarm_setup_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_home">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_home_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_monitor_setting">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_monitor_setting_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_nibp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_nibp_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_patient_data">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:GMed_PM01.My.Resources.Resources.taskbar_patient_data_activated">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>
