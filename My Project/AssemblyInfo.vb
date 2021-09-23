@@ -8,14 +8,14 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("GMed-PM01")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("GMed-PM01")>
-<Assembly: AssemblyCopyright("Copyright ©  2021")>
+<Assembly: AssemblyTitle("Monitor Patient")>
+<Assembly: AssemblyDescription("Gerlink - Monitor Patient")>
+<Assembly: AssemblyCompany("PT. Gerlink Utama Mandiri")>
+<Assembly: AssemblyProduct("Monitor Patient")>
+<Assembly: AssemblyCopyright("PT. Gerlink Utama Mandiri Copyright ©  2021")>
 <Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("f8ed6277-0b0d-44a7-bf97-c85ed5a4978a")>
