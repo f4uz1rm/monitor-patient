@@ -35,16 +35,16 @@ Partial Class PatientInformation
         Me.Label21 = New System.Windows.Forms.Label()
         Me.btn_edit = New System.Windows.Forms.Button()
         Me.btn_delete = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.TextBox2 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.Datetimepicker1 = New Bunifu.Framework.UI.BunifuDatepicker()
+        Me.TextBox3 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.TextBox4 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.TextBox5 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.TextBox6 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.TextBox7 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.TextBox8 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.ComboBox1 = New Bunifu.Framework.UI.BunifuDropdown()
         Me.SuspendLayout()
         '
         'Label1
@@ -171,7 +171,7 @@ Partial Class PatientInformation
         'btn_edit
         '
         Me.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_edit.Location = New System.Drawing.Point(25, 430)
+        Me.btn_edit.Location = New System.Drawing.Point(25, 444)
         Me.btn_edit.Name = "btn_edit"
         Me.btn_edit.Size = New System.Drawing.Size(55, 23)
         Me.btn_edit.TabIndex = 23
@@ -183,7 +183,7 @@ Partial Class PatientInformation
         Me.btn_delete.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn_delete.ForeColor = System.Drawing.Color.White
-        Me.btn_delete.Location = New System.Drawing.Point(104, 430)
+        Me.btn_delete.Location = New System.Drawing.Point(104, 444)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(52, 23)
         Me.btn_delete.TabIndex = 24
@@ -192,96 +192,201 @@ Partial Class PatientInformation
         '
         'TextBox1
         '
+        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(25, 96)
+        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TextBox1.HintForeColor = System.Drawing.Color.Empty
+        Me.TextBox1.HintText = ""
+        Me.TextBox1.isPassword = False
+        Me.TextBox1.LineFocusedColor = System.Drawing.Color.Lime
+        Me.TextBox1.LineIdleColor = System.Drawing.Color.Gray
+        Me.TextBox1.LineMouseHoverColor = System.Drawing.Color.Lime
+        Me.TextBox1.LineThickness = 3
+        Me.TextBox1.Location = New System.Drawing.Point(25, 83)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox1.TabIndex = 25
+        Me.TextBox1.Size = New System.Drawing.Size(143, 33)
+        Me.TextBox1.TabIndex = 35
         Me.TextBox1.Text = "John"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'TextBox2
         '
+        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(213, 96)
+        Me.TextBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.TextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TextBox2.HintForeColor = System.Drawing.Color.Empty
+        Me.TextBox2.HintText = ""
+        Me.TextBox2.isPassword = False
+        Me.TextBox2.LineFocusedColor = System.Drawing.Color.Lime
+        Me.TextBox2.LineIdleColor = System.Drawing.Color.Gray
+        Me.TextBox2.LineMouseHoverColor = System.Drawing.Color.Lime
+        Me.TextBox2.LineThickness = 3
+        Me.TextBox2.Location = New System.Drawing.Point(213, 83)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 26
+        Me.TextBox2.Size = New System.Drawing.Size(143, 33)
+        Me.TextBox2.TabIndex = 36
         Me.TextBox2.Text = "Doe"
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'DateTimePicker1
+        'Datetimepicker1
         '
-        Me.DateTimePicker1.Enabled = False
-        Me.DateTimePicker1.Location = New System.Drawing.Point(25, 159)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(121, 20)
-        Me.DateTimePicker1.TabIndex = 27
+        Me.Datetimepicker1.BackColor = System.Drawing.Color.Transparent
+        Me.Datetimepicker1.BorderRadius = 0
+        Me.Datetimepicker1.Enabled = False
+        Me.Datetimepicker1.ForeColor = System.Drawing.Color.Black
+        Me.Datetimepicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Datetimepicker1.FormatCustom = ""
+        Me.Datetimepicker1.Location = New System.Drawing.Point(25, 162)
+        Me.Datetimepicker1.Name = "Datetimepicker1"
+        Me.Datetimepicker1.Size = New System.Drawing.Size(147, 33)
+        Me.Datetimepicker1.TabIndex = 37
+        Me.Datetimepicker1.Value = New Date(2021, 9, 22, 0, 0, 0, 0)
         '
         'TextBox3
         '
+        Me.TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox3.Enabled = False
+        Me.TextBox3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.TextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TextBox3.HintForeColor = System.Drawing.Color.Empty
+        Me.TextBox3.HintText = ""
+        Me.TextBox3.isPassword = False
+        Me.TextBox3.LineFocusedColor = System.Drawing.Color.Lime
+        Me.TextBox3.LineIdleColor = System.Drawing.Color.Gray
+        Me.TextBox3.LineMouseHoverColor = System.Drawing.Color.Lime
+        Me.TextBox3.LineThickness = 3
         Me.TextBox3.Location = New System.Drawing.Point(213, 162)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 28
+        Me.TextBox3.Size = New System.Drawing.Size(143, 33)
+        Me.TextBox3.TabIndex = 38
         Me.TextBox3.Text = "19"
+        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'TextBox4
         '
+        Me.TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(25, 236)
+        Me.TextBox4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.TextBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TextBox4.HintForeColor = System.Drawing.Color.Empty
+        Me.TextBox4.HintText = ""
+        Me.TextBox4.isPassword = False
+        Me.TextBox4.LineFocusedColor = System.Drawing.Color.Lime
+        Me.TextBox4.LineIdleColor = System.Drawing.Color.Gray
+        Me.TextBox4.LineMouseHoverColor = System.Drawing.Color.Lime
+        Me.TextBox4.LineThickness = 3
+        Me.TextBox4.Location = New System.Drawing.Point(29, 237)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox4.TabIndex = 29
+        Me.TextBox4.Size = New System.Drawing.Size(143, 33)
+        Me.TextBox4.TabIndex = 39
         Me.TextBox4.Text = "167"
+        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'TextBox5
         '
+        Me.TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(213, 236)
+        Me.TextBox5.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.TextBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TextBox5.HintForeColor = System.Drawing.Color.Empty
+        Me.TextBox5.HintText = ""
+        Me.TextBox5.isPassword = False
+        Me.TextBox5.LineFocusedColor = System.Drawing.Color.Lime
+        Me.TextBox5.LineIdleColor = System.Drawing.Color.Gray
+        Me.TextBox5.LineMouseHoverColor = System.Drawing.Color.Lime
+        Me.TextBox5.LineThickness = 3
+        Me.TextBox5.Location = New System.Drawing.Point(213, 237)
+        Me.TextBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox5.TabIndex = 30
-        Me.TextBox5.Text = "62"
+        Me.TextBox5.Size = New System.Drawing.Size(143, 33)
+        Me.TextBox5.TabIndex = 40
+        Me.TextBox5.Text = "60"
+        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'TextBox6
         '
+        Me.TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(213, 313)
+        Me.TextBox6.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.TextBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TextBox6.HintForeColor = System.Drawing.Color.Empty
+        Me.TextBox6.HintText = ""
+        Me.TextBox6.isPassword = False
+        Me.TextBox6.LineFocusedColor = System.Drawing.Color.Lime
+        Me.TextBox6.LineIdleColor = System.Drawing.Color.Gray
+        Me.TextBox6.LineMouseHoverColor = System.Drawing.Color.Lime
+        Me.TextBox6.LineThickness = 3
+        Me.TextBox6.Location = New System.Drawing.Point(213, 314)
+        Me.TextBox6.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox6.TabIndex = 31
+        Me.TextBox6.Size = New System.Drawing.Size(143, 33)
+        Me.TextBox6.TabIndex = 41
         Me.TextBox6.Text = "Collage Student"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Enabled = False
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Male", "Famale"})
-        Me.ComboBox1.Location = New System.Drawing.Point(25, 313)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 32
-        Me.ComboBox1.Text = "Male"
+        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'TextBox7
         '
+        Me.TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox7.Enabled = False
-        Me.TextBox7.Location = New System.Drawing.Point(25, 387)
+        Me.TextBox7.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.TextBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TextBox7.HintForeColor = System.Drawing.Color.Empty
+        Me.TextBox7.HintText = ""
+        Me.TextBox7.isPassword = False
+        Me.TextBox7.LineFocusedColor = System.Drawing.Color.Lime
+        Me.TextBox7.LineIdleColor = System.Drawing.Color.Gray
+        Me.TextBox7.LineMouseHoverColor = System.Drawing.Color.Lime
+        Me.TextBox7.LineThickness = 3
+        Me.TextBox7.Location = New System.Drawing.Point(25, 388)
+        Me.TextBox7.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox7.TabIndex = 33
+        Me.TextBox7.Size = New System.Drawing.Size(143, 33)
+        Me.TextBox7.TabIndex = 42
         Me.TextBox7.Text = "dr. Jimmy Doe"
+        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'TextBox8
         '
-        Me.TextBox8.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox8.Enabled = False
-        Me.TextBox8.Location = New System.Drawing.Point(213, 387)
+        Me.TextBox8.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.TextBox8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TextBox8.HintForeColor = System.Drawing.Color.Empty
+        Me.TextBox8.HintText = ""
+        Me.TextBox8.isPassword = False
+        Me.TextBox8.LineFocusedColor = System.Drawing.Color.Lime
+        Me.TextBox8.LineIdleColor = System.Drawing.Color.Gray
+        Me.TextBox8.LineMouseHoverColor = System.Drawing.Color.Lime
+        Me.TextBox8.LineThickness = 3
+        Me.TextBox8.Location = New System.Drawing.Point(213, 388)
+        Me.TextBox8.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 13)
-        Me.TextBox8.TabIndex = 34
+        Me.TextBox8.Size = New System.Drawing.Size(143, 33)
+        Me.TextBox8.TabIndex = 43
         Me.TextBox8.Text = "Nrs. Jane Doe"
+        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.Transparent
+        Me.ComboBox1.BorderRadius = 3
+        Me.ComboBox1.DisabledColor = System.Drawing.Color.Gray
+        Me.ComboBox1.Enabled = False
+        Me.ComboBox1.ForeColor = System.Drawing.Color.Black
+        Me.ComboBox1.Items = New String() {"Male", "Famale"}
+        Me.ComboBox1.Location = New System.Drawing.Point(25, 314)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.NomalColor = System.Drawing.Color.Transparent
+        Me.ComboBox1.onHoverColor = System.Drawing.Color.Silver
+        Me.ComboBox1.selectedIndex = -1
+        Me.ComboBox1.Size = New System.Drawing.Size(147, 33)
+        Me.ComboBox1.TabIndex = 44
         '
         'PatientInformation
         '
@@ -289,14 +394,14 @@ Partial Class PatientInformation
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(389, 561)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.Datetimepicker1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btn_edit)
@@ -317,7 +422,6 @@ Partial Class PatientInformation
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PatientInformation"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -334,14 +438,14 @@ Partial Class PatientInformation
     Friend WithEvents Label21 As Label
     Friend WithEvents btn_edit As Button
     Friend WithEvents btn_delete As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBox1 As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents TextBox2 As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents Datetimepicker1 As Bunifu.Framework.UI.BunifuDatepicker
+    Friend WithEvents TextBox3 As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents TextBox4 As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents TextBox5 As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents TextBox6 As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents TextBox7 As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents TextBox8 As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents ComboBox1 As Bunifu.Framework.UI.BunifuDropdown
 End Class

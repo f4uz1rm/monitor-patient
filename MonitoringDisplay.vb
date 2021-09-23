@@ -714,4 +714,46 @@ Public Class MonitoringDisplay
 
         End Try
     End Sub
+    Public isMouseDown As Boolean = False
+    Public mouseOffset As Point
+    Private Sub MonitoringDisplay_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
+        If e.Button = MouseButtons.Left Then
+            ' Get the new position
+            mouseOffset = New Point(-e.X, -e.Y)
+            ' Set that left button is pressed
+            isMouseDown = True
+        End If
+    End Sub
+
+    Private Sub MonitoringDisplay_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
+        If isMouseDown Then
+            Dim mousePos As Point = Control.MousePosition
+            ' Get the new form position
+            mousePos.Offset(mouseOffset.X, mouseOffset.Y)
+            Mdi.Location = mousePos
+        End If
+    End Sub
+
+    Private Sub MonitoringDisplay_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
+        If e.Button = MouseButtons.Left Then
+            isMouseDown = False
+        End If
+    End Sub
+
+    Private Sub TimerRandom_Tick(sender As Object, e As EventArgs) Handles TimerRandom.Tick
+        Dim MyValue As Double
+        MyValue = Int((9 * Rnd()) + 100)
+
+        ecghr.Text = MyValue
+        muispo2.Text = MyValue
+        muitd.Text = MyValue
+        muitemp1.Text = MyValue
+        muitemp2.Text = MyValue
+        ecgrr.Text = MyValue
+        sysdys.Text = MyValue
+
+        Chart1.Series("rr").Points.AddXY(detik3, Val(MyValue))
+        Chart2.Series("spo2").Points.AddXY(detik2, Val(MyValue))
+    End Sub
+
 End Class

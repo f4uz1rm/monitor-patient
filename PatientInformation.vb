@@ -29,6 +29,24 @@
         TextBox7.Enabled = Status
         TextBox8.Enabled = Status
         ComboBox1.Enabled = Status
-        DateTimePicker1.Enabled = Status
+        Datetimepicker1.Enabled = Status
+        Return Status
     End Function
+
+    Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+        DeleteTextBoxAll()
+
+    End Sub
+    Sub DeleteTextBoxAll()
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        TextBox4.Text = ""
+        TextBox5.Text = ""
+        TextBox6.Text = ""
+        TextBox7.Text = ""
+        TextBox8.Text = ""
+        ComboBox1.Text = ""
+        DateTimePicker1.Text = ""
+    End Sub
 End Class

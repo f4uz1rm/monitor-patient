@@ -24,14 +24,22 @@ Partial Class Mdi
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mdi))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.PanelAlarmSetup = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PanelSoundLevel = New System.Windows.Forms.Panel()
         Me.TrackBar6 = New System.Windows.Forms.TrackBar()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.btn_soundlevel = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelLampBrightness = New System.Windows.Forms.Panel()
         Me.TrackBar10 = New System.Windows.Forms.TrackBar()
         Me.Label20 = New System.Windows.Forms.Label()
+        Me.btn_lampbrightness = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelAlarmLimits = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TrackBar5 = New System.Windows.Forms.TrackBar()
@@ -43,16 +51,22 @@ Partial Class Mdi
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.btn_alarmlimits = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PanelAlarmSetupHistory = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.PanelMonitorSetting = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btn_default = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelScreenBrightness = New System.Windows.Forms.Panel()
-        Me.TrackBar13 = New System.Windows.Forms.TrackBar()
+        Me.TrackBarScreenBrightness = New System.Windows.Forms.TrackBar()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.btn_screenbrightness = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.btn_parametersetup = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelSound = New System.Windows.Forms.Panel()
         Me.TrackBar9 = New System.Windows.Forms.TrackBar()
         Me.Label33 = New System.Windows.Forms.Label()
@@ -60,12 +74,13 @@ Partial Class Mdi
         Me.Label32 = New System.Windows.Forms.Label()
         Me.TrackBar7 = New System.Windows.Forms.TrackBar()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.btn_sound = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelColors = New System.Windows.Forms.Panel()
-        Me.Button27 = New System.Windows.Forms.Button()
-        Me.Button28 = New System.Windows.Forms.Button()
-        Me.Button29 = New System.Windows.Forms.Button()
-        Me.Button30 = New System.Windows.Forms.Button()
-        Me.Button31 = New System.Windows.Forms.Button()
+        Me.btn_temp_green = New System.Windows.Forms.Button()
+        Me.btn_temp_red = New System.Windows.Forms.Button()
+        Me.btn_temp_yellow = New System.Windows.Forms.Button()
+        Me.btn_temp_pink = New System.Windows.Forms.Button()
+        Me.btn_temp_blue = New System.Windows.Forms.Button()
         Me.btn_resp_green = New System.Windows.Forms.Button()
         Me.btn_resp_red = New System.Windows.Forms.Button()
         Me.btn_resp_yellow = New System.Windows.Forms.Button()
@@ -93,22 +108,28 @@ Partial Class Mdi
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.btn_colors = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelScreensetup = New System.Windows.Forms.Panel()
-        Me.BunifuCheckbox4 = New Bunifu.Framework.UI.BunifuCheckbox()
-        Me.BunifuCheckbox3 = New Bunifu.Framework.UI.BunifuCheckbox()
+        Me.CheckBox_SPO2 = New Bunifu.Framework.UI.BunifuCheckbox()
+        Me.CheckBox_RR = New Bunifu.Framework.UI.BunifuCheckbox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.BunifuCheckbox2 = New Bunifu.Framework.UI.BunifuCheckbox()
+        Me.CheckBox_ECG2 = New Bunifu.Framework.UI.BunifuCheckbox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.BunifuCheckbox1 = New Bunifu.Framework.UI.BunifuCheckbox()
+        Me.CheckBox_ECG1 = New Bunifu.Framework.UI.BunifuCheckbox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
+        Me.btn_screensetup = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.PanelPatientData = New System.Windows.Forms.Panel()
+        Me.btn_view_patient = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.btn_add_patient = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.PanelNIBP = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.btn_start_auto = New System.Windows.Forms.Button()
@@ -117,35 +138,14 @@ Partial Class Mdi
         Me.Label7 = New System.Windows.Forms.Label()
         Me.BunifuDropdown1 = New Bunifu.Framework.UI.BunifuDropdown()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.BunifuFlatButton7 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.btn_stop_manual = New System.Windows.Forms.Button()
         Me.btn_start_manual = New System.Windows.Forms.Button()
+        Me.BunifuFlatButton6 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.BunifuFlatButton7 = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BunifuFlatButton6 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.btn_view_patient = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btn_add_patient = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.btn_default = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btn_screenbrightness = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btn_parametersetup = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btn_sound = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btn_colors = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btn_screensetup = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.btn_soundlevel = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btn_lampbrightness = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.btn_alarmlimits = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.PanelAlarmSetup.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -165,7 +165,7 @@ Partial Class Mdi
         Me.PanelMonitorSetting.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.PanelScreenBrightness.SuspendLayout()
-        CType(Me.TrackBar13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBarScreenBrightness, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSound.SuspendLayout()
         CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -190,10 +190,88 @@ Partial Class Mdi
         Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 824)
+        Me.Panel2.Location = New System.Drawing.Point(0, 863)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1919, 61)
         Me.Panel2.TabIndex = 2
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_nibp
+        Me.Button6.Location = New System.Drawing.Point(838, 1)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(170, 60)
+        Me.Button6.TabIndex = 11
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_patient_data
+        Me.Button5.Location = New System.Drawing.Point(675, 1)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(170, 60)
+        Me.Button5.TabIndex = 10
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_monitor_setting
+        Me.Button4.Location = New System.Drawing.Point(505, 1)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(170, 60)
+        Me.Button4.TabIndex = 9
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_alarm_history
+        Me.Button3.Location = New System.Drawing.Point(336, 1)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(170, 60)
+        Me.Button3.TabIndex = 8
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_alarm_setup
+        Me.Button2.Location = New System.Drawing.Point(166, 1)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(170, 60)
+        Me.Button2.TabIndex = 7
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_home
+        Me.Button1.Location = New System.Drawing.Point(-2, 1)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(170, 60)
+        Me.Button1.TabIndex = 6
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'PanelAlarmSetup
         '
@@ -203,7 +281,7 @@ Partial Class Mdi
         Me.PanelAlarmSetup.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelAlarmSetup.Location = New System.Drawing.Point(0, 0)
         Me.PanelAlarmSetup.Name = "PanelAlarmSetup"
-        Me.PanelAlarmSetup.Size = New System.Drawing.Size(300, 824)
+        Me.PanelAlarmSetup.Size = New System.Drawing.Size(300, 863)
         Me.PanelAlarmSetup.TabIndex = 3
         '
         'Panel1
@@ -246,6 +324,41 @@ Partial Class Mdi
         Me.Label16.TabIndex = 1
         Me.Label16.Text = "Level"
         '
+        'btn_soundlevel
+        '
+        Me.btn_soundlevel.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_soundlevel.BackColor = System.Drawing.Color.Transparent
+        Me.btn_soundlevel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_soundlevel.BorderRadius = 0
+        Me.btn_soundlevel.ButtonText = "Sound Level"
+        Me.btn_soundlevel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_soundlevel.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_soundlevel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_soundlevel.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_soundlevel.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_sound_volume
+        Me.btn_soundlevel.Iconimage_right = CType(resources.GetObject("btn_soundlevel.Iconimage_right"), System.Drawing.Image)
+        Me.btn_soundlevel.Iconimage_right_Selected = CType(resources.GetObject("btn_soundlevel.Iconimage_right_Selected"), System.Drawing.Image)
+        Me.btn_soundlevel.Iconimage_Selected = CType(resources.GetObject("btn_soundlevel.Iconimage_Selected"), System.Drawing.Image)
+        Me.btn_soundlevel.IconMarginLeft = 0
+        Me.btn_soundlevel.IconMarginRight = 0
+        Me.btn_soundlevel.IconRightVisible = True
+        Me.btn_soundlevel.IconRightZoom = 0R
+        Me.btn_soundlevel.IconVisible = True
+        Me.btn_soundlevel.IconZoom = 50.0R
+        Me.btn_soundlevel.IsTab = False
+        Me.btn_soundlevel.Location = New System.Drawing.Point(0, 536)
+        Me.btn_soundlevel.Name = "btn_soundlevel"
+        Me.btn_soundlevel.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_soundlevel.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_soundlevel.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_soundlevel.selected = False
+        Me.btn_soundlevel.Size = New System.Drawing.Size(300, 48)
+        Me.btn_soundlevel.TabIndex = 4
+        Me.btn_soundlevel.Text = "Sound Level"
+        Me.btn_soundlevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_soundlevel.Textcolor = System.Drawing.Color.Black
+        Me.btn_soundlevel.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
         'PanelLampBrightness
         '
         Me.PanelLampBrightness.Controls.Add(Me.TrackBar10)
@@ -271,6 +384,41 @@ Partial Class Mdi
         Me.Label20.Size = New System.Drawing.Size(56, 13)
         Me.Label20.TabIndex = 1
         Me.Label20.Text = "Brightness"
+        '
+        'btn_lampbrightness
+        '
+        Me.btn_lampbrightness.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_lampbrightness.BackColor = System.Drawing.Color.Transparent
+        Me.btn_lampbrightness.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_lampbrightness.BorderRadius = 0
+        Me.btn_lampbrightness.ButtonText = "Lamp Brightness"
+        Me.btn_lampbrightness.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_lampbrightness.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_lampbrightness.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_lampbrightness.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_lampbrightness.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_lamp_brightness1
+        Me.btn_lampbrightness.Iconimage_right = CType(resources.GetObject("btn_lampbrightness.Iconimage_right"), System.Drawing.Image)
+        Me.btn_lampbrightness.Iconimage_right_Selected = CType(resources.GetObject("btn_lampbrightness.Iconimage_right_Selected"), System.Drawing.Image)
+        Me.btn_lampbrightness.Iconimage_Selected = CType(resources.GetObject("btn_lampbrightness.Iconimage_Selected"), System.Drawing.Image)
+        Me.btn_lampbrightness.IconMarginLeft = 0
+        Me.btn_lampbrightness.IconMarginRight = 0
+        Me.btn_lampbrightness.IconRightVisible = True
+        Me.btn_lampbrightness.IconRightZoom = 0R
+        Me.btn_lampbrightness.IconVisible = True
+        Me.btn_lampbrightness.IconZoom = 50.0R
+        Me.btn_lampbrightness.IsTab = False
+        Me.btn_lampbrightness.Location = New System.Drawing.Point(0, 398)
+        Me.btn_lampbrightness.Name = "btn_lampbrightness"
+        Me.btn_lampbrightness.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_lampbrightness.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_lampbrightness.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_lampbrightness.selected = False
+        Me.btn_lampbrightness.Size = New System.Drawing.Size(300, 48)
+        Me.btn_lampbrightness.TabIndex = 2
+        Me.btn_lampbrightness.Text = "Lamp Brightness"
+        Me.btn_lampbrightness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_lampbrightness.Textcolor = System.Drawing.Color.Black
+        Me.btn_lampbrightness.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'PanelAlarmLimits
         '
@@ -370,6 +518,42 @@ Partial Class Mdi
         Me.Label11.TabIndex = 1
         Me.Label11.Text = "HR ECG"
         '
+        'btn_alarmlimits
+        '
+        Me.btn_alarmlimits.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_alarmlimits.BackColor = System.Drawing.Color.Transparent
+        Me.btn_alarmlimits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_alarmlimits.BorderRadius = 0
+        Me.btn_alarmlimits.ButtonText = "Alarm Limits"
+        Me.btn_alarmlimits.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_alarmlimits.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_alarmlimits.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_alarmlimits.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_alarmlimits.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_alarm_limits1
+        Me.btn_alarmlimits.Iconimage_right = CType(resources.GetObject("btn_alarmlimits.Iconimage_right"), System.Drawing.Image)
+        Me.btn_alarmlimits.Iconimage_right_Selected = CType(resources.GetObject("btn_alarmlimits.Iconimage_right_Selected"), System.Drawing.Image)
+        Me.btn_alarmlimits.Iconimage_Selected = CType(resources.GetObject("btn_alarmlimits.Iconimage_Selected"), System.Drawing.Image)
+        Me.btn_alarmlimits.IconMarginLeft = 0
+        Me.btn_alarmlimits.IconMarginRight = 0
+        Me.btn_alarmlimits.IconRightVisible = True
+        Me.btn_alarmlimits.IconRightZoom = 50.0R
+        Me.btn_alarmlimits.IconVisible = True
+        Me.btn_alarmlimits.IconZoom = 50.0R
+        Me.btn_alarmlimits.IsTab = False
+        Me.btn_alarmlimits.Location = New System.Drawing.Point(0, 0)
+        Me.btn_alarmlimits.Name = "btn_alarmlimits"
+        Me.btn_alarmlimits.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_alarmlimits.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_alarmlimits.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_alarmlimits.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btn_alarmlimits.selected = False
+        Me.btn_alarmlimits.Size = New System.Drawing.Size(300, 48)
+        Me.btn_alarmlimits.TabIndex = 0
+        Me.btn_alarmlimits.Text = "Alarm Limits"
+        Me.btn_alarmlimits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_alarmlimits.Textcolor = System.Drawing.Color.Black
+        Me.btn_alarmlimits.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.Label9)
@@ -389,6 +573,16 @@ Partial Class Mdi
         Me.Label9.TabIndex = 2
         Me.Label9.Text = "Alarm Setup "
         '
+        'Panel4
+        '
+        Me.Panel4.BackgroundImage = Global.GMed_PM01.My.Resources.Resources.logo
+        Me.Panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(300, 81)
+        Me.Panel4.TabIndex = 3
+        '
         'PanelAlarmSetupHistory
         '
         Me.PanelAlarmSetupHistory.Controls.Add(Me.Panel10)
@@ -396,7 +590,7 @@ Partial Class Mdi
         Me.PanelAlarmSetupHistory.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelAlarmSetupHistory.Location = New System.Drawing.Point(300, 0)
         Me.PanelAlarmSetupHistory.Name = "PanelAlarmSetupHistory"
-        Me.PanelAlarmSetupHistory.Size = New System.Drawing.Size(300, 824)
+        Me.PanelAlarmSetupHistory.Size = New System.Drawing.Size(300, 863)
         Me.PanelAlarmSetupHistory.TabIndex = 4
         '
         'Panel10
@@ -418,6 +612,16 @@ Partial Class Mdi
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Alarm Setup History"
         '
+        'Panel6
+        '
+        Me.Panel6.BackgroundImage = Global.GMed_PM01.My.Resources.Resources.logo
+        Me.Panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(300, 81)
+        Me.Panel6.TabIndex = 4
+        '
         'PanelMonitorSetting
         '
         Me.PanelMonitorSetting.Controls.Add(Me.Panel3)
@@ -426,7 +630,7 @@ Partial Class Mdi
         Me.PanelMonitorSetting.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelMonitorSetting.Location = New System.Drawing.Point(600, 0)
         Me.PanelMonitorSetting.Name = "PanelMonitorSetting"
-        Me.PanelMonitorSetting.Size = New System.Drawing.Size(300, 824)
+        Me.PanelMonitorSetting.Size = New System.Drawing.Size(300, 863)
         Me.PanelMonitorSetting.TabIndex = 5
         '
         'Panel3
@@ -447,9 +651,44 @@ Partial Class Mdi
         Me.Panel3.Size = New System.Drawing.Size(300, 698)
         Me.Panel3.TabIndex = 7
         '
+        'btn_default
+        '
+        Me.btn_default.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_default.BackColor = System.Drawing.Color.Transparent
+        Me.btn_default.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_default.BorderRadius = 0
+        Me.btn_default.ButtonText = "Default Setup"
+        Me.btn_default.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_default.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_default.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_default.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_default.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_default_setup1
+        Me.btn_default.Iconimage_right = Nothing
+        Me.btn_default.Iconimage_right_Selected = Nothing
+        Me.btn_default.Iconimage_Selected = Nothing
+        Me.btn_default.IconMarginLeft = 0
+        Me.btn_default.IconMarginRight = 0
+        Me.btn_default.IconRightVisible = True
+        Me.btn_default.IconRightZoom = 50.0R
+        Me.btn_default.IconVisible = True
+        Me.btn_default.IconZoom = 50.0R
+        Me.btn_default.IsTab = True
+        Me.btn_default.Location = New System.Drawing.Point(0, 921)
+        Me.btn_default.Name = "btn_default"
+        Me.btn_default.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_default.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_default.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_default.selected = False
+        Me.btn_default.Size = New System.Drawing.Size(300, 48)
+        Me.btn_default.TabIndex = 9
+        Me.btn_default.Text = "Default Setup"
+        Me.btn_default.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_default.Textcolor = System.Drawing.Color.Black
+        Me.btn_default.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
         'PanelScreenBrightness
         '
-        Me.PanelScreenBrightness.Controls.Add(Me.TrackBar13)
+        Me.PanelScreenBrightness.Controls.Add(Me.TrackBarScreenBrightness)
         Me.PanelScreenBrightness.Controls.Add(Me.Label8)
         Me.PanelScreenBrightness.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelScreenBrightness.Location = New System.Drawing.Point(0, 840)
@@ -457,21 +696,93 @@ Partial Class Mdi
         Me.PanelScreenBrightness.Size = New System.Drawing.Size(300, 81)
         Me.PanelScreenBrightness.TabIndex = 8
         '
-        'TrackBar13
+        'TrackBarScreenBrightness
         '
-        Me.TrackBar13.Location = New System.Drawing.Point(12, 30)
-        Me.TrackBar13.Name = "TrackBar13"
-        Me.TrackBar13.Size = New System.Drawing.Size(158, 45)
-        Me.TrackBar13.TabIndex = 2
+        Me.TrackBarScreenBrightness.Location = New System.Drawing.Point(49, 36)
+        Me.TrackBarScreenBrightness.Maximum = 100
+        Me.TrackBarScreenBrightness.Name = "TrackBarScreenBrightness"
+        Me.TrackBarScreenBrightness.Size = New System.Drawing.Size(158, 45)
+        Me.TrackBarScreenBrightness.TabIndex = 2
+        Me.TrackBarScreenBrightness.Value = 100
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(18, 13)
+        Me.Label8.Location = New System.Drawing.Point(52, 14)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(56, 13)
         Me.Label8.TabIndex = 1
         Me.Label8.Text = "Brightness"
+        '
+        'btn_screenbrightness
+        '
+        Me.btn_screenbrightness.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_screenbrightness.BackColor = System.Drawing.Color.Transparent
+        Me.btn_screenbrightness.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_screenbrightness.BorderRadius = 0
+        Me.btn_screenbrightness.ButtonText = "Screen Brightness"
+        Me.btn_screenbrightness.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_screenbrightness.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_screenbrightness.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_screenbrightness.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_screenbrightness.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_screen_brightness
+        Me.btn_screenbrightness.Iconimage_right = Global.GMed_PM01.My.Resources.Resources.arrow_dropdown
+        Me.btn_screenbrightness.Iconimage_right_Selected = Global.GMed_PM01.My.Resources.Resources.arrow_dropdown_activated
+        Me.btn_screenbrightness.Iconimage_Selected = Global.GMed_PM01.My.Resources.Resources.arrow_dropdown_activated
+        Me.btn_screenbrightness.IconMarginLeft = 0
+        Me.btn_screenbrightness.IconMarginRight = 0
+        Me.btn_screenbrightness.IconRightVisible = True
+        Me.btn_screenbrightness.IconRightZoom = 0R
+        Me.btn_screenbrightness.IconVisible = True
+        Me.btn_screenbrightness.IconZoom = 50.0R
+        Me.btn_screenbrightness.IsTab = False
+        Me.btn_screenbrightness.Location = New System.Drawing.Point(0, 792)
+        Me.btn_screenbrightness.Name = "btn_screenbrightness"
+        Me.btn_screenbrightness.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_screenbrightness.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_screenbrightness.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_screenbrightness.selected = False
+        Me.btn_screenbrightness.Size = New System.Drawing.Size(300, 48)
+        Me.btn_screenbrightness.TabIndex = 7
+        Me.btn_screenbrightness.Text = "Screen Brightness"
+        Me.btn_screenbrightness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_screenbrightness.Textcolor = System.Drawing.Color.Black
+        Me.btn_screenbrightness.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'btn_parametersetup
+        '
+        Me.btn_parametersetup.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_parametersetup.BackColor = System.Drawing.Color.Transparent
+        Me.btn_parametersetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_parametersetup.BorderRadius = 0
+        Me.btn_parametersetup.ButtonText = "Parameter Setup"
+        Me.btn_parametersetup.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_parametersetup.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_parametersetup.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_parametersetup.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_parametersetup.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_parameter_setup
+        Me.btn_parametersetup.Iconimage_right = Nothing
+        Me.btn_parametersetup.Iconimage_right_Selected = Nothing
+        Me.btn_parametersetup.Iconimage_Selected = Nothing
+        Me.btn_parametersetup.IconMarginLeft = 0
+        Me.btn_parametersetup.IconMarginRight = 0
+        Me.btn_parametersetup.IconRightVisible = True
+        Me.btn_parametersetup.IconRightZoom = 0R
+        Me.btn_parametersetup.IconVisible = True
+        Me.btn_parametersetup.IconZoom = 50.0R
+        Me.btn_parametersetup.IsTab = False
+        Me.btn_parametersetup.Location = New System.Drawing.Point(0, 744)
+        Me.btn_parametersetup.Name = "btn_parametersetup"
+        Me.btn_parametersetup.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_parametersetup.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_parametersetup.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_parametersetup.selected = False
+        Me.btn_parametersetup.Size = New System.Drawing.Size(300, 48)
+        Me.btn_parametersetup.TabIndex = 6
+        Me.btn_parametersetup.Text = "Parameter Setup"
+        Me.btn_parametersetup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_parametersetup.Textcolor = System.Drawing.Color.Black
+        Me.btn_parametersetup.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'PanelSound
         '
@@ -521,9 +832,11 @@ Partial Class Mdi
         '
         'TrackBar7
         '
+        Me.TrackBar7.LargeChange = 10
         Me.TrackBar7.Location = New System.Drawing.Point(46, 31)
         Me.TrackBar7.Name = "TrackBar7"
         Me.TrackBar7.Size = New System.Drawing.Size(158, 45)
+        Me.TrackBar7.SmallChange = 10
         Me.TrackBar7.TabIndex = 2
         '
         'Label17
@@ -535,13 +848,48 @@ Partial Class Mdi
         Me.Label17.TabIndex = 1
         Me.Label17.Text = "Alarms"
         '
+        'btn_sound
+        '
+        Me.btn_sound.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_sound.BackColor = System.Drawing.Color.Transparent
+        Me.btn_sound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_sound.BorderRadius = 0
+        Me.btn_sound.ButtonText = "Sound Volume"
+        Me.btn_sound.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_sound.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_sound.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_sound.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_sound.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_sound_level
+        Me.btn_sound.Iconimage_right = CType(resources.GetObject("btn_sound.Iconimage_right"), System.Drawing.Image)
+        Me.btn_sound.Iconimage_right_Selected = CType(resources.GetObject("btn_sound.Iconimage_right_Selected"), System.Drawing.Image)
+        Me.btn_sound.Iconimage_Selected = CType(resources.GetObject("btn_sound.Iconimage_Selected"), System.Drawing.Image)
+        Me.btn_sound.IconMarginLeft = 0
+        Me.btn_sound.IconMarginRight = 0
+        Me.btn_sound.IconRightVisible = True
+        Me.btn_sound.IconRightZoom = 0R
+        Me.btn_sound.IconVisible = True
+        Me.btn_sound.IconZoom = 50.0R
+        Me.btn_sound.IsTab = False
+        Me.btn_sound.Location = New System.Drawing.Point(0, 496)
+        Me.btn_sound.Name = "btn_sound"
+        Me.btn_sound.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_sound.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_sound.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_sound.selected = False
+        Me.btn_sound.Size = New System.Drawing.Size(300, 48)
+        Me.btn_sound.TabIndex = 4
+        Me.btn_sound.Text = "Sound Volume"
+        Me.btn_sound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_sound.Textcolor = System.Drawing.Color.Black
+        Me.btn_sound.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
         'PanelColors
         '
-        Me.PanelColors.Controls.Add(Me.Button27)
-        Me.PanelColors.Controls.Add(Me.Button28)
-        Me.PanelColors.Controls.Add(Me.Button29)
-        Me.PanelColors.Controls.Add(Me.Button30)
-        Me.PanelColors.Controls.Add(Me.Button31)
+        Me.PanelColors.Controls.Add(Me.btn_temp_green)
+        Me.PanelColors.Controls.Add(Me.btn_temp_red)
+        Me.PanelColors.Controls.Add(Me.btn_temp_yellow)
+        Me.PanelColors.Controls.Add(Me.btn_temp_pink)
+        Me.PanelColors.Controls.Add(Me.btn_temp_blue)
         Me.PanelColors.Controls.Add(Me.btn_resp_green)
         Me.PanelColors.Controls.Add(Me.btn_resp_red)
         Me.PanelColors.Controls.Add(Me.btn_resp_yellow)
@@ -575,56 +923,56 @@ Partial Class Mdi
         Me.PanelColors.Size = New System.Drawing.Size(300, 200)
         Me.PanelColors.TabIndex = 3
         '
-        'Button27
+        'btn_temp_green
         '
-        Me.Button27.BackColor = System.Drawing.Color.Lime
-        Me.Button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button27.Location = New System.Drawing.Point(216, 155)
-        Me.Button27.Name = "Button27"
-        Me.Button27.Size = New System.Drawing.Size(17, 15)
-        Me.Button27.TabIndex = 35
-        Me.Button27.UseVisualStyleBackColor = False
+        Me.btn_temp_green.BackColor = System.Drawing.Color.Lime
+        Me.btn_temp_green.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_temp_green.Location = New System.Drawing.Point(216, 155)
+        Me.btn_temp_green.Name = "btn_temp_green"
+        Me.btn_temp_green.Size = New System.Drawing.Size(17, 15)
+        Me.btn_temp_green.TabIndex = 35
+        Me.btn_temp_green.UseVisualStyleBackColor = False
         '
-        'Button28
+        'btn_temp_red
         '
-        Me.Button28.BackColor = System.Drawing.Color.Red
-        Me.Button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button28.Location = New System.Drawing.Point(193, 155)
-        Me.Button28.Name = "Button28"
-        Me.Button28.Size = New System.Drawing.Size(17, 15)
-        Me.Button28.TabIndex = 34
-        Me.Button28.UseVisualStyleBackColor = False
+        Me.btn_temp_red.BackColor = System.Drawing.Color.Red
+        Me.btn_temp_red.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_temp_red.Location = New System.Drawing.Point(193, 155)
+        Me.btn_temp_red.Name = "btn_temp_red"
+        Me.btn_temp_red.Size = New System.Drawing.Size(17, 15)
+        Me.btn_temp_red.TabIndex = 34
+        Me.btn_temp_red.UseVisualStyleBackColor = False
         '
-        'Button29
+        'btn_temp_yellow
         '
-        Me.Button29.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button29.Location = New System.Drawing.Point(170, 155)
-        Me.Button29.Name = "Button29"
-        Me.Button29.Size = New System.Drawing.Size(17, 15)
-        Me.Button29.TabIndex = 33
-        Me.Button29.UseVisualStyleBackColor = False
+        Me.btn_temp_yellow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btn_temp_yellow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_temp_yellow.Location = New System.Drawing.Point(170, 155)
+        Me.btn_temp_yellow.Name = "btn_temp_yellow"
+        Me.btn_temp_yellow.Size = New System.Drawing.Size(17, 15)
+        Me.btn_temp_yellow.TabIndex = 33
+        Me.btn_temp_yellow.UseVisualStyleBackColor = False
         '
-        'Button30
+        'btn_temp_pink
         '
-        Me.Button30.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.Button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button30.Location = New System.Drawing.Point(148, 155)
-        Me.Button30.Name = "Button30"
-        Me.Button30.Size = New System.Drawing.Size(17, 15)
-        Me.Button30.TabIndex = 32
-        Me.Button30.UseVisualStyleBackColor = False
+        Me.btn_temp_pink.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.btn_temp_pink.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_temp_pink.Location = New System.Drawing.Point(148, 155)
+        Me.btn_temp_pink.Name = "btn_temp_pink"
+        Me.btn_temp_pink.Size = New System.Drawing.Size(17, 15)
+        Me.btn_temp_pink.TabIndex = 32
+        Me.btn_temp_pink.UseVisualStyleBackColor = False
         '
-        'Button31
+        'btn_temp_blue
         '
-        Me.Button31.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Button31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button31.Location = New System.Drawing.Point(125, 155)
-        Me.Button31.Name = "Button31"
-        Me.Button31.Size = New System.Drawing.Size(17, 15)
-        Me.Button31.TabIndex = 31
-        Me.Button31.UseVisualStyleBackColor = False
+        Me.btn_temp_blue.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.btn_temp_blue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_temp_blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_temp_blue.Location = New System.Drawing.Point(125, 155)
+        Me.btn_temp_blue.Name = "btn_temp_blue"
+        Me.btn_temp_blue.Size = New System.Drawing.Size(17, 15)
+        Me.btn_temp_blue.TabIndex = 31
+        Me.btn_temp_blue.UseVisualStyleBackColor = False
         '
         'btn_resp_green
         '
@@ -853,9 +1201,9 @@ Partial Class Mdi
         Me.Label29.AutoSize = True
         Me.Label29.Location = New System.Drawing.Point(45, 105)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(33, 13)
+        Me.Label29.Size = New System.Drawing.Size(32, 13)
         Me.Label29.TabIndex = 8
-        Me.Label29.Text = "NIBR"
+        Me.Label29.Text = "NIBP"
         '
         'Label28
         '
@@ -893,14 +1241,49 @@ Partial Class Mdi
         Me.Label26.TabIndex = 4
         Me.Label26.Text = "Indicators"
         '
+        'btn_colors
+        '
+        Me.btn_colors.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_colors.BackColor = System.Drawing.Color.Transparent
+        Me.btn_colors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_colors.BorderRadius = 0
+        Me.btn_colors.ButtonText = "Colors"
+        Me.btn_colors.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_colors.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_colors.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_colors.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_colors.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_colors
+        Me.btn_colors.Iconimage_right = CType(resources.GetObject("btn_colors.Iconimage_right"), System.Drawing.Image)
+        Me.btn_colors.Iconimage_right_Selected = CType(resources.GetObject("btn_colors.Iconimage_right_Selected"), System.Drawing.Image)
+        Me.btn_colors.Iconimage_Selected = CType(resources.GetObject("btn_colors.Iconimage_Selected"), System.Drawing.Image)
+        Me.btn_colors.IconMarginLeft = 0
+        Me.btn_colors.IconMarginRight = 0
+        Me.btn_colors.IconRightVisible = True
+        Me.btn_colors.IconRightZoom = 0R
+        Me.btn_colors.IconVisible = True
+        Me.btn_colors.IconZoom = 50.0R
+        Me.btn_colors.IsTab = False
+        Me.btn_colors.Location = New System.Drawing.Point(0, 248)
+        Me.btn_colors.Name = "btn_colors"
+        Me.btn_colors.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_colors.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_colors.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_colors.selected = False
+        Me.btn_colors.Size = New System.Drawing.Size(300, 48)
+        Me.btn_colors.TabIndex = 2
+        Me.btn_colors.Text = "Colors"
+        Me.btn_colors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_colors.Textcolor = System.Drawing.Color.Black
+        Me.btn_colors.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
         'PanelScreensetup
         '
-        Me.PanelScreensetup.Controls.Add(Me.BunifuCheckbox4)
-        Me.PanelScreensetup.Controls.Add(Me.BunifuCheckbox3)
+        Me.PanelScreensetup.Controls.Add(Me.CheckBox_SPO2)
+        Me.PanelScreensetup.Controls.Add(Me.CheckBox_RR)
         Me.PanelScreensetup.Controls.Add(Me.Label19)
-        Me.PanelScreensetup.Controls.Add(Me.BunifuCheckbox2)
+        Me.PanelScreensetup.Controls.Add(Me.CheckBox_ECG2)
         Me.PanelScreensetup.Controls.Add(Me.Label25)
-        Me.PanelScreensetup.Controls.Add(Me.BunifuCheckbox1)
+        Me.PanelScreensetup.Controls.Add(Me.CheckBox_ECG1)
         Me.PanelScreensetup.Controls.Add(Me.Label21)
         Me.PanelScreensetup.Controls.Add(Me.Label22)
         Me.PanelScreensetup.Controls.Add(Me.Label23)
@@ -911,29 +1294,29 @@ Partial Class Mdi
         Me.PanelScreensetup.Size = New System.Drawing.Size(300, 200)
         Me.PanelScreensetup.TabIndex = 1
         '
-        'BunifuCheckbox4
+        'CheckBox_SPO2
         '
-        Me.BunifuCheckbox4.BackColor = System.Drawing.Color.Black
-        Me.BunifuCheckbox4.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.BunifuCheckbox4.Checked = True
-        Me.BunifuCheckbox4.CheckedOnColor = System.Drawing.Color.Black
-        Me.BunifuCheckbox4.ForeColor = System.Drawing.Color.White
-        Me.BunifuCheckbox4.Location = New System.Drawing.Point(184, 137)
-        Me.BunifuCheckbox4.Name = "BunifuCheckbox4"
-        Me.BunifuCheckbox4.Size = New System.Drawing.Size(20, 20)
-        Me.BunifuCheckbox4.TabIndex = 15
+        Me.CheckBox_SPO2.BackColor = System.Drawing.Color.Black
+        Me.CheckBox_SPO2.ChechedOffColor = System.Drawing.Color.Black
+        Me.CheckBox_SPO2.Checked = True
+        Me.CheckBox_SPO2.CheckedOnColor = System.Drawing.Color.Black
+        Me.CheckBox_SPO2.ForeColor = System.Drawing.Color.White
+        Me.CheckBox_SPO2.Location = New System.Drawing.Point(184, 137)
+        Me.CheckBox_SPO2.Name = "CheckBox_SPO2"
+        Me.CheckBox_SPO2.Size = New System.Drawing.Size(20, 20)
+        Me.CheckBox_SPO2.TabIndex = 15
         '
-        'BunifuCheckbox3
+        'CheckBox_RR
         '
-        Me.BunifuCheckbox3.BackColor = System.Drawing.Color.Black
-        Me.BunifuCheckbox3.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.BunifuCheckbox3.Checked = True
-        Me.BunifuCheckbox3.CheckedOnColor = System.Drawing.Color.Black
-        Me.BunifuCheckbox3.ForeColor = System.Drawing.Color.White
-        Me.BunifuCheckbox3.Location = New System.Drawing.Point(184, 105)
-        Me.BunifuCheckbox3.Name = "BunifuCheckbox3"
-        Me.BunifuCheckbox3.Size = New System.Drawing.Size(20, 20)
-        Me.BunifuCheckbox3.TabIndex = 14
+        Me.CheckBox_RR.BackColor = System.Drawing.Color.Black
+        Me.CheckBox_RR.ChechedOffColor = System.Drawing.Color.Black
+        Me.CheckBox_RR.Checked = True
+        Me.CheckBox_RR.CheckedOnColor = System.Drawing.Color.Black
+        Me.CheckBox_RR.ForeColor = System.Drawing.Color.White
+        Me.CheckBox_RR.Location = New System.Drawing.Point(184, 105)
+        Me.CheckBox_RR.Name = "CheckBox_RR"
+        Me.CheckBox_RR.Size = New System.Drawing.Size(20, 20)
+        Me.CheckBox_RR.TabIndex = 14
         '
         'Label19
         '
@@ -944,17 +1327,17 @@ Partial Class Mdi
         Me.Label19.TabIndex = 13
         Me.Label19.Text = "SPO2"
         '
-        'BunifuCheckbox2
+        'CheckBox_ECG2
         '
-        Me.BunifuCheckbox2.BackColor = System.Drawing.Color.Black
-        Me.BunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.BunifuCheckbox2.Checked = True
-        Me.BunifuCheckbox2.CheckedOnColor = System.Drawing.Color.Black
-        Me.BunifuCheckbox2.ForeColor = System.Drawing.Color.White
-        Me.BunifuCheckbox2.Location = New System.Drawing.Point(184, 76)
-        Me.BunifuCheckbox2.Name = "BunifuCheckbox2"
-        Me.BunifuCheckbox2.Size = New System.Drawing.Size(20, 20)
-        Me.BunifuCheckbox2.TabIndex = 12
+        Me.CheckBox_ECG2.BackColor = System.Drawing.Color.Black
+        Me.CheckBox_ECG2.ChechedOffColor = System.Drawing.Color.Black
+        Me.CheckBox_ECG2.Checked = True
+        Me.CheckBox_ECG2.CheckedOnColor = System.Drawing.Color.Black
+        Me.CheckBox_ECG2.ForeColor = System.Drawing.Color.White
+        Me.CheckBox_ECG2.Location = New System.Drawing.Point(184, 76)
+        Me.CheckBox_ECG2.Name = "CheckBox_ECG2"
+        Me.CheckBox_ECG2.Size = New System.Drawing.Size(20, 20)
+        Me.CheckBox_ECG2.TabIndex = 12
         '
         'Label25
         '
@@ -965,17 +1348,17 @@ Partial Class Mdi
         Me.Label25.TabIndex = 11
         Me.Label25.Text = "ECG 2"
         '
-        'BunifuCheckbox1
+        'CheckBox_ECG1
         '
-        Me.BunifuCheckbox1.BackColor = System.Drawing.Color.Black
-        Me.BunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.BunifuCheckbox1.Checked = True
-        Me.BunifuCheckbox1.CheckedOnColor = System.Drawing.Color.Black
-        Me.BunifuCheckbox1.ForeColor = System.Drawing.Color.White
-        Me.BunifuCheckbox1.Location = New System.Drawing.Point(184, 40)
-        Me.BunifuCheckbox1.Name = "BunifuCheckbox1"
-        Me.BunifuCheckbox1.Size = New System.Drawing.Size(20, 20)
-        Me.BunifuCheckbox1.TabIndex = 10
+        Me.CheckBox_ECG1.BackColor = System.Drawing.Color.Black
+        Me.CheckBox_ECG1.ChechedOffColor = System.Drawing.Color.Black
+        Me.CheckBox_ECG1.Checked = True
+        Me.CheckBox_ECG1.CheckedOnColor = System.Drawing.Color.Black
+        Me.CheckBox_ECG1.ForeColor = System.Drawing.Color.White
+        Me.CheckBox_ECG1.Location = New System.Drawing.Point(184, 40)
+        Me.CheckBox_ECG1.Name = "CheckBox_ECG1"
+        Me.CheckBox_ECG1.Size = New System.Drawing.Size(20, 20)
+        Me.CheckBox_ECG1.TabIndex = 10
         '
         'Label21
         '
@@ -1013,6 +1396,41 @@ Partial Class Mdi
         Me.Label24.TabIndex = 1
         Me.Label24.Text = "Indicators"
         '
+        'btn_screensetup
+        '
+        Me.btn_screensetup.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_screensetup.BackColor = System.Drawing.Color.Transparent
+        Me.btn_screensetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_screensetup.BorderRadius = 0
+        Me.btn_screensetup.ButtonText = "Screen Setup"
+        Me.btn_screensetup.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_screensetup.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_screensetup.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_screensetup.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_screensetup.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_screen_setup
+        Me.btn_screensetup.Iconimage_right = CType(resources.GetObject("btn_screensetup.Iconimage_right"), System.Drawing.Image)
+        Me.btn_screensetup.Iconimage_right_Selected = CType(resources.GetObject("btn_screensetup.Iconimage_right_Selected"), System.Drawing.Image)
+        Me.btn_screensetup.Iconimage_Selected = CType(resources.GetObject("btn_screensetup.Iconimage_Selected"), System.Drawing.Image)
+        Me.btn_screensetup.IconMarginLeft = 0
+        Me.btn_screensetup.IconMarginRight = 0
+        Me.btn_screensetup.IconRightVisible = True
+        Me.btn_screensetup.IconRightZoom = 0R
+        Me.btn_screensetup.IconVisible = True
+        Me.btn_screensetup.IconZoom = 50.0R
+        Me.btn_screensetup.IsTab = False
+        Me.btn_screensetup.Location = New System.Drawing.Point(0, 0)
+        Me.btn_screensetup.Name = "btn_screensetup"
+        Me.btn_screensetup.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_screensetup.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_screensetup.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_screensetup.selected = False
+        Me.btn_screensetup.Size = New System.Drawing.Size(300, 48)
+        Me.btn_screensetup.TabIndex = 0
+        Me.btn_screensetup.Text = "Screen Setup"
+        Me.btn_screensetup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_screensetup.Textcolor = System.Drawing.Color.Black
+        Me.btn_screensetup.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
         'Panel11
         '
         Me.Panel11.Controls.Add(Me.Label2)
@@ -1032,6 +1450,16 @@ Partial Class Mdi
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Monitor Setting"
         '
+        'Panel7
+        '
+        Me.Panel7.BackgroundImage = Global.GMed_PM01.My.Resources.Resources.logo
+        Me.Panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(300, 81)
+        Me.Panel7.TabIndex = 4
+        '
         'PanelPatientData
         '
         Me.PanelPatientData.Controls.Add(Me.btn_view_patient)
@@ -1041,8 +1469,78 @@ Partial Class Mdi
         Me.PanelPatientData.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelPatientData.Location = New System.Drawing.Point(900, 0)
         Me.PanelPatientData.Name = "PanelPatientData"
-        Me.PanelPatientData.Size = New System.Drawing.Size(300, 824)
+        Me.PanelPatientData.Size = New System.Drawing.Size(300, 863)
         Me.PanelPatientData.TabIndex = 6
+        '
+        'btn_view_patient
+        '
+        Me.btn_view_patient.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_view_patient.BackColor = System.Drawing.Color.Transparent
+        Me.btn_view_patient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_view_patient.BorderRadius = 0
+        Me.btn_view_patient.ButtonText = "View Patient"
+        Me.btn_view_patient.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_view_patient.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_view_patient.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_view_patient.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_view_patient.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_view_patient
+        Me.btn_view_patient.Iconimage_right = Nothing
+        Me.btn_view_patient.Iconimage_right_Selected = Nothing
+        Me.btn_view_patient.Iconimage_Selected = Nothing
+        Me.btn_view_patient.IconMarginLeft = 0
+        Me.btn_view_patient.IconMarginRight = 0
+        Me.btn_view_patient.IconRightVisible = True
+        Me.btn_view_patient.IconRightZoom = 0R
+        Me.btn_view_patient.IconVisible = True
+        Me.btn_view_patient.IconZoom = 50.0R
+        Me.btn_view_patient.IsTab = False
+        Me.btn_view_patient.Location = New System.Drawing.Point(0, 185)
+        Me.btn_view_patient.Name = "btn_view_patient"
+        Me.btn_view_patient.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_view_patient.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_view_patient.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_view_patient.selected = False
+        Me.btn_view_patient.Size = New System.Drawing.Size(300, 48)
+        Me.btn_view_patient.TabIndex = 8
+        Me.btn_view_patient.Text = "View Patient"
+        Me.btn_view_patient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_view_patient.Textcolor = System.Drawing.Color.Black
+        Me.btn_view_patient.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'btn_add_patient
+        '
+        Me.btn_add_patient.Activecolor = System.Drawing.Color.DarkGray
+        Me.btn_add_patient.BackColor = System.Drawing.Color.Transparent
+        Me.btn_add_patient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_add_patient.BorderRadius = 0
+        Me.btn_add_patient.ButtonText = "Add Patient"
+        Me.btn_add_patient.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_add_patient.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_add_patient.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_add_patient.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_add_patient.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_add_patient
+        Me.btn_add_patient.Iconimage_right = Nothing
+        Me.btn_add_patient.Iconimage_right_Selected = Nothing
+        Me.btn_add_patient.Iconimage_Selected = Nothing
+        Me.btn_add_patient.IconMarginLeft = 0
+        Me.btn_add_patient.IconMarginRight = 0
+        Me.btn_add_patient.IconRightVisible = True
+        Me.btn_add_patient.IconRightZoom = 0R
+        Me.btn_add_patient.IconVisible = True
+        Me.btn_add_patient.IconZoom = 50.0R
+        Me.btn_add_patient.IsTab = False
+        Me.btn_add_patient.Location = New System.Drawing.Point(0, 137)
+        Me.btn_add_patient.Name = "btn_add_patient"
+        Me.btn_add_patient.Normalcolor = System.Drawing.Color.Transparent
+        Me.btn_add_patient.OnHovercolor = System.Drawing.Color.DarkGray
+        Me.btn_add_patient.OnHoverTextColor = System.Drawing.Color.Black
+        Me.btn_add_patient.selected = False
+        Me.btn_add_patient.Size = New System.Drawing.Size(300, 48)
+        Me.btn_add_patient.TabIndex = 7
+        Me.btn_add_patient.Text = "Add Patient"
+        Me.btn_add_patient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_add_patient.Textcolor = System.Drawing.Color.Black
+        Me.btn_add_patient.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'Panel12
         '
@@ -1063,6 +1561,16 @@ Partial Class Mdi
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Patient Data"
         '
+        'Panel8
+        '
+        Me.Panel8.BackgroundImage = Global.GMed_PM01.My.Resources.Resources.logo
+        Me.Panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(0, 0)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(300, 81)
+        Me.Panel8.TabIndex = 4
+        '
         'PanelNIBP
         '
         Me.PanelNIBP.Controls.Add(Me.Panel16)
@@ -1074,7 +1582,7 @@ Partial Class Mdi
         Me.PanelNIBP.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelNIBP.Location = New System.Drawing.Point(1200, 0)
         Me.PanelNIBP.Name = "PanelNIBP"
-        Me.PanelNIBP.Size = New System.Drawing.Size(300, 824)
+        Me.PanelNIBP.Size = New System.Drawing.Size(300, 863)
         Me.PanelNIBP.TabIndex = 7
         '
         'Panel16
@@ -1161,57 +1669,6 @@ Partial Class Mdi
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Duration"
         '
-        'Panel15
-        '
-        Me.Panel15.Controls.Add(Me.btn_stop_manual)
-        Me.Panel15.Controls.Add(Me.btn_start_manual)
-        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel15.Location = New System.Drawing.Point(0, 185)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(300, 89)
-        Me.Panel15.TabIndex = 9
-        '
-        'btn_stop_manual
-        '
-        Me.btn_stop_manual.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_stop_manual.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_stop_manual.ForeColor = System.Drawing.Color.White
-        Me.btn_stop_manual.Location = New System.Drawing.Point(123, 25)
-        Me.btn_stop_manual.Name = "btn_stop_manual"
-        Me.btn_stop_manual.Size = New System.Drawing.Size(75, 23)
-        Me.btn_stop_manual.TabIndex = 1
-        Me.btn_stop_manual.Text = "Stop"
-        Me.btn_stop_manual.UseVisualStyleBackColor = False
-        '
-        'btn_start_manual
-        '
-        Me.btn_start_manual.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_start_manual.Location = New System.Drawing.Point(42, 25)
-        Me.btn_start_manual.Name = "btn_start_manual"
-        Me.btn_start_manual.Size = New System.Drawing.Size(75, 23)
-        Me.btn_start_manual.TabIndex = 0
-        Me.btn_start_manual.Text = "Start"
-        Me.btn_start_manual.UseVisualStyleBackColor = True
-        '
-        'Panel13
-        '
-        Me.Panel13.Controls.Add(Me.Label5)
-        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel13.Location = New System.Drawing.Point(0, 81)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(300, 56)
-        Me.Panel13.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(61, 25)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(43, 16)
-        Me.Label5.TabIndex = 1
-        Me.Label5.Text = "NIBP"
-        '
         'BunifuFlatButton7
         '
         Me.BunifuFlatButton7.Activecolor = System.Drawing.Color.DarkGray
@@ -1246,6 +1703,38 @@ Partial Class Mdi
         Me.BunifuFlatButton7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.BunifuFlatButton7.Textcolor = System.Drawing.Color.Black
         Me.BunifuFlatButton7.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'Panel15
+        '
+        Me.Panel15.Controls.Add(Me.btn_stop_manual)
+        Me.Panel15.Controls.Add(Me.btn_start_manual)
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel15.Location = New System.Drawing.Point(0, 185)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(300, 89)
+        Me.Panel15.TabIndex = 9
+        '
+        'btn_stop_manual
+        '
+        Me.btn_stop_manual.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_stop_manual.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_stop_manual.ForeColor = System.Drawing.Color.White
+        Me.btn_stop_manual.Location = New System.Drawing.Point(123, 25)
+        Me.btn_stop_manual.Name = "btn_stop_manual"
+        Me.btn_stop_manual.Size = New System.Drawing.Size(75, 23)
+        Me.btn_stop_manual.TabIndex = 1
+        Me.btn_stop_manual.Text = "Stop"
+        Me.btn_stop_manual.UseVisualStyleBackColor = False
+        '
+        'btn_start_manual
+        '
+        Me.btn_start_manual.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_start_manual.Location = New System.Drawing.Point(42, 25)
+        Me.btn_start_manual.Name = "btn_start_manual"
+        Me.btn_start_manual.Size = New System.Drawing.Size(75, 23)
+        Me.btn_start_manual.TabIndex = 0
+        Me.btn_start_manual.Text = "Start"
+        Me.btn_start_manual.UseVisualStyleBackColor = True
         '
         'BunifuFlatButton6
         '
@@ -1282,6 +1771,25 @@ Partial Class Mdi
         Me.BunifuFlatButton6.Textcolor = System.Drawing.Color.Black
         Me.BunifuFlatButton6.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
+        'Panel13
+        '
+        Me.Panel13.Controls.Add(Me.Label5)
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel13.Location = New System.Drawing.Point(0, 81)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(300, 56)
+        Me.Panel13.TabIndex = 7
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(61, 25)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(43, 16)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "NIBP"
+        '
         'Panel9
         '
         Me.Panel9.BackgroundImage = Global.GMed_PM01.My.Resources.Resources.logo
@@ -1292,522 +1800,19 @@ Partial Class Mdi
         Me.Panel9.Size = New System.Drawing.Size(300, 81)
         Me.Panel9.TabIndex = 4
         '
-        'btn_view_patient
-        '
-        Me.btn_view_patient.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_view_patient.BackColor = System.Drawing.Color.Transparent
-        Me.btn_view_patient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_view_patient.BorderRadius = 0
-        Me.btn_view_patient.ButtonText = "View Patient"
-        Me.btn_view_patient.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_view_patient.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_view_patient.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_view_patient.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_view_patient.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_view_patient
-        Me.btn_view_patient.Iconimage_right = Nothing
-        Me.btn_view_patient.Iconimage_right_Selected = Nothing
-        Me.btn_view_patient.Iconimage_Selected = Nothing
-        Me.btn_view_patient.IconMarginLeft = 0
-        Me.btn_view_patient.IconMarginRight = 0
-        Me.btn_view_patient.IconRightVisible = True
-        Me.btn_view_patient.IconRightZoom = 0R
-        Me.btn_view_patient.IconVisible = True
-        Me.btn_view_patient.IconZoom = 50.0R
-        Me.btn_view_patient.IsTab = False
-        Me.btn_view_patient.Location = New System.Drawing.Point(0, 185)
-        Me.btn_view_patient.Name = "btn_view_patient"
-        Me.btn_view_patient.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_view_patient.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_view_patient.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_view_patient.selected = False
-        Me.btn_view_patient.Size = New System.Drawing.Size(300, 48)
-        Me.btn_view_patient.TabIndex = 8
-        Me.btn_view_patient.Text = "View Patient"
-        Me.btn_view_patient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_view_patient.Textcolor = System.Drawing.Color.Black
-        Me.btn_view_patient.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'btn_add_patient
-        '
-        Me.btn_add_patient.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_add_patient.BackColor = System.Drawing.Color.Transparent
-        Me.btn_add_patient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_add_patient.BorderRadius = 0
-        Me.btn_add_patient.ButtonText = "Add Patient"
-        Me.btn_add_patient.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_add_patient.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_add_patient.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_add_patient.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_add_patient.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_add_patient
-        Me.btn_add_patient.Iconimage_right = Nothing
-        Me.btn_add_patient.Iconimage_right_Selected = Nothing
-        Me.btn_add_patient.Iconimage_Selected = Nothing
-        Me.btn_add_patient.IconMarginLeft = 0
-        Me.btn_add_patient.IconMarginRight = 0
-        Me.btn_add_patient.IconRightVisible = True
-        Me.btn_add_patient.IconRightZoom = 0R
-        Me.btn_add_patient.IconVisible = True
-        Me.btn_add_patient.IconZoom = 50.0R
-        Me.btn_add_patient.IsTab = False
-        Me.btn_add_patient.Location = New System.Drawing.Point(0, 137)
-        Me.btn_add_patient.Name = "btn_add_patient"
-        Me.btn_add_patient.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_add_patient.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_add_patient.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_add_patient.selected = False
-        Me.btn_add_patient.Size = New System.Drawing.Size(300, 48)
-        Me.btn_add_patient.TabIndex = 7
-        Me.btn_add_patient.Text = "Add Patient"
-        Me.btn_add_patient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_add_patient.Textcolor = System.Drawing.Color.Black
-        Me.btn_add_patient.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'Panel8
-        '
-        Me.Panel8.BackgroundImage = Global.GMed_PM01.My.Resources.Resources.logo
-        Me.Panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(300, 81)
-        Me.Panel8.TabIndex = 4
-        '
-        'btn_default
-        '
-        Me.btn_default.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_default.BackColor = System.Drawing.Color.Transparent
-        Me.btn_default.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_default.BorderRadius = 0
-        Me.btn_default.ButtonText = "Default Setup"
-        Me.btn_default.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_default.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_default.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_default.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_default.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_default_setup1
-        Me.btn_default.Iconimage_right = Nothing
-        Me.btn_default.Iconimage_right_Selected = Nothing
-        Me.btn_default.Iconimage_Selected = Nothing
-        Me.btn_default.IconMarginLeft = 0
-        Me.btn_default.IconMarginRight = 0
-        Me.btn_default.IconRightVisible = True
-        Me.btn_default.IconRightZoom = 50.0R
-        Me.btn_default.IconVisible = True
-        Me.btn_default.IconZoom = 50.0R
-        Me.btn_default.IsTab = True
-        Me.btn_default.Location = New System.Drawing.Point(0, 921)
-        Me.btn_default.Name = "btn_default"
-        Me.btn_default.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_default.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_default.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_default.selected = False
-        Me.btn_default.Size = New System.Drawing.Size(300, 48)
-        Me.btn_default.TabIndex = 9
-        Me.btn_default.Text = "Default Setup"
-        Me.btn_default.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_default.Textcolor = System.Drawing.Color.Black
-        Me.btn_default.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'btn_screenbrightness
-        '
-        Me.btn_screenbrightness.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_screenbrightness.BackColor = System.Drawing.Color.Transparent
-        Me.btn_screenbrightness.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_screenbrightness.BorderRadius = 0
-        Me.btn_screenbrightness.ButtonText = "Screen Brightness"
-        Me.btn_screenbrightness.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_screenbrightness.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_screenbrightness.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_screenbrightness.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_screenbrightness.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_screen_brightness
-        Me.btn_screenbrightness.Iconimage_right = Global.GMed_PM01.My.Resources.Resources.arrow_dropdown
-        Me.btn_screenbrightness.Iconimage_right_Selected = Global.GMed_PM01.My.Resources.Resources.arrow_dropdown_activated
-        Me.btn_screenbrightness.Iconimage_Selected = Global.GMed_PM01.My.Resources.Resources.arrow_dropdown_activated
-        Me.btn_screenbrightness.IconMarginLeft = 0
-        Me.btn_screenbrightness.IconMarginRight = 0
-        Me.btn_screenbrightness.IconRightVisible = True
-        Me.btn_screenbrightness.IconRightZoom = 0R
-        Me.btn_screenbrightness.IconVisible = True
-        Me.btn_screenbrightness.IconZoom = 50.0R
-        Me.btn_screenbrightness.IsTab = False
-        Me.btn_screenbrightness.Location = New System.Drawing.Point(0, 792)
-        Me.btn_screenbrightness.Name = "btn_screenbrightness"
-        Me.btn_screenbrightness.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_screenbrightness.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_screenbrightness.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_screenbrightness.selected = False
-        Me.btn_screenbrightness.Size = New System.Drawing.Size(300, 48)
-        Me.btn_screenbrightness.TabIndex = 7
-        Me.btn_screenbrightness.Text = "Screen Brightness"
-        Me.btn_screenbrightness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_screenbrightness.Textcolor = System.Drawing.Color.Black
-        Me.btn_screenbrightness.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'btn_parametersetup
-        '
-        Me.btn_parametersetup.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_parametersetup.BackColor = System.Drawing.Color.Transparent
-        Me.btn_parametersetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_parametersetup.BorderRadius = 0
-        Me.btn_parametersetup.ButtonText = "Parameter Setup"
-        Me.btn_parametersetup.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_parametersetup.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_parametersetup.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_parametersetup.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_parametersetup.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_parameter_setup
-        Me.btn_parametersetup.Iconimage_right = Nothing
-        Me.btn_parametersetup.Iconimage_right_Selected = Nothing
-        Me.btn_parametersetup.Iconimage_Selected = Nothing
-        Me.btn_parametersetup.IconMarginLeft = 0
-        Me.btn_parametersetup.IconMarginRight = 0
-        Me.btn_parametersetup.IconRightVisible = True
-        Me.btn_parametersetup.IconRightZoom = 0R
-        Me.btn_parametersetup.IconVisible = True
-        Me.btn_parametersetup.IconZoom = 50.0R
-        Me.btn_parametersetup.IsTab = False
-        Me.btn_parametersetup.Location = New System.Drawing.Point(0, 744)
-        Me.btn_parametersetup.Name = "btn_parametersetup"
-        Me.btn_parametersetup.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_parametersetup.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_parametersetup.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_parametersetup.selected = False
-        Me.btn_parametersetup.Size = New System.Drawing.Size(300, 48)
-        Me.btn_parametersetup.TabIndex = 6
-        Me.btn_parametersetup.Text = "Parameter Setup"
-        Me.btn_parametersetup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_parametersetup.Textcolor = System.Drawing.Color.Black
-        Me.btn_parametersetup.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'btn_sound
-        '
-        Me.btn_sound.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_sound.BackColor = System.Drawing.Color.Transparent
-        Me.btn_sound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_sound.BorderRadius = 0
-        Me.btn_sound.ButtonText = "Sound Volume"
-        Me.btn_sound.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_sound.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_sound.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_sound.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_sound.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_sound_level
-        Me.btn_sound.Iconimage_right = CType(resources.GetObject("btn_sound.Iconimage_right"), System.Drawing.Image)
-        Me.btn_sound.Iconimage_right_Selected = CType(resources.GetObject("btn_sound.Iconimage_right_Selected"), System.Drawing.Image)
-        Me.btn_sound.Iconimage_Selected = CType(resources.GetObject("btn_sound.Iconimage_Selected"), System.Drawing.Image)
-        Me.btn_sound.IconMarginLeft = 0
-        Me.btn_sound.IconMarginRight = 0
-        Me.btn_sound.IconRightVisible = True
-        Me.btn_sound.IconRightZoom = 0R
-        Me.btn_sound.IconVisible = True
-        Me.btn_sound.IconZoom = 50.0R
-        Me.btn_sound.IsTab = False
-        Me.btn_sound.Location = New System.Drawing.Point(0, 496)
-        Me.btn_sound.Name = "btn_sound"
-        Me.btn_sound.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_sound.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_sound.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_sound.selected = False
-        Me.btn_sound.Size = New System.Drawing.Size(300, 48)
-        Me.btn_sound.TabIndex = 4
-        Me.btn_sound.Text = "Sound Volume"
-        Me.btn_sound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_sound.Textcolor = System.Drawing.Color.Black
-        Me.btn_sound.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'btn_colors
-        '
-        Me.btn_colors.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_colors.BackColor = System.Drawing.Color.Transparent
-        Me.btn_colors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_colors.BorderRadius = 0
-        Me.btn_colors.ButtonText = "Colors"
-        Me.btn_colors.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_colors.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_colors.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_colors.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_colors.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_colors
-        Me.btn_colors.Iconimage_right = CType(resources.GetObject("btn_colors.Iconimage_right"), System.Drawing.Image)
-        Me.btn_colors.Iconimage_right_Selected = CType(resources.GetObject("btn_colors.Iconimage_right_Selected"), System.Drawing.Image)
-        Me.btn_colors.Iconimage_Selected = CType(resources.GetObject("btn_colors.Iconimage_Selected"), System.Drawing.Image)
-        Me.btn_colors.IconMarginLeft = 0
-        Me.btn_colors.IconMarginRight = 0
-        Me.btn_colors.IconRightVisible = True
-        Me.btn_colors.IconRightZoom = 0R
-        Me.btn_colors.IconVisible = True
-        Me.btn_colors.IconZoom = 50.0R
-        Me.btn_colors.IsTab = False
-        Me.btn_colors.Location = New System.Drawing.Point(0, 248)
-        Me.btn_colors.Name = "btn_colors"
-        Me.btn_colors.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_colors.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_colors.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_colors.selected = False
-        Me.btn_colors.Size = New System.Drawing.Size(300, 48)
-        Me.btn_colors.TabIndex = 2
-        Me.btn_colors.Text = "Colors"
-        Me.btn_colors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_colors.Textcolor = System.Drawing.Color.Black
-        Me.btn_colors.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'btn_screensetup
-        '
-        Me.btn_screensetup.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_screensetup.BackColor = System.Drawing.Color.Transparent
-        Me.btn_screensetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_screensetup.BorderRadius = 0
-        Me.btn_screensetup.ButtonText = "Screen Setup"
-        Me.btn_screensetup.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_screensetup.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_screensetup.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_screensetup.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_screensetup.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_screen_setup
-        Me.btn_screensetup.Iconimage_right = CType(resources.GetObject("btn_screensetup.Iconimage_right"), System.Drawing.Image)
-        Me.btn_screensetup.Iconimage_right_Selected = CType(resources.GetObject("btn_screensetup.Iconimage_right_Selected"), System.Drawing.Image)
-        Me.btn_screensetup.Iconimage_Selected = CType(resources.GetObject("btn_screensetup.Iconimage_Selected"), System.Drawing.Image)
-        Me.btn_screensetup.IconMarginLeft = 0
-        Me.btn_screensetup.IconMarginRight = 0
-        Me.btn_screensetup.IconRightVisible = True
-        Me.btn_screensetup.IconRightZoom = 0R
-        Me.btn_screensetup.IconVisible = True
-        Me.btn_screensetup.IconZoom = 50.0R
-        Me.btn_screensetup.IsTab = False
-        Me.btn_screensetup.Location = New System.Drawing.Point(0, 0)
-        Me.btn_screensetup.Name = "btn_screensetup"
-        Me.btn_screensetup.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_screensetup.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_screensetup.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_screensetup.selected = False
-        Me.btn_screensetup.Size = New System.Drawing.Size(300, 48)
-        Me.btn_screensetup.TabIndex = 0
-        Me.btn_screensetup.Text = "Screen Setup"
-        Me.btn_screensetup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_screensetup.Textcolor = System.Drawing.Color.Black
-        Me.btn_screensetup.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'Panel7
-        '
-        Me.Panel7.BackgroundImage = Global.GMed_PM01.My.Resources.Resources.logo
-        Me.Panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(300, 81)
-        Me.Panel7.TabIndex = 4
-        '
-        'Panel6
-        '
-        Me.Panel6.BackgroundImage = Global.GMed_PM01.My.Resources.Resources.logo
-        Me.Panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(300, 81)
-        Me.Panel6.TabIndex = 4
-        '
-        'btn_soundlevel
-        '
-        Me.btn_soundlevel.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_soundlevel.BackColor = System.Drawing.Color.Transparent
-        Me.btn_soundlevel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_soundlevel.BorderRadius = 0
-        Me.btn_soundlevel.ButtonText = "Sound Level"
-        Me.btn_soundlevel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_soundlevel.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_soundlevel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_soundlevel.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_soundlevel.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_sound_volume
-        Me.btn_soundlevel.Iconimage_right = CType(resources.GetObject("btn_soundlevel.Iconimage_right"), System.Drawing.Image)
-        Me.btn_soundlevel.Iconimage_right_Selected = CType(resources.GetObject("btn_soundlevel.Iconimage_right_Selected"), System.Drawing.Image)
-        Me.btn_soundlevel.Iconimage_Selected = CType(resources.GetObject("btn_soundlevel.Iconimage_Selected"), System.Drawing.Image)
-        Me.btn_soundlevel.IconMarginLeft = 0
-        Me.btn_soundlevel.IconMarginRight = 0
-        Me.btn_soundlevel.IconRightVisible = True
-        Me.btn_soundlevel.IconRightZoom = 0R
-        Me.btn_soundlevel.IconVisible = True
-        Me.btn_soundlevel.IconZoom = 50.0R
-        Me.btn_soundlevel.IsTab = False
-        Me.btn_soundlevel.Location = New System.Drawing.Point(0, 536)
-        Me.btn_soundlevel.Name = "btn_soundlevel"
-        Me.btn_soundlevel.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_soundlevel.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_soundlevel.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_soundlevel.selected = False
-        Me.btn_soundlevel.Size = New System.Drawing.Size(300, 48)
-        Me.btn_soundlevel.TabIndex = 4
-        Me.btn_soundlevel.Text = "Sound Level"
-        Me.btn_soundlevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_soundlevel.Textcolor = System.Drawing.Color.Black
-        Me.btn_soundlevel.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'btn_lampbrightness
-        '
-        Me.btn_lampbrightness.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_lampbrightness.BackColor = System.Drawing.Color.Transparent
-        Me.btn_lampbrightness.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_lampbrightness.BorderRadius = 0
-        Me.btn_lampbrightness.ButtonText = "Lamp Brightness"
-        Me.btn_lampbrightness.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_lampbrightness.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_lampbrightness.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_lampbrightness.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_lampbrightness.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_lamp_brightness1
-        Me.btn_lampbrightness.Iconimage_right = CType(resources.GetObject("btn_lampbrightness.Iconimage_right"), System.Drawing.Image)
-        Me.btn_lampbrightness.Iconimage_right_Selected = CType(resources.GetObject("btn_lampbrightness.Iconimage_right_Selected"), System.Drawing.Image)
-        Me.btn_lampbrightness.Iconimage_Selected = CType(resources.GetObject("btn_lampbrightness.Iconimage_Selected"), System.Drawing.Image)
-        Me.btn_lampbrightness.IconMarginLeft = 0
-        Me.btn_lampbrightness.IconMarginRight = 0
-        Me.btn_lampbrightness.IconRightVisible = True
-        Me.btn_lampbrightness.IconRightZoom = 0R
-        Me.btn_lampbrightness.IconVisible = True
-        Me.btn_lampbrightness.IconZoom = 50.0R
-        Me.btn_lampbrightness.IsTab = False
-        Me.btn_lampbrightness.Location = New System.Drawing.Point(0, 398)
-        Me.btn_lampbrightness.Name = "btn_lampbrightness"
-        Me.btn_lampbrightness.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_lampbrightness.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_lampbrightness.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_lampbrightness.selected = False
-        Me.btn_lampbrightness.Size = New System.Drawing.Size(300, 48)
-        Me.btn_lampbrightness.TabIndex = 2
-        Me.btn_lampbrightness.Text = "Lamp Brightness"
-        Me.btn_lampbrightness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_lampbrightness.Textcolor = System.Drawing.Color.Black
-        Me.btn_lampbrightness.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'btn_alarmlimits
-        '
-        Me.btn_alarmlimits.Activecolor = System.Drawing.Color.DarkGray
-        Me.btn_alarmlimits.BackColor = System.Drawing.Color.Transparent
-        Me.btn_alarmlimits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btn_alarmlimits.BorderRadius = 0
-        Me.btn_alarmlimits.ButtonText = "Alarm Limits"
-        Me.btn_alarmlimits.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_alarmlimits.DisabledColor = System.Drawing.Color.Gray
-        Me.btn_alarmlimits.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_alarmlimits.Iconcolor = System.Drawing.Color.Transparent
-        Me.btn_alarmlimits.Iconimage = Global.GMed_PM01.My.Resources.Resources.sidebar_alarm_limits1
-        Me.btn_alarmlimits.Iconimage_right = CType(resources.GetObject("btn_alarmlimits.Iconimage_right"), System.Drawing.Image)
-        Me.btn_alarmlimits.Iconimage_right_Selected = CType(resources.GetObject("btn_alarmlimits.Iconimage_right_Selected"), System.Drawing.Image)
-        Me.btn_alarmlimits.Iconimage_Selected = CType(resources.GetObject("btn_alarmlimits.Iconimage_Selected"), System.Drawing.Image)
-        Me.btn_alarmlimits.IconMarginLeft = 0
-        Me.btn_alarmlimits.IconMarginRight = 0
-        Me.btn_alarmlimits.IconRightVisible = True
-        Me.btn_alarmlimits.IconRightZoom = 50.0R
-        Me.btn_alarmlimits.IconVisible = True
-        Me.btn_alarmlimits.IconZoom = 50.0R
-        Me.btn_alarmlimits.IsTab = False
-        Me.btn_alarmlimits.Location = New System.Drawing.Point(0, 0)
-        Me.btn_alarmlimits.Name = "btn_alarmlimits"
-        Me.btn_alarmlimits.Normalcolor = System.Drawing.Color.Transparent
-        Me.btn_alarmlimits.OnHovercolor = System.Drawing.Color.DarkGray
-        Me.btn_alarmlimits.OnHoverTextColor = System.Drawing.Color.Black
-        Me.btn_alarmlimits.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btn_alarmlimits.selected = False
-        Me.btn_alarmlimits.Size = New System.Drawing.Size(300, 48)
-        Me.btn_alarmlimits.TabIndex = 0
-        Me.btn_alarmlimits.Text = "Alarm Limits"
-        Me.btn_alarmlimits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btn_alarmlimits.Textcolor = System.Drawing.Color.Black
-        Me.btn_alarmlimits.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'Panel4
-        '
-        Me.Panel4.BackgroundImage = Global.GMed_PM01.My.Resources.Resources.logo
-        Me.Panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(300, 81)
-        Me.Panel4.TabIndex = 3
-        '
-        'Button6
-        '
-        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_nibp
-        Me.Button6.Location = New System.Drawing.Point(838, 1)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(170, 60)
-        Me.Button6.TabIndex = 11
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'Button5
-        '
-        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_patient_data
-        Me.Button5.Location = New System.Drawing.Point(675, 1)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(170, 60)
-        Me.Button5.TabIndex = 10
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_monitor_setting
-        Me.Button4.Location = New System.Drawing.Point(505, 1)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(170, 60)
-        Me.Button4.TabIndex = 9
-        Me.Button4.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_alarm_history
-        Me.Button3.Location = New System.Drawing.Point(336, 1)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(170, 60)
-        Me.Button3.TabIndex = 8
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_alarm_setup
-        Me.Button2.Location = New System.Drawing.Point(166, 1)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(170, 60)
-        Me.Button2.TabIndex = 7
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_home
-        Me.Button1.Location = New System.Drawing.Point(-2, 1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(170, 60)
-        Me.Button1.TabIndex = 6
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'Mdi
         '
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1919, 885)
+        Me.ClientSize = New System.Drawing.Size(1919, 924)
         Me.Controls.Add(Me.PanelNIBP)
         Me.Controls.Add(Me.PanelPatientData)
         Me.Controls.Add(Me.PanelMonitorSetting)
         Me.Controls.Add(Me.PanelAlarmSetupHistory)
         Me.Controls.Add(Me.PanelAlarmSetup)
         Me.Controls.Add(Me.Panel2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.IsMdiContainer = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -1839,7 +1844,7 @@ Partial Class Mdi
         Me.Panel3.ResumeLayout(False)
         Me.PanelScreenBrightness.ResumeLayout(False)
         Me.PanelScreenBrightness.PerformLayout()
-        CType(Me.TrackBar13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBarScreenBrightness, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSound.ResumeLayout(False)
         Me.PanelSound.PerformLayout()
         CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1896,12 +1901,12 @@ Partial Class Mdi
     Friend WithEvents Label27 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents Label26 As Label
-    Friend WithEvents BunifuCheckbox4 As Bunifu.Framework.UI.BunifuCheckbox
-    Friend WithEvents BunifuCheckbox3 As Bunifu.Framework.UI.BunifuCheckbox
+    Friend WithEvents CheckBox_SPO2 As Bunifu.Framework.UI.BunifuCheckbox
+    Friend WithEvents CheckBox_RR As Bunifu.Framework.UI.BunifuCheckbox
     Friend WithEvents Label19 As Label
-    Friend WithEvents BunifuCheckbox2 As Bunifu.Framework.UI.BunifuCheckbox
+    Friend WithEvents CheckBox_ECG2 As Bunifu.Framework.UI.BunifuCheckbox
     Friend WithEvents Label25 As Label
-    Friend WithEvents BunifuCheckbox1 As Bunifu.Framework.UI.BunifuCheckbox
+    Friend WithEvents CheckBox_ECG1 As Bunifu.Framework.UI.BunifuCheckbox
     Friend WithEvents Label31 As Label
     Friend WithEvents TrackBar8 As TrackBar
     Friend WithEvents Label32 As Label
@@ -1937,7 +1942,7 @@ Partial Class Mdi
     Friend WithEvents Panel7 As Panel
     Friend WithEvents btn_default As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents PanelScreenBrightness As Panel
-    Friend WithEvents TrackBar13 As TrackBar
+    Friend WithEvents TrackBarScreenBrightness As TrackBar
     Friend WithEvents Label8 As Label
     Friend WithEvents btn_screenbrightness As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btn_parametersetup As Bunifu.Framework.UI.BunifuFlatButton
@@ -1962,11 +1967,11 @@ Partial Class Mdi
     Friend WithEvents btn_stop_manual As Button
     Friend WithEvents btn_start_manual As Button
     Friend WithEvents Label9 As Label
-    Friend WithEvents Button27 As Button
-    Friend WithEvents Button28 As Button
-    Friend WithEvents Button29 As Button
-    Friend WithEvents Button30 As Button
-    Friend WithEvents Button31 As Button
+    Friend WithEvents btn_temp_green As Button
+    Friend WithEvents btn_temp_red As Button
+    Friend WithEvents btn_temp_yellow As Button
+    Friend WithEvents btn_temp_pink As Button
+    Friend WithEvents btn_temp_blue As Button
     Friend WithEvents btn_resp_green As Button
     Friend WithEvents btn_resp_red As Button
     Friend WithEvents btn_resp_yellow As Button
