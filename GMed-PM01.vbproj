@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB5A7E4D-0FAA-4F7A-937F-4FF30F887408}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>GMed_PM01.My.MyApplication</StartupObject>
+    <RootNamespace>GMed_PM01</RootNamespace>
+    <AssemblyName>GMed-PM01</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>GMed-PM01.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>GMed-PM01.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\..\project vb\Bunifu_UI_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddPatient.Designer.vb">
+      <DependentUpon>AddPatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddPatient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlarmHistory.Designer.vb">
+      <DependentUpon>AlarmHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DefaultSetup.Designer.vb">
+      <DependentUpon>DefaultSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mdi.Designer.vb">
+      <DependentUpon>Mdi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mdi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\Layout.vb" />
+    <Compile Include="Module\Navigation.vb" />
+    <Compile Include="Module\Panel-Setting.vb" />
+    <Compile Include="ParameterSetup.Designer.vb">
+      <DependentUpon>ParameterSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ParameterSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientInformation.Designer.vb">
+      <DependentUpon>PatientInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PatientInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonitoringDisplay.Designer.vb">
+      <DependentUpon>MonitoringDisplay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MonitoringDisplay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddPatient.resx">
+      <DependentUpon>AddPatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlarmHistory.resx">
+      <DependentUpon>AlarmHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefaultSetup.resx">
+      <DependentUpon>DefaultSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mdi.resx">
+      <DependentUpon>Mdi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitoringDisplay.resx">
+      <DependentUpon>MonitoringDisplay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParameterSetup.resx">
+      <DependentUpon>ParameterSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientInformation.resx">
+      <DependentUpon>PatientInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splashscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-add-patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-add-patient-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-alarm-limits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-alarm-limits-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-auto-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-colors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-colors-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-default-setup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-default-setup-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-lamp-brightness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-lamp-brightness-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-manual-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-parameter-setup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-parameter-setup-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-screen-brightness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-screen-brightness-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-screen-setup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-screen-setup-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-sound-level.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-sound-level-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-sound-volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-sound-volume-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-view-patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-view-patient-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-alarm-history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-alarm-history-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-alarm-setup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-alarm-setup-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-home-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-monitor-setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-monitor-setting-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-nibp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-nibp-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-patient-data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar-patient-data-activated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-default-setup1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-alarm-limits1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar-lamp-brightness1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-dropdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-dropdown-activated.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
