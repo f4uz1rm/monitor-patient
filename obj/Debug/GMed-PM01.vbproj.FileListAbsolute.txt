@@ -16,15 +16,15 @@ C:\Medical\GMed-PM01\obj\Debug\GMed_PM01.AddPatient.resources
 C:\Medical\GMed-PM01\obj\Debug\GMed_PM01.ParameterSetup.resources
 C:\Medical\GMed-PM01\obj\Debug\GMed_PM01.PatientInformation.resources
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\bin\Debug\GMed-PM01.exe.config
-C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.exe
-C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.xml
-C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.pdb
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\bin\Debug\GMed-PM01.exe.manifest
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\bin\Debug\GMed-PM01.application
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\bin\Debug\GMed-PM01.exe
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\bin\Debug\GMed-PM01.pdb
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\bin\Debug\GMed-PM01.xml
-C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.vbprojResolveAssemblyReference.cache
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.AddPatient.resources
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.AlarmHistory.resources
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.DefaultSetup.resources
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.Mdi.resources
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.MonitoringDisplay.resources
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.ParameterSetup.resources
@@ -32,5 +32,9 @@ C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.SplashScreen1.resources
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.Resources.resources
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.vbproj.GenerateResource.Cache
-C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\bin\Debug\Bunifu_UI_v1.5.3.dll
-C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.DefaultSetup.resources
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.exe.manifest
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.application
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.exe
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.xml
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.pdb
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.vbprojResolveAssemblyReference.cache
