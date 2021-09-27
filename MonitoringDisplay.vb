@@ -30,20 +30,22 @@ Public Class MonitoringDisplay
 
     Private Sub MonitoringDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HideButtonNaigation()
+        'Connection - COM 5
+        'COM5Connecting()
+        'Batas
         Button4.Focus()
         Timer1.Enabled = True
         'Try Connection For Button
-        Try
-            comport = "COM5"
-            KoneksiButton()
-
-        Catch ex As Exception
-            'MsgBox("Connection Failed")
-        End Try
+        'Try
+        'comport = "COM5"
+        'KoneksiButton()
+        'Catch ex As Exception
+        'MsgBox("Connection Failed")
+        'End Try
         setchart()
-        Timer3.Enabled = True
-        Timer4.Enabled = True
-        Timer5.Enabled = True
+        Timer3.Enabled = False
+        Timer4.Enabled = False
+        Timer5.Enabled = False
         'setchart()
     End Sub
 
@@ -739,21 +741,70 @@ Public Class MonitoringDisplay
             isMouseDown = False
         End If
     End Sub
-
+    Shared MyValue As New Random()
     Private Sub TimerRandom_Tick(sender As Object, e As EventArgs) Handles TimerRandom.Tick
-        Dim MyValue As Double
-        MyValue = Int((9 * Rnd()) + 100)
+        ecghr.Text = MyValue.Next(110, 180)
+        muispo2.Text = MyValue.Next(55, 120)
+        muitd.Text = MyValue.Next(10, 70)
+        muitemp1.Text = MyValue.Next(10, 70)
+        muitemp2.Text = MyValue.Next(10, 70)
+        ecgrr.Text = MyValue.Next(10, 70)
+        sysdys.Text = MyValue.Next(10, 70) & "/" & MyValue.Next(10, 70)
+        Chart1.Series("rr").Points.AddXY(detik3, Val(MyValue.Next(20, 130)))
+        Chart2.Series("spo2").Points.AddXY(detik2, Val(MyValue.Next(20, 130)))
 
-        ecghr.Text = MyValue
-        muispo2.Text = MyValue
-        muitd.Text = MyValue
-        muitemp1.Text = MyValue
-        muitemp2.Text = MyValue
-        ecgrr.Text = MyValue
-        sysdys.Text = MyValue
-
-        Chart1.Series("rr").Points.AddXY(detik3, Val(MyValue))
-        Chart2.Series("spo2").Points.AddXY(detik2, Val(MyValue))
+        AudioHBAlarm()
+    End Sub
+    Private Sub TimerBlue_Tick(sender As Object, e As EventArgs) Handles TimerBlue.Tick
+        BlueButton()
+    End Sub
+    Dim StatusActive As Boolean
+    Dim NameStatus As String = "ECG HIGH"
+    Private Sub TimerNotification_Tick(sender As Object, e As EventArgs) Handles TimerNotification.Tick
+        NotificationStatusECG(MyValue.Next(110, 180), NameStatus)
+    End Sub
+    Private Sub TimerCOM3_Tick(sender As Object, e As EventArgs) Handles TimerCOM3.Tick
+        COM3Connecting()
+    End Sub
+    Sub COM3Connecting()
+        SerialPort1.Close()
+        SerialPort1.PortName = "COM3"
+        SerialPort1.BaudRate = 1200
+        SerialPort1.DataBits = 8
+        SerialPort1.Parity = Parity.None
+        SerialPort1.StopBits = StopBits.One
+        SerialPort1.Handshake = Handshake.None
+        SerialPort1.Encoding = System.Text.Encoding.Default 'very important!
+        SerialPort1.ReadTimeout = 10000
+        SerialPort1.Open()
+        MsgBox("Connection Success COM 3")
+        SerialPort1.Close()
+        TimerCOM3.Stop()
+        MsgBox("Disconnection Success COM 3")
+        TimerCOM5.Start()
+        MsgBox("Connection Success COM 5")
     End Sub
 
+    Sub COM5Connecting()
+        SerialPort1.Close()
+        SerialPort1.PortName = "COM5"
+        SerialPort1.BaudRate = 9600
+        SerialPort1.DataBits = 8
+        SerialPort1.Parity = Parity.None
+        SerialPort1.StopBits = StopBits.One
+        SerialPort1.Handshake = Handshake.None
+        SerialPort1.Encoding = System.Text.Encoding.Default 'very important!
+        SerialPort1.ReadTimeout = 10000
+        SerialPort1.Open()
+        'MsgBox("Connection Success")
+    End Sub
+
+    Private Sub MonitoringDisplay_DoubleClick(sender As Object, e As EventArgs) Handles Me.DoubleClick
+        Mdi.WindowState = FormWindowState.Maximized
+        Me.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub MonitoringDisplay_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        StopBackgroundSound()
+    End Sub
 End Class

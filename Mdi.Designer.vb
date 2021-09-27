@@ -33,14 +33,17 @@ Partial Class Mdi
         Me.PanelAlarmSetup = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PanelSoundLevel = New System.Windows.Forms.Panel()
-        Me.TrackBar6 = New System.Windows.Forms.TrackBar()
+        Me.ButtonUP = New System.Windows.Forms.Button()
+        Me.ButtonDown = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btn_soundlevel = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelLampBrightness = New System.Windows.Forms.Panel()
-        Me.TrackBar10 = New System.Windows.Forms.TrackBar()
+        Me.LabelBrightness = New System.Windows.Forms.Label()
+        Me.TrackBarBrightness = New System.Windows.Forms.TrackBar()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.btn_lampbrightness = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelAlarmLimits = New System.Windows.Forms.Panel()
+        Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TrackBar5 = New System.Windows.Forms.TrackBar()
         Me.TrackBar4 = New System.Windows.Forms.TrackBar()
@@ -49,7 +52,6 @@ Partial Class Mdi
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TrackBar2 = New System.Windows.Forms.TrackBar()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btn_alarmlimits = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -63,6 +65,7 @@ Partial Class Mdi
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btn_default = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelScreenBrightness = New System.Windows.Forms.Panel()
+        Me.LabelScreenBrightness = New System.Windows.Forms.Label()
         Me.TrackBarScreenBrightness = New System.Windows.Forms.TrackBar()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btn_screenbrightness = New Bunifu.Framework.UI.BunifuFlatButton()
@@ -70,12 +73,17 @@ Partial Class Mdi
         Me.PanelSound = New System.Windows.Forms.Panel()
         Me.TrackBar9 = New System.Windows.Forms.TrackBar()
         Me.Label33 = New System.Windows.Forms.Label()
-        Me.TrackBar8 = New System.Windows.Forms.TrackBar()
+        Me.TrackBarHB = New System.Windows.Forms.TrackBar()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.TrackBar7 = New System.Windows.Forms.TrackBar()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.btn_sound = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelColors = New System.Windows.Forms.Panel()
+        Me.btn_temp_white = New System.Windows.Forms.Button()
+        Me.btn_resp_white = New System.Windows.Forms.Button()
+        Me.btn_nibp_white = New System.Windows.Forms.Button()
+        Me.btn_spo2_white = New System.Windows.Forms.Button()
+        Me.btn_ecg_white = New System.Windows.Forms.Button()
         Me.btn_temp_green = New System.Windows.Forms.Button()
         Me.btn_temp_red = New System.Windows.Forms.Button()
         Me.btn_temp_yellow = New System.Windows.Forms.Button()
@@ -134,9 +142,9 @@ Partial Class Mdi
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.btn_start_auto = New System.Windows.Forms.Button()
         Me.btn_stop_auto = New System.Windows.Forms.Button()
-        Me.BunifuDropdown2 = New Bunifu.Framework.UI.BunifuDropdown()
+        Me.BunifuDropdownPatientType = New Bunifu.Framework.UI.BunifuDropdown()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.BunifuDropdown1 = New Bunifu.Framework.UI.BunifuDropdown()
+        Me.BunifuDropdownDuration = New Bunifu.Framework.UI.BunifuDropdown()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BunifuFlatButton7 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel15 = New System.Windows.Forms.Panel()
@@ -150,15 +158,14 @@ Partial Class Mdi
         Me.PanelAlarmSetup.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.PanelSoundLevel.SuspendLayout()
-        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelLampBrightness.SuspendLayout()
-        CType(Me.TrackBar10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBarBrightness, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelAlarmLimits.SuspendLayout()
+        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.PanelAlarmSetupHistory.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -168,7 +175,7 @@ Partial Class Mdi
         CType(Me.TrackBarScreenBrightness, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSound.SuspendLayout()
         CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBarHB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelColors.SuspendLayout()
         Me.PanelScreensetup.SuspendLayout()
@@ -205,7 +212,7 @@ Partial Class Mdi
         Me.Button6.Location = New System.Drawing.Point(838, 1)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(170, 60)
-        Me.Button6.TabIndex = 11
+        Me.Button6.TabIndex = 6
         Me.Button6.UseVisualStyleBackColor = False
         '
         'Button5
@@ -218,7 +225,7 @@ Partial Class Mdi
         Me.Button5.Location = New System.Drawing.Point(675, 1)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(170, 60)
-        Me.Button5.TabIndex = 10
+        Me.Button5.TabIndex = 5
         Me.Button5.UseVisualStyleBackColor = False
         '
         'Button4
@@ -231,7 +238,7 @@ Partial Class Mdi
         Me.Button4.Location = New System.Drawing.Point(505, 1)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(170, 60)
-        Me.Button4.TabIndex = 9
+        Me.Button4.TabIndex = 4
         Me.Button4.UseVisualStyleBackColor = False
         '
         'Button3
@@ -244,7 +251,7 @@ Partial Class Mdi
         Me.Button3.Location = New System.Drawing.Point(336, 1)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(170, 60)
-        Me.Button3.TabIndex = 8
+        Me.Button3.TabIndex = 3
         Me.Button3.UseVisualStyleBackColor = False
         '
         'Button2
@@ -257,7 +264,7 @@ Partial Class Mdi
         Me.Button2.Location = New System.Drawing.Point(166, 1)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(170, 60)
-        Me.Button2.TabIndex = 7
+        Me.Button2.TabIndex = 2
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
@@ -270,7 +277,7 @@ Partial Class Mdi
         Me.Button1.Location = New System.Drawing.Point(-2, 1)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(170, 60)
-        Me.Button1.TabIndex = 6
+        Me.Button1.TabIndex = 1
         Me.Button1.UseVisualStyleBackColor = False
         '
         'PanelAlarmSetup
@@ -295,30 +302,42 @@ Partial Class Mdi
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 137)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(300, 712)
+        Me.Panel1.Size = New System.Drawing.Size(300, 726)
         Me.Panel1.TabIndex = 5
         '
         'PanelSoundLevel
         '
-        Me.PanelSoundLevel.Controls.Add(Me.TrackBar6)
+        Me.PanelSoundLevel.Controls.Add(Me.ButtonUP)
+        Me.PanelSoundLevel.Controls.Add(Me.ButtonDown)
         Me.PanelSoundLevel.Controls.Add(Me.Label16)
         Me.PanelSoundLevel.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSoundLevel.Location = New System.Drawing.Point(0, 584)
         Me.PanelSoundLevel.Name = "PanelSoundLevel"
-        Me.PanelSoundLevel.Size = New System.Drawing.Size(300, 86)
+        Me.PanelSoundLevel.Size = New System.Drawing.Size(300, 114)
         Me.PanelSoundLevel.TabIndex = 5
         '
-        'TrackBar6
+        'ButtonUP
         '
-        Me.TrackBar6.Location = New System.Drawing.Point(67, 38)
-        Me.TrackBar6.Name = "TrackBar6"
-        Me.TrackBar6.Size = New System.Drawing.Size(158, 45)
-        Me.TrackBar6.TabIndex = 2
+        Me.ButtonUP.Location = New System.Drawing.Point(128, 42)
+        Me.ButtonUP.Name = "ButtonUP"
+        Me.ButtonUP.Size = New System.Drawing.Size(25, 23)
+        Me.ButtonUP.TabIndex = 4
+        Me.ButtonUP.Text = "+"
+        Me.ButtonUP.UseVisualStyleBackColor = True
+        '
+        'ButtonDown
+        '
+        Me.ButtonDown.Location = New System.Drawing.Point(97, 42)
+        Me.ButtonDown.Name = "ButtonDown"
+        Me.ButtonDown.Size = New System.Drawing.Size(25, 23)
+        Me.ButtonDown.TabIndex = 3
+        Me.ButtonDown.Text = "-"
+        Me.ButtonDown.UseVisualStyleBackColor = True
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(64, 13)
+        Me.Label16.Location = New System.Drawing.Point(64, 12)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(33, 13)
         Me.Label16.TabIndex = 1
@@ -361,7 +380,8 @@ Partial Class Mdi
         '
         'PanelLampBrightness
         '
-        Me.PanelLampBrightness.Controls.Add(Me.TrackBar10)
+        Me.PanelLampBrightness.Controls.Add(Me.LabelBrightness)
+        Me.PanelLampBrightness.Controls.Add(Me.TrackBarBrightness)
         Me.PanelLampBrightness.Controls.Add(Me.Label20)
         Me.PanelLampBrightness.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelLampBrightness.Location = New System.Drawing.Point(0, 446)
@@ -369,12 +389,24 @@ Partial Class Mdi
         Me.PanelLampBrightness.Size = New System.Drawing.Size(300, 90)
         Me.PanelLampBrightness.TabIndex = 3
         '
-        'TrackBar10
+        'LabelBrightness
         '
-        Me.TrackBar10.Location = New System.Drawing.Point(67, 42)
-        Me.TrackBar10.Name = "TrackBar10"
-        Me.TrackBar10.Size = New System.Drawing.Size(158, 45)
-        Me.TrackBar10.TabIndex = 2
+        Me.LabelBrightness.AutoSize = True
+        Me.LabelBrightness.Location = New System.Drawing.Point(221, 45)
+        Me.LabelBrightness.Name = "LabelBrightness"
+        Me.LabelBrightness.Size = New System.Drawing.Size(13, 13)
+        Me.LabelBrightness.TabIndex = 3
+        Me.LabelBrightness.Text = "0"
+        '
+        'TrackBarBrightness
+        '
+        Me.TrackBarBrightness.LargeChange = 10
+        Me.TrackBarBrightness.Location = New System.Drawing.Point(67, 42)
+        Me.TrackBarBrightness.Maximum = 100
+        Me.TrackBarBrightness.Name = "TrackBarBrightness"
+        Me.TrackBarBrightness.Size = New System.Drawing.Size(158, 45)
+        Me.TrackBarBrightness.TabIndex = 2
+        Me.TrackBarBrightness.Value = 50
         '
         'Label20
         '
@@ -422,6 +454,7 @@ Partial Class Mdi
         '
         'PanelAlarmLimits
         '
+        Me.PanelAlarmLimits.Controls.Add(Me.TrackBar1)
         Me.PanelAlarmLimits.Controls.Add(Me.Label15)
         Me.PanelAlarmLimits.Controls.Add(Me.TrackBar5)
         Me.PanelAlarmLimits.Controls.Add(Me.TrackBar4)
@@ -430,7 +463,6 @@ Partial Class Mdi
         Me.PanelAlarmLimits.Controls.Add(Me.Label13)
         Me.PanelAlarmLimits.Controls.Add(Me.TrackBar2)
         Me.PanelAlarmLimits.Controls.Add(Me.Label12)
-        Me.PanelAlarmLimits.Controls.Add(Me.TrackBar1)
         Me.PanelAlarmLimits.Controls.Add(Me.Label11)
         Me.PanelAlarmLimits.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelAlarmLimits.Location = New System.Drawing.Point(0, 48)
@@ -438,14 +470,21 @@ Partial Class Mdi
         Me.PanelAlarmLimits.Size = New System.Drawing.Size(300, 350)
         Me.PanelAlarmLimits.TabIndex = 1
         '
+        'TrackBar1
+        '
+        Me.TrackBar1.Location = New System.Drawing.Point(67, 25)
+        Me.TrackBar1.Name = "TrackBar1"
+        Me.TrackBar1.Size = New System.Drawing.Size(158, 45)
+        Me.TrackBar1.TabIndex = 11
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(73, 295)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(32, 13)
+        Me.Label15.Size = New System.Drawing.Size(23, 13)
         Me.Label15.TabIndex = 9
-        Me.Label15.Text = "NIBP"
+        Me.Label15.Text = "RR"
         '
         'TrackBar5
         '
@@ -498,16 +537,9 @@ Partial Class Mdi
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(73, 76)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(53, 13)
+        Me.Label12.Size = New System.Drawing.Size(54, 13)
         Me.Label12.TabIndex = 3
-        Me.Label12.Text = "PR SPO2"
-        '
-        'TrackBar1
-        '
-        Me.TrackBar1.Location = New System.Drawing.Point(67, 28)
-        Me.TrackBar1.Name = "TrackBar1"
-        Me.TrackBar1.Size = New System.Drawing.Size(158, 45)
-        Me.TrackBar1.TabIndex = 2
+        Me.Label12.Text = "RR SPO2"
         '
         'Label11
         '
@@ -688,6 +720,7 @@ Partial Class Mdi
         '
         'PanelScreenBrightness
         '
+        Me.PanelScreenBrightness.Controls.Add(Me.LabelScreenBrightness)
         Me.PanelScreenBrightness.Controls.Add(Me.TrackBarScreenBrightness)
         Me.PanelScreenBrightness.Controls.Add(Me.Label8)
         Me.PanelScreenBrightness.Dock = System.Windows.Forms.DockStyle.Top
@@ -696,6 +729,15 @@ Partial Class Mdi
         Me.PanelScreenBrightness.Size = New System.Drawing.Size(300, 81)
         Me.PanelScreenBrightness.TabIndex = 8
         '
+        'LabelScreenBrightness
+        '
+        Me.LabelScreenBrightness.AutoSize = True
+        Me.LabelScreenBrightness.Location = New System.Drawing.Point(213, 38)
+        Me.LabelScreenBrightness.Name = "LabelScreenBrightness"
+        Me.LabelScreenBrightness.Size = New System.Drawing.Size(13, 13)
+        Me.LabelScreenBrightness.TabIndex = 3
+        Me.LabelScreenBrightness.Text = "0"
+        '
         'TrackBarScreenBrightness
         '
         Me.TrackBarScreenBrightness.Location = New System.Drawing.Point(49, 36)
@@ -703,7 +745,6 @@ Partial Class Mdi
         Me.TrackBarScreenBrightness.Name = "TrackBarScreenBrightness"
         Me.TrackBarScreenBrightness.Size = New System.Drawing.Size(158, 45)
         Me.TrackBarScreenBrightness.TabIndex = 2
-        Me.TrackBarScreenBrightness.Value = 100
         '
         'Label8
         '
@@ -788,7 +829,7 @@ Partial Class Mdi
         '
         Me.PanelSound.Controls.Add(Me.TrackBar9)
         Me.PanelSound.Controls.Add(Me.Label33)
-        Me.PanelSound.Controls.Add(Me.TrackBar8)
+        Me.PanelSound.Controls.Add(Me.TrackBarHB)
         Me.PanelSound.Controls.Add(Me.Label32)
         Me.PanelSound.Controls.Add(Me.TrackBar7)
         Me.PanelSound.Controls.Add(Me.Label17)
@@ -801,25 +842,29 @@ Partial Class Mdi
         'TrackBar9
         '
         Me.TrackBar9.Location = New System.Drawing.Point(48, 131)
+        Me.TrackBar9.Maximum = 100
         Me.TrackBar9.Name = "TrackBar9"
         Me.TrackBar9.Size = New System.Drawing.Size(158, 45)
         Me.TrackBar9.TabIndex = 6
+        Me.TrackBar9.Value = 50
         '
         'Label33
         '
         Me.Label33.AutoSize = True
         Me.Label33.Location = New System.Drawing.Point(54, 114)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(66, 13)
+        Me.Label33.Size = New System.Drawing.Size(64, 13)
         Me.Label33.TabIndex = 5
-        Me.Label33.Text = "Tochscreem"
+        Me.Label33.Text = "Tochscreen"
         '
-        'TrackBar8
+        'TrackBarHB
         '
-        Me.TrackBar8.Location = New System.Drawing.Point(46, 82)
-        Me.TrackBar8.Name = "TrackBar8"
-        Me.TrackBar8.Size = New System.Drawing.Size(158, 45)
-        Me.TrackBar8.TabIndex = 4
+        Me.TrackBarHB.Location = New System.Drawing.Point(46, 82)
+        Me.TrackBarHB.Maximum = 100
+        Me.TrackBarHB.Name = "TrackBarHB"
+        Me.TrackBarHB.Size = New System.Drawing.Size(158, 45)
+        Me.TrackBarHB.TabIndex = 4
+        Me.TrackBarHB.Value = 50
         '
         'Label32
         '
@@ -834,10 +879,12 @@ Partial Class Mdi
         '
         Me.TrackBar7.LargeChange = 10
         Me.TrackBar7.Location = New System.Drawing.Point(46, 31)
+        Me.TrackBar7.Maximum = 100
         Me.TrackBar7.Name = "TrackBar7"
         Me.TrackBar7.Size = New System.Drawing.Size(158, 45)
         Me.TrackBar7.SmallChange = 10
         Me.TrackBar7.TabIndex = 2
+        Me.TrackBar7.Value = 50
         '
         'Label17
         '
@@ -885,6 +932,11 @@ Partial Class Mdi
         '
         'PanelColors
         '
+        Me.PanelColors.Controls.Add(Me.btn_temp_white)
+        Me.PanelColors.Controls.Add(Me.btn_resp_white)
+        Me.PanelColors.Controls.Add(Me.btn_nibp_white)
+        Me.PanelColors.Controls.Add(Me.btn_spo2_white)
+        Me.PanelColors.Controls.Add(Me.btn_ecg_white)
         Me.PanelColors.Controls.Add(Me.btn_temp_green)
         Me.PanelColors.Controls.Add(Me.btn_temp_red)
         Me.PanelColors.Controls.Add(Me.btn_temp_yellow)
@@ -922,6 +974,61 @@ Partial Class Mdi
         Me.PanelColors.Name = "PanelColors"
         Me.PanelColors.Size = New System.Drawing.Size(300, 200)
         Me.PanelColors.TabIndex = 3
+        '
+        'btn_temp_white
+        '
+        Me.btn_temp_white.BackColor = System.Drawing.Color.White
+        Me.btn_temp_white.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_temp_white.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_temp_white.Location = New System.Drawing.Point(103, 155)
+        Me.btn_temp_white.Name = "btn_temp_white"
+        Me.btn_temp_white.Size = New System.Drawing.Size(17, 15)
+        Me.btn_temp_white.TabIndex = 40
+        Me.btn_temp_white.UseVisualStyleBackColor = False
+        '
+        'btn_resp_white
+        '
+        Me.btn_resp_white.BackColor = System.Drawing.Color.White
+        Me.btn_resp_white.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_resp_white.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_resp_white.Location = New System.Drawing.Point(103, 129)
+        Me.btn_resp_white.Name = "btn_resp_white"
+        Me.btn_resp_white.Size = New System.Drawing.Size(17, 15)
+        Me.btn_resp_white.TabIndex = 39
+        Me.btn_resp_white.UseVisualStyleBackColor = False
+        '
+        'btn_nibp_white
+        '
+        Me.btn_nibp_white.BackColor = System.Drawing.Color.White
+        Me.btn_nibp_white.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_nibp_white.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_nibp_white.Location = New System.Drawing.Point(103, 103)
+        Me.btn_nibp_white.Name = "btn_nibp_white"
+        Me.btn_nibp_white.Size = New System.Drawing.Size(17, 15)
+        Me.btn_nibp_white.TabIndex = 38
+        Me.btn_nibp_white.UseVisualStyleBackColor = False
+        '
+        'btn_spo2_white
+        '
+        Me.btn_spo2_white.BackColor = System.Drawing.Color.White
+        Me.btn_spo2_white.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_spo2_white.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_spo2_white.Location = New System.Drawing.Point(103, 74)
+        Me.btn_spo2_white.Name = "btn_spo2_white"
+        Me.btn_spo2_white.Size = New System.Drawing.Size(17, 15)
+        Me.btn_spo2_white.TabIndex = 37
+        Me.btn_spo2_white.UseVisualStyleBackColor = False
+        '
+        'btn_ecg_white
+        '
+        Me.btn_ecg_white.BackColor = System.Drawing.Color.White
+        Me.btn_ecg_white.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_ecg_white.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_ecg_white.Location = New System.Drawing.Point(103, 45)
+        Me.btn_ecg_white.Name = "btn_ecg_white"
+        Me.btn_ecg_white.Size = New System.Drawing.Size(17, 15)
+        Me.btn_ecg_white.TabIndex = 36
+        Me.btn_ecg_white.UseVisualStyleBackColor = False
         '
         'btn_temp_green
         '
@@ -1589,9 +1696,9 @@ Partial Class Mdi
         '
         Me.Panel16.Controls.Add(Me.btn_start_auto)
         Me.Panel16.Controls.Add(Me.btn_stop_auto)
-        Me.Panel16.Controls.Add(Me.BunifuDropdown2)
+        Me.Panel16.Controls.Add(Me.BunifuDropdownPatientType)
         Me.Panel16.Controls.Add(Me.Label7)
-        Me.Panel16.Controls.Add(Me.BunifuDropdown1)
+        Me.Panel16.Controls.Add(Me.BunifuDropdownDuration)
         Me.Panel16.Controls.Add(Me.Label6)
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel16.Location = New System.Drawing.Point(0, 322)
@@ -1621,20 +1728,20 @@ Partial Class Mdi
         Me.btn_stop_auto.Text = "Stop"
         Me.btn_stop_auto.UseVisualStyleBackColor = False
         '
-        'BunifuDropdown2
+        'BunifuDropdownPatientType
         '
-        Me.BunifuDropdown2.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuDropdown2.BorderRadius = 3
-        Me.BunifuDropdown2.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuDropdown2.ForeColor = System.Drawing.Color.Black
-        Me.BunifuDropdown2.Items = New String() {"-----"}
-        Me.BunifuDropdown2.Location = New System.Drawing.Point(39, 106)
-        Me.BunifuDropdown2.Name = "BunifuDropdown2"
-        Me.BunifuDropdown2.NomalColor = System.Drawing.Color.Transparent
-        Me.BunifuDropdown2.onHoverColor = System.Drawing.Color.Silver
-        Me.BunifuDropdown2.selectedIndex = -1
-        Me.BunifuDropdown2.Size = New System.Drawing.Size(174, 35)
-        Me.BunifuDropdown2.TabIndex = 11
+        Me.BunifuDropdownPatientType.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuDropdownPatientType.BorderRadius = 3
+        Me.BunifuDropdownPatientType.DisabledColor = System.Drawing.Color.Gray
+        Me.BunifuDropdownPatientType.ForeColor = System.Drawing.Color.Black
+        Me.BunifuDropdownPatientType.Items = New String() {"Adult ", "Child", "New Born"}
+        Me.BunifuDropdownPatientType.Location = New System.Drawing.Point(39, 106)
+        Me.BunifuDropdownPatientType.Name = "BunifuDropdownPatientType"
+        Me.BunifuDropdownPatientType.NomalColor = System.Drawing.Color.Transparent
+        Me.BunifuDropdownPatientType.onHoverColor = System.Drawing.Color.Silver
+        Me.BunifuDropdownPatientType.selectedIndex = -1
+        Me.BunifuDropdownPatientType.Size = New System.Drawing.Size(174, 35)
+        Me.BunifuDropdownPatientType.TabIndex = 11
         '
         'Label7
         '
@@ -1645,20 +1752,20 @@ Partial Class Mdi
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "Patient Type"
         '
-        'BunifuDropdown1
+        'BunifuDropdownDuration
         '
-        Me.BunifuDropdown1.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuDropdown1.BorderRadius = 3
-        Me.BunifuDropdown1.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuDropdown1.ForeColor = System.Drawing.Color.Black
-        Me.BunifuDropdown1.Items = New String() {"-----"}
-        Me.BunifuDropdown1.Location = New System.Drawing.Point(36, 32)
-        Me.BunifuDropdown1.Name = "BunifuDropdown1"
-        Me.BunifuDropdown1.NomalColor = System.Drawing.Color.Transparent
-        Me.BunifuDropdown1.onHoverColor = System.Drawing.Color.Silver
-        Me.BunifuDropdown1.selectedIndex = -1
-        Me.BunifuDropdown1.Size = New System.Drawing.Size(174, 35)
-        Me.BunifuDropdown1.TabIndex = 9
+        Me.BunifuDropdownDuration.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuDropdownDuration.BorderRadius = 3
+        Me.BunifuDropdownDuration.DisabledColor = System.Drawing.Color.Gray
+        Me.BunifuDropdownDuration.ForeColor = System.Drawing.Color.Black
+        Me.BunifuDropdownDuration.Items = New String() {"1 Minute", "2 Minute", "3 Minute", "4 Minute", "5 Minute", "10 Minute", "20 Minute", "30 Minute", "1 Hours", "2 Hours", "3 Hours", "4 Hours", "5 Hours"}
+        Me.BunifuDropdownDuration.Location = New System.Drawing.Point(36, 32)
+        Me.BunifuDropdownDuration.Name = "BunifuDropdownDuration"
+        Me.BunifuDropdownDuration.NomalColor = System.Drawing.Color.Transparent
+        Me.BunifuDropdownDuration.onHoverColor = System.Drawing.Color.Silver
+        Me.BunifuDropdownDuration.selectedIndex = -1
+        Me.BunifuDropdownDuration.Size = New System.Drawing.Size(174, 35)
+        Me.BunifuDropdownDuration.TabIndex = 9
         '
         'Label6
         '
@@ -1824,17 +1931,16 @@ Partial Class Mdi
         Me.Panel1.ResumeLayout(False)
         Me.PanelSoundLevel.ResumeLayout(False)
         Me.PanelSoundLevel.PerformLayout()
-        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelLampBrightness.ResumeLayout(False)
         Me.PanelLampBrightness.PerformLayout()
-        CType(Me.TrackBar10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBarBrightness, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelAlarmLimits.ResumeLayout(False)
         Me.PanelAlarmLimits.PerformLayout()
+        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.PanelAlarmSetupHistory.ResumeLayout(False)
@@ -1848,7 +1954,7 @@ Partial Class Mdi
         Me.PanelSound.ResumeLayout(False)
         Me.PanelSound.PerformLayout()
         CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBarHB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelColors.ResumeLayout(False)
         Me.PanelColors.PerformLayout()
@@ -1908,18 +2014,17 @@ Partial Class Mdi
     Friend WithEvents Label25 As Label
     Friend WithEvents CheckBox_ECG1 As Bunifu.Framework.UI.BunifuCheckbox
     Friend WithEvents Label31 As Label
-    Friend WithEvents TrackBar8 As TrackBar
+    Friend WithEvents TrackBarHB As TrackBar
     Friend WithEvents Label32 As Label
     Friend WithEvents TrackBar9 As TrackBar
     Friend WithEvents Label33 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PanelSoundLevel As Panel
-    Friend WithEvents TrackBar6 As TrackBar
     Friend WithEvents Label16 As Label
     Friend WithEvents btn_soundlevel As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents PanelLampBrightness As Panel
-    Friend WithEvents TrackBar10 As TrackBar
+    Friend WithEvents TrackBarBrightness As TrackBar
     Friend WithEvents Label20 As Label
     Friend WithEvents btn_lampbrightness As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents PanelAlarmLimits As Panel
@@ -1931,7 +2036,6 @@ Partial Class Mdi
     Friend WithEvents Label13 As Label
     Friend WithEvents TrackBar2 As TrackBar
     Friend WithEvents Label12 As Label
-    Friend WithEvents TrackBar1 As TrackBar
     Friend WithEvents Label11 As Label
     Friend WithEvents btn_alarmlimits As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Panel5 As Panel
@@ -1955,9 +2059,9 @@ Partial Class Mdi
     Friend WithEvents btn_view_patient As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btn_add_patient As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Panel16 As Panel
-    Friend WithEvents BunifuDropdown2 As Bunifu.Framework.UI.BunifuDropdown
+    Friend WithEvents BunifuDropdownPatientType As Bunifu.Framework.UI.BunifuDropdown
     Friend WithEvents Label7 As Label
-    Friend WithEvents BunifuDropdown1 As Bunifu.Framework.UI.BunifuDropdown
+    Friend WithEvents BunifuDropdownDuration As Bunifu.Framework.UI.BunifuDropdown
     Friend WithEvents Label6 As Label
     Friend WithEvents BunifuFlatButton7 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Panel15 As Panel
@@ -1992,4 +2096,14 @@ Partial Class Mdi
     Friend WithEvents btn_ecg_yellow As Button
     Friend WithEvents btn_ecg_pink As Button
     Friend WithEvents btn_ecg_blue As Button
+    Friend WithEvents btn_temp_white As Button
+    Friend WithEvents btn_resp_white As Button
+    Friend WithEvents btn_nibp_white As Button
+    Friend WithEvents btn_spo2_white As Button
+    Friend WithEvents btn_ecg_white As Button
+    Friend WithEvents ButtonUP As Button
+    Friend WithEvents ButtonDown As Button
+    Friend WithEvents LabelBrightness As Label
+    Friend WithEvents LabelScreenBrightness As Label
+    Friend WithEvents TrackBar1 As TrackBar
 End Class

@@ -13,6 +13,7 @@
         p.AddArc(New Rectangle(0, Me.Height - 40, 40, 40), 90, 90)
         p.CloseFigure()
         Me.Region = New Region(p)
+        Panel2.Hide()
     End Sub
 
     Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
@@ -34,8 +35,8 @@
     End Function
 
     Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
-        DeleteTextBoxAll()
-
+        Panel2.Show()
+        Panel3.Hide()
     End Sub
     Sub DeleteTextBoxAll()
         TextBox1.Text = ""
@@ -48,5 +49,16 @@
         TextBox8.Text = ""
         ComboBox1.Text = ""
         DateTimePicker1.Text = ""
+    End Sub
+
+    Private Sub btn_no_Click(sender As Object, e As EventArgs) Handles btn_no.Click
+        Panel3.Show()
+        Panel2.Hide()
+    End Sub
+
+    Private Sub btn_yes_Click(sender As Object, e As EventArgs) Handles btn_yes.Click
+        DeleteTextBoxAll()
+        Panel2.Hide()
+        Panel3.Show()
     End Sub
 End Class

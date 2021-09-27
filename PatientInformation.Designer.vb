@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PatientInformation
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class PatientInformation
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -45,6 +45,15 @@ Partial Class PatientInformation
         Me.TextBox7 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.TextBox8 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.ComboBox1 = New Bunifu.Framework.UI.BunifuDropdown()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btn_yes = New System.Windows.Forms.Button()
+        Me.btn_no = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -171,7 +180,7 @@ Partial Class PatientInformation
         'btn_edit
         '
         Me.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_edit.Location = New System.Drawing.Point(25, 444)
+        Me.btn_edit.Location = New System.Drawing.Point(26, 15)
         Me.btn_edit.Name = "btn_edit"
         Me.btn_edit.Size = New System.Drawing.Size(55, 23)
         Me.btn_edit.TabIndex = 23
@@ -183,7 +192,7 @@ Partial Class PatientInformation
         Me.btn_delete.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn_delete.ForeColor = System.Drawing.Color.White
-        Me.btn_delete.Location = New System.Drawing.Point(104, 444)
+        Me.btn_delete.Location = New System.Drawing.Point(105, 15)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(52, 23)
         Me.btn_delete.TabIndex = 24
@@ -388,12 +397,77 @@ Partial Class PatientInformation
         Me.ComboBox1.Size = New System.Drawing.Size(147, 33)
         Me.ComboBox1.TabIndex = 44
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Panel3)
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Location = New System.Drawing.Point(15, 436)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(200, 100)
+        Me.Panel1.TabIndex = 45
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.btn_yes)
+        Me.Panel2.Controls.Add(Me.btn_no)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 50)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(200, 50)
+        Me.Panel2.TabIndex = 25
+        '
+        'Label3
+        '
+        Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label3.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(10, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(180, 23)
+        Me.Label3.TabIndex = 49
+        Me.Label3.Text = "Are you sure to delete this data?"
+        '
+        'btn_yes
+        '
+        Me.btn_yes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_yes.Location = New System.Drawing.Point(21, 23)
+        Me.btn_yes.Name = "btn_yes"
+        Me.btn_yes.Size = New System.Drawing.Size(55, 23)
+        Me.btn_yes.TabIndex = 47
+        Me.btn_yes.Text = "Yes"
+        Me.btn_yes.UseVisualStyleBackColor = True
+        '
+        'btn_no
+        '
+        Me.btn_no.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_no.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_no.ForeColor = System.Drawing.Color.White
+        Me.btn_no.Location = New System.Drawing.Point(100, 22)
+        Me.btn_no.Name = "btn_no"
+        Me.btn_no.Size = New System.Drawing.Size(52, 23)
+        Me.btn_no.TabIndex = 48
+        Me.btn_no.Text = "No"
+        Me.btn_no.UseVisualStyleBackColor = False
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.btn_delete)
+        Me.Panel3.Controls.Add(Me.btn_edit)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(200, 50)
+        Me.Panel3.TabIndex = 26
+        '
         'PatientInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(389, 561)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.TextBox7)
@@ -404,8 +478,6 @@ Partial Class PatientInformation
         Me.Controls.Add(Me.Datetimepicker1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.btn_edit)
-        Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Label11)
@@ -421,6 +493,9 @@ Partial Class PatientInformation
         Me.Name = "PatientInformation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PatientInformation"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -448,4 +523,10 @@ Partial Class PatientInformation
     Friend WithEvents TextBox7 As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents TextBox8 As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents ComboBox1 As Bunifu.Framework.UI.BunifuDropdown
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btn_yes As Button
+    Friend WithEvents btn_no As Button
+    Friend WithEvents Panel3 As Panel
 End Class

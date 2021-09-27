@@ -14,4 +14,32 @@
         p.CloseFigure()
         Me.Region = New Region(p)
     End Sub
+
+    Private Sub cb_t1_label_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_t1_label.SelectedIndexChanged
+        If cb_t1_label.SelectedIndex = 0 Then
+            MonitoringDisplay.Label27.Text = "C"
+        ElseIf cb_t1_label.SelectedIndex = 1
+            MonitoringDisplay.Label27.Text = "F"
+        End If
+    End Sub
+
+    Private Sub cb_t2_label_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_t2_label.SelectedIndexChanged
+        If cb_t2_label.SelectedIndex = 0 Then
+            MonitoringDisplay.Label29.Text = "C"
+        ElseIf cb_t2_label.SelectedIndex = 1
+            MonitoringDisplay.Label29.Text = "F"
+        End If
+    End Sub
+
+    Private Sub cb_td_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_td.SelectedIndexChanged
+        If cb_td.SelectedIndex = 0 Then
+            MonitoringDisplay.Label28.Text = "C"
+        ElseIf cb_td.SelectedIndex = 1
+            MonitoringDisplay.Label28.Text = "F"
+        End If
+    End Sub
+
+    Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
+        Me.Close()
+    End Sub
 End Class

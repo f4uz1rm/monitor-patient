@@ -1,4 +1,6 @@
-﻿Public Class Mdi
+﻿Imports System.Runtime.InteropServices
+Imports System.Management
+Public Class Mdi
     'Lebar Me
     Dim WidthMe As Integer = 1024
     'Tinggi Me 
@@ -6,6 +8,8 @@
     'Lebar 
     Dim W As Integer = 255
     Dim H As Integer = 50
+    'Nav Bottom
+    Dim ValueArrowButton As Integer
     Sub CloseFormAll()
         'Close Form
         AlarmHistory.Close()
@@ -34,40 +38,48 @@
         'Panel_Setting.PanelAlarmHideAll()
         MonitorDisplayView(WidthMe - 5, HeightMe - 10)
         Me.Size = New Size(WidthMe, HeightMe)
+        'Function Keyboard
+        Me.KeyPreview = True
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         PanelHideAll()
         MonitorDisplayView(WidthMe - 5, HeightMe - 10)
+        NavBottom("Home", True)
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         PanelHideAll()
         MonitorDisplayView(WidthMe - W, HeightMe - H)
         PanelAlarmSetup.Show()
-
+        Button2.Select()
+        NavBottom("Alarm-Setting", True)
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         PanelHideAll()
         PanelAlarmSetupHistory.Show()
         MonitorDisplayView(WidthMe - W, HeightMe - H)
-        AlarmHistory.Focus()
+        AlarmHistory.btn_close.Select()
         AlarmHistory.Show()
+        NavBottom("Alarm-History", True)
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         PanelHideAll()
         PanelMonitorSetting.Show()
         MonitorDisplayView(WidthMe - W, HeightMe - H)
+        NavBottom("Monitor-Setting", True)
     End Sub
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         PanelHideAll()
         PanelPatientData.Show()
         MonitorDisplayView(WidthMe - W, HeightMe - H)
+        NavBottom("Patient-Data", True)
     End Sub
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         PanelHideAll()
         PanelNIBP.Show()
         MonitorDisplayView(WidthMe - W, HeightMe - H)
+        NavBottom("NIBP", True)
     End Sub
 
     Private Sub btn_alarmlimits_Click(sender As Object, e As EventArgs)
@@ -99,7 +111,10 @@
     Private Sub btn_soundlevel_Click_1(sender As Object, e As EventArgs) Handles btn_soundlevel.Click
         Panel_Setting.PanelAlarmHideAll()
         PanelSoundLevel.Show()
+        'Sound Level
+
     End Sub
+
 
     Private Sub btn_screensetup_Click(sender As Object, e As EventArgs) Handles btn_screensetup.Click
         PanelMonitorSettingHideAll()
@@ -197,23 +212,23 @@
     End Sub
 
     Private Sub btn_ecg_blue_Click(sender As Object, e As EventArgs) Handles btn_ecg_blue.Click
-        ColorScreen("ECG", Color.DeepSkyBlue)
+        ColorScreen("ECG1", Color.DeepSkyBlue)
     End Sub
 
     Private Sub btn_ecg_pink_Click(sender As Object, e As EventArgs) Handles btn_ecg_pink.Click
-        ColorScreen("ECG", Color.HotPink)
+        ColorScreen("ECG1", Color.HotPink)
     End Sub
 
     Private Sub btn_ecg_yellow_Click(sender As Object, e As EventArgs) Handles btn_ecg_yellow.Click
-        ColorScreen("ECG", Color.Yellow)
+        ColorScreen("ECG1", Color.Yellow)
     End Sub
 
     Private Sub btn_ecg_red_Click(sender As Object, e As EventArgs) Handles btn_ecg_red.Click
-        ColorScreen("ECG", Color.Red)
+        ColorScreen("ECG1", Color.Red)
     End Sub
 
     Private Sub btn_ecg_green_Click(sender As Object, e As EventArgs) Handles btn_ecg_green.Click
-        ColorScreen("ECG", Color.Lime)
+        ColorScreen("ECG1", Color.Lime)
     End Sub
 
     Private Sub btn_nibr_blue_Click(sender As Object, e As EventArgs) Handles btn_nibr_blue.Click
@@ -258,7 +273,7 @@
     End Sub
 
     Private Sub btn_temp_blue_Click(sender As Object, e As EventArgs) Handles btn_temp_blue.Click
-        ColorScreen("TEMP", Color.Blue)
+        ColorScreen("TEMP", Color.DeepSkyBlue)
     End Sub
 
     Private Sub btn_temp_pink_Click(sender As Object, e As EventArgs) Handles btn_temp_pink.Click
@@ -274,6 +289,144 @@
     End Sub
 
     Private Sub btn_temp_green_Click(sender As Object, e As EventArgs) Handles btn_temp_green.Click
-        ColorScreen("TEMP", Color.Green)
+        ColorScreen("TEMP", Color.Lime)
     End Sub
+
+    Private Sub btn_ecg_white_Click(sender As Object, e As EventArgs) Handles btn_ecg_white.Click
+        ColorScreen("ECG1", Color.White)
+    End Sub
+
+    Private Sub btn_spo2_white_Click(sender As Object, e As EventArgs) Handles btn_spo2_white.Click
+        ColorScreen("SPO2", Color.White)
+    End Sub
+
+    Private Sub btn_nibp_white_Click(sender As Object, e As EventArgs) Handles btn_nibp_white.Click
+        ColorScreen("NIBP", Color.White)
+    End Sub
+
+    Private Sub btn_resp_white_Click(sender As Object, e As EventArgs) Handles btn_resp_white.Click
+        ColorScreen("RR", Color.White)
+    End Sub
+
+    Private Sub btn_temp_white_Click(sender As Object, e As EventArgs) Handles btn_temp_white.Click
+        ColorScreen("TEMP", Color.White)
+    End Sub
+
+    Private Sub Mdi_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Left
+                Debug.WriteLine("Kiri")
+                ValueArrowButton -= 1
+                If ValueArrowButton <= 1 Then
+                    ValueArrowButton = 1
+                End If
+                Pilih()
+            Case Keys.Right
+                Debug.WriteLine("Kanan")
+                ValueArrowButton += 1
+                If ValueArrowButton > 6 Then
+                    ValueArrowButton = 6
+                End If
+                Pilih()
+            Case Keys.Enter
+                SwitchTombol()
+            'Keyboard Function
+            Case Keys.D1, Keys.LControlKey, Keys.LMenu
+                Button1.PerformClick()
+            Case Keys.D2, Keys.LControlKey, Keys.LMenu
+                Button2.PerformClick()
+            Case Keys.D3, Keys.LControlKey, Keys.LMenu
+                Button3.PerformClick()
+            Case Keys.D4, Keys.LControlKey, Keys.LMenu
+                Button4.PerformClick()
+            Case Keys.D5, Keys.LControlKey, Keys.LMenu
+                Button5.PerformClick()
+            Case Keys.D6, Keys.LControlKey, Keys.LMenu
+                Button6.PerformClick()
+        End Select
+    End Sub
+    Sub Pilih()
+        If ValueArrowButton = Button1.TabIndex Then
+            NavBottom("Home", True)
+            Button1.Select()
+            Button1.Focus()
+        ElseIf ValueArrowButton = Button2.TabIndex Then
+            NavBottom("Alarm-Setting", True)
+            Button2.Select()
+            Button2.Focus()
+        ElseIf ValueArrowButton = Button3.TabIndex Then
+            NavBottom("Alarm-History", True)
+            Button3.Select()
+            Button3.Focus()
+        ElseIf ValueArrowButton = Button4.TabIndex Then
+            NavBottom("Monitor-Setting", True)
+            Button4.Select()
+            Button4.Focus()
+        ElseIf ValueArrowButton = Button5.TabIndex Then
+            NavBottom("Patient-Data", True)
+            Button5.Select()
+            Button5.Focus()
+        ElseIf ValueArrowButton = Button6.TabIndex Then
+            NavBottom("NIBP", True)
+            Button6.Select()
+            Button6.Focus()
+        End If
+    End Sub
+    'Button 
+    Sub SwitchTombol()
+        Select Case ValueArrowButton
+            Case 1
+                Button1.PerformClick()
+            Case 2
+                Button2.PerformClick()
+            Case 3
+                Button3.PerformClick()
+            Case 4
+                Button4.PerformClick()
+            Case 5
+                Button5.PerformClick()
+            Case 6
+                Button6.PerformClick()
+            Case Else
+                Debug.WriteLine("Not between 1 and 10, inclusive")
+        End Select
+    End Sub
+    <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Auto)> Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As UInteger, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
+    End Function
+
+    Const WM_APPCOMMAND As UInteger = &H319
+    Const APPCOMMAND_VOLUME_UP As UInteger = &HA
+    Const APPCOMMAND_VOLUME_DOWN As UInteger = &H9
+    Const APPCOMMAND_VOLUME_MUTE As UInteger = &H8
+    Private Sub ButtonUP_Click(sender As Object, e As EventArgs) Handles ButtonUP.Click
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_UP * &H10000)
+    End Sub
+    Private Sub ButtonDown_Click(sender As Object, e As EventArgs) Handles ButtonDown.Click
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
+    End Sub
+    Private Sub TrackBarScreenBrightness_Scroll(sender As Object, e As EventArgs) Handles TrackBarScreenBrightness.Scroll
+        Dim mclass As New ManagementClass("WmiMonitorBrightnessMethods")
+        mclass.Scope = New ManagementScope("\\.\root\wmi")
+        Dim instances As ManagementObjectCollection = mclass.GetInstances()
+
+        For Each instance As ManagementObject In instances
+            Dim timeout As ULong = 1
+            ' in seconds
+            Dim brightness As UShort = CUShort(TrackBarScreenBrightness.Value)
+            ' in percent
+            Dim args As Object() = New Object() {timeout, brightness}
+            instance.InvokeMethod("WmiSetBrightness", args)
+        Next
+        LabelScreenBrightness.Text = TrackBarScreenBrightness.Value
+    End Sub
+
+    Private Sub btn_stop_manual_Click(sender As Object, e As EventArgs) Handles btn_stop_manual.Click
+        MonitoringDisplay.TimerRandom.Stop()
+        MonitoringDisplay.sysdys.Text = " --/ --"
+    End Sub
+
+    Private Sub btn_start_manual_Click(sender As Object, e As EventArgs) Handles btn_start_manual.Click
+        MonitoringDisplay.TimerRandom.Start()
+    End Sub
+
 End Class

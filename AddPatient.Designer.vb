@@ -310,7 +310,7 @@ Partial Class AddPatient
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(71, 23)
         Me.Label13.TabIndex = 54
-        Me.Label13.Text = "Wight (Kg)"
+        Me.Label13.Text = "Weight (Kg)"
         '
         'Label15
         '

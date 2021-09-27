@@ -23,4 +23,8 @@
         MsgBox("Simpan Berhasil")
         Me.Close()
     End Sub
+
+    Private Sub TextBox1_Click(sender As Object, e As EventArgs) Handles TextBox8.Click, TextBox7.Click, TextBox6.Click, TextBox5.Click, TextBox4.Click, TextBox3.Click, TextBox2.Click, TextBox1.Click
+        Keyboard_Show()
+    End Sub
 End Class

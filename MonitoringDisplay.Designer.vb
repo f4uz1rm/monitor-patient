@@ -23,15 +23,13 @@ Partial Class MonitoringDisplay
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim ChartArea10 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim ChartArea11 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim ChartArea12 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LabelPatientName = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
@@ -43,12 +41,27 @@ Partial Class MonitoringDisplay
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
+        Me.ButtonBlue = New System.Windows.Forms.Button()
+        Me.ButtonYellow = New System.Windows.Forms.Button()
+        Me.ButtonRed = New System.Windows.Forms.Button()
         Me.TimerRandom = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.PanelRR = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.PanelSPO2 = New System.Windows.Forms.Panel()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.PanelECG2 = New System.Windows.Forms.Panel()
+        Me.Chart4 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.PanelECG1 = New System.Windows.Forms.Panel()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Chart3 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.muitemp2 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
@@ -64,12 +77,6 @@ Partial Class MonitoringDisplay
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.sysdys = New System.Windows.Forms.Label()
-        Me.PanelECG1 = New System.Windows.Forms.Panel()
-        Me.Chart4 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Chart3 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -92,36 +99,27 @@ Partial Class MonitoringDisplay
         Me.Label10 = New System.Windows.Forms.Label()
         Me.ecgrr = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.PanelECG2 = New System.Windows.Forms.Panel()
-        Me.Chart5 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Chart6 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.PanelRR = New System.Windows.Forms.Panel()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.PanelSPO2 = New System.Windows.Forms.Panel()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.TimerBlue = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerNotification = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerCOM3 = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerCOM5 = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerLedAll = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerAudio = New System.Windows.Forms.Timer(Me.components)
+        Me.LabelTypePatient = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        Me.PanelECG1.SuspendLayout()
+        Me.PanelRR.SuspendLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelSPO2.SuspendLayout()
+        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelECG2.SuspendLayout()
         CType(Me.Chart4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelECG1.SuspendLayout()
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel6.SuspendLayout()
-        Me.PanelECG2.SuspendLayout()
-        CType(Me.Chart5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Chart6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelRR.SuspendLayout()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelSPO2.SuspendLayout()
-        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -140,16 +138,16 @@ Partial Class MonitoringDisplay
         '
         Me.Timer1.Interval = 1000
         '
-        'Label2
+        'LabelPatientName
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(12, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(307, 24)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Patient Name : John Doe | Adult"
+        Me.LabelPatientName.AutoSize = True
+        Me.LabelPatientName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelPatientName.ForeColor = System.Drawing.Color.White
+        Me.LabelPatientName.Location = New System.Drawing.Point(12, 9)
+        Me.LabelPatientName.Name = "LabelPatientName"
+        Me.LabelPatientName.Size = New System.Drawing.Size(242, 24)
+        Me.LabelPatientName.TabIndex = 7
+        Me.LabelPatientName.Text = "Patient Name : John Doe"
         '
         'Timer2
         '
@@ -245,55 +243,57 @@ Partial Class MonitoringDisplay
         Me.Button1.TabIndex = 0
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Button7
+        'ButtonBlue
         '
-        Me.Button7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.ButtonBlue.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.Color.Black
-        Me.Button7.Location = New System.Drawing.Point(346, 9)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(146, 27)
-        Me.Button7.TabIndex = 54
-        Me.Button7.Text = "BATTERY FAILURE"
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.ButtonBlue.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.ButtonBlue.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonBlue.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonBlue.ForeColor = System.Drawing.Color.Black
+        Me.ButtonBlue.Location = New System.Drawing.Point(346, 9)
+        Me.ButtonBlue.Name = "ButtonBlue"
+        Me.ButtonBlue.Size = New System.Drawing.Size(146, 27)
+        Me.ButtonBlue.TabIndex = 54
+        Me.ButtonBlue.Text = "BATTERY FAILURE"
+        Me.ButtonBlue.UseVisualStyleBackColor = False
+        Me.ButtonBlue.Visible = False
         '
-        'Button8
+        'ButtonYellow
         '
-        Me.Button8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.ButtonYellow.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.Black
-        Me.Button8.Location = New System.Drawing.Point(498, 9)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(146, 27)
-        Me.Button8.TabIndex = 55
-        Me.Button8.Text = "SPO2 LOW"
-        Me.Button8.UseVisualStyleBackColor = False
+        Me.ButtonYellow.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.ButtonYellow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonYellow.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonYellow.ForeColor = System.Drawing.Color.Black
+        Me.ButtonYellow.Location = New System.Drawing.Point(498, 9)
+        Me.ButtonYellow.Name = "ButtonYellow"
+        Me.ButtonYellow.Size = New System.Drawing.Size(146, 27)
+        Me.ButtonYellow.TabIndex = 55
+        Me.ButtonYellow.UseVisualStyleBackColor = False
+        Me.ButtonYellow.Visible = False
         '
-        'Button9
+        'ButtonRed
         '
-        Me.Button9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.ButtonRed.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button9.BackColor = System.Drawing.Color.Red
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.Color.Black
-        Me.Button9.Location = New System.Drawing.Point(650, 9)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(146, 27)
-        Me.Button9.TabIndex = 56
-        Me.Button9.Text = "ECG HIGH"
-        Me.Button9.UseVisualStyleBackColor = False
+        Me.ButtonRed.BackColor = System.Drawing.Color.Red
+        Me.ButtonRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonRed.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRed.ForeColor = System.Drawing.Color.Black
+        Me.ButtonRed.Location = New System.Drawing.Point(650, 9)
+        Me.ButtonRed.Name = "ButtonRed"
+        Me.ButtonRed.Size = New System.Drawing.Size(146, 27)
+        Me.ButtonRed.TabIndex = 56
+        Me.ButtonRed.Text = " "
+        Me.ButtonRed.UseVisualStyleBackColor = False
+        Me.ButtonRed.Visible = False
         '
         'TimerRandom
         '
         Me.TimerRandom.Enabled = True
-        Me.TimerRandom.Interval = 1000
+        Me.TimerRandom.Interval = 2000
         '
         'Panel1
         '
@@ -316,6 +316,204 @@ Partial Class MonitoringDisplay
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(699, 518)
         Me.Panel5.TabIndex = 3
+        '
+        'PanelRR
+        '
+        Me.PanelRR.Controls.Add(Me.Label11)
+        Me.PanelRR.Controls.Add(Me.Label16)
+        Me.PanelRR.Controls.Add(Me.Chart1)
+        Me.PanelRR.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelRR.Location = New System.Drawing.Point(0, 306)
+        Me.PanelRR.Name = "PanelRR"
+        Me.PanelRR.Size = New System.Drawing.Size(699, 141)
+        Me.PanelRR.TabIndex = 4
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label11.ForeColor = System.Drawing.Color.Lime
+        Me.Label11.Location = New System.Drawing.Point(63, 31)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(35, 17)
+        Me.Label11.TabIndex = 58
+        Me.Label11.Text = "bpm"
+        '
+        'Label16
+        '
+        Me.Label16.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Lime
+        Me.Label16.Location = New System.Drawing.Point(31, 6)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(40, 25)
+        Me.Label16.TabIndex = 57
+        Me.Label16.Text = "RR"
+        '
+        'Chart1
+        '
+        Me.Chart1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Chart1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        ChartArea9.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        ChartArea9.BorderColor = System.Drawing.Color.Transparent
+        ChartArea9.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea9)
+        Me.Chart1.IsSoftShadows = False
+        Me.Chart1.Location = New System.Drawing.Point(81, -1)
+        Me.Chart1.Name = "Chart1"
+        Me.Chart1.Size = New System.Drawing.Size(615, 140)
+        Me.Chart1.TabIndex = 59
+        Me.Chart1.Text = "Chart1"
+        '
+        'PanelSPO2
+        '
+        Me.PanelSPO2.Controls.Add(Me.Label32)
+        Me.PanelSPO2.Controls.Add(Me.Label31)
+        Me.PanelSPO2.Controls.Add(Me.Chart2)
+        Me.PanelSPO2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelSPO2.Location = New System.Drawing.Point(0, 181)
+        Me.PanelSPO2.Name = "PanelSPO2"
+        Me.PanelSPO2.Size = New System.Drawing.Size(699, 125)
+        Me.PanelSPO2.TabIndex = 3
+        '
+        'Label32
+        '
+        Me.Label32.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label32.Location = New System.Drawing.Point(78, 56)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(20, 17)
+        Me.Label32.TabIndex = 57
+        Me.Label32.Text = "%"
+        '
+        'Label31
+        '
+        Me.Label31.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label31.Location = New System.Drawing.Point(30, 22)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(68, 25)
+        Me.Label31.TabIndex = 56
+        Me.Label31.Text = "SpO2"
+        '
+        'Chart2
+        '
+        Me.Chart2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Chart2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        ChartArea10.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        ChartArea10.BorderColor = System.Drawing.Color.Transparent
+        ChartArea10.Name = "ChartArea1"
+        Me.Chart2.ChartAreas.Add(ChartArea10)
+        Me.Chart2.IsSoftShadows = False
+        Me.Chart2.Location = New System.Drawing.Point(81, 5)
+        Me.Chart2.Name = "Chart2"
+        Me.Chart2.Size = New System.Drawing.Size(615, 140)
+        Me.Chart2.TabIndex = 62
+        Me.Chart2.Text = "Chart1"
+        '
+        'PanelECG2
+        '
+        Me.PanelECG2.Controls.Add(Me.Chart4)
+        Me.PanelECG2.Controls.Add(Me.Label30)
+        Me.PanelECG2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelECG2.Location = New System.Drawing.Point(0, 0)
+        Me.PanelECG2.Name = "PanelECG2"
+        Me.PanelECG2.Size = New System.Drawing.Size(699, 181)
+        Me.PanelECG2.TabIndex = 1
+        '
+        'Chart4
+        '
+        Me.Chart4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Chart4.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        ChartArea11.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        ChartArea11.BorderColor = System.Drawing.Color.Transparent
+        ChartArea11.Name = "ChartArea1"
+        Me.Chart4.ChartAreas.Add(ChartArea11)
+        Me.Chart4.IsSoftShadows = False
+        Me.Chart4.Location = New System.Drawing.Point(81, 34)
+        Me.Chart4.Name = "Chart4"
+        Me.Chart4.Size = New System.Drawing.Size(615, 109)
+        Me.Chart4.TabIndex = 61
+        Me.Chart4.Text = "Chart1"
+        '
+        'Label30
+        '
+        Me.Label30.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label30.ForeColor = System.Drawing.Color.Lime
+        Me.Label30.Location = New System.Drawing.Point(78, 16)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(50, 17)
+        Me.Label30.TabIndex = 59
+        Me.Label30.Text = "Lead II"
+        '
+        'PanelECG1
+        '
+        Me.PanelECG1.Controls.Add(Me.Label26)
+        Me.PanelECG1.Controls.Add(Me.Label25)
+        Me.PanelECG1.Controls.Add(Me.Chart3)
+        Me.PanelECG1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelECG1.Location = New System.Drawing.Point(0, 0)
+        Me.PanelECG1.Name = "PanelECG1"
+        Me.PanelECG1.Size = New System.Drawing.Size(699, 181)
+        Me.PanelECG1.TabIndex = 0
+        '
+        'Label26
+        '
+        Me.Label26.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label26.ForeColor = System.Drawing.Color.Lime
+        Me.Label26.Location = New System.Drawing.Point(78, 42)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(47, 17)
+        Me.Label26.TabIndex = 58
+        Me.Label26.Text = "Lead I"
+        '
+        'Label25
+        '
+        Me.Label25.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.Label25.ForeColor = System.Drawing.Color.Lime
+        Me.Label25.Location = New System.Drawing.Point(28, 17)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(64, 25)
+        Me.Label25.TabIndex = 57
+        Me.Label25.Text = "ECG "
+        '
+        'Chart3
+        '
+        Me.Chart3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Chart3.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        ChartArea12.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        ChartArea12.BorderColor = System.Drawing.Color.Transparent
+        ChartArea12.Name = "ChartArea1"
+        Me.Chart3.ChartAreas.Add(ChartArea12)
+        Me.Chart3.IsSoftShadows = False
+        Me.Chart3.Location = New System.Drawing.Point(84, 51)
+        Me.Chart3.Name = "Chart3"
+        Me.Chart3.Size = New System.Drawing.Size(615, 106)
+        Me.Chart3.TabIndex = 60
+        Me.Chart3.Text = "Chart1"
         '
         'Label29
         '
@@ -481,90 +679,6 @@ Partial Class MonitoringDisplay
         Me.sysdys.Size = New System.Drawing.Size(138, 63)
         Me.sysdys.TabIndex = 38
         Me.sysdys.Text = "---/--"
-        '
-        'PanelECG1
-        '
-        Me.PanelECG1.Controls.Add(Me.Chart4)
-        Me.PanelECG1.Controls.Add(Me.Label30)
-        Me.PanelECG1.Controls.Add(Me.Label26)
-        Me.PanelECG1.Controls.Add(Me.Label25)
-        Me.PanelECG1.Controls.Add(Me.Chart3)
-        Me.PanelECG1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelECG1.Location = New System.Drawing.Point(0, 0)
-        Me.PanelECG1.Name = "PanelECG1"
-        Me.PanelECG1.Size = New System.Drawing.Size(699, 181)
-        Me.PanelECG1.TabIndex = 0
-        '
-        'Chart4
-        '
-        Me.Chart4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Chart4.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea7.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea7.BorderColor = System.Drawing.Color.Transparent
-        ChartArea7.Name = "ChartArea1"
-        Me.Chart4.ChartAreas.Add(ChartArea7)
-        Me.Chart4.IsSoftShadows = False
-        Me.Chart4.Location = New System.Drawing.Point(81, 136)
-        Me.Chart4.Name = "Chart4"
-        Me.Chart4.Size = New System.Drawing.Size(615, 109)
-        Me.Chart4.TabIndex = 61
-        Me.Chart4.Text = "Chart1"
-        '
-        'Label30
-        '
-        Me.Label30.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label30.ForeColor = System.Drawing.Color.Lime
-        Me.Label30.Location = New System.Drawing.Point(78, 118)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(50, 17)
-        Me.Label30.TabIndex = 59
-        Me.Label30.Text = "Lead II"
-        '
-        'Label26
-        '
-        Me.Label26.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label26.ForeColor = System.Drawing.Color.Lime
-        Me.Label26.Location = New System.Drawing.Point(78, 42)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(47, 17)
-        Me.Label26.TabIndex = 58
-        Me.Label26.Text = "Lead I"
-        '
-        'Label25
-        '
-        Me.Label25.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold)
-        Me.Label25.ForeColor = System.Drawing.Color.Lime
-        Me.Label25.Location = New System.Drawing.Point(28, 17)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(70, 25)
-        Me.Label25.TabIndex = 57
-        Me.Label25.Text = "ECG I"
-        '
-        'Chart3
-        '
-        Me.Chart3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Chart3.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea8.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea8.BorderColor = System.Drawing.Color.Transparent
-        ChartArea8.Name = "ChartArea1"
-        Me.Chart3.ChartAreas.Add(ChartArea8)
-        Me.Chart3.IsSoftShadows = False
-        Me.Chart3.Location = New System.Drawing.Point(81, 9)
-        Me.Chart3.Name = "Chart3"
-        Me.Chart3.Size = New System.Drawing.Size(615, 106)
-        Me.Chart3.TabIndex = 60
-        Me.Chart3.Text = "Chart1"
         '
         'Panel2
         '
@@ -829,195 +943,42 @@ Partial Class MonitoringDisplay
         Me.Panel6.Size = New System.Drawing.Size(302, 216)
         Me.Panel6.TabIndex = 65
         '
-        'PanelECG2
+        'TimerBlue
         '
-        Me.PanelECG2.Controls.Add(Me.Chart5)
-        Me.PanelECG2.Controls.Add(Me.Label21)
-        Me.PanelECG2.Controls.Add(Me.Label35)
-        Me.PanelECG2.Controls.Add(Me.Label36)
-        Me.PanelECG2.Controls.Add(Me.Chart6)
-        Me.PanelECG2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelECG2.Location = New System.Drawing.Point(0, 0)
-        Me.PanelECG2.Name = "PanelECG2"
-        Me.PanelECG2.Size = New System.Drawing.Size(699, 181)
-        Me.PanelECG2.TabIndex = 1
+        Me.TimerBlue.Enabled = True
+        Me.TimerBlue.Interval = 500
         '
-        'Chart5
+        'TimerNotification
         '
-        Me.Chart5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Chart5.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea9.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea9.BorderColor = System.Drawing.Color.Transparent
-        ChartArea9.Name = "ChartArea1"
-        Me.Chart5.ChartAreas.Add(ChartArea9)
-        Me.Chart5.IsSoftShadows = False
-        Me.Chart5.Location = New System.Drawing.Point(81, 136)
-        Me.Chart5.Name = "Chart5"
-        Me.Chart5.Size = New System.Drawing.Size(615, 109)
-        Me.Chart5.TabIndex = 61
-        Me.Chart5.Text = "Chart1"
+        Me.TimerNotification.Enabled = True
+        Me.TimerNotification.Interval = 2000
         '
-        'Label21
+        'TimerCOM3
         '
-        Me.Label21.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label21.ForeColor = System.Drawing.Color.Lime
-        Me.Label21.Location = New System.Drawing.Point(78, 118)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(50, 17)
-        Me.Label21.TabIndex = 59
-        Me.Label21.Text = "Lead II"
+        Me.TimerCOM3.Interval = 500
         '
-        'Label35
+        'TimerCOM5
         '
-        Me.Label35.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label35.ForeColor = System.Drawing.Color.Lime
-        Me.Label35.Location = New System.Drawing.Point(78, 42)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(47, 17)
-        Me.Label35.TabIndex = 58
-        Me.Label35.Text = "Lead I"
+        Me.TimerCOM5.Interval = 500
         '
-        'Label36
+        'TimerLedAll
         '
-        Me.Label36.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label36.AutoSize = True
-        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold)
-        Me.Label36.ForeColor = System.Drawing.Color.Lime
-        Me.Label36.Location = New System.Drawing.Point(28, 17)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(76, 25)
-        Me.Label36.TabIndex = 57
-        Me.Label36.Text = "ECG II"
+        Me.TimerLedAll.Interval = 1000
         '
-        'Chart6
+        'TimerAudio
         '
-        Me.Chart6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Chart6.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea10.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea10.BorderColor = System.Drawing.Color.Transparent
-        ChartArea10.Name = "ChartArea1"
-        Me.Chart6.ChartAreas.Add(ChartArea10)
-        Me.Chart6.IsSoftShadows = False
-        Me.Chart6.Location = New System.Drawing.Point(81, 9)
-        Me.Chart6.Name = "Chart6"
-        Me.Chart6.Size = New System.Drawing.Size(615, 106)
-        Me.Chart6.TabIndex = 60
-        Me.Chart6.Text = "Chart1"
+        Me.TimerAudio.Interval = 1500
         '
-        'PanelRR
+        'LabelTypePatient
         '
-        Me.PanelRR.Controls.Add(Me.Label11)
-        Me.PanelRR.Controls.Add(Me.Label16)
-        Me.PanelRR.Controls.Add(Me.Chart1)
-        Me.PanelRR.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelRR.Location = New System.Drawing.Point(0, 306)
-        Me.PanelRR.Name = "PanelRR"
-        Me.PanelRR.Size = New System.Drawing.Size(699, 141)
-        Me.PanelRR.TabIndex = 4
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label11.ForeColor = System.Drawing.Color.Lime
-        Me.Label11.Location = New System.Drawing.Point(63, 31)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(35, 17)
-        Me.Label11.TabIndex = 58
-        Me.Label11.Text = "bpm"
-        '
-        'Label16
-        '
-        Me.Label16.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Lime
-        Me.Label16.Location = New System.Drawing.Point(31, 6)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(40, 25)
-        Me.Label16.TabIndex = 57
-        Me.Label16.Text = "RR"
-        '
-        'Chart1
-        '
-        Me.Chart1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Chart1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea11.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea11.BorderColor = System.Drawing.Color.Transparent
-        ChartArea11.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea11)
-        Me.Chart1.IsSoftShadows = False
-        Me.Chart1.Location = New System.Drawing.Point(81, -1)
-        Me.Chart1.Name = "Chart1"
-        Me.Chart1.Size = New System.Drawing.Size(615, 140)
-        Me.Chart1.TabIndex = 59
-        Me.Chart1.Text = "Chart1"
-        '
-        'PanelSPO2
-        '
-        Me.PanelSPO2.Controls.Add(Me.Label32)
-        Me.PanelSPO2.Controls.Add(Me.Label31)
-        Me.PanelSPO2.Controls.Add(Me.Chart2)
-        Me.PanelSPO2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelSPO2.Location = New System.Drawing.Point(0, 181)
-        Me.PanelSPO2.Name = "PanelSPO2"
-        Me.PanelSPO2.Size = New System.Drawing.Size(699, 125)
-        Me.PanelSPO2.TabIndex = 3
-        '
-        'Label32
-        '
-        Me.Label32.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label32.Location = New System.Drawing.Point(78, 56)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(20, 17)
-        Me.Label32.TabIndex = 57
-        Me.Label32.Text = "%"
-        '
-        'Label31
-        '
-        Me.Label31.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label31.Location = New System.Drawing.Point(30, 22)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(68, 25)
-        Me.Label31.TabIndex = 56
-        Me.Label31.Text = "SpO2"
-        '
-        'Chart2
-        '
-        Me.Chart2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Chart2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea12.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea12.BorderColor = System.Drawing.Color.Transparent
-        ChartArea12.Name = "ChartArea1"
-        Me.Chart2.ChartAreas.Add(ChartArea12)
-        Me.Chart2.IsSoftShadows = False
-        Me.Chart2.Location = New System.Drawing.Point(81, 5)
-        Me.Chart2.Name = "Chart2"
-        Me.Chart2.Size = New System.Drawing.Size(615, 140)
-        Me.Chart2.TabIndex = 62
-        Me.Chart2.Text = "Chart1"
+        Me.LabelTypePatient.AutoSize = True
+        Me.LabelTypePatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTypePatient.ForeColor = System.Drawing.Color.White
+        Me.LabelTypePatient.Location = New System.Drawing.Point(260, 9)
+        Me.LabelTypePatient.Name = "LabelTypePatient"
+        Me.LabelTypePatient.Size = New System.Drawing.Size(58, 24)
+        Me.LabelTypePatient.TabIndex = 66
+        Me.LabelTypePatient.Text = "Adult"
         '
         'MonitoringDisplay
         '
@@ -1025,15 +986,16 @@ Partial Class MonitoringDisplay
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1024, 768)
+        Me.Controls.Add(Me.LabelTypePatient)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button9)
-        Me.Controls.Add(Me.Button8)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.ButtonRed)
+        Me.Controls.Add(Me.ButtonYellow)
+        Me.Controls.Add(Me.ButtonBlue)
+        Me.Controls.Add(Me.LabelPatientName)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
@@ -1049,9 +1011,17 @@ Partial Class MonitoringDisplay
         Me.Text = "MonitoringDisplay"
         Me.Panel1.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
+        Me.PanelRR.ResumeLayout(False)
+        Me.PanelRR.PerformLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelSPO2.ResumeLayout(False)
+        Me.PanelSPO2.PerformLayout()
+        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelECG2.ResumeLayout(False)
+        Me.PanelECG2.PerformLayout()
+        CType(Me.Chart4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelECG1.ResumeLayout(False)
         Me.PanelECG1.PerformLayout()
-        CType(Me.Chart4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -1061,16 +1031,6 @@ Partial Class MonitoringDisplay
         Me.Panel4.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        Me.PanelECG2.ResumeLayout(False)
-        Me.PanelECG2.PerformLayout()
-        CType(Me.Chart5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Chart6, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelRR.ResumeLayout(False)
-        Me.PanelRR.PerformLayout()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelSPO2.ResumeLayout(False)
-        Me.PanelSPO2.PerformLayout()
-        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1084,15 +1044,15 @@ Partial Class MonitoringDisplay
     Friend WithEvents Button6 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LabelPatientName As Label
     Friend WithEvents Timer2 As Timer
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents Timer3 As Timer
     Friend WithEvents Timer4 As Timer
     Friend WithEvents Timer5 As Timer
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
+    Friend WithEvents ButtonBlue As Button
+    Friend WithEvents ButtonYellow As Button
+    Friend WithEvents ButtonRed As Button
     Friend WithEvents TimerRandom As Timer
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel5 As Panel
@@ -1147,10 +1107,12 @@ Partial Class MonitoringDisplay
     Friend WithEvents Label32 As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents Chart2 As DataVisualization.Charting.Chart
+    Friend WithEvents TimerBlue As Timer
     Friend WithEvents PanelECG2 As Panel
-    Friend WithEvents Chart5 As DataVisualization.Charting.Chart
-    Friend WithEvents Label21 As Label
-    Friend WithEvents Label35 As Label
-    Friend WithEvents Label36 As Label
-    Friend WithEvents Chart6 As DataVisualization.Charting.Chart
+    Friend WithEvents TimerNotification As Timer
+    Friend WithEvents TimerCOM3 As Timer
+    Friend WithEvents TimerCOM5 As Timer
+    Friend WithEvents TimerLedAll As Timer
+    Friend WithEvents TimerAudio As Timer
+    Friend WithEvents LabelTypePatient As Label
 End Class
