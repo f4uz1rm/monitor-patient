@@ -81,6 +81,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property fix_blue_alarm() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("fix_blue_alarm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property fix_HB_sound() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("fix_HB_sound", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property fix_red_alarm() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("fix_red_alarm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property fix_yellow_alarm() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("fix_yellow_alarm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property logo() As System.Drawing.Bitmap

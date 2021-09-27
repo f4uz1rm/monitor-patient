@@ -34,10 +34,5 @@ Namespace My
         Protected Overrides Sub OnCreateMainForm()
             Me.MainForm = Global.GMed_PM01.Mdi
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
-        Protected Overrides Sub OnCreateSplashScreen()
-            Me.SplashScreen = Global.GMed_PM01.SplashScreen1
-        End Sub
     End Class
 End Namespace
