@@ -2,7 +2,7 @@
     Function MonitorDisplayView(W As Integer, H As Integer)
         MonitoringDisplay.MdiParent = Mdi
         MonitoringDisplay.Size = New Size(W, H)
-        MonitoringDisplay.Dock = DockStyle.Top.Left
+        MonitoringDisplay.Dock = DockStyle.Top.Fill
         MonitoringDisplay.Show()
         Return {W, H}
     End Function
@@ -21,15 +21,15 @@
                 MonitoringDisplay.Label33.ForeColor = ColorSelect
                 MonitoringDisplay.Label34.ForeColor = ColorSelect
                 MonitoringDisplay.bprm1.ForeColor = ColorSelect
-            Case "ECG"
+            Case "ECG1"
                 MonitoringDisplay.Label25.ForeColor = ColorSelect
                 MonitoringDisplay.Label26.ForeColor = ColorSelect
-                MonitoringDisplay.Chart3.Series("ecg1").Color = ColorSelect
                 MonitoringDisplay.Label30.ForeColor = ColorSelect
                 MonitoringDisplay.Label15.ForeColor = ColorSelect
                 MonitoringDisplay.Label13.ForeColor = ColorSelect
                 MonitoringDisplay.Label12.ForeColor = ColorSelect
                 MonitoringDisplay.ecghr.ForeColor = ColorSelect
+                MonitoringDisplay.Chart3.Series("ecg1").Color = ColorSelect
             Case "NIBP"
                 MonitoringDisplay.Label20.ForeColor = ColorSelect
                 MonitoringDisplay.Label19.ForeColor = ColorSelect
@@ -45,12 +45,54 @@
                 MonitoringDisplay.Label3.ForeColor = ColorSelect
                 MonitoringDisplay.ecgrr.ForeColor = ColorSelect
                 MonitoringDisplay.Chart1.Series("rr").Color = ColorSelect
+            Case "TEMP"
+                MonitoringDisplay.Label24.ForeColor = ColorSelect
+                MonitoringDisplay.Label23.ForeColor = ColorSelect
+                MonitoringDisplay.Label22.ForeColor = ColorSelect
+                MonitoringDisplay.Label14.ForeColor = ColorSelect
+                MonitoringDisplay.Label27.ForeColor = ColorSelect
+                MonitoringDisplay.Label28.ForeColor = ColorSelect
+                MonitoringDisplay.Label29.ForeColor = ColorSelect
+                MonitoringDisplay.muitemp1.ForeColor = ColorSelect
+                MonitoringDisplay.muitemp2.ForeColor = ColorSelect
+                MonitoringDisplay.muitd.ForeColor = ColorSelect
         End Select
         Return {NameColor, ColorSelect}
     End Function
 
     Function DefaultSetup(ColorSelect As Color)
-
         Return ColorSelect
     End Function
+
+    'Show Keyboard
+    Declare Function Wow64DisableWow64FsRedirection Lib "kernel32" (ByRef oldvalue As Long) As Boolean
+    Declare Function Wow64EnableWow64FsRedirection Lib "kernel32" (ByRef oldvalue As Long) As Boolean
+    Private osk As String = "C:\Windows\System32\osk.exe"
+    Private pOSK As Process = Nothing
+
+    Public Sub Keyboard_Show()
+        'An instance is running => Dan wordt pOSK het bestaande proces
+        For Each pkiller As Process In Process.GetProcesses
+            If String.Compare(pkiller.ProcessName, "osk", True) = 0 Then pOSK = pkiller
+        Next
+
+        'If no instance of OSK is running than create one depending on 32/64 bit
+        For Each pkiller As Process In Process.GetProcesses
+            If Not (String.Compare(pkiller.ProcessName, "osk", True) = 0) And (pOSK Is Nothing) Then
+
+                Dim old As Long
+                If Environment.Is64BitOperatingSystem Then
+                    '64 Bit
+                    If Wow64DisableWow64FsRedirection(old) Then
+                        pOSK = Process.Start(osk)
+                        Wow64EnableWow64FsRedirection(old)
+                    End If
+                Else
+                    '32 Bit
+                    pOSK = Process.Start(osk)
+                End If
+                Exit For
+            End If
+        Next
+    End Sub
 End Module
