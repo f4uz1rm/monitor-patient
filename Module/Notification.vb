@@ -45,9 +45,11 @@
     End Sub
     Sub RedButton()
         If MonitoringDisplay.ButtonRed.Visible = True Then
+            'LedOffRed()
             MonitoringDisplay.ButtonRed.Visible = False
             StatusActive = False
         ElseIf MonitoringDisplay.ButtonRed.Visible = False Then
+            'LedOnRed()
             MonitoringDisplay.ButtonRed.Visible = True
             StatusActive = True
         End If

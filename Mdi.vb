@@ -404,21 +404,7 @@ Public Class Mdi
     Private Sub ButtonDown_Click(sender As Object, e As EventArgs) Handles ButtonDown.Click
         SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
     End Sub
-    Private Sub TrackBarScreenBrightness_Scroll(sender As Object, e As EventArgs) Handles TrackBarScreenBrightness.Scroll
-        Dim mclass As New ManagementClass("WmiMonitorBrightnessMethods")
-        mclass.Scope = New ManagementScope("\\.\root\wmi")
-        Dim instances As ManagementObjectCollection = mclass.GetInstances()
 
-        For Each instance As ManagementObject In instances
-            Dim timeout As ULong = 1
-            ' in seconds
-            Dim brightness As UShort = CUShort(TrackBarScreenBrightness.Value)
-            ' in percent
-            Dim args As Object() = New Object() {timeout, brightness}
-            instance.InvokeMethod("WmiSetBrightness", args)
-        Next
-        LabelScreenBrightness.Text = TrackBarScreenBrightness.Value
-    End Sub
 
     Private Sub btn_stop_manual_Click(sender As Object, e As EventArgs) Handles btn_stop_manual.Click
         MonitoringDisplay.TimerRandom.Stop()
@@ -429,4 +415,19 @@ Public Class Mdi
         MonitoringDisplay.TimerRandom.Start()
     End Sub
 
+    Private Sub BunifuTrackbarScreenBrightness_ValueChanged(sender As Object, e As EventArgs) Handles BunifuTrackbarScreenBrightness.ValueChanged
+        Dim mclass As New ManagementClass("WmiMonitorBrightnessMethods")
+        mclass.Scope = New ManagementScope("\\.\root\wmi")
+        Dim instances As ManagementObjectCollection = mclass.GetInstances()
+
+        For Each instance As ManagementObject In instances
+            Dim timeout As ULong = 1
+            ' in seconds
+            Dim brightness As UShort = CUShort(BunifuTrackbarScreenBrightness.Value)
+            ' in percent
+            Dim args As Object() = New Object() {timeout, brightness}
+            instance.InvokeMethod("WmiSetBrightness", args)
+        Next
+        LabelScreenBrightness.Text = BunifuTrackbarScreenBrightness.Value
+    End Sub
 End Class

@@ -31,6 +31,7 @@ C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.PatientInformation.resources
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.SplashScreen1.resources
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.Resources.resources
+C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed_PM01.TESTDLL.resources
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.vbproj.GenerateResource.Cache
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.exe.manifest
 C:\Users\KQ\Documents\Visual Studio 2015\Projects\GMed-PM01\obj\Debug\GMed-PM01.application

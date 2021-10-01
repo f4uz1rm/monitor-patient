@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\KQ\Documents\Publish VB\Monitor-Patient-V.1\</PublishUrl>
+    <PublishUrl>C:\Users\KQ\Documents\Publish VB\Monitor-Patient-V.2\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -135,7 +135,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module\Connection-COM.vb" />
+    <Compile Include="Module\File-Reader.vb" />
     <Compile Include="Module\Layout.vb" />
+    <Compile Include="Module\LED.vb" />
     <Compile Include="Module\Navigation.vb" />
     <Compile Include="Module\Notification.vb" />
     <Compile Include="Module\Panel-Setting.vb" />
@@ -180,6 +182,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TESTDLL.Designer.vb">
+      <DependentUpon>TESTDLL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TESTDLL.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddPatient.resx">
@@ -212,8 +220,61 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TESTDLL.resx">
+      <DependentUpon>TESTDLL.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="C\Header-Files\ColorStatic.h" />
+    <None Include="C\Header-Files\ComPort.h" />
+    <None Include="C\Header-Files\ComWatchThread.h" />
+    <None Include="C\Header-Files\DebugInfoDlg.h" />
+    <None Include="C\Header-Files\LAYOUT.h" />
+    <None Include="C\Header-Files\MainDlg.h" />
+    <None Include="C\Header-Files\Multi_Para Monitor.h" />
+    <None Include="C\Header-Files\Multi_Para MonitorDlg.h" />
+    <None Include="C\Header-Files\NbpCaliDlg.h" />
+    <None Include="C\Header-Files\NibpInfo.h" />
+    <None Include="C\Header-Files\PackID.h" />
+    <None Include="C\Header-Files\resource.h" />
+    <None Include="C\Header-Files\SetPatientDlg.h" />
+    <None Include="C\Header-Files\ShowTimeThread.h" />
+    <None Include="C\Header-Files\SpO2Info.h" />
+    <None Include="C\Header-Files\SpO2Wave.h" />
+    <None Include="C\Header-Files\StaticCuffPrsInfo.h" />
+    <None Include="C\Header-Files\StaticEcgInfo.h" />
+    <None Include="C\Header-Files\StaticEcgWave.h" />
+    <None Include="C\Header-Files\StaticRespInfo.h" />
+    <None Include="C\Header-Files\StaticRespWave.h" />
+    <None Include="C\Header-Files\StaticResultInfo.h" />
+    <None Include="C\Header-Files\StaticTempInfo.h" />
+    <None Include="C\Header-Files\StaticWave.h" />
+    <None Include="C\Header-Files\stdafx.h" />
+    <None Include="C\Header-Files\targetver.h" />
+    <None Include="C\Header-Files\TransParentButton.h" />
+    <None Include="C\Source-Files\ColorStatic.cpp" />
+    <None Include="C\Source-Files\ComPort.cpp" />
+    <None Include="C\Source-Files\ComWatchThread.cpp" />
+    <None Include="C\Source-Files\DebugInfoDlg.cpp" />
+    <None Include="C\Source-Files\MainDlg.cpp" />
+    <None Include="C\Source-Files\Multi_Para Monitor.cpp" />
+    <None Include="C\Source-Files\Multi_Para MonitorDlg.cpp" />
+    <None Include="C\Source-Files\NbpCaliDlg.cpp" />
+    <None Include="C\Source-Files\NibpInfo.cpp" />
+    <None Include="C\Source-Files\SetPatientDlg.cpp" />
+    <None Include="C\Source-Files\ShowTimeThread.cpp" />
+    <None Include="C\Source-Files\SpO2Info.cpp" />
+    <None Include="C\Source-Files\SpO2Wave.cpp" />
+    <None Include="C\Source-Files\StaticCuffPrsInfo.cpp" />
+    <None Include="C\Source-Files\StaticEcgInfo.cpp" />
+    <None Include="C\Source-Files\StaticEcgWave.cpp" />
+    <None Include="C\Source-Files\StaticRespInfo.cpp" />
+    <None Include="C\Source-Files\StaticRespWave.cpp" />
+    <None Include="C\Source-Files\StaticResultInfo.cpp" />
+    <None Include="C\Source-Files\StaticTempInfo.cpp" />
+    <None Include="C\Source-Files\StaticWave.cpp" />
+    <None Include="C\Source-Files\stdafx.cpp" />
+    <None Include="C\Source-Files\TransParentButton.cpp" />
     <None Include="GMed-PM01_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -385,6 +446,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fix-yellow-alarm.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

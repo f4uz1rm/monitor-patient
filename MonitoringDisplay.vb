@@ -43,10 +43,9 @@ Public Class MonitoringDisplay
         'MsgBox("Connection Failed")
         'End Try
         setchart()
-        Timer3.Enabled = False
-        Timer4.Enabled = False
-        Timer5.Enabled = False
-        'setchart()
+        'Timer3.Enabled = False
+        'Timer4.Enabled = False
+        'Timer5.Enabled = False
     End Sub
 
     Private Sub MonitoringDisplay_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -479,39 +478,37 @@ Public Class MonitoringDisplay
         Catch ex As Exception
         End Try
     End Sub
-
-
-    Sub ReadingFileChartRR()
+    Dim PathFileReader As String = "C:\Users\KQ\Documents\Visual Studio 2015\Projects\Multi_Para Monitor V3\ecgrr.text"
+    Function ReadingFileChartRR(NameFile As String, NameChart As Chart)
         Try
             Dim fileReader4 As String
             Dim resp1 As Double
             Dim minimumtemp1 As Integer = 9999
             Dim maximumtemp1 As Integer = 0
-            fileReader4 = My.Computer.FileSystem.ReadAllText("C:\M001 - Copy\Multi_Para Monitor V3\ecgresp.txt", System.Text.Encoding.Default)
+            fileReader4 = My.Computer.FileSystem.ReadAllText(PathFileReader, System.Text.Encoding.Default)
             If fileReader4 <> "654" Then
                 resp1 = Val(fileReader4)
-                Chart1.Series("rr").Points.AddXY(detik3, Val(resp1))
+                NameChart.Series("rr").Points.AddXY(detik3, Val(resp1))
             Else
-                Chart1.Series("rr").Points.AddXY(detik3, Val(resp1))
+                NameChart.Series("rr").Points.AddXY(detik3, Val(resp1))
             End If
             If detik3 >= 600 Then
-                Chart1.Series("rr").Points.Clear()
+                NameChart.Series("rr").Points.Clear()
                 detik3 = 0
             End If
         Catch ex As Exception
         End Try
-    End Sub
-
-
+    End Function
     Sub ReadingFileChartECG()
+
         Try
             Dim fileReader2 As String
-            Dim fileReader3 As String
+            'Dim fileReader3 As String
             Dim ecg1 As Double
-            Dim ecg2 As Double
+            'Dim ecg2 As Double
 
 
-            fileReader2 = My.Computer.FileSystem.ReadAllText("C:\M001 - Copy\Multi_Para Monitor V3\ecgwave2.txt", System.Text.Encoding.Default)
+            fileReader2 = My.Computer.FileSystem.ReadAllText("C:\Users\KQ\Documents\Visual Studio 2015\Projects\Multi_Para Monitor V3\ecgwave2.txt", System.Text.Encoding.Default)
             'If fileReader2 <> "654" Then
             ecg1 = Val(fileReader2)
 
@@ -609,24 +606,20 @@ Public Class MonitoringDisplay
         End Try
     End Sub
 
-    Sub setchart()
-        'CHART RR
-        Chart1.Series.Add("rr")
-        Chart1.Series("rr").ChartType = SeriesChartType.Spline
-        Chart1.Series("rr").Color = Color.Lime
-        Dim CArea1 As ChartArea = Chart1.ChartAreas(0)
-        CArea1.BackColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea1.AxisX.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
-        CArea1.AxisX.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea1.AxisX.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea1.AxisY.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea1.AxisX.Maximum = 600
-        CArea1.AxisY.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
-        CArea1.AxisY.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea1.AxisY.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea1.AxisX.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea1.AxisY.MajorTickMark.Enabled = False
 
+
+    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+        'running ecg
+        Try
+            ChartActive("ecg1", ecghr.Text, Chart3)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Dim MaxAxisX As Integer = 600
+    Sub setchart()
+        'Chart 1 RR
+        Chart1.ChartAreas(0).AxisX.Maximum = MaxAxisX
         'CHART SPO2
         Chart2.Series.Add("spo2")
         Chart2.Series("spo2").ChartType = SeriesChartType.Spline
@@ -642,7 +635,7 @@ Public Class MonitoringDisplay
         CArea2.AxisX.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea2.AxisX.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea2.AxisY.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea2.AxisX.Maximum = 600
+        CArea2.AxisX.Maximum = MaxAxisX
         CArea2.AxisY.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
         CArea2.AxisY.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea2.AxisY.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
@@ -665,16 +658,13 @@ Public Class MonitoringDisplay
         CArea3.AxisX.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea3.AxisX.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea3.AxisY.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea3.AxisX.Maximum = 250
+        CArea3.AxisX.Maximum = MaxAxisX
         CArea3.AxisY.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
         CArea3.AxisY.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea3.AxisY.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea3.AxisX.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF")
         'CArea3.AxisX.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea3.AxisX.MajorTickMark.Enabled = True
-        CArea3.AxisY.Minimum = -650
-        CArea3.AxisY.Maximum = 1300
-
 
         'CHART ECG L2
         Chart4.Series.Add("ecg2")
@@ -686,36 +676,81 @@ Public Class MonitoringDisplay
         CArea4.AxisX.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea4.AxisX.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea4.AxisY.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea4.AxisX.Maximum = 250
+        CArea4.AxisX.Maximum = MaxAxisX
         CArea4.AxisY.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
         CArea4.AxisY.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea4.AxisY.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         CArea4.AxisX.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
         'CArea4.AxisX.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF")
         CArea4.AxisY.MajorTickMark.Enabled = False
-        CArea4.AxisY.Minimum = -650
-        CArea4.AxisY.Maximum = 1300
 
     End Sub
-
-    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
-        'running ecg
-        Try
-            ReadingFileChartECG()
-        Catch ex As Exception
-
-        End Try
-    End Sub
-
-
+    Dim NameTemp1 As String = "txt\temp1.txt"
+    Dim NameTemp2 As String = "txt\temp2.txt"
+    'SPO2
+    Dim SpO2 As String = "txt\m_uiSpO2.txt"
+    Dim PulseRate As String = "txt\m_uiPulseRate.txt"
+    Dim Pi As String = "txt\m_uiPi.txt"
+    'ECG
+    Dim ECG As String = "txt\m_uiHr.txt"
+    Dim SetNormal As Integer = 90
+    'Location
+    Dim PathLoc As String = "C:\Users\KQ\Documents\Visual Studio 2015\Projects\Multi_Para Monitor V3\Debug\"
     Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles Timer5.Tick
         'running rr
+
         Try
-            ReadingFileChartRR()
+
+            'INFO
+            FileReaderInfo(PathLoc + SpO2, muispo2)
+            FileReaderInfo(PathLoc + NameTemp1, muitemp1)
+            FileReaderInfo(PathLoc + NameTemp2, muitemp2)
+            FileReaderInfo(PathLoc + PulseRate, bprm1)
+            FileReaderInfo(PathLoc + Pi, pi1)
+            FileReaderInfo(PathLoc + ECG, ecghr)
+
+            'Wave
+            'ECG
+            ChartActive("ecg1", ecghr.Text / 2, Chart3)
+            ChartActive("ecg2", ecghr.Text, Chart4)
+            'SPO
+            ChartActive("spo2", muispo2.Text, Chart2)
         Catch ex As Exception
 
         End Try
     End Sub
+    Function FileReaderInfo(PathLoc As String, LabelName As Label)
+        ' Store the line in this String.
+        Dim line As String
+        Dim FilePath As String = PathLoc
+        ' Create new StreamReader instance with Using block.
+        Using reader As StreamReader = New StreamReader(FilePath)
+            ' Read one line from file
+            line = reader.ReadLine
+        End Using
+
+        ' Write the line we read from "file.txt"
+        Console.WriteLine("Info" & line)
+        LabelName.Text = line
+        Return {PathLoc}
+    End Function
+
+
+    Function FileReaderWave(PathLoc As String, NameSeries As String, ChartName As Chart)
+        ' Store the line in this String.
+        Dim line As String
+        Dim FilePath As String = PathLoc
+        ' Create new StreamReader instance with Using block.
+        Using reader As StreamReader = New StreamReader(FilePath)
+            ' Read one line from file
+            line = reader.ReadLine
+        End Using
+
+        ' Write the line we read from "file.txt"
+        Console.WriteLine("Wave" & line)
+        'ChartActive(NameSeries, line, ChartName)
+        ChartName.Series(NameSeries).Points.AddXY(detik3, line)
+    End Function
     Public isMouseDown As Boolean = False
     Public mouseOffset As Point
     Private Sub MonitoringDisplay_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
@@ -742,19 +777,38 @@ Public Class MonitoringDisplay
         End If
     End Sub
     Shared MyValue As New Random()
+    Dim NameSeries As String
+    Dim ValueChartSeries As String
+    Dim ChartValue As Chart
+
+    Sub ReadSPO2()
+        Dim fileReader As String
+        fileReader = My.Computer.FileSystem.ReadAllText("C:\Users\KQ\Documents\Visual Studio 2015\Projects\Multi_Para Monitor V3\Received\value.text",
+           System.Text.Encoding.UTF32)
+        MsgBox(fileReader)
+    End Sub
     Private Sub TimerRandom_Tick(sender As Object, e As EventArgs) Handles TimerRandom.Tick
         ecghr.Text = MyValue.Next(110, 180)
-        muispo2.Text = MyValue.Next(55, 120)
+        muispo2.Text = MyValue.Next(110, 180)
         muitd.Text = MyValue.Next(10, 70)
         muitemp1.Text = MyValue.Next(10, 70)
         muitemp2.Text = MyValue.Next(10, 70)
-        ecgrr.Text = MyValue.Next(10, 70)
+        ecgrr.Text = MyValue.Next(50, 60)
         sysdys.Text = MyValue.Next(10, 70) & "/" & MyValue.Next(10, 70)
-        Chart1.Series("rr").Points.AddXY(detik3, Val(MyValue.Next(20, 130)))
-        Chart2.Series("spo2").Points.AddXY(detik2, Val(MyValue.Next(20, 130)))
-
+        ChartActive("rr", ecgrr.Text, Chart1)
+        ChartActive("spo2", muispo2.Text, Chart2)
+        ChartActive("ecg1", ecghr.Text, Chart3)
+        ChartActive("ecg2", ecghr.Text, Chart4)
         AudioHBAlarm()
     End Sub
+    Function ChartActive(NameSeries As String, ValueChartSeries As Integer, ChartName As Chart)
+        If ChartName.Series(NameSeries).Points.AddXY(detik3, ValueChartSeries) > ChartName.Size.Width Then
+            ChartName.Series(NameSeries).Points.RemoveAt(0)
+        Else
+            ChartName.Series(NameSeries).Points.AddXY(detik3, ValueChartSeries)
+        End If
+        Return {NameSeries, ValueChartSeries}
+    End Function
     Private Sub TimerBlue_Tick(sender As Object, e As EventArgs) Handles TimerBlue.Tick
         BlueButton()
     End Sub
@@ -785,19 +839,7 @@ Public Class MonitoringDisplay
         MsgBox("Connection Success COM 5")
     End Sub
 
-    Sub COM5Connecting()
-        SerialPort1.Close()
-        SerialPort1.PortName = "COM5"
-        SerialPort1.BaudRate = 9600
-        SerialPort1.DataBits = 8
-        SerialPort1.Parity = Parity.None
-        SerialPort1.StopBits = StopBits.One
-        SerialPort1.Handshake = Handshake.None
-        SerialPort1.Encoding = System.Text.Encoding.Default 'very important!
-        SerialPort1.ReadTimeout = 10000
-        SerialPort1.Open()
-        'MsgBox("Connection Success")
-    End Sub
+
 
     Private Sub MonitoringDisplay_DoubleClick(sender As Object, e As EventArgs) Handles Me.DoubleClick
         Mdi.WindowState = FormWindowState.Maximized

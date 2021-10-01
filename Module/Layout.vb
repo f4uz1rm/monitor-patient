@@ -1,5 +1,5 @@
 ﻿Module Layout
-    Function MonitorDisplayView(W As Integer, H As Integer)
+    Public Function MonitorDisplayView(W As Integer, H As Integer)
         MonitoringDisplay.MdiParent = Mdi
         MonitoringDisplay.Size = New Size(W, H)
         MonitoringDisplay.Dock = DockStyle.Top.Fill
@@ -30,6 +30,7 @@
                 MonitoringDisplay.Label12.ForeColor = ColorSelect
                 MonitoringDisplay.ecghr.ForeColor = ColorSelect
                 MonitoringDisplay.Chart3.Series("ecg1").Color = ColorSelect
+                MonitoringDisplay.Chart4.Series("ecg2").Color = ColorSelect
             Case "NIBP"
                 MonitoringDisplay.Label20.ForeColor = ColorSelect
                 MonitoringDisplay.Label19.ForeColor = ColorSelect
