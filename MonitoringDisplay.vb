@@ -230,7 +230,7 @@ Public Class MonitoringDisplay
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         receivedData = ReceiveSerialData()
-        Label7.Text = receivedData
+        LabelSpo2Min.Text = receivedData
         If receivedData.Contains("q") Then
             Button1.PerformClick()
         ElseIf receivedData.Contains("w") Then
@@ -256,16 +256,16 @@ Public Class MonitoringDisplay
         Dim fileReader As String
         Dim minimumspo2 As Integer = 9999
         Dim maximumspo2 As Integer = 0
-        fileReader = My.Computer.FileSystem.ReadAllText("C:\M001 - Copy\Multi_Para Monitor V3\tpoint.txt", System.Text.Encoding.Default)
+        fileReader = My.Computer.FileSystem.ReadAllText("C:\Users\GAMING\Documents\GitHub\Multi_Para_Monitor\Debug\txt\m_uiSpO2.txt", System.Text.Encoding.Default)
         If fileReader <> "127" Then
             muispo2.Text = fileReader
             If fileReader < minimumspo2 Then
                 minimumspo2 = fileReader
-                Label7.Text = minimumspo2
+                LabelSpo2Min.Text = minimumspo2
             End If
             If fileReader > maximumspo2 Then
                 maximumspo2 = fileReader
-                Label6.Text = maximumspo2
+                LabelSpo2Max.Text = maximumspo2
             End If
         Else
             muispo2.Text = "--"
@@ -277,7 +277,7 @@ Public Class MonitoringDisplay
         Dim fileReader As String
         Dim minimumtemp1 As Integer = 9999
         Dim maximumtemp1 As Integer = 0
-        fileReader = My.Computer.FileSystem.ReadAllText("C:\M001 - Copy\Multi_Para Monitor V3\temp1.txt", System.Text.Encoding.Default)
+        fileReader = My.Computer.FileSystem.ReadAllText("", System.Text.Encoding.Default)
         If fileReader <> "555" Then
             muitemp1.Text = fileReader
             td2 = fileReader
@@ -580,9 +580,9 @@ Public Class MonitoringDisplay
             detik2 = detik2 + 1
             detik3 = detik3 + 1
             detik3s = detik3s + 1
-            Label12.Text = detik
-            Label13.Text = detik - 250
-            Label15.Text = Val(Label12.Text) - Val(Label13.Text)
+            LabelEcgMin.Text = detik
+            LabelEcgMax.Text = detik - 250
+            Label15.Text = Val(LabelEcgMin.Text) - Val(LabelEcgMax.Text)
 
 
             Dim td1 As Double
@@ -608,116 +608,132 @@ Public Class MonitoringDisplay
 
 
 
-    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
-        'running ecg
-        Try
-            ChartActive("ecg1", ecghr.Text, Chart3)
-        Catch ex As Exception
 
-        End Try
-    End Sub
     Dim MaxAxisX As Integer = 600
+    Dim MinAxisX As Integer
     Sub setchart()
-        'Chart 1 RR
+        'Chart RR
         Chart1.ChartAreas(0).AxisX.Maximum = MaxAxisX
-        'CHART SPO2
-        Chart2.Series.Add("spo2")
-        Chart2.Series("spo2").ChartType = SeriesChartType.Spline
-        Chart2.Series("spo2").Color = Color.DodgerBlue
-
-        Chart2.Series.Add("spo3")
-        Chart2.Series("spo3").ChartType = SeriesChartType.Spline
-        Chart2.Series("spo3").Color = Color.DodgerBlue
-
-        Dim CArea2 As ChartArea = Chart2.ChartAreas(0)
-        CArea2.BackColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea2.AxisX.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
-        CArea2.AxisX.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea2.AxisX.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea2.AxisY.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea2.AxisX.Maximum = MaxAxisX
-        CArea2.AxisY.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
-        CArea2.AxisY.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea2.AxisY.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea2.AxisX.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea2.AxisY.MajorTickMark.Enabled = False
-
+        'Chart SPO
+        Chart2.ChartAreas(0).AxisX.Minimum = MinAxisX
+        Chart2.ChartAreas(0).AxisX.Maximum = MaxAxisX
         'CHART ECG L1
-        Chart3.Series.Add("ecg1")
-        Chart3.Series("ecg1").ChartType = SeriesChartType.Spline
-        Chart3.Series("ecg1").Color = Color.Lime
-
-        Chart3.Series.Add("ecg1a")
-        Chart3.Series("ecg1a").ChartType = SeriesChartType.Spline
-        Chart3.Series("ecg1a").Color = Color.Lime
-
-
-        Dim CArea3 As ChartArea = Chart3.ChartAreas(0)
-        CArea3.BackColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea3.AxisX.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
-        CArea3.AxisX.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea3.AxisX.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea3.AxisY.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea3.AxisX.Maximum = MaxAxisX
-        CArea3.AxisY.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
-        CArea3.AxisY.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea3.AxisY.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea3.AxisX.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF")
-        'CArea3.AxisX.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea3.AxisX.MajorTickMark.Enabled = True
-
+        Chart3.ChartAreas(0).AxisX.Maximum = MaxAxisX
         'CHART ECG L2
-        Chart4.Series.Add("ecg2")
-        Chart4.Series("ecg2").ChartType = SeriesChartType.Spline
-        Chart4.Series("ecg2").Color = Color.Lime
-        Dim CArea4 As ChartArea = Chart4.ChartAreas(0)
-        CArea4.BackColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea4.AxisX.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
-        CArea4.AxisX.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea4.AxisX.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea4.AxisY.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea4.AxisX.Maximum = MaxAxisX
-        CArea4.AxisY.LabelStyle.Font = New System.Drawing.Font("Segoe UI", 10.0F, System.Drawing.FontStyle.Regular)
-        CArea4.AxisY.MajorGrid.LineColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea4.AxisY.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        CArea4.AxisX.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1A1A1A")
-        'CArea4.AxisX.LabelStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF")
-        CArea4.AxisY.MajorTickMark.Enabled = False
+        Chart4.ChartAreas(0).AxisX.Maximum = MaxAxisX
 
     End Sub
     Dim NameTemp1 As String = "txt\temp1.txt"
     Dim NameTemp2 As String = "txt\temp2.txt"
     'SPO2
     Dim SpO2 As String = "txt\m_uiSpO2.txt"
+    'SPO2 Status
+    Dim SpO2Status As String = "txt\statusSpo2.txt"
     Dim PulseRate As String = "txt\m_uiPulseRate.txt"
     Dim Pi As String = "txt\m_uiPi.txt"
     'ECG
     Dim ECG As String = "txt\m_uiHr.txt"
+    Dim RR As String = "txt\m_uiRr.txt"
+    'ECG Status
+    Dim ECGStatus As String = "txt\statusEcg.txt"
     Dim SetNormal As Integer = 90
     'Location
-    Dim PathLoc As String = "C:\Users\KQ\Documents\Visual Studio 2015\Projects\Multi_Para Monitor V3\Debug\"
-    Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles Timer5.Tick
-        'running rr
-
+    Dim PathLoc As String = "C:\Users\GAMING\Documents\GitHub\Multi_Para_Monitor\Debug\"
+    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+        'running ecg
         Try
-
-            'INFO
-            FileReaderInfo(PathLoc + SpO2, muispo2)
-            FileReaderInfo(PathLoc + NameTemp1, muitemp1)
-            FileReaderInfo(PathLoc + NameTemp2, muitemp2)
-            FileReaderInfo(PathLoc + PulseRate, bprm1)
-            FileReaderInfo(PathLoc + Pi, pi1)
-            FileReaderInfo(PathLoc + ECG, ecghr)
-
-            'Wave
-            'ECG
-            ChartActive("ecg1", ecghr.Text / 2, Chart3)
-            ChartActive("ecg2", ecghr.Text, Chart4)
             'SPO
-            ChartActive("spo2", muispo2.Text, Chart2)
+
         Catch ex As Exception
 
         End Try
+    End Sub
+    Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles TimerReceivedData.Tick
+        'running rr
+
+        Try
+            'SPO2
+            FileReaderInfo(PathLoc + SpO2, muispo2)
+            FileReaderInfo(PathLoc + PulseRate, bprm1)
+            FileReaderInfo(PathLoc + Pi, pi1)
+
+            'TEMP
+            FileReaderInfo(PathLoc + NameTemp1, muitemp1)
+            FileReaderInfo(PathLoc + NameTemp2, muitemp2)
+            'ECG
+            FileReaderInfo(PathLoc + ECG, ecghr)
+            'RR
+            FileReaderInfo(PathLoc + RR, ecgrr)
+            'Status SPO2
+            FileReaderInfo(PathLoc + SpO2Status, LabelStatusSpo2)
+
+            'FileReaderInfo(PathLoc + SpO2Status, LabelStatusSpo2)
+            'Status SPO2
+            'FileReaderInfo(PathLoc + ECGStatus, LabelStatusLead1)
+
+            'Wave
+            'ChartActive("spo2", muispo2.Text, Chart2)
+            'WAVE ECG
+            ChartActive("ecg1", ecghr.Text, Chart3)
+            ChartActive("ecg2", ecghr.Text, Chart4)
+            ChartActive("rr", LabelRRMin.Text, Chart1)
+
+            'ECG
+            'ChartActive("ecg1", ecghr.Text, Chart3)
+            'ChartActive("ecg2", ecghr.Text, Chart4)
+            'SPO Chart
+            'ChartActive("spo2", muispo2.Text, Chart2)
+            'ChartActive("spo2", SetNormal, Chart2)
+
+            FilterSet()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Sub FilterSet()
+        Select Case muispo2.Text
+            Case "127"
+                muispo2.Text = "--"
+            Case Else
+                FileReaderInfo(PathLoc + SpO2, muispo2)
+        End Select
+
+
+        Select Case bprm1.Text
+            Case "511"
+                bprm1.Text = "--"
+            Case Else
+                FileReaderInfo(PathLoc + PulseRate, bprm1)
+        End Select
+
+        Select Case pi1.Text
+            Case "0"
+                pi1.Text = "--"
+            Case Else
+                FileReaderInfo(PathLoc + Pi, pi1)
+        End Select
+
+        Select Case ecghr.Text
+            Case 30
+                ecghr.Text = "--"
+            Case Else
+                FileReaderInfo(PathLoc + ECG, ecghr)
+        End Select
+
+        Select Case muitemp1.Text
+            Case 550
+                muitemp1.Text = "--"
+            Case Else
+                FileReaderInfo(PathLoc + NameTemp1, muitemp1)
+        End Select
+
+        Select Case muitemp2.Text
+            Case 550
+                muitemp2.Text = "--"
+            Case Else
+                FileReaderInfo(PathLoc + NameTemp2, muitemp2)
+        End Select
+
     End Sub
     Function FileReaderInfo(PathLoc As String, LabelName As Label)
         ' Store the line in this String.
@@ -730,7 +746,7 @@ Public Class MonitoringDisplay
         End Using
 
         ' Write the line we read from "file.txt"
-        Console.WriteLine("Info" & line)
+        Console.WriteLine("Info :" & line)
         LabelName.Text = line
         Return {PathLoc}
     End Function
@@ -781,12 +797,6 @@ Public Class MonitoringDisplay
     Dim ValueChartSeries As String
     Dim ChartValue As Chart
 
-    Sub ReadSPO2()
-        Dim fileReader As String
-        fileReader = My.Computer.FileSystem.ReadAllText("C:\Users\KQ\Documents\Visual Studio 2015\Projects\Multi_Para Monitor V3\Received\value.text",
-           System.Text.Encoding.UTF32)
-        MsgBox(fileReader)
-    End Sub
     Private Sub TimerRandom_Tick(sender As Object, e As EventArgs) Handles TimerRandom.Tick
         ecghr.Text = MyValue.Next(110, 180)
         muispo2.Text = MyValue.Next(110, 180)
@@ -802,12 +812,13 @@ Public Class MonitoringDisplay
         AudioHBAlarm()
     End Sub
     Function ChartActive(NameSeries As String, ValueChartSeries As Integer, ChartName As Chart)
-        If ChartName.Series(NameSeries).Points.AddXY(detik3, ValueChartSeries) > ChartName.Size.Width Then
+        If ChartName.Series(NameSeries).Points.AddXY(detik3, ValueChartSeries) >= ChartName.Size.Width Then
             ChartName.Series(NameSeries).Points.RemoveAt(0)
+            'ChartName.Series(NameSeries).Points.Clear()
         Else
             ChartName.Series(NameSeries).Points.AddXY(detik3, ValueChartSeries)
         End If
-        Return {NameSeries, ValueChartSeries}
+        Return {NameSeries, ValueChartSeries, ChartName}
     End Function
     Private Sub TimerBlue_Tick(sender As Object, e As EventArgs) Handles TimerBlue.Tick
         BlueButton()
@@ -848,5 +859,28 @@ Public Class MonitoringDisplay
 
     Private Sub MonitoringDisplay_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         StopBackgroundSound()
+    End Sub
+
+    Private Sub TimerSpo2_Tick(sender As Object, e As EventArgs) Handles TimerSpo2.Tick
+        If muispo2.Text = "--" Then
+            ChartActive("spo2", 80, Chart2)
+
+        Else
+            ChartActive("spo2", muispo2.Text, Chart2)
+
+        End If
+
+    End Sub
+
+    Private Sub TimerMax_Tick(sender As Object, e As EventArgs) Handles TimerMax.Tick
+        ChartActive("spo2", 80, Chart2)
+    End Sub
+
+    Private Sub TimerMin_Tick(sender As Object, e As EventArgs) Handles TimerMin.Tick
+        If bprm1.Text = "--" Then
+            ChartActive("spo2", 80, Chart2)
+        Else
+            ChartActive("spo2", bprm1.Text, Chart2)
+        End If
     End Sub
 End Class

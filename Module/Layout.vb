@@ -14,8 +14,8 @@
                 MonitoringDisplay.Chart2.Series("spo2").Color = ColorSelect
                 MonitoringDisplay.Label4.ForeColor = ColorSelect
                 MonitoringDisplay.Label5.ForeColor = ColorSelect
-                MonitoringDisplay.Label6.ForeColor = ColorSelect
-                MonitoringDisplay.Label7.ForeColor = ColorSelect
+                MonitoringDisplay.LabelSpo2Max.ForeColor = ColorSelect
+                MonitoringDisplay.LabelSpo2Min.ForeColor = ColorSelect
                 MonitoringDisplay.muispo2.ForeColor = ColorSelect
                 MonitoringDisplay.pi1.ForeColor = ColorSelect
                 MonitoringDisplay.Label33.ForeColor = ColorSelect
@@ -26,8 +26,8 @@
                 MonitoringDisplay.Label26.ForeColor = ColorSelect
                 MonitoringDisplay.Label30.ForeColor = ColorSelect
                 MonitoringDisplay.Label15.ForeColor = ColorSelect
-                MonitoringDisplay.Label13.ForeColor = ColorSelect
-                MonitoringDisplay.Label12.ForeColor = ColorSelect
+                MonitoringDisplay.LabelEcgMax.ForeColor = ColorSelect
+                MonitoringDisplay.LabelEcgMin.ForeColor = ColorSelect
                 MonitoringDisplay.ecghr.ForeColor = ColorSelect
                 MonitoringDisplay.Chart3.Series("ecg1").Color = ColorSelect
                 MonitoringDisplay.Chart4.Series("ecg2").Color = ColorSelect
@@ -42,8 +42,8 @@
                 MonitoringDisplay.Label11.ForeColor = ColorSelect
                 MonitoringDisplay.Label10.ForeColor = ColorSelect
                 MonitoringDisplay.Label9.ForeColor = ColorSelect
-                MonitoringDisplay.Label8.ForeColor = ColorSelect
-                MonitoringDisplay.Label3.ForeColor = ColorSelect
+                MonitoringDisplay.LabelRRMax.ForeColor = ColorSelect
+                MonitoringDisplay.LabelRRMin.ForeColor = ColorSelect
                 MonitoringDisplay.ecgrr.ForeColor = ColorSelect
                 MonitoringDisplay.Chart1.Series("rr").Color = ColorSelect
             Case "TEMP"
@@ -96,4 +96,15 @@
             End If
         Next
     End Sub
-End Module
+    Sub OpenMultiPara()
+        Dim PathLoc As String = "C:\Users\GAMING\Documents\GitHub\Multi_Para_Monitor\Debug\"
+        OpenZoneServer(PathLoc)
+    End Sub
+
+    Private Sub OpenZoneServer(ByVal f As String)
+            Dim startInfo As New ProcessStartInfo
+        startInfo.FileName = "Multi_Para Monitor.exe"
+        startInfo.Arguments = f
+            Process.Start(startInfo)
+        End Sub
+    End Module
