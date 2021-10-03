@@ -96,15 +96,5 @@
             End If
         Next
     End Sub
-    Sub OpenMultiPara()
-        Dim PathLoc As String = "C:\Users\GAMING\Documents\GitHub\Multi_Para_Monitor\Debug\"
-        OpenZoneServer(PathLoc)
-    End Sub
 
-    Private Sub OpenZoneServer(ByVal f As String)
-            Dim startInfo As New ProcessStartInfo
-        startInfo.FileName = "Multi_Para Monitor.exe"
-        startInfo.Arguments = f
-            Process.Start(startInfo)
-        End Sub
-    End Module
+End Module

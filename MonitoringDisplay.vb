@@ -29,7 +29,9 @@ Public Class MonitoringDisplay
     End Sub
 
     Private Sub MonitoringDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        OpenMultiParameter()
         HideButtonNaigation()
+
         'Connection - COM 5
         'COM5Connecting()
         'Batas
@@ -48,6 +50,17 @@ Public Class MonitoringDisplay
         'Timer5.Enabled = False
     End Sub
 
+    Sub OpenMultiParameter()
+        Dim myFile As New System.Diagnostics.Process
+        With myFile
+            .StartInfo.WorkingDirectory = "C:\Users\GAMING\Documents\GitHub\Multi_Para_Monitor\Debug\"
+            .StartInfo.FileName = "Multi_Para Monitor.exe"
+        End With
+        myFile.Start()
+    End Sub
+    Sub CloseMultiParameter()
+
+    End Sub
     Private Sub MonitoringDisplay_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         SplashScreen1.Close()
     End Sub

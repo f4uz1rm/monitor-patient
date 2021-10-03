@@ -61,4 +61,3 @@ C:\Users\GAMING\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.TESTDLL.res
 C:\Users\GAMING\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.vbproj.GenerateResource.Cache
 C:\Users\GAMING\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.exe.manifest
 C:\Users\GAMING\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.application
-C:\Users\GAMING\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.vbprojResolveAssemblyReference.cache

@@ -31,7 +31,7 @@
             MonitoringDisplay.ButtonBlue.Visible = True
             StatusActive = True
         End If
-        Application.DoEvents()
+        'Application.DoEvents()
     End Sub
     Sub YellowButton()
         If MonitoringDisplay.ButtonYellow.Visible = True Then
