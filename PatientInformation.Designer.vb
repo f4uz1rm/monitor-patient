@@ -46,14 +46,14 @@ Partial Class PatientInformation
         Me.TextBox8 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.ComboBox1 = New Bunifu.Framework.UI.BunifuDropdown()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btn_yes = New System.Windows.Forms.Button()
         Me.btn_no = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -202,7 +202,6 @@ Partial Class PatientInformation
         'TextBox1
         '
         Me.TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox1.Enabled = False
         Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TextBox1.HintForeColor = System.Drawing.Color.Empty
@@ -223,7 +222,6 @@ Partial Class PatientInformation
         'TextBox2
         '
         Me.TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox2.Enabled = False
         Me.TextBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.TextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TextBox2.HintForeColor = System.Drawing.Color.Empty
@@ -245,7 +243,6 @@ Partial Class PatientInformation
         '
         Me.Datetimepicker1.BackColor = System.Drawing.Color.Transparent
         Me.Datetimepicker1.BorderRadius = 0
-        Me.Datetimepicker1.Enabled = False
         Me.Datetimepicker1.ForeColor = System.Drawing.Color.Black
         Me.Datetimepicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Datetimepicker1.FormatCustom = ""
@@ -258,7 +255,6 @@ Partial Class PatientInformation
         'TextBox3
         '
         Me.TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox3.Enabled = False
         Me.TextBox3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.TextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TextBox3.HintForeColor = System.Drawing.Color.Empty
@@ -279,7 +275,6 @@ Partial Class PatientInformation
         'TextBox4
         '
         Me.TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox4.Enabled = False
         Me.TextBox4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.TextBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TextBox4.HintForeColor = System.Drawing.Color.Empty
@@ -300,7 +295,6 @@ Partial Class PatientInformation
         'TextBox5
         '
         Me.TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox5.Enabled = False
         Me.TextBox5.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.TextBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TextBox5.HintForeColor = System.Drawing.Color.Empty
@@ -321,7 +315,6 @@ Partial Class PatientInformation
         'TextBox6
         '
         Me.TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox6.Enabled = False
         Me.TextBox6.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.TextBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TextBox6.HintForeColor = System.Drawing.Color.Empty
@@ -342,7 +335,6 @@ Partial Class PatientInformation
         'TextBox7
         '
         Me.TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox7.Enabled = False
         Me.TextBox7.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.TextBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TextBox7.HintForeColor = System.Drawing.Color.Empty
@@ -363,7 +355,6 @@ Partial Class PatientInformation
         'TextBox8
         '
         Me.TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox8.Enabled = False
         Me.TextBox8.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.TextBox8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TextBox8.HintForeColor = System.Drawing.Color.Empty
@@ -386,7 +377,6 @@ Partial Class PatientInformation
         Me.ComboBox1.BackColor = System.Drawing.Color.Transparent
         Me.ComboBox1.BorderRadius = 3
         Me.ComboBox1.DisabledColor = System.Drawing.Color.Gray
-        Me.ComboBox1.Enabled = False
         Me.ComboBox1.ForeColor = System.Drawing.Color.Black
         Me.ComboBox1.Items = New String() {"Male", "Famale"}
         Me.ComboBox1.Location = New System.Drawing.Point(25, 314)
@@ -405,6 +395,16 @@ Partial Class PatientInformation
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 100)
         Me.Panel1.TabIndex = 45
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.btn_delete)
+        Me.Panel3.Controls.Add(Me.btn_edit)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(200, 50)
+        Me.Panel3.TabIndex = 26
         '
         'Panel2
         '
@@ -431,7 +431,7 @@ Partial Class PatientInformation
         'btn_yes
         '
         Me.btn_yes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_yes.Location = New System.Drawing.Point(21, 23)
+        Me.btn_yes.Location = New System.Drawing.Point(26, 24)
         Me.btn_yes.Name = "btn_yes"
         Me.btn_yes.Size = New System.Drawing.Size(55, 23)
         Me.btn_yes.TabIndex = 47
@@ -443,22 +443,12 @@ Partial Class PatientInformation
         Me.btn_no.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btn_no.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn_no.ForeColor = System.Drawing.Color.White
-        Me.btn_no.Location = New System.Drawing.Point(100, 22)
+        Me.btn_no.Location = New System.Drawing.Point(105, 24)
         Me.btn_no.Name = "btn_no"
         Me.btn_no.Size = New System.Drawing.Size(52, 23)
         Me.btn_no.TabIndex = 48
         Me.btn_no.Text = "No"
         Me.btn_no.UseVisualStyleBackColor = False
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.btn_delete)
-        Me.Panel3.Controls.Add(Me.btn_edit)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(200, 50)
-        Me.Panel3.TabIndex = 26
         '
         'PatientInformation
         '
@@ -494,8 +484,8 @@ Partial Class PatientInformation
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PatientInformation"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

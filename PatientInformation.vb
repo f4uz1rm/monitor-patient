@@ -17,7 +17,7 @@
     End Sub
 
     Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
-        InputTextBox(True)
+        MonitoringDisplay.LabelPatient.Text = TextBox1.Text
     End Sub
 
     Function InputTextBox(Status As Boolean)

@@ -29,7 +29,7 @@ Public Class MonitoringDisplay
     End Sub
 
     Private Sub MonitoringDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        OpenMultiParameter()
+        'OpenMultiParameter()
         HideButtonNaigation()
 
         'Connection - COM 5
@@ -651,7 +651,7 @@ Public Class MonitoringDisplay
     Dim ECGStatus As String = "txt\statusEcg.txt"
     Dim SetNormal As Integer = 90
     'Location
-    Dim PathLoc As String = "C:\Users\GAMING\Documents\GitHub\Multi_Para_Monitor\Debug\"
+    Dim PathLoc As String = "C:\Users\KQ\Documents\GitHub\Multi_Para_Monitor\Debug\"
     Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
         'running ecg
         Try
@@ -734,14 +734,14 @@ Public Class MonitoringDisplay
         End Select
 
         Select Case muitemp1.Text
-            Case 550
+            Case 55
                 muitemp1.Text = "--"
             Case Else
                 FileReaderInfo(PathLoc + NameTemp1, muitemp1)
         End Select
 
         Select Case muitemp2.Text
-            Case 550
+            Case 55
                 muitemp2.Text = "--"
             Case Else
                 FileReaderInfo(PathLoc + NameTemp2, muitemp2)
