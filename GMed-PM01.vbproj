@@ -121,6 +121,7 @@
     <Compile Include="AlarmHistory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Database\Connection-Acces.vb" />
     <Compile Include="Module\Audio.vb" />
     <Compile Include="DefaultSetup.Designer.vb">
       <DependentUpon>DefaultSetup.vb</DependentUpon>
@@ -135,6 +136,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module\Connection-COM.vb" />
+    <Compile Include="Module\Data-Patient.vb" />
     <Compile Include="Module\File-Reader.vb" />
     <Compile Include="Module\Layout.vb" />
     <Compile Include="Module\LED.vb" />
@@ -182,6 +184,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TEST DATABASE.Designer.vb">
+      <DependentUpon>TEST DATABASE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TEST DATABASE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TESTDLL.Designer.vb">
       <DependentUpon>TESTDLL.vb</DependentUpon>
     </Compile>
@@ -220,61 +228,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TEST DATABASE.resx">
+      <DependentUpon>TEST DATABASE.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TESTDLL.resx">
       <DependentUpon>TESTDLL.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="C\Header-Files\ColorStatic.h" />
-    <None Include="C\Header-Files\ComPort.h" />
-    <None Include="C\Header-Files\ComWatchThread.h" />
-    <None Include="C\Header-Files\DebugInfoDlg.h" />
-    <None Include="C\Header-Files\LAYOUT.h" />
-    <None Include="C\Header-Files\MainDlg.h" />
-    <None Include="C\Header-Files\Multi_Para Monitor.h" />
-    <None Include="C\Header-Files\Multi_Para MonitorDlg.h" />
-    <None Include="C\Header-Files\NbpCaliDlg.h" />
-    <None Include="C\Header-Files\NibpInfo.h" />
-    <None Include="C\Header-Files\PackID.h" />
-    <None Include="C\Header-Files\resource.h" />
-    <None Include="C\Header-Files\SetPatientDlg.h" />
-    <None Include="C\Header-Files\ShowTimeThread.h" />
-    <None Include="C\Header-Files\SpO2Info.h" />
-    <None Include="C\Header-Files\SpO2Wave.h" />
-    <None Include="C\Header-Files\StaticCuffPrsInfo.h" />
-    <None Include="C\Header-Files\StaticEcgInfo.h" />
-    <None Include="C\Header-Files\StaticEcgWave.h" />
-    <None Include="C\Header-Files\StaticRespInfo.h" />
-    <None Include="C\Header-Files\StaticRespWave.h" />
-    <None Include="C\Header-Files\StaticResultInfo.h" />
-    <None Include="C\Header-Files\StaticTempInfo.h" />
-    <None Include="C\Header-Files\StaticWave.h" />
-    <None Include="C\Header-Files\stdafx.h" />
-    <None Include="C\Header-Files\targetver.h" />
-    <None Include="C\Header-Files\TransParentButton.h" />
-    <None Include="C\Source-Files\ColorStatic.cpp" />
-    <None Include="C\Source-Files\ComPort.cpp" />
-    <None Include="C\Source-Files\ComWatchThread.cpp" />
-    <None Include="C\Source-Files\DebugInfoDlg.cpp" />
-    <None Include="C\Source-Files\MainDlg.cpp" />
-    <None Include="C\Source-Files\Multi_Para Monitor.cpp" />
-    <None Include="C\Source-Files\Multi_Para MonitorDlg.cpp" />
-    <None Include="C\Source-Files\NbpCaliDlg.cpp" />
-    <None Include="C\Source-Files\NibpInfo.cpp" />
-    <None Include="C\Source-Files\SetPatientDlg.cpp" />
-    <None Include="C\Source-Files\ShowTimeThread.cpp" />
-    <None Include="C\Source-Files\SpO2Info.cpp" />
-    <None Include="C\Source-Files\SpO2Wave.cpp" />
-    <None Include="C\Source-Files\StaticCuffPrsInfo.cpp" />
-    <None Include="C\Source-Files\StaticEcgInfo.cpp" />
-    <None Include="C\Source-Files\StaticEcgWave.cpp" />
-    <None Include="C\Source-Files\StaticRespInfo.cpp" />
-    <None Include="C\Source-Files\StaticRespWave.cpp" />
-    <None Include="C\Source-Files\StaticResultInfo.cpp" />
-    <None Include="C\Source-Files\StaticTempInfo.cpp" />
-    <None Include="C\Source-Files\StaticWave.cpp" />
-    <None Include="C\Source-Files\stdafx.cpp" />
-    <None Include="C\Source-Files\TransParentButton.cpp" />
     <None Include="GMed-PM01_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -447,8 +408,6 @@
   <ItemGroup>
     <None Include="Resources\fix-yellow-alarm.wav" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

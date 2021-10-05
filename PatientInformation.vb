@@ -1,4 +1,5 @@
-﻿Public Class PatientInformation
+﻿Imports System.Data.OleDb
+Public Class PatientInformation
     Private Sub PatientInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.DoubleBuffered = True
         Me.FormBorderStyle = FormBorderStyle.None
@@ -14,23 +15,23 @@
         p.CloseFigure()
         Me.Region = New Region(p)
         Panel2.Hide()
+        Tampil_Texbox()
     End Sub
-
     Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
-        MonitoringDisplay.LabelPatient.Text = TextBox1.Text
+        Update_Data_Patient()
     End Sub
 
     Function InputTextBox(Status As Boolean)
-        TextBox1.Enabled = Status
-        TextBox2.Enabled = Status
-        TextBox3.Enabled = Status
-        TextBox4.Enabled = Status
-        TextBox5.Enabled = Status
-        TextBox6.Enabled = Status
-        TextBox7.Enabled = Status
-        TextBox8.Enabled = Status
-        ComboBox1.Enabled = Status
+        txt_first_name.Enabled = Status
+        txt_last_name.Enabled = Status
         Datetimepicker1.Enabled = Status
+        txt_age.Enabled = Status
+        txt_height.Enabled = Status
+        txt_weight.Enabled = Status
+        cb_gender.Enabled = Status
+        txt_profession.Enabled = Status
+        txt_doctor.Enabled = Status
+        txt_nurse.Enabled = Status
         Return Status
     End Function
 
@@ -39,16 +40,16 @@
         Panel3.Hide()
     End Sub
     Sub DeleteTextBoxAll()
-        TextBox1.Text = ""
-        TextBox2.Text = ""
-        TextBox3.Text = ""
-        TextBox4.Text = ""
-        TextBox5.Text = ""
-        TextBox6.Text = ""
-        TextBox7.Text = ""
-        TextBox8.Text = ""
-        ComboBox1.Text = ""
-        DateTimePicker1.Text = ""
+        txt_first_name.Text = ""
+        txt_last_name.Text = ""
+        Datetimepicker1.Text = ""
+        txt_age.Text = ""
+        txt_height.Text = ""
+        txt_weight.Text = ""
+        cb_gender.Text = ""
+        txt_profession.Text = ""
+        txt_doctor.Text = ""
+        txt_nurse.Text = ""
     End Sub
 
     Private Sub btn_no_Click(sender As Object, e As EventArgs) Handles btn_no.Click

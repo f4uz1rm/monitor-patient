@@ -9,6 +9,7 @@
     Function ColorScreen(NameColor As String, ColorSelect As Color)
         Select Case NameColor
             Case "SPO2"
+                MonitoringDisplay.LabelStatusSpo2.ForeColor = ColorSelect
                 MonitoringDisplay.Label31.ForeColor = ColorSelect
                 MonitoringDisplay.Label32.ForeColor = ColorSelect
                 MonitoringDisplay.Chart2.Series("spo2").Color = ColorSelect
@@ -22,6 +23,8 @@
                 MonitoringDisplay.Label34.ForeColor = ColorSelect
                 MonitoringDisplay.bprm1.ForeColor = ColorSelect
             Case "ECG1"
+                MonitoringDisplay.LabelStatusLead1.ForeColor = ColorSelect
+                MonitoringDisplay.LabelStatusLead2.ForeColor = ColorSelect
                 MonitoringDisplay.Label25.ForeColor = ColorSelect
                 MonitoringDisplay.Label26.ForeColor = ColorSelect
                 MonitoringDisplay.Label30.ForeColor = ColorSelect
@@ -38,6 +41,7 @@
                 MonitoringDisplay.Label17.ForeColor = ColorSelect
                 MonitoringDisplay.sysdys.ForeColor = ColorSelect
             Case "RR"
+                MonitoringDisplay.LabelRrStatus.ForeColor = ColorSelect
                 MonitoringDisplay.Label16.ForeColor = ColorSelect
                 MonitoringDisplay.Label11.ForeColor = ColorSelect
                 MonitoringDisplay.Label10.ForeColor = ColorSelect

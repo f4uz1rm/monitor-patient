@@ -39,12 +39,6 @@ Partial Class MonitoringDisplay
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.TimerReceivedData = New System.Windows.Forms.Timer(Me.components)
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.ButtonBlue = New System.Windows.Forms.Button()
         Me.ButtonYellow = New System.Windows.Forms.Button()
         Me.ButtonRed = New System.Windows.Forms.Button()
@@ -57,6 +51,7 @@ Partial Class MonitoringDisplay
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.PanelSPO2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.LabelStatusSpo2 = New System.Windows.Forms.Label()
         Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -119,6 +114,13 @@ Partial Class MonitoringDisplay
         Me.TimerMin = New System.Windows.Forms.Timer(Me.components)
         Me.LabelPatient = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.LabelKode = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.PanelRR.SuspendLayout()
@@ -141,7 +143,7 @@ Partial Class MonitoringDisplay
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(818, 9)
+        Me.Label1.Location = New System.Drawing.Point(809, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(162, 24)
         Me.Label1.TabIndex = 6
@@ -156,7 +158,7 @@ Partial Class MonitoringDisplay
         Me.LabelPatientName.AutoSize = True
         Me.LabelPatientName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelPatientName.ForeColor = System.Drawing.Color.White
-        Me.LabelPatientName.Location = New System.Drawing.Point(12, 9)
+        Me.LabelPatientName.Location = New System.Drawing.Point(2, 9)
         Me.LabelPatientName.Name = "LabelPatientName"
         Me.LabelPatientName.Size = New System.Drawing.Size(152, 24)
         Me.LabelPatientName.TabIndex = 7
@@ -179,84 +181,6 @@ Partial Class MonitoringDisplay
         '
         Me.TimerReceivedData.Enabled = True
         Me.TimerReceivedData.Interval = 1
-        '
-        'Button6
-        '
-        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_nibp
-        Me.Button6.Location = New System.Drawing.Point(839, 709)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(170, 60)
-        Me.Button6.TabIndex = 5
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'Button5
-        '
-        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_patient_data
-        Me.Button5.Location = New System.Drawing.Point(676, 709)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(170, 60)
-        Me.Button5.TabIndex = 4
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_monitor_setting
-        Me.Button4.Location = New System.Drawing.Point(506, 709)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(170, 60)
-        Me.Button4.TabIndex = 3
-        Me.Button4.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_alarm_history
-        Me.Button3.Location = New System.Drawing.Point(337, 709)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(170, 60)
-        Me.Button3.TabIndex = 2
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_alarm_setup
-        Me.Button2.Location = New System.Drawing.Point(167, 709)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(170, 60)
-        Me.Button2.TabIndex = 1
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_home_activated
-        Me.Button1.Location = New System.Drawing.Point(-1, 709)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(170, 60)
-        Me.Button1.TabIndex = 0
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'ButtonBlue
         '
@@ -414,6 +338,7 @@ Partial Class MonitoringDisplay
         '
         'PanelSPO2
         '
+        Me.PanelSPO2.Controls.Add(Me.Label3)
         Me.PanelSPO2.Controls.Add(Me.LabelStatusSpo2)
         Me.PanelSPO2.Controls.Add(Me.Chart2)
         Me.PanelSPO2.Controls.Add(Me.Label32)
@@ -423,6 +348,19 @@ Partial Class MonitoringDisplay
         Me.PanelSPO2.Name = "PanelSPO2"
         Me.PanelSPO2.Size = New System.Drawing.Size(699, 156)
         Me.PanelSPO2.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label3.ForeColor = System.Drawing.Color.Lime
+        Me.Label3.Location = New System.Drawing.Point(92, 125)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(35, 17)
+        Me.Label3.TabIndex = 67
+        Me.Label3.Text = "bpm"
         '
         'LabelStatusSpo2
         '
@@ -1132,12 +1070,10 @@ Partial Class MonitoringDisplay
         '
         'TimerMax
         '
-        Me.TimerMax.Enabled = True
         Me.TimerMax.Interval = 1000
         '
         'TimerMin
         '
-        Me.TimerMin.Enabled = True
         Me.TimerMin.Interval = 1000
         '
         'LabelPatient
@@ -1145,11 +1081,11 @@ Partial Class MonitoringDisplay
         Me.LabelPatient.AutoSize = True
         Me.LabelPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelPatient.ForeColor = System.Drawing.Color.White
-        Me.LabelPatient.Location = New System.Drawing.Point(160, 9)
+        Me.LabelPatient.Location = New System.Drawing.Point(146, 9)
         Me.LabelPatient.Name = "LabelPatient"
-        Me.LabelPatient.Size = New System.Drawing.Size(116, 24)
+        Me.LabelPatient.Size = New System.Drawing.Size(31, 24)
         Me.LabelPatient.TabIndex = 67
-        Me.LabelPatient.Text = "Fauzi Rizky"
+        Me.LabelPatient.Text = "---"
         '
         'Label2
         '
@@ -1162,12 +1098,102 @@ Partial Class MonitoringDisplay
         Me.Label2.TabIndex = 68
         Me.Label2.Text = "|"
         '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_nibp
+        Me.Button6.Location = New System.Drawing.Point(839, 709)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(170, 60)
+        Me.Button6.TabIndex = 5
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_patient_data
+        Me.Button5.Location = New System.Drawing.Point(676, 709)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(170, 60)
+        Me.Button5.TabIndex = 4
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_monitor_setting
+        Me.Button4.Location = New System.Drawing.Point(506, 709)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(170, 60)
+        Me.Button4.TabIndex = 3
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_alarm_history
+        Me.Button3.Location = New System.Drawing.Point(337, 709)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(170, 60)
+        Me.Button3.TabIndex = 2
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_alarm_setup
+        Me.Button2.Location = New System.Drawing.Point(167, 709)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(170, 60)
+        Me.Button2.TabIndex = 1
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Image = Global.GMed_PM01.My.Resources.Resources.taskbar_home_activated
+        Me.Button1.Location = New System.Drawing.Point(-1, 709)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(170, 60)
+        Me.Button1.TabIndex = 0
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'LabelKode
+        '
+        Me.LabelKode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LabelKode.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelKode.ForeColor = System.Drawing.Color.White
+        Me.LabelKode.Location = New System.Drawing.Point(972, 13)
+        Me.LabelKode.Name = "LabelKode"
+        Me.LabelKode.Size = New System.Drawing.Size(40, 23)
+        Me.LabelKode.TabIndex = 71
+        Me.LabelKode.Text = "DP001"
+        '
         'MonitoringDisplay
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1024, 768)
+        Me.Controls.Add(Me.LabelKode)
         Me.Controls.Add(Me.LabelPatient)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LabelTypePatient)
@@ -1308,4 +1334,6 @@ Partial Class MonitoringDisplay
     Friend WithEvents TimerMin As Timer
     Friend WithEvents LabelPatient As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents LabelKode As Label
 End Class

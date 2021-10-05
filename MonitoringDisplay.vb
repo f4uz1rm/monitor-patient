@@ -3,6 +3,7 @@ Imports System.IO.Ports
 Imports System.Windows.Forms.DataVisualization.Charting
 Imports System.Xml
 Imports System.IO
+Imports System.Data.OleDb
 Public Class MonitoringDisplay
     Public comport As String
     Dim receivedData As String
@@ -28,7 +29,21 @@ Public Class MonitoringDisplay
         Button6.Hide()
     End Sub
 
+    Sub Tampil_Nama_Patient()
+        Try
+            Koneksi()
+            syntak = "SELECT*FROM Table_Patient where ID='DP001'"
+            cmd = New OleDbCommand(syntak, conn)
+            dr = cmd.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                LabelPatient.Text = dr.Item("First_Name") & " " & dr.Item("Last_Name")
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
     Private Sub MonitoringDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Tampil_Nama_Patient()
         'OpenMultiParameter()
         HideButtonNaigation()
 

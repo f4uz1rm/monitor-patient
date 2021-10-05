@@ -190,9 +190,9 @@ Partial Class Mdi
         Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 863)
+        Me.Panel2.Location = New System.Drawing.Point(0, 727)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1919, 61)
+        Me.Panel2.Size = New System.Drawing.Size(1386, 61)
         Me.Panel2.TabIndex = 2
         '
         'Button6
@@ -281,7 +281,7 @@ Partial Class Mdi
         Me.PanelAlarmSetup.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelAlarmSetup.Location = New System.Drawing.Point(0, 0)
         Me.PanelAlarmSetup.Name = "PanelAlarmSetup"
-        Me.PanelAlarmSetup.Size = New System.Drawing.Size(300, 863)
+        Me.PanelAlarmSetup.Size = New System.Drawing.Size(300, 727)
         Me.PanelAlarmSetup.TabIndex = 3
         '
         'Panel1
@@ -660,7 +660,7 @@ Partial Class Mdi
         Me.PanelAlarmSetupHistory.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelAlarmSetupHistory.Location = New System.Drawing.Point(300, 0)
         Me.PanelAlarmSetupHistory.Name = "PanelAlarmSetupHistory"
-        Me.PanelAlarmSetupHistory.Size = New System.Drawing.Size(300, 863)
+        Me.PanelAlarmSetupHistory.Size = New System.Drawing.Size(300, 727)
         Me.PanelAlarmSetupHistory.TabIndex = 4
         '
         'Panel10
@@ -700,7 +700,7 @@ Partial Class Mdi
         Me.PanelMonitorSetting.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelMonitorSetting.Location = New System.Drawing.Point(600, 0)
         Me.PanelMonitorSetting.Name = "PanelMonitorSetting"
-        Me.PanelMonitorSetting.Size = New System.Drawing.Size(300, 863)
+        Me.PanelMonitorSetting.Size = New System.Drawing.Size(300, 727)
         Me.PanelMonitorSetting.TabIndex = 5
         '
         'Panel3
@@ -1667,7 +1667,7 @@ Partial Class Mdi
         Me.PanelPatientData.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelPatientData.Location = New System.Drawing.Point(900, 0)
         Me.PanelPatientData.Name = "PanelPatientData"
-        Me.PanelPatientData.Size = New System.Drawing.Size(300, 863)
+        Me.PanelPatientData.Size = New System.Drawing.Size(300, 727)
         Me.PanelPatientData.TabIndex = 6
         '
         'btn_view_patient
@@ -1780,7 +1780,7 @@ Partial Class Mdi
         Me.PanelNIBP.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelNIBP.Location = New System.Drawing.Point(1200, 0)
         Me.PanelNIBP.Name = "PanelNIBP"
-        Me.PanelNIBP.Size = New System.Drawing.Size(300, 863)
+        Me.PanelNIBP.Size = New System.Drawing.Size(300, 727)
         Me.PanelNIBP.TabIndex = 7
         '
         'Panel16
@@ -2003,7 +2003,7 @@ Partial Class Mdi
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1919, 924)
+        Me.ClientSize = New System.Drawing.Size(1386, 788)
         Me.Controls.Add(Me.PanelNIBP)
         Me.Controls.Add(Me.PanelPatientData)
         Me.Controls.Add(Me.PanelMonitorSetting)
