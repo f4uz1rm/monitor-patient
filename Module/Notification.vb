@@ -6,38 +6,40 @@
             MonitoringDisplay.ButtonYellow.Visible = False
             RedButton()
 
-        ElseIf ValueStatus > 120 Then
+        ElseIf ValueStatus >= 120 Then
             MonitoringDisplay.ButtonYellow.Text = NameStatus
             MonitoringDisplay.ButtonRed.Visible = False
             YellowButton()
 
         ElseIf ValueStatus < 120 Then
-            MonitoringDisplay.ButtonYellow.Text = NameStatus
             MonitoringDisplay.ButtonRed.Visible = False
             MonitoringDisplay.ButtonYellow.Visible = False
-            YellowButton()
-
         End If
         'Send Alarm 
         AlarmHistory.DataGridView1.Rows.Add(NameStatus, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH : mm"))
         AlarmHistory.DataGridView1.FirstDisplayedScrollingRowIndex = AlarmHistory.DataGridView1.RowCount - 1
         Return ValueStatus
+
     End Function
     Sub BlueButton()
         If MonitoringDisplay.ButtonBlue.Visible = True Then
             MonitoringDisplay.ButtonBlue.Visible = False
             StatusActive = False
+            AudioBlueAlarm()
         ElseIf MonitoringDisplay.ButtonBlue.Visible = False Then
             MonitoringDisplay.ButtonBlue.Visible = True
             StatusActive = True
         End If
-        'Application.DoEvents()
+        Application.DoEvents()
     End Sub
     Sub YellowButton()
         If MonitoringDisplay.ButtonYellow.Visible = True Then
+            LedOffYellow()
             MonitoringDisplay.ButtonYellow.Visible = False
             StatusActive = False
+            AudioYellowAlarm()
         ElseIf MonitoringDisplay.ButtonYellow.Visible = False Then
+            LedOnYellow()
             MonitoringDisplay.ButtonYellow.Visible = True
             StatusActive = True
         End If
@@ -45,11 +47,12 @@
     End Sub
     Sub RedButton()
         If MonitoringDisplay.ButtonRed.Visible = True Then
-            'LedOffRed()
+            LedOffRed()
             MonitoringDisplay.ButtonRed.Visible = False
+            AudioRedAlarm()
             StatusActive = False
         ElseIf MonitoringDisplay.ButtonRed.Visible = False Then
-            'LedOnRed()
+            LedOnRed()
             MonitoringDisplay.ButtonRed.Visible = True
             StatusActive = True
         End If
@@ -59,9 +62,11 @@
         Select Case value
             Case > 120
                 MonitoringDisplay.ButtonYellow.Text = "ECG HIGH"
+                AudioYellowAlarm()
             Case > 140
                 MonitoringDisplay.ButtonRed.Text = "ECG HIGH"
                 MonitoringDisplay.ecghr.ForeColor = Color.Red
+                AudioRedAlarm()
         End Select
         Return {value, name}
     End Function
@@ -86,7 +91,6 @@
                 MonitoringDisplay.ButtonYellow.Text = "RR HIGH"
             Case Else
                 MonitoringDisplay.ecgrr.ForeColor = Color.Lime
-
         End Select
         Return {value, name}
     End Function

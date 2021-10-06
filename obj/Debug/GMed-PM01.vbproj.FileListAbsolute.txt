@@ -71,7 +71,6 @@ C:\Users\KQ\Documents\GitHub\monitor-patient\bin\Debug\GMed-PM01.exe
 C:\Users\KQ\Documents\GitHub\monitor-patient\bin\Debug\GMed-PM01.pdb
 C:\Users\KQ\Documents\GitHub\monitor-patient\bin\Debug\GMed-PM01.xml
 C:\Users\KQ\Documents\GitHub\monitor-patient\bin\Debug\Bunifu_UI_v1.5.3.dll
-C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.vbprojResolveAssemblyReference.cache
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.AddPatient.resources
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.AlarmHistory.resources
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.DefaultSetup.resources

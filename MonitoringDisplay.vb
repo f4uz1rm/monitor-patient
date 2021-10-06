@@ -63,6 +63,7 @@ Public Class MonitoringDisplay
         'Timer3.Enabled = False
         'Timer4.Enabled = False
         'Timer5.Enabled = False
+        COM5Connecting()
     End Sub
 
     Sub OpenMultiParameter()
@@ -666,14 +667,13 @@ Public Class MonitoringDisplay
     Dim ECGStatus As String = "txt\statusEcg.txt"
     Dim SetNormal As Integer = 90
     'Location
-    Dim PathLoc As String = "C:\Users\KQ\Documents\GitHub\Multi_Para_Monitor\Debug\"
+    Dim strComputerName As String = Environment.UserName.ToString()
+    Dim PathLoc As String = "C:\Users\" & strComputerName & "\Documents\GitHub\Multi_Para_Monitor\Debug\"
     Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
         'running ecg
         Try
             'SPO
-
         Catch ex As Exception
-
         End Try
     End Sub
     Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles TimerReceivedData.Tick
@@ -854,7 +854,7 @@ Public Class MonitoringDisplay
     Dim StatusActive As Boolean
     Dim NameStatus As String = "ECG HIGH"
     Private Sub TimerNotification_Tick(sender As Object, e As EventArgs) Handles TimerNotification.Tick
-        NotificationStatusECG(MyValue.Next(110, 180), NameStatus)
+        NotificationStatusECG(ecghr.Text, NameStatus)
     End Sub
     Private Sub TimerCOM3_Tick(sender As Object, e As EventArgs) Handles TimerCOM3.Tick
         COM3Connecting()
@@ -874,8 +874,7 @@ Public Class MonitoringDisplay
         SerialPort1.Close()
         TimerCOM3.Stop()
         MsgBox("Disconnection Success COM 3")
-        TimerCOM5.Start()
-        MsgBox("Connection Success COM 5")
+
     End Sub
 
 
@@ -911,4 +910,5 @@ Public Class MonitoringDisplay
             ChartActive("spo2", bprm1.Text, Chart2)
         End If
     End Sub
+
 End Class
