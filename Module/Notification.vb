@@ -77,12 +77,12 @@
     End Sub
     Sub YellowButton()
         If MonitoringDisplay.ButtonYellow.Visible = True Then
-            'LedOffYellow()
+            LedOffYellow()
             StatusActive = False
             MonitoringDisplay.ButtonYellow.Visible = False
             StopBackgroundSound()
         ElseIf MonitoringDisplay.ButtonYellow.Visible = False
-            'LedOnYellow()
+            LedOnYellow()
             StatusActive = True
             MonitoringDisplay.ButtonYellow.Visible = True
 
@@ -92,12 +92,12 @@
     End Sub
     Sub RedButton()
         If MonitoringDisplay.ButtonRed.Visible = True Then
-            ' LedOffRed()
+            LedOffRed()
             StatusActive = False
             MonitoringDisplay.ButtonRed.Visible = False
 
         ElseIf MonitoringDisplay.ButtonRed.Visible = False
-            'LedOnRed()
+            LedOnRed()
             StatusActive = True
             MonitoringDisplay.ButtonRed.Visible = True
             AudioRedAlarm()
