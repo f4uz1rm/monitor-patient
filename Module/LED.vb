@@ -2,7 +2,8 @@
     Dim LED As String
     Sub KirimLed()
         Try
-            MonitoringDisplay.SerialPort1.Write(LED & vbCrLf)
+            MonitoringDisplay.SerialPort1.Write(LED)
+            ' & vbCrLf
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
