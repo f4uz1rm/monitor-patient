@@ -38,8 +38,10 @@ Partial Class Mdi
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btn_soundlevel = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelLampBrightness = New System.Windows.Forms.Panel()
-        Me.BunifuTrackbar1 = New Bunifu.Framework.UI.BunifuTrackbar()
-        Me.LabelBrightness = New System.Windows.Forms.Label()
+        Me.btn_default_led = New System.Windows.Forms.Button()
+        Me.TrackbarBrightLed = New Bunifu.Framework.UI.BunifuTrackbar()
+        Me.btn_save_bright_led = New System.Windows.Forms.Button()
+        Me.LabelBrightnessLed = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.btn_lampbrightness = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelAlarmLimits = New System.Windows.Forms.Panel()
@@ -304,7 +306,7 @@ Partial Class Mdi
         Me.PanelSoundLevel.Controls.Add(Me.ButtonDown)
         Me.PanelSoundLevel.Controls.Add(Me.Label16)
         Me.PanelSoundLevel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelSoundLevel.Location = New System.Drawing.Point(0, 584)
+        Me.PanelSoundLevel.Location = New System.Drawing.Point(0, 635)
         Me.PanelSoundLevel.Name = "PanelSoundLevel"
         Me.PanelSoundLevel.Size = New System.Drawing.Size(300, 114)
         Me.PanelSoundLevel.TabIndex = 5
@@ -358,7 +360,7 @@ Partial Class Mdi
         Me.btn_soundlevel.IconVisible = True
         Me.btn_soundlevel.IconZoom = 50.0R
         Me.btn_soundlevel.IsTab = False
-        Me.btn_soundlevel.Location = New System.Drawing.Point(0, 536)
+        Me.btn_soundlevel.Location = New System.Drawing.Point(0, 587)
         Me.btn_soundlevel.Name = "btn_soundlevel"
         Me.btn_soundlevel.Normalcolor = System.Drawing.Color.Transparent
         Me.btn_soundlevel.OnHovercolor = System.Drawing.Color.DarkGray
@@ -373,38 +375,64 @@ Partial Class Mdi
         '
         'PanelLampBrightness
         '
-        Me.PanelLampBrightness.Controls.Add(Me.BunifuTrackbar1)
-        Me.PanelLampBrightness.Controls.Add(Me.LabelBrightness)
+        Me.PanelLampBrightness.Controls.Add(Me.btn_default_led)
+        Me.PanelLampBrightness.Controls.Add(Me.TrackbarBrightLed)
+        Me.PanelLampBrightness.Controls.Add(Me.btn_save_bright_led)
+        Me.PanelLampBrightness.Controls.Add(Me.LabelBrightnessLed)
         Me.PanelLampBrightness.Controls.Add(Me.Label20)
         Me.PanelLampBrightness.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelLampBrightness.Location = New System.Drawing.Point(0, 446)
         Me.PanelLampBrightness.Name = "PanelLampBrightness"
-        Me.PanelLampBrightness.Size = New System.Drawing.Size(300, 90)
+        Me.PanelLampBrightness.Size = New System.Drawing.Size(300, 141)
         Me.PanelLampBrightness.TabIndex = 3
         '
-        'BunifuTrackbar1
+        'btn_default_led
         '
-        Me.BunifuTrackbar1.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTrackbar1.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.BunifuTrackbar1.BorderRadius = 10
-        Me.BunifuTrackbar1.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.BunifuTrackbar1.Location = New System.Drawing.Point(58, 42)
-        Me.BunifuTrackbar1.MaximumValue = 100
-        Me.BunifuTrackbar1.MinimumValue = 0
-        Me.BunifuTrackbar1.Name = "BunifuTrackbar1"
-        Me.BunifuTrackbar1.Size = New System.Drawing.Size(151, 30)
-        Me.BunifuTrackbar1.SliderRadius = 50
-        Me.BunifuTrackbar1.TabIndex = 12
-        Me.BunifuTrackbar1.Value = 0
+        Me.btn_default_led.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_default_led.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_default_led.ForeColor = System.Drawing.Color.White
+        Me.btn_default_led.Location = New System.Drawing.Point(46, 78)
+        Me.btn_default_led.Name = "btn_default_led"
+        Me.btn_default_led.Size = New System.Drawing.Size(75, 23)
+        Me.btn_default_led.TabIndex = 16
+        Me.btn_default_led.Text = "Default"
+        Me.btn_default_led.UseVisualStyleBackColor = False
         '
-        'LabelBrightness
+        'TrackbarBrightLed
         '
-        Me.LabelBrightness.AutoSize = True
-        Me.LabelBrightness.Location = New System.Drawing.Point(215, 50)
-        Me.LabelBrightness.Name = "LabelBrightness"
-        Me.LabelBrightness.Size = New System.Drawing.Size(13, 13)
-        Me.LabelBrightness.TabIndex = 3
-        Me.LabelBrightness.Text = "0"
+        Me.TrackbarBrightLed.BackColor = System.Drawing.Color.Transparent
+        Me.TrackbarBrightLed.BackgroudColor = System.Drawing.Color.DarkGray
+        Me.TrackbarBrightLed.BorderRadius = 10
+        Me.TrackbarBrightLed.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.TrackbarBrightLed.Location = New System.Drawing.Point(58, 42)
+        Me.TrackbarBrightLed.MaximumValue = 100
+        Me.TrackbarBrightLed.MinimumValue = 0
+        Me.TrackbarBrightLed.Name = "TrackbarBrightLed"
+        Me.TrackbarBrightLed.Size = New System.Drawing.Size(151, 30)
+        Me.TrackbarBrightLed.SliderRadius = 50
+        Me.TrackbarBrightLed.TabIndex = 12
+        Me.TrackbarBrightLed.Value = 0
+        '
+        'btn_save_bright_led
+        '
+        Me.btn_save_bright_led.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_save_bright_led.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_save_bright_led.ForeColor = System.Drawing.Color.White
+        Me.btn_save_bright_led.Location = New System.Drawing.Point(134, 78)
+        Me.btn_save_bright_led.Name = "btn_save_bright_led"
+        Me.btn_save_bright_led.Size = New System.Drawing.Size(75, 23)
+        Me.btn_save_bright_led.TabIndex = 15
+        Me.btn_save_bright_led.Text = "Save"
+        Me.btn_save_bright_led.UseVisualStyleBackColor = False
+        '
+        'LabelBrightnessLed
+        '
+        Me.LabelBrightnessLed.AutoSize = True
+        Me.LabelBrightnessLed.Location = New System.Drawing.Point(215, 50)
+        Me.LabelBrightnessLed.Name = "LabelBrightnessLed"
+        Me.LabelBrightnessLed.Size = New System.Drawing.Size(13, 13)
+        Me.LabelBrightnessLed.TabIndex = 3
+        Me.LabelBrightnessLed.Text = "0"
         '
         'Label20
         '
@@ -2175,9 +2203,9 @@ Partial Class Mdi
     Friend WithEvents btn_ecg_white As Button
     Friend WithEvents ButtonUP As Button
     Friend WithEvents ButtonDown As Button
-    Friend WithEvents LabelBrightness As Label
+    Friend WithEvents LabelBrightnessLed As Label
     Friend WithEvents LabelScreenBrightness As Label
-    Friend WithEvents BunifuTrackbar1 As Bunifu.Framework.UI.BunifuTrackbar
+    Friend WithEvents TrackbarBrightLed As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents BunifuTrackbarScreenBrightness As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents Label34 As Label
     Friend WithEvents Label10 As Label
@@ -2190,4 +2218,6 @@ Partial Class Mdi
     Friend WithEvents BunifuTrackbar7 As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents BunifuTrackbar6 As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents BunifuTrackbar5 As Bunifu.Framework.UI.BunifuTrackbar
+    Friend WithEvents btn_save_bright_led As Button
+    Friend WithEvents btn_default_led As Button
 End Class

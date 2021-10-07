@@ -19,6 +19,7 @@ Public Class Mdi
         DefaultSetup.Close()
     End Sub
     Sub PanelHideAll()
+        LedOffYellow()
         PanelAlarmSetup.Hide()
         PanelAlarmSetupHistory.Hide()
         PanelMonitorSetting.Hide()
@@ -104,6 +105,7 @@ Public Class Mdi
     End Sub
 
     Private Sub btn_lampbrightness_Click_1(sender As Object, e As EventArgs) Handles btn_lampbrightness.Click
+        LedOnYellow()
         Panel_Setting.PanelAlarmHideAll()
         PanelLampBrightness.Show()
     End Sub
@@ -418,5 +420,19 @@ Public Class Mdi
             instance.InvokeMethod("WmiSetBrightness", args)
         Next
         LabelScreenBrightness.Text = BunifuTrackbarScreenBrightness.Value
+    End Sub
+    Dim LedBrightness As String
+    Private Sub TrackbarBrightLed_ValueChanged(sender As Object, e As EventArgs) Handles TrackbarBrightLed.ValueChanged
+        LabelBrightnessLed.Text = TrackbarBrightLed.Value
+    End Sub
+
+    Private Sub btn_save_bright_led_Click(sender As Object, e As EventArgs) Handles btn_save_bright_led.Click
+        LedBrightness = LabelBrightnessLed.Text
+        KirimLed(LedBrightness)
+    End Sub
+
+    Private Sub btn_default_led_Click(sender As Object, e As EventArgs) Handles btn_default_led.Click
+        LedBrightness = 0
+        KirimLed(LedBrightness)
     End Sub
 End Class
