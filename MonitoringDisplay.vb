@@ -48,7 +48,9 @@ Public Class MonitoringDisplay
         HideButtonNaigation()
 
         'Connection - COM 5
-        'COM5Connecting()
+        COM5Connecting()
+
+
         'Batas
         Button4.Focus()
         Timer1.Enabled = True
@@ -63,7 +65,6 @@ Public Class MonitoringDisplay
         'Timer3.Enabled = False
         'Timer4.Enabled = False
         'Timer5.Enabled = False
-        COM5Connecting()
     End Sub
 
     Sub OpenMultiParameter()
@@ -718,6 +719,7 @@ Public Class MonitoringDisplay
 
         End Try
     End Sub
+
     Sub FilterSet()
         Select Case muispo2.Text
             Case "127"
@@ -825,7 +827,7 @@ Public Class MonitoringDisplay
     Dim ValueChartSeries As String
     Dim ChartValue As Chart
 
-    Private Sub TimerRandom_Tick(sender As Object, e As EventArgs) Handles TimerRandom.Tick
+    Private Sub TimerRandom_Tick(sender As Object, e As EventArgs)
         ecghr.Text = MyValue.Next(110, 180)
         muispo2.Text = MyValue.Next(110, 180)
         muitd.Text = MyValue.Next(10, 70)
@@ -851,11 +853,8 @@ Public Class MonitoringDisplay
     Private Sub TimerBlue_Tick(sender As Object, e As EventArgs) Handles TimerBlue.Tick
         BlueButton()
     End Sub
-    Dim StatusActive As Boolean
-    Dim NameStatus As String = "ECG HIGH"
-    Private Sub TimerNotification_Tick(sender As Object, e As EventArgs) Handles TimerNotification.Tick
-        NotificationStatusECG(ecghr.Text, NameStatus)
-    End Sub
+
+
     Private Sub TimerCOM3_Tick(sender As Object, e As EventArgs) Handles TimerCOM3.Tick
         COM3Connecting()
     End Sub
@@ -910,5 +909,34 @@ Public Class MonitoringDisplay
             ChartActive("spo2", bprm1.Text, Chart2)
         End If
     End Sub
+    Dim StatusActive As Boolean
+    Dim NameStatusECG As String = "ECG HIGH"
+    Dim NameStatusSPO2 As String = "SPO2 LOW"
+    Dim NameStatusRR As String = "RR"
+    Dim EcgValue As Integer
+    Dim RRValue As Integer
+    Dim Spo2Value As Integer
+    Private Sub TimerNotification_Tick(sender As Object, e As EventArgs) Handles TimerNotification.Tick
+        If ecghr.Text = "--" Then
+            EcgValue = 100
+        Else
+            EcgValue = ecghr.Text
+            NotificationStatusECG(EcgValue, NameStatusECG)
+        End If
 
+        If muispo2.Text = 127 Then
+            muispo2.Text = "--"
+            Spo2Value = 127
+        Else
+            Spo2Value = muispo2.Text
+            NotificationStatusSPO2(Spo2Value, NameStatusSPO2)
+        End If
+
+        If ecgrr.Text = "--" Then
+            RRValue = 20
+        Else
+            RRValue = ecgrr.Text
+            NotificationStatusRR(RRValue)
+        End If
+    End Sub
 End Class

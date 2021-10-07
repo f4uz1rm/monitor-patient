@@ -5,15 +5,35 @@
             MonitoringDisplay.ButtonRed.Text = NameStatus
             MonitoringDisplay.ButtonYellow.Visible = False
             RedButton()
-
-        ElseIf ValueStatus >= 120 Then
+        ElseIf ValueStatus > 120
             MonitoringDisplay.ButtonYellow.Text = NameStatus
             MonitoringDisplay.ButtonRed.Visible = False
             YellowButton()
-
-        ElseIf ValueStatus < 120 Then
+        ElseIf ValueStatus < 120
             MonitoringDisplay.ButtonRed.Visible = False
             MonitoringDisplay.ButtonYellow.Visible = False
+            StopBackgroundSound()
+        End If
+        'Send Alarm 
+        AlarmHistory.DataGridView1.Rows.Add(NameStatus, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH : mm"))
+        AlarmHistory.DataGridView1.FirstDisplayedScrollingRowIndex = AlarmHistory.DataGridView1.RowCount - 1
+        Return ValueStatus
+    End Function
+    Function NotificationStatusSPO2(ValueStatus As Integer, NameStatus As String)
+        If ValueStatus < 60 Then
+            MonitoringDisplay.ButtonRed.Text = NameStatus
+            MonitoringDisplay.ButtonYellow.Visible = False
+            RedButton()
+        ElseIf ValueStatus < 95
+            MonitoringDisplay.ButtonYellow.Text = NameStatus
+            MonitoringDisplay.ButtonRed.Visible = False
+            YellowButton()
+        ElseIf ValueStatus > 95
+            MonitoringDisplay.ButtonRed.Visible = False
+            MonitoringDisplay.ButtonYellow.Visible = False
+            If MonitoringDisplay.LabelStatusSpo2.Text = "Module working properly" Then
+                AudioHBAlarm()
+            End If
         End If
         'Send Alarm 
         AlarmHistory.DataGridView1.Rows.Add(NameStatus, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH : mm"))
@@ -21,40 +41,67 @@
         Return ValueStatus
 
     End Function
+    Function NotificationStatusRR(ValueStatus As Integer)
+        Dim StatusName As String
+        If ValueStatus > 40 Then
+            StatusName = "RR HIGH"
+            MonitoringDisplay.ButtonRed.Text = StatusName
+            MonitoringDisplay.ButtonYellow.Visible = False
+            RedButton()
+        ElseIf ValueStatus < 5
+            StatusName = "RR LOW"
+            MonitoringDisplay.ButtonYellow.Text = StatusName
+            MonitoringDisplay.ButtonRed.Visible = False
+            YellowButton()
+        Else
+            MonitoringDisplay.ButtonRed.Visible = False
+            MonitoringDisplay.ButtonYellow.Visible = False
+        End If
+        'Send Alarm 
+        AlarmHistory.DataGridView1.Rows.Add(StatusName, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH : mm"))
+        AlarmHistory.DataGridView1.FirstDisplayedScrollingRowIndex = AlarmHistory.DataGridView1.RowCount - 1
+        Return ValueStatus
+
+    End Function
+
     Sub BlueButton()
         If MonitoringDisplay.ButtonBlue.Visible = True Then
             MonitoringDisplay.ButtonBlue.Visible = False
             StatusActive = False
-            AudioBlueAlarm()
-        ElseIf MonitoringDisplay.ButtonBlue.Visible = False Then
+        ElseIf MonitoringDisplay.ButtonBlue.Visible = False
             MonitoringDisplay.ButtonBlue.Visible = True
             StatusActive = True
+            AudioBlueAlarm()
         End If
         Application.DoEvents()
     End Sub
     Sub YellowButton()
         If MonitoringDisplay.ButtonYellow.Visible = True Then
-            LedOffYellow()
-            MonitoringDisplay.ButtonYellow.Visible = False
+            'LedOffYellow()
             StatusActive = False
-            AudioYellowAlarm()
-        ElseIf MonitoringDisplay.ButtonYellow.Visible = False Then
-            LedOnYellow()
-            MonitoringDisplay.ButtonYellow.Visible = True
+            MonitoringDisplay.ButtonYellow.Visible = False
+            StopBackgroundSound()
+        ElseIf MonitoringDisplay.ButtonYellow.Visible = False
+            'LedOnYellow()
             StatusActive = True
+            MonitoringDisplay.ButtonYellow.Visible = True
+
+            AudioYellowAlarm()
         End If
         Application.DoEvents()
     End Sub
     Sub RedButton()
         If MonitoringDisplay.ButtonRed.Visible = True Then
-            LedOffRed()
-            MonitoringDisplay.ButtonRed.Visible = False
-            AudioRedAlarm()
+            ' LedOffRed()
             StatusActive = False
-        ElseIf MonitoringDisplay.ButtonRed.Visible = False Then
-            LedOnRed()
-            MonitoringDisplay.ButtonRed.Visible = True
+            MonitoringDisplay.ButtonRed.Visible = False
+
+        ElseIf MonitoringDisplay.ButtonRed.Visible = False
+            'LedOnRed()
             StatusActive = True
+            MonitoringDisplay.ButtonRed.Visible = True
+            AudioRedAlarm()
+
         End If
         Application.DoEvents()
     End Sub

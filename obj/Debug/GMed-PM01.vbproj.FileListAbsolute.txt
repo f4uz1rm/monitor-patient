@@ -85,3 +85,4 @@ C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.vbproj.Generate
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.exe.manifest
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.application
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.TEST_DATABASE.resources
+C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.vbprojResolveAssemblyReference.cache

@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GMed-PM01.exe" size="5825968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GMed-PM01.exe" size="5826480">
       <assemblyIdentity name="GMed-PM01" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5+VziraefEo81pbgzBR688NRo1B8+QgoLDNl0SrImsA=</dsig:DigestValue>
+        <dsig:DigestValue>wsLIY04D9FtRMZ3gfLtXPzv43xN3mzoPs1SEYsltkjY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

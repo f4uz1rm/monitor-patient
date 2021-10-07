@@ -404,17 +404,6 @@ Public Class Mdi
     Private Sub ButtonDown_Click(sender As Object, e As EventArgs) Handles ButtonDown.Click
         SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
     End Sub
-
-
-    Private Sub btn_stop_manual_Click(sender As Object, e As EventArgs) Handles btn_stop_manual.Click
-        MonitoringDisplay.TimerRandom.Stop()
-        MonitoringDisplay.sysdys.Text = " --/ --"
-    End Sub
-
-    Private Sub btn_start_manual_Click(sender As Object, e As EventArgs) Handles btn_start_manual.Click
-        MonitoringDisplay.TimerRandom.Start()
-    End Sub
-
     Private Sub BunifuTrackbarScreenBrightness_ValueChanged(sender As Object, e As EventArgs) Handles BunifuTrackbarScreenBrightness.ValueChanged
         Dim mclass As New ManagementClass("WmiMonitorBrightnessMethods")
         mclass.Scope = New ManagementScope("\\.\root\wmi")
