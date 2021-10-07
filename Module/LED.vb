@@ -5,7 +5,7 @@
             MonitoringDisplay.SerialPort1.Write(LedValue & vbCrLf)
             ' & vbCrLf
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            'MsgBox(ex.ToString)
         End Try
     End Function
     'RED
