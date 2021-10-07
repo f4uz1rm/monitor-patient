@@ -77,16 +77,15 @@
     End Sub
     Sub YellowButton()
         If MonitoringDisplay.ButtonYellow.Visible = True Then
-            LedOffYellow()
             StatusActive = False
             MonitoringDisplay.ButtonYellow.Visible = False
             StopBackgroundSound()
+            LedOffYellow()
         ElseIf MonitoringDisplay.ButtonYellow.Visible = False
-            LedOnYellow()
             StatusActive = True
             MonitoringDisplay.ButtonYellow.Visible = True
-
             AudioYellowAlarm()
+            LedOnYellow()
         End If
         Application.DoEvents()
     End Sub
@@ -95,7 +94,6 @@
             LedOffRed()
             StatusActive = False
             MonitoringDisplay.ButtonRed.Visible = False
-
         ElseIf MonitoringDisplay.ButtonRed.Visible = False
             LedOnRed()
             StatusActive = True
