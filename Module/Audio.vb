@@ -1,4 +1,5 @@
 ﻿Imports System.Media
+Imports System.IO
 Module Audio
     Sub AudioHBAlarm()
         My.Computer.Audio.Play(My.Resources.fix_HB_sound, AudioPlayMode.Background)

@@ -13,7 +13,6 @@
         p.AddArc(New Rectangle(0, Me.Height - 40, 40, 40), 90, 90)
         p.CloseFigure()
         Me.Region = New Region(p)
-        Tampil_DataGrid()
         Tampil_Texbox()
     End Sub
 
@@ -30,7 +29,6 @@
     End Sub
     Private Sub Button_Edit_Click(sender As Object, e As EventArgs) Handles Button_Edit.Click
         Update_Data_Patient()
-        Tampil_DataGrid()
     End Sub
 
     Private Sub Datetimepicker1_onValueChanged(sender As Object, e As EventArgs) Handles Datetimepicker1.onValueChanged

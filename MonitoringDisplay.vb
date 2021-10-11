@@ -4,6 +4,7 @@ Imports System.Windows.Forms.DataVisualization.Charting
 Imports System.Xml
 Imports System.IO
 Imports System.Data.OleDb
+Imports System.Media
 Public Class MonitoringDisplay
     Public comport As String
     Dim receivedData As String
@@ -48,7 +49,7 @@ Public Class MonitoringDisplay
         HideButtonNaigation()
 
         'Connection - COM 5
-        COM5Connecting()
+        'COM5Connecting()
 
 
         'Batas
@@ -667,9 +668,7 @@ Public Class MonitoringDisplay
     'ECG Status
     Dim ECGStatus As String = "txt\statusEcg.txt"
     Dim SetNormal As Integer = 90
-    'Location
-    Dim strComputerName As String = Environment.UserName.ToString()
-    Dim PathLoc As String = "C:\Users\" & strComputerName & "\Documents\GitHub\Multi_Para_Monitor\Debug\"
+
     Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
         'running ecg
         Try

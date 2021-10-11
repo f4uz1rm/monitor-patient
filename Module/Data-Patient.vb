@@ -20,15 +20,7 @@ Module Data_Patient
             conn.Close()
         End If
         conn.Close()
-        Tampil_DataGrid()
-    End Sub
-    Sub Tampil_DataGrid()
-        Koneksi()
-        da = New OleDbDataAdapter("SELECT * FROM Table_Patient", conn)
-        ds = New DataSet
-        ds.Clear()
-        da.Fill(ds, "Table_Patient")
-        AddPatient.DataGridView1.DataSource = (ds.Tables("Table_Patient"))
+
     End Sub
     Sub Tampil_Texbox()
         Try

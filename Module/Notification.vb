@@ -4,10 +4,12 @@
         If ValueStatus > 140 Then
             MonitoringDisplay.ButtonRed.Text = NameStatus
             MonitoringDisplay.ButtonYellow.Visible = False
+            SendNotifFormAlarm(NameStatus)
             RedButton()
         ElseIf ValueStatus > 120
             MonitoringDisplay.ButtonYellow.Text = NameStatus
             MonitoringDisplay.ButtonRed.Visible = False
+            SendNotifFormAlarm(NameStatus)
             YellowButton()
         ElseIf ValueStatus < 120
             MonitoringDisplay.ButtonRed.Visible = False
@@ -15,18 +17,23 @@
             StopBackgroundSound()
         End If
         'Send Alarm 
+        Return ValueStatus
+    End Function
+    Function SendNotifFormAlarm(NameStatus As String)
         AlarmHistory.DataGridView1.Rows.Add(NameStatus, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH : mm"))
         AlarmHistory.DataGridView1.FirstDisplayedScrollingRowIndex = AlarmHistory.DataGridView1.RowCount - 1
-        Return ValueStatus
+        Return NameStatus
     End Function
     Function NotificationStatusSPO2(ValueStatus As Integer, NameStatus As String)
         If ValueStatus < 60 Then
             MonitoringDisplay.ButtonRed.Text = NameStatus
             MonitoringDisplay.ButtonYellow.Visible = False
+            SendNotifFormAlarm(NameStatus)
             RedButton()
         ElseIf ValueStatus < 95
             MonitoringDisplay.ButtonYellow.Text = NameStatus
             MonitoringDisplay.ButtonRed.Visible = False
+            SendNotifFormAlarm(NameStatus)
             YellowButton()
         ElseIf ValueStatus > 95
             MonitoringDisplay.ButtonRed.Visible = False
@@ -36,8 +43,6 @@
             End If
         End If
         'Send Alarm 
-        AlarmHistory.DataGridView1.Rows.Add(NameStatus, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH : mm"))
-        AlarmHistory.DataGridView1.FirstDisplayedScrollingRowIndex = AlarmHistory.DataGridView1.RowCount - 1
         Return ValueStatus
 
     End Function
@@ -47,19 +52,19 @@
             StatusName = "RR HIGH"
             MonitoringDisplay.ButtonRed.Text = StatusName
             MonitoringDisplay.ButtonYellow.Visible = False
+            SendNotifFormAlarm(StatusName)
             RedButton()
         ElseIf ValueStatus < 5
             StatusName = "RR LOW"
             MonitoringDisplay.ButtonYellow.Text = StatusName
             MonitoringDisplay.ButtonRed.Visible = False
+            SendNotifFormAlarm(StatusName)
             YellowButton()
         Else
             MonitoringDisplay.ButtonRed.Visible = False
             MonitoringDisplay.ButtonYellow.Visible = False
         End If
         'Send Alarm 
-        AlarmHistory.DataGridView1.Rows.Add(StatusName, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH : mm"))
-        AlarmHistory.DataGridView1.FirstDisplayedScrollingRowIndex = AlarmHistory.DataGridView1.RowCount - 1
         Return ValueStatus
 
     End Function

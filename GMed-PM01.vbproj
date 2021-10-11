@@ -82,6 +82,11 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\..\..\project vb\Bunifu_UI_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio, Version=1.7.2.19, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Downloads\naudio\sourceCode\naudio\NAudio\obj\Debug\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -143,6 +148,7 @@
     <Compile Include="Module\Navigation.vb" />
     <Compile Include="Module\Notification.vb" />
     <Compile Include="Module\Panel-Setting.vb" />
+    <Compile Include="Module\Path.vb" />
     <Compile Include="ParameterSetup.Designer.vb">
       <DependentUpon>ParameterSetup.vb</DependentUpon>
     </Compile>
@@ -408,6 +414,8 @@
   <ItemGroup>
     <None Include="Resources\fix-yellow-alarm.wav" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -73,12 +73,14 @@ Partial Class Mdi
         Me.btn_screenbrightness = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btn_parametersetup = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelSound = New System.Windows.Forms.Panel()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.BunifuTrackbar4 = New Bunifu.Framework.UI.BunifuTrackbar()
-        Me.BunifuTrackbar3 = New Bunifu.Framework.UI.BunifuTrackbar()
-        Me.BunifuTrackbar2 = New Bunifu.Framework.UI.BunifuTrackbar()
+        Me.btn_min_hb = New System.Windows.Forms.Button()
+        Me.tbn_plus_hb = New System.Windows.Forms.Button()
+        Me.btn_min_alarm = New System.Windows.Forms.Button()
+        Me.btn_plus_alarm = New System.Windows.Forms.Button()
+        Me.LabelSoundTochscreen = New System.Windows.Forms.Label()
+        Me.LabelSoundHeartBeat = New System.Windows.Forms.Label()
+        Me.LabelSoundAlarm = New System.Windows.Forms.Label()
+        Me.Trackbar_Sound_Tochscreen = New Bunifu.Framework.UI.BunifuTrackbar()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -900,12 +902,14 @@ Partial Class Mdi
         '
         'PanelSound
         '
-        Me.PanelSound.Controls.Add(Me.Label34)
-        Me.PanelSound.Controls.Add(Me.Label10)
-        Me.PanelSound.Controls.Add(Me.Label1)
-        Me.PanelSound.Controls.Add(Me.BunifuTrackbar4)
-        Me.PanelSound.Controls.Add(Me.BunifuTrackbar3)
-        Me.PanelSound.Controls.Add(Me.BunifuTrackbar2)
+        Me.PanelSound.Controls.Add(Me.btn_min_hb)
+        Me.PanelSound.Controls.Add(Me.tbn_plus_hb)
+        Me.PanelSound.Controls.Add(Me.btn_min_alarm)
+        Me.PanelSound.Controls.Add(Me.btn_plus_alarm)
+        Me.PanelSound.Controls.Add(Me.LabelSoundTochscreen)
+        Me.PanelSound.Controls.Add(Me.LabelSoundHeartBeat)
+        Me.PanelSound.Controls.Add(Me.LabelSoundAlarm)
+        Me.PanelSound.Controls.Add(Me.Trackbar_Sound_Tochscreen)
         Me.PanelSound.Controls.Add(Me.Label33)
         Me.PanelSound.Controls.Add(Me.Label32)
         Me.PanelSound.Controls.Add(Me.Label17)
@@ -915,82 +919,94 @@ Partial Class Mdi
         Me.PanelSound.Size = New System.Drawing.Size(300, 200)
         Me.PanelSound.TabIndex = 5
         '
-        'Label34
+        'btn_min_hb
         '
-        Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(212, 136)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(13, 13)
-        Me.Label34.TabIndex = 17
-        Me.Label34.Text = "0"
+        Me.btn_min_hb.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_min_hb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_min_hb.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btn_min_hb.Location = New System.Drawing.Point(46, 89)
+        Me.btn_min_hb.Name = "btn_min_hb"
+        Me.btn_min_hb.Size = New System.Drawing.Size(61, 23)
+        Me.btn_min_hb.TabIndex = 21
+        Me.btn_min_hb.Text = "-"
+        Me.btn_min_hb.UseVisualStyleBackColor = False
         '
-        'Label10
+        'tbn_plus_hb
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(212, 87)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(13, 13)
-        Me.Label10.TabIndex = 16
-        Me.Label10.Text = "0"
+        Me.tbn_plus_hb.Location = New System.Drawing.Point(165, 89)
+        Me.tbn_plus_hb.Name = "tbn_plus_hb"
+        Me.tbn_plus_hb.Size = New System.Drawing.Size(61, 23)
+        Me.tbn_plus_hb.TabIndex = 20
+        Me.tbn_plus_hb.Text = "+"
+        Me.tbn_plus_hb.UseVisualStyleBackColor = True
         '
-        'Label1
+        'btn_min_alarm
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(213, 35)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(13, 13)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "0"
+        Me.btn_min_alarm.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_min_alarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_min_alarm.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btn_min_alarm.Location = New System.Drawing.Point(46, 30)
+        Me.btn_min_alarm.Name = "btn_min_alarm"
+        Me.btn_min_alarm.Size = New System.Drawing.Size(61, 23)
+        Me.btn_min_alarm.TabIndex = 19
+        Me.btn_min_alarm.Text = "-"
+        Me.btn_min_alarm.UseVisualStyleBackColor = False
         '
-        'BunifuTrackbar4
+        'btn_plus_alarm
         '
-        Me.BunifuTrackbar4.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTrackbar4.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.BunifuTrackbar4.BorderRadius = 0
-        Me.BunifuTrackbar4.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.BunifuTrackbar4.Location = New System.Drawing.Point(56, 130)
-        Me.BunifuTrackbar4.MaximumValue = 100
-        Me.BunifuTrackbar4.MinimumValue = 0
-        Me.BunifuTrackbar4.Name = "BunifuTrackbar4"
-        Me.BunifuTrackbar4.Size = New System.Drawing.Size(151, 30)
-        Me.BunifuTrackbar4.SliderRadius = 50
-        Me.BunifuTrackbar4.TabIndex = 15
-        Me.BunifuTrackbar4.Value = 0
+        Me.btn_plus_alarm.Location = New System.Drawing.Point(165, 30)
+        Me.btn_plus_alarm.Name = "btn_plus_alarm"
+        Me.btn_plus_alarm.Size = New System.Drawing.Size(61, 23)
+        Me.btn_plus_alarm.TabIndex = 18
+        Me.btn_plus_alarm.Text = "+"
+        Me.btn_plus_alarm.UseVisualStyleBackColor = True
         '
-        'BunifuTrackbar3
+        'LabelSoundTochscreen
         '
-        Me.BunifuTrackbar3.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTrackbar3.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.BunifuTrackbar3.BorderRadius = 0
-        Me.BunifuTrackbar3.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.BunifuTrackbar3.Location = New System.Drawing.Point(55, 82)
-        Me.BunifuTrackbar3.MaximumValue = 100
-        Me.BunifuTrackbar3.MinimumValue = 0
-        Me.BunifuTrackbar3.Name = "BunifuTrackbar3"
-        Me.BunifuTrackbar3.Size = New System.Drawing.Size(151, 30)
-        Me.BunifuTrackbar3.SliderRadius = 50
-        Me.BunifuTrackbar3.TabIndex = 14
-        Me.BunifuTrackbar3.Value = 0
+        Me.LabelSoundTochscreen.AutoSize = True
+        Me.LabelSoundTochscreen.Location = New System.Drawing.Point(211, 145)
+        Me.LabelSoundTochscreen.Name = "LabelSoundTochscreen"
+        Me.LabelSoundTochscreen.Size = New System.Drawing.Size(13, 13)
+        Me.LabelSoundTochscreen.TabIndex = 17
+        Me.LabelSoundTochscreen.Text = "0"
         '
-        'BunifuTrackbar2
+        'LabelSoundHeartBeat
         '
-        Me.BunifuTrackbar2.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTrackbar2.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.BunifuTrackbar2.BorderRadius = 0
-        Me.BunifuTrackbar2.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.BunifuTrackbar2.Location = New System.Drawing.Point(53, 30)
-        Me.BunifuTrackbar2.MaximumValue = 100
-        Me.BunifuTrackbar2.MinimumValue = 0
-        Me.BunifuTrackbar2.Name = "BunifuTrackbar2"
-        Me.BunifuTrackbar2.Size = New System.Drawing.Size(151, 30)
-        Me.BunifuTrackbar2.SliderRadius = 50
-        Me.BunifuTrackbar2.TabIndex = 13
-        Me.BunifuTrackbar2.Value = 0
+        Me.LabelSoundHeartBeat.AutoSize = True
+        Me.LabelSoundHeartBeat.Location = New System.Drawing.Point(129, 94)
+        Me.LabelSoundHeartBeat.Name = "LabelSoundHeartBeat"
+        Me.LabelSoundHeartBeat.Size = New System.Drawing.Size(13, 13)
+        Me.LabelSoundHeartBeat.TabIndex = 16
+        Me.LabelSoundHeartBeat.Text = "0"
+        '
+        'LabelSoundAlarm
+        '
+        Me.LabelSoundAlarm.AutoSize = True
+        Me.LabelSoundAlarm.Location = New System.Drawing.Point(126, 35)
+        Me.LabelSoundAlarm.Name = "LabelSoundAlarm"
+        Me.LabelSoundAlarm.Size = New System.Drawing.Size(13, 13)
+        Me.LabelSoundAlarm.TabIndex = 13
+        Me.LabelSoundAlarm.Text = "0"
+        '
+        'Trackbar_Sound_Tochscreen
+        '
+        Me.Trackbar_Sound_Tochscreen.BackColor = System.Drawing.Color.Transparent
+        Me.Trackbar_Sound_Tochscreen.BackgroudColor = System.Drawing.Color.DarkGray
+        Me.Trackbar_Sound_Tochscreen.BorderRadius = 0
+        Me.Trackbar_Sound_Tochscreen.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Trackbar_Sound_Tochscreen.Location = New System.Drawing.Point(55, 139)
+        Me.Trackbar_Sound_Tochscreen.MaximumValue = 100
+        Me.Trackbar_Sound_Tochscreen.MinimumValue = 0
+        Me.Trackbar_Sound_Tochscreen.Name = "Trackbar_Sound_Tochscreen"
+        Me.Trackbar_Sound_Tochscreen.Size = New System.Drawing.Size(151, 30)
+        Me.Trackbar_Sound_Tochscreen.SliderRadius = 50
+        Me.Trackbar_Sound_Tochscreen.TabIndex = 15
+        Me.Trackbar_Sound_Tochscreen.Value = 0
         '
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(54, 114)
+        Me.Label33.Location = New System.Drawing.Point(53, 123)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(64, 13)
         Me.Label33.TabIndex = 5
@@ -2207,12 +2223,10 @@ Partial Class Mdi
     Friend WithEvents LabelScreenBrightness As Label
     Friend WithEvents TrackbarBrightLed As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents BunifuTrackbarScreenBrightness As Bunifu.Framework.UI.BunifuTrackbar
-    Friend WithEvents Label34 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents BunifuTrackbar4 As Bunifu.Framework.UI.BunifuTrackbar
-    Friend WithEvents BunifuTrackbar3 As Bunifu.Framework.UI.BunifuTrackbar
-    Friend WithEvents BunifuTrackbar2 As Bunifu.Framework.UI.BunifuTrackbar
+    Friend WithEvents LabelSoundTochscreen As Label
+    Friend WithEvents LabelSoundHeartBeat As Label
+    Friend WithEvents LabelSoundAlarm As Label
+    Friend WithEvents Trackbar_Sound_Tochscreen As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents BunifuTrackbar9 As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents BunifuTrackbar8 As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents BunifuTrackbar7 As Bunifu.Framework.UI.BunifuTrackbar
@@ -2220,4 +2234,8 @@ Partial Class Mdi
     Friend WithEvents BunifuTrackbar5 As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents btn_save_bright_led As Button
     Friend WithEvents btn_default_led As Button
+    Friend WithEvents btn_min_alarm As Button
+    Friend WithEvents btn_plus_alarm As Button
+    Friend WithEvents btn_min_hb As Button
+    Friend WithEvents tbn_plus_hb As Button
 End Class

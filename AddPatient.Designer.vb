@@ -44,9 +44,7 @@ Partial Class AddPatient
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button_Edit = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_cancle
@@ -369,15 +367,6 @@ Partial Class AddPatient
         Me.Label2.TabIndex = 48
         Me.Label2.Text = "First Name"
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 510)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(500, 74)
-        Me.DataGridView1.TabIndex = 68
-        '
         'Button_Edit
         '
         Me.Button_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -395,7 +384,6 @@ Partial Class AddPatient
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(500, 584)
         Me.Controls.Add(Me.Button_Edit)
-        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.cb_gender)
         Me.Controls.Add(Me.txt_nurse)
         Me.Controls.Add(Me.txt_doctor)
@@ -422,7 +410,6 @@ Partial Class AddPatient
         Me.Name = "AddPatient"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AddPatient"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -448,6 +435,5 @@ Partial Class AddPatient
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button_Edit As Button
 End Class

@@ -54,14 +54,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GMed-PM01.exe" size="2207152">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GMed-PM01.exe" size="2211248">
       <assemblyIdentity name="GMed-PM01" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dcHgJrjej/Gdhzo1UA+Lapk2yTJfRW7AHkT94ImP6C4=</dsig:DigestValue>
+        <dsig:DigestValue>0Z0hxmMPUgFr0kbTRw3OfxHBwWKhG6N+wMRiwKj84Zg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NAudio.dll" size="493568">
+      <assemblyIdentity name="NAudio" version="1.7.2.19" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Y6D67UtcXLgKPibCZHUvbokIXvDCvlFKZtbkuHDqcVI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

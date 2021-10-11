@@ -422,6 +422,7 @@ Public Class Mdi
         LabelScreenBrightness.Text = BunifuTrackbarScreenBrightness.Value
     End Sub
     Dim LedBrightness As String
+    Dim SoundAlarm, SoundHeartbeat, SoundTochscreen As Double
     Private Sub TrackbarBrightLed_ValueChanged(sender As Object, e As EventArgs) Handles TrackbarBrightLed.ValueChanged
         LabelBrightnessLed.Text = TrackbarBrightLed.Value
     End Sub
@@ -430,9 +431,108 @@ Public Class Mdi
         LedBrightness = LabelBrightnessLed.Text
         KirimLed(LedBrightness)
     End Sub
-
     Private Sub btn_default_led_Click(sender As Object, e As EventArgs) Handles btn_default_led.Click
         LedBrightness = 0
         KirimLed(LedBrightness)
+    End Sub
+
+
+    Private Sub tbn_plus_hb_Click(sender As Object, e As EventArgs) Handles tbn_plus_hb.Click
+        If SoundHeartbeat >= 0.9 Then
+            SoundHeartbeat = 0.9
+        Else
+            SoundHeartbeat = SoundHeartbeat + 0.1
+            LabelSoundHeartBeat.Text = SoundHeartbeat
+            PlaySoundAlarm(SoundHeartbeat, HBalarm)
+        End If
+    End Sub
+
+    Private Sub btn_min_hb_Click(sender As Object, e As EventArgs) Handles btn_min_hb.Click
+        If SoundHeartbeat <= 0.1 Then
+            SoundHeartbeat = 0.1
+            PlaySoundAlarm(SoundHeartbeat, HBalarm)
+        Else
+            SoundHeartbeat = SoundHeartbeat - 0.1
+            LabelSoundHeartBeat.Text = SoundHeartbeat
+            PlaySoundAlarm(SoundHeartbeat, HBalarm)
+        End If
+    End Sub
+
+
+    Private Sub LabelSoundAlarm_TextChanged(sender As Object, e As EventArgs) Handles LabelSoundAlarm.TextChanged
+        TextChange(LabelSoundAlarm)
+    End Sub
+    Sub TextChange(LabelName As Label)
+        Select Case LabelName.Text
+            Case 0.1
+                LabelName.Text = 10
+            Case 0.2
+                LabelName.Text = 20
+            Case 0.3
+                LabelName.Text = 30
+            Case 0.4
+                LabelName.Text = 40
+            Case 0.5
+                LabelName.Text = 50
+            Case 0.6
+                LabelName.Text = 60
+            Case 0.7
+                LabelName.Text = 70
+            Case 0.8
+                LabelName.Text = 80
+            Case 0.9
+                LabelName.Text = 90
+            Case 1
+                LabelName.Text = 100
+            Case 0.0
+                LabelName.Text = 10
+        End Select
+    End Sub
+
+    Private Sub LabelSoundHeartBeat_TextChanged(sender As Object, e As EventArgs) Handles LabelSoundHeartBeat.TextChanged
+        TextChange(LabelSoundHeartBeat)
+    End Sub
+
+    Dim Wave1 As New NAudio.Wave.WaveOut 'Wave out device for playing the sound
+    Dim redalarm() As Byte = IO.File.ReadAllBytes(PathAudio & "fix-red-alarm.wav") 'Your Buffer
+    Dim HBalarm() As Byte = IO.File.ReadAllBytes(PathAudio & "fix-HB-sound.wav")
+    Sub PlaySoundAlarm(value As Double, valueByte() As Byte)
+
+        Dim data As New IO.MemoryStream(valueByte) 'Data stream for the buffer
+        Wave1.Init(New NAudio.Wave.BlockAlignReductionStream(NAudio.Wave.WaveFormatConversionStream.CreatePcmStream(New NAudio.Wave.WaveFileReader(data))))
+        Wave1.Volume = value 'Sets the Volume to 10%
+        Wave1.Play()
+    End Sub
+    Private Sub btn_plus_alarm_Click(sender As Object, e As EventArgs) Handles btn_plus_alarm.Click
+
+        If SoundAlarm >= 0.9 Then
+            SoundAlarm = 0.9
+            PlaySoundAlarm(SoundAlarm, redalarm)
+        Else
+            SoundAlarm = SoundAlarm + 0.1
+            LabelSoundAlarm.Text = SoundAlarm
+            PlaySoundAlarm(SoundAlarm, redalarm)
+        End If
+
+    End Sub
+    Private Sub btn_plus_alarm_DoubleClick(sender As Object, e As EventArgs) Handles btn_plus_alarm.DoubleClick
+        If SoundAlarm >= 0.9 Then
+            SoundAlarm = 0.9
+            PlaySoundAlarm(SoundAlarm, redalarm)
+        Else
+            SoundAlarm = SoundAlarm + 0.2
+            LabelSoundAlarm.Text = SoundAlarm
+            PlaySoundAlarm(SoundAlarm, redalarm)
+        End If
+    End Sub
+    Private Sub btn_min_alarm_Click(sender As Object, e As EventArgs) Handles btn_min_alarm.Click
+        If SoundAlarm <= 0.1 Then
+            SoundAlarm = 0.1
+            PlaySoundAlarm(SoundAlarm, redalarm)
+        Else
+            SoundAlarm = SoundAlarm - 0.1
+            LabelSoundAlarm.Text = SoundAlarm
+            PlaySoundAlarm(SoundAlarm, redalarm)
+        End If
     End Sub
 End Class
