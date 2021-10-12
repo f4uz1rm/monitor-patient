@@ -49,7 +49,7 @@ Public Class MonitoringDisplay
         HideButtonNaigation()
 
         'Connection - COM 5
-        'COM5Connecting()
+        COM5Connecting()
 
 
         'Batas
