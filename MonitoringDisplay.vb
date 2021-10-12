@@ -924,7 +924,7 @@ Public Class MonitoringDisplay
         End If
 
         If muispo2.Text = 127 Then
-            muispo2.Text = "--"
+
             Spo2Value = 127
         Else
             Spo2Value = muispo2.Text

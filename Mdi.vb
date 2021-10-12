@@ -423,17 +423,15 @@ Public Class Mdi
     End Sub
     Dim LedBrightness As String
     Dim SoundAlarm, SoundHeartbeat, SoundTochscreen As Double
-    Private Sub TrackbarBrightLed_ValueChanged(sender As Object, e As EventArgs) Handles TrackbarBrightLed.ValueChanged
-        LabelBrightnessLed.Text = TrackbarBrightLed.Value
-    End Sub
 
     Private Sub btn_save_bright_led_Click(sender As Object, e As EventArgs) Handles btn_save_bright_led.Click
         LedBrightness = LabelBrightnessLed.Text
-        KirimLed(LedBrightness)
+        KirimLed(LedBrightnessValue)
     End Sub
     Private Sub btn_default_led_Click(sender As Object, e As EventArgs) Handles btn_default_led.Click
         LedBrightness = 0
-        KirimLed(LedBrightness)
+        LabelBrightnessLed.Text = 0.9
+        KirimLed(LedBrightnessValue)
     End Sub
 
 
@@ -515,6 +513,168 @@ Public Class Mdi
         End If
 
     End Sub
+
+    Private Sub BunifuDropdownPatientType_onItemSelected(sender As Object, e As EventArgs) Handles BunifuDropdownPatientType.onItemSelected
+        MonitoringDisplay.LabelTypePatient.Text = BunifuDropdownPatientType.selectedValue
+    End Sub
+    Dim ECGMin As Integer = 120
+    Dim ECGMax As Integer = 140
+    Private Sub btn_min_ecg_min_Click(sender As Object, e As EventArgs) Handles btn_min_ecg_min.Click
+        If TextBoxECGMin.Text <= 0 Then
+            ECGMin = 0
+        Else
+            ECGMin = ECGMin - 1
+        End If
+        TextBoxECGMin.Text = ECGMin
+    End Sub
+
+    Private Sub btn_min_ecg_plus_Click(sender As Object, e As EventArgs) Handles btn_min_ecg_plus.Click
+        If TextBoxECGMin.Text >= ECGMax Then
+            ECGMin = ECGMax
+        Else
+            ECGMin = ECGMin + 1
+        End If
+        TextBoxECGMin.Text = ECGMin
+    End Sub
+
+    Private Sub TextBoxECGMin_TextChanged(sender As Object, e As EventArgs) Handles TextBoxECGMin.TextChanged
+        MonitoringDisplay.LabelEcgMin.Text = ECGMin
+    End Sub
+
+    Private Sub btn_max_ecg_plus_Click(sender As Object, e As EventArgs) Handles btn_max_ecg_plus.Click
+        ECGMax = ECGMax + 1
+        TextBoxECGMax.Text = ECGMax
+    End Sub
+
+    Private Sub btn_max_ecg_min_Click(sender As Object, e As EventArgs) Handles btn_max_ecg_min.Click
+        If TextBoxECGMax.Text <= ECGMin Then
+            ECGMax = ECGMin
+        Else
+            ECGMax = ECGMax - 1
+        End If
+        TextBoxECGMax.Text = ECGMax
+    End Sub
+
+    Private Sub TextBoxECGMax_TextChanged(sender As Object, e As EventArgs) Handles TextBoxECGMax.TextChanged
+        MonitoringDisplay.LabelEcgMax.Text = ECGMax
+    End Sub
+    Dim SPO2Min As Integer = 60
+    Dim Spo2Max As Integer = 95
+    Private Sub btn_min_spo2_min_Click(sender As Object, e As EventArgs) Handles btn_min_spo2_min.Click
+        If TextBoxSPO2Min.Text <= 0 Then
+            SPO2Min = 0
+        Else
+            SPO2Min = SPO2Min - 1
+        End If
+        TextBoxSPO2Min.Text = SPO2Min
+    End Sub
+
+    Private Sub btn_min_spo2_plus_Click(sender As Object, e As EventArgs) Handles btn_min_spo2_plus.Click
+        If TextBoxSPO2Min.Text >= Spo2Max Then
+            SPO2Min = Spo2Max
+        Else
+            SPO2Min = SPO2Min + 1
+        End If
+        TextBoxSPO2Min.Text = SPO2Min
+    End Sub
+
+    Private Sub TextBoxSPO2Min_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSPO2Min.TextChanged
+        MonitoringDisplay.LabelSpo2Min.Text = SPO2Min
+    End Sub
+
+    Private Sub btn_max_spo2_min_Click(sender As Object, e As EventArgs) Handles btn_max_spo2_min.Click
+        If TextBoxSPO2Max.Text <= SPO2Min Then
+            Spo2Max = SPO2Min
+        Else
+            Spo2Max = Spo2Max - 1
+        End If
+        TextBoxSPO2Max.Text = Spo2Max
+    End Sub
+
+    Private Sub btn_max_spo2_plus_Click(sender As Object, e As EventArgs) Handles btn_max_spo2_plus.Click
+        Spo2Max = Spo2Max + 1
+        TextBoxSPO2Max.Text = Spo2Max
+    End Sub
+
+    Private Sub TextBoxSPO2Max_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSPO2Max.TextChanged
+        MonitoringDisplay.LabelSpo2Max.Text = Spo2Max
+    End Sub
+    Dim RRMin As Integer = 5
+    Dim RRMax As Integer = 40
+    Private Sub btn_min_rr_min_Click(sender As Object, e As EventArgs) Handles btn_min_rr_min.Click
+        If TextBoxRRMin.Text <= 0 Then
+            RRMin = 0
+        Else
+            RRMin = RRMin - 1
+        End If
+        TextBoxRRMin.Text = RRMin
+    End Sub
+
+    Private Sub btn_min_rr_plus_Click(sender As Object, e As EventArgs) Handles btn_min_rr_plus.Click
+        If TextBoxRRMin.Text >= RRMax Then
+            RRMin = RRMax
+        Else
+            RRMin = RRMin + 1
+        End If
+        TextBoxRRMin.Text = RRMin
+    End Sub
+
+    Private Sub TextBoxRRMin_TextChanged(sender As Object, e As EventArgs) Handles TextBoxRRMin.TextChanged
+        MonitoringDisplay.LabelRRMin.Text = RRMin
+    End Sub
+
+    Private Sub btn_max_rr_min_Click(sender As Object, e As EventArgs) Handles btn_max_rr_min.Click
+        If TextBoxRRMax.Text <= RRMin Then
+            RRMax = RRMin
+        Else
+            RRMax = RRMax - 1
+        End If
+        TextBoxRRMax.Text = RRMax
+    End Sub
+
+    Private Sub btn_max_rr_plus_Click(sender As Object, e As EventArgs) Handles btn_max_rr_plus.Click
+        RRMax = RRMax + 1
+        TextBoxRRMax.Text = RRMax
+    End Sub
+
+    Private Sub TextBoxRRMax_TextChanged(sender As Object, e As EventArgs) Handles TextBoxRRMax.TextChanged
+        MonitoringDisplay.LabelRRMax.Text = RRMax
+    End Sub
+
+    Private Sub btn_default_alarm_Click(sender As Object, e As EventArgs) Handles btn_default_alarm.Click
+        ECGMin = 120
+        ECGMax = 140
+        SPO2Min = 60
+        Spo2Max = 95
+        RRMin = 5
+        RRMax = 40
+
+        TextBoxECGMin.Text = ECGMin
+        TextBoxECGMax.Text = ECGMax
+        TextBoxSPO2Min.Text = SPO2Min
+        TextBoxSPO2Max.Text = Spo2Max
+        TextBoxRRMin.Text = RRMin
+        TextBoxRRMax.Text = RRMax
+    End Sub
+    Dim LedBrightnessValue As Double
+    Private Sub btn_lamp_plus_Click(sender As Object, e As EventArgs) Handles btn_lamp_plus.Click
+        If LabelBrightnessLed.Text >= 0.9 Then
+            LedBrightnessValue = 0.9
+        Else
+            LedBrightnessValue = LedBrightnessValue + 0.1
+        End If
+        LabelBrightnessLed.Text = LedBrightnessValue
+    End Sub
+
+    Private Sub btn_lamp_min_Click(sender As Object, e As EventArgs) Handles btn_lamp_min.Click
+        If LabelBrightnessLed.Text <= 0.1 Then
+            LedBrightnessValue = 0.1
+        Else
+            LedBrightnessValue = LedBrightnessValue - 0.1
+        End If
+        LabelBrightnessLed.Text = LedBrightnessValue
+    End Sub
+
     Private Sub btn_plus_alarm_DoubleClick(sender As Object, e As EventArgs) Handles btn_plus_alarm.DoubleClick
         If SoundAlarm >= 0.9 Then
             SoundAlarm = 0.9

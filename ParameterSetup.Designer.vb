@@ -48,18 +48,19 @@ Partial Class ParameterSetup
         Me.ComboBoxAutoMode = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxSetupT1 = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.ComboBox13 = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxSetupT2 = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.cb_t1_label = New System.Windows.Forms.ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.cb_td = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxTDifference = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.cb_t2_label = New System.Windows.Forms.ComboBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.ButtonSave = New System.Windows.Forms.Button()
         Me.ButtonClose = New System.Windows.Forms.Button()
+        Me.Label_ID = New System.Windows.Forms.Label()
+        Me.TextBoxT2Label = New System.Windows.Forms.TextBox()
+        Me.TextBoxT1Label = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -333,16 +334,17 @@ Partial Class ParameterSetup
         Me.Label15.TabIndex = 25
         Me.Label15.Text = "Tempratures"
         '
-        'ComboBox12
+        'ComboBoxSetupT1
         '
-        Me.ComboBox12.BackColor = System.Drawing.SystemColors.Control
-        Me.ComboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Location = New System.Drawing.Point(51, 463)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox12.TabIndex = 27
+        Me.ComboBoxSetupT1.BackColor = System.Drawing.SystemColors.Control
+        Me.ComboBoxSetupT1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxSetupT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBoxSetupT1.FormattingEnabled = True
+        Me.ComboBoxSetupT1.Items.AddRange(New Object() {"Enable", "Disable"})
+        Me.ComboBoxSetupT1.Location = New System.Drawing.Point(51, 463)
+        Me.ComboBoxSetupT1.Name = "ComboBoxSetupT1"
+        Me.ComboBoxSetupT1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxSetupT1.TabIndex = 27
         '
         'Label16
         '
@@ -353,16 +355,17 @@ Partial Class ParameterSetup
         Me.Label16.TabIndex = 26
         Me.Label16.Text = "Setup T1"
         '
-        'ComboBox13
+        'ComboBoxSetupT2
         '
-        Me.ComboBox13.BackColor = System.Drawing.SystemColors.Control
-        Me.ComboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox13.FormattingEnabled = True
-        Me.ComboBox13.Location = New System.Drawing.Point(215, 463)
-        Me.ComboBox13.Name = "ComboBox13"
-        Me.ComboBox13.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox13.TabIndex = 29
+        Me.ComboBoxSetupT2.BackColor = System.Drawing.SystemColors.Control
+        Me.ComboBoxSetupT2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxSetupT2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBoxSetupT2.FormattingEnabled = True
+        Me.ComboBoxSetupT2.Items.AddRange(New Object() {"Enable", "Disable"})
+        Me.ComboBoxSetupT2.Location = New System.Drawing.Point(215, 463)
+        Me.ComboBoxSetupT2.Name = "ComboBoxSetupT2"
+        Me.ComboBoxSetupT2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxSetupT2.TabIndex = 29
         '
         'Label17
         '
@@ -373,18 +376,6 @@ Partial Class ParameterSetup
         Me.Label17.TabIndex = 28
         Me.Label17.Text = "Setup T2"
         '
-        'cb_t1_label
-        '
-        Me.cb_t1_label.BackColor = System.Drawing.SystemColors.Control
-        Me.cb_t1_label.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cb_t1_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cb_t1_label.FormattingEnabled = True
-        Me.cb_t1_label.Items.AddRange(New Object() {"C", "F"})
-        Me.cb_t1_label.Location = New System.Drawing.Point(353, 463)
-        Me.cb_t1_label.Name = "cb_t1_label"
-        Me.cb_t1_label.Size = New System.Drawing.Size(121, 21)
-        Me.cb_t1_label.TabIndex = 31
-        '
         'Label18
         '
         Me.Label18.AutoSize = True
@@ -394,17 +385,17 @@ Partial Class ParameterSetup
         Me.Label18.TabIndex = 30
         Me.Label18.Text = "T1 Label"
         '
-        'cb_td
+        'ComboBoxTDifference
         '
-        Me.cb_td.BackColor = System.Drawing.SystemColors.Control
-        Me.cb_td.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cb_td.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cb_td.FormattingEnabled = True
-        Me.cb_td.Items.AddRange(New Object() {"C", "F"})
-        Me.cb_td.Location = New System.Drawing.Point(215, 524)
-        Me.cb_td.Name = "cb_td"
-        Me.cb_td.Size = New System.Drawing.Size(121, 21)
-        Me.cb_td.TabIndex = 35
+        Me.ComboBoxTDifference.BackColor = System.Drawing.SystemColors.Control
+        Me.ComboBoxTDifference.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxTDifference.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ComboBoxTDifference.FormattingEnabled = True
+        Me.ComboBoxTDifference.Items.AddRange(New Object() {"Enable", "Disable"})
+        Me.ComboBoxTDifference.Location = New System.Drawing.Point(215, 524)
+        Me.ComboBoxTDifference.Name = "ComboBoxTDifference"
+        Me.ComboBoxTDifference.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxTDifference.TabIndex = 35
         '
         'Label19
         '
@@ -414,18 +405,6 @@ Partial Class ParameterSetup
         Me.Label19.Size = New System.Drawing.Size(66, 13)
         Me.Label19.TabIndex = 34
         Me.Label19.Text = "T Difference"
-        '
-        'cb_t2_label
-        '
-        Me.cb_t2_label.BackColor = System.Drawing.SystemColors.Control
-        Me.cb_t2_label.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cb_t2_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cb_t2_label.FormattingEnabled = True
-        Me.cb_t2_label.Items.AddRange(New Object() {"C", "F"})
-        Me.cb_t2_label.Location = New System.Drawing.Point(51, 524)
-        Me.cb_t2_label.Name = "cb_t2_label"
-        Me.cb_t2_label.Size = New System.Drawing.Size(121, 21)
-        Me.cb_t2_label.TabIndex = 33
         '
         'Label20
         '
@@ -454,22 +433,47 @@ Partial Class ParameterSetup
         Me.ButtonClose.Text = "Close"
         Me.ButtonClose.UseVisualStyleBackColor = True
         '
+        'Label_ID
+        '
+        Me.Label_ID.AutoSize = True
+        Me.Label_ID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_ID.Location = New System.Drawing.Point(456, 9)
+        Me.Label_ID.Name = "Label_ID"
+        Me.Label_ID.Size = New System.Drawing.Size(44, 13)
+        Me.Label_ID.TabIndex = 38
+        Me.Label_ID.Text = "PS001"
+        '
+        'TextBoxT2Label
+        '
+        Me.TextBoxT2Label.Location = New System.Drawing.Point(52, 525)
+        Me.TextBoxT2Label.Name = "TextBoxT2Label"
+        Me.TextBoxT2Label.Size = New System.Drawing.Size(120, 20)
+        Me.TextBoxT2Label.TabIndex = 39
+        '
+        'TextBoxT1Label
+        '
+        Me.TextBoxT1Label.Location = New System.Drawing.Point(354, 464)
+        Me.TextBoxT1Label.Name = "TextBoxT1Label"
+        Me.TextBoxT1Label.Size = New System.Drawing.Size(100, 20)
+        Me.TextBoxT1Label.TabIndex = 40
+        '
         'ParameterSetup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(507, 638)
+        Me.Controls.Add(Me.TextBoxT1Label)
+        Me.Controls.Add(Me.TextBoxT2Label)
+        Me.Controls.Add(Me.Label_ID)
         Me.Controls.Add(Me.ButtonClose)
         Me.Controls.Add(Me.ButtonSave)
-        Me.Controls.Add(Me.cb_td)
+        Me.Controls.Add(Me.ComboBoxTDifference)
         Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.cb_t2_label)
         Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.cb_t1_label)
         Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.ComboBox13)
+        Me.Controls.Add(Me.ComboBoxSetupT2)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.ComboBox12)
+        Me.Controls.Add(Me.ComboBoxSetupT1)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.ComboBoxAutoMode)
@@ -532,16 +536,17 @@ Partial Class ParameterSetup
     Friend WithEvents ComboBoxAutoMode As ComboBox
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents ComboBox12 As ComboBox
+    Friend WithEvents ComboBoxSetupT1 As ComboBox
     Friend WithEvents Label16 As Label
-    Friend WithEvents ComboBox13 As ComboBox
+    Friend WithEvents ComboBoxSetupT2 As ComboBox
     Friend WithEvents Label17 As Label
-    Friend WithEvents cb_t1_label As ComboBox
     Friend WithEvents Label18 As Label
-    Friend WithEvents cb_td As ComboBox
+    Friend WithEvents ComboBoxTDifference As ComboBox
     Friend WithEvents Label19 As Label
-    Friend WithEvents cb_t2_label As ComboBox
     Friend WithEvents Label20 As Label
     Friend WithEvents ButtonSave As Button
     Friend WithEvents ButtonClose As Button
+    Friend WithEvents Label_ID As Label
+    Friend WithEvents TextBoxT2Label As TextBox
+    Friend WithEvents TextBoxT1Label As TextBox
 End Class

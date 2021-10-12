@@ -80,11 +80,9 @@ C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.ParameterSetup.
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.PatientInformation.resources
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.SplashScreen1.resources
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.Resources.resources
-C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.TESTDLL.resources
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.vbproj.GenerateResource.Cache
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.exe.manifest
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.application
-C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.TEST_DATABASE.resources
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.vbprojResolveAssemblyReference.cache
 C:\Users\KQ\Documents\GitHub\monitor-patient\bin\Debug\NAudio.dll
 C:\Users\KQ\Documents\GitHub\monitor-patient\bin\Debug\NAudio.pdb

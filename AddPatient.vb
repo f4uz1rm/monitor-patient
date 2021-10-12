@@ -13,7 +13,6 @@
         p.AddArc(New Rectangle(0, Me.Height - 40, 40, 40), 90, 90)
         p.CloseFigure()
         Me.Region = New Region(p)
-        Tampil_Texbox()
     End Sub
 
     Private Sub btn_cancle_Click(sender As Object, e As EventArgs) Handles btn_cancle.Click
@@ -28,7 +27,8 @@
         Keyboard_Show()
     End Sub
     Private Sub Button_Edit_Click(sender As Object, e As EventArgs) Handles Button_Edit.Click
-        Update_Data_Patient()
+        Add_Patient_Update_Data_Patient()
+        MonitoringDisplay.LabelPatient.Text = txt_first_name.Text & " " & txt_last_name.Text
     End Sub
 
     Private Sub Datetimepicker1_onValueChanged(sender As Object, e As EventArgs) Handles Datetimepicker1.onValueChanged

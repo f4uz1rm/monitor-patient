@@ -1,9 +1,7 @@
 ﻿Imports System.Data.OleDb
 Module Data_Patient
     'Variable
-    Dim AddForm As Form = AddPatient
-
-    Sub Update_Data_Patient()
+    Sub Add_Patient_Update_Data_Patient()
         Koneksi()
         Dim NameFrom As AddPatient = AddPatient
         If AddPatient.txt_first_name.Text = "" Then
@@ -20,7 +18,44 @@ Module Data_Patient
             conn.Close()
         End If
         conn.Close()
-
+    End Sub
+    Sub Update_Data_Patient()
+        Koneksi()
+        Dim NameFrom As PatientInformation = PatientInformation
+        If AddPatient.txt_first_name.Text = "" Then
+            MsgBox("Kode Tidak Ada")
+        Else
+            Dim edit As String = "Update Table_Patient set Birth='" & NameFrom.Datetimepicker1.Value & "',First_Name='" & NameFrom.txt_first_name.Text & "',Last_Name='" & NameFrom.txt_last_name.Text & "',Age='" & NameFrom.txt_age.Text & "',Height='" & NameFrom.txt_height.Text & "',Weight='" & NameFrom.txt_weight.Text & "',Gender='" & NameFrom.cb_gender.selectedValue & "',Profession='" & NameFrom.txt_profession.Text & "',Doctor='" & NameFrom.txt_doctor.Text & "',Nurse='" & NameFrom.txt_nurse.Text & "'where ID='" & MonitoringDisplay.LabelKode.Text & "'"
+            cmd = New OleDbCommand(edit, conn)
+            Try
+                cmd.ExecuteNonQuery()
+                MsgBox("Data Berhasil Di Ubah", MsgBoxStyle.Information, "Info")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            conn.Close()
+        End If
+        conn.Close()
+        Tampil_Texbox()
+    End Sub
+    Sub Deleted_Data_Patient()
+        Koneksi()
+        Dim NameFrom As PatientInformation = PatientInformation
+        If NameFrom.txt_first_name.Text = "" Then
+            MsgBox("Kode Tidak Ada")
+        Else
+            Dim edit As String = "Update Table_Patient set Birth='" & NameFrom.Datetimepicker1.Value & "',First_Name='" & NameFrom.txt_first_name.Text & "',Last_Name='" & NameFrom.txt_last_name.Text & "',Age='" & NameFrom.txt_age.Text & "',Height='" & NameFrom.txt_height.Text & "',Weight='" & NameFrom.txt_weight.Text & "',Gender='" & NameFrom.cb_gender.selectedValue & "',Profession='" & NameFrom.txt_profession.Text & "',Doctor='" & NameFrom.txt_doctor.Text & "',Nurse='" & NameFrom.txt_nurse.Text & "'where ID='" & MonitoringDisplay.LabelKode.Text & "'"
+            cmd = New OleDbCommand(edit, conn)
+            Try
+                cmd.ExecuteNonQuery()
+                MsgBox("Data Berhasil Di Ubah", MsgBoxStyle.Information, "Info")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            conn.Close()
+        End If
+        conn.Close()
+        Tampil_Texbox()
     End Sub
     Sub Tampil_Texbox()
         Try

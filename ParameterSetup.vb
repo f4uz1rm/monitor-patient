@@ -13,33 +13,44 @@
         p.AddArc(New Rectangle(0, Me.Height - 40, 40, 40), 90, 90)
         p.CloseFigure()
         Me.Region = New Region(p)
+        Tampil_ComboBox()
     End Sub
 
-    Private Sub cb_t1_label_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_t1_label.SelectedIndexChanged
-        If cb_t1_label.SelectedIndex = 0 Then
-            MonitoringDisplay.Label27.Text = "C"
-        ElseIf cb_t1_label.SelectedIndex = 1
-            MonitoringDisplay.Label27.Text = "F"
-        End If
-    End Sub
-
-    Private Sub cb_t2_label_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_t2_label.SelectedIndexChanged
-        If cb_t2_label.SelectedIndex = 0 Then
-            MonitoringDisplay.Label29.Text = "C"
-        ElseIf cb_t2_label.SelectedIndex = 1
-            MonitoringDisplay.Label29.Text = "F"
-        End If
-    End Sub
-
-    Private Sub cb_td_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_td.SelectedIndexChanged
-        If cb_td.SelectedIndex = 0 Then
-            MonitoringDisplay.Label28.Text = "C"
-        ElseIf cb_td.SelectedIndex = 1
-            MonitoringDisplay.Label28.Text = "F"
+    Private Sub cb_td_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxTDifference.SelectedIndexChanged
+        If ComboBoxTDifference.SelectedItem = "Enable" Then
+            MonitoringDisplay.Label28.Visible = True
+            MonitoringDisplay.muitd.Visible = True
+        ElseIf ComboBoxTDifference.SelectedItem = "Disable"
+            MonitoringDisplay.Label28.Visible = False
+            MonitoringDisplay.muitd.Visible = False
         End If
     End Sub
 
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub ButtonSave_Click(sender As Object, e As EventArgs) Handles ButtonSave.Click
+        Update_Parameter_Setup()
+    End Sub
+
+    Private Sub ComboBoxSetupT1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSetupT1.SelectedIndexChanged
+        If ComboBoxSetupT1.SelectedItem = "Enable" Then
+            MonitoringDisplay.Label27.Visible = True
+            MonitoringDisplay.muitemp1.Visible = True
+        ElseIf ComboBoxSetupT1.SelectedItem = "Disable"
+            MonitoringDisplay.Label27.Visible = False
+            MonitoringDisplay.muitemp1.Visible = False
+        End If
+    End Sub
+
+    Private Sub ComboBoxSetupT2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSetupT2.SelectedIndexChanged
+        If ComboBoxSetupT1.SelectedItem = "Enable" Then
+            MonitoringDisplay.Label29.Visible = True
+            MonitoringDisplay.muitemp2.Visible = True
+        ElseIf ComboBoxSetupT1.SelectedItem = "Disable"
+            MonitoringDisplay.Label29.Visible = False
+            MonitoringDisplay.muitemp2.Visible = False
+        End If
     End Sub
 End Class

@@ -374,7 +374,7 @@ Partial Class AddPatient
         Me.Button_Edit.Name = "Button_Edit"
         Me.Button_Edit.Size = New System.Drawing.Size(55, 23)
         Me.Button_Edit.TabIndex = 69
-        Me.Button_Edit.Text = "Edit"
+        Me.Button_Edit.Text = "Save"
         Me.Button_Edit.UseVisualStyleBackColor = True
         '
         'AddPatient

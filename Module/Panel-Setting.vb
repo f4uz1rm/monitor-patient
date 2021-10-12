@@ -35,6 +35,12 @@
         MonitoringDisplay.Label29.Text = "T2"
         MonitoringDisplay.Label28.Text = "TD"
 
+        MonitoringDisplay.Label27.Visible = True
+        MonitoringDisplay.Label28.Visible = True
+        MonitoringDisplay.Label29.Visible = True
+        MonitoringDisplay.muitemp1.Visible = True
+        MonitoringDisplay.muitemp2.Visible = True
+        MonitoringDisplay.muitd.Visible = True
 
     End Sub
 End Module

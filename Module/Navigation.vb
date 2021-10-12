@@ -4,6 +4,7 @@ Module Navigation
     Sub PanelHideAll()
         Mdi.CloseFormAll()
         Mdi.PanelAlarmSetup.Hide()
+        AlarmHistory.Close()
         Mdi.PanelAlarmSetupHistory.Hide()
         Mdi.PanelMonitorSetting.Hide()
         Mdi.PanelPatientData.Hide()

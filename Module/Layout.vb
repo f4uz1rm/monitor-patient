@@ -1,4 +1,4 @@
-﻿Module Layout
+﻿Module LayoutReset
     Public Function MonitorDisplayView(W As Integer, H As Integer)
         MonitoringDisplay.MdiParent = Mdi
         MonitoringDisplay.Size = New Size(W, H)

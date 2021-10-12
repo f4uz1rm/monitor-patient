@@ -1,12 +1,12 @@
 ﻿Module Notification
     Dim StatusActive As Boolean
     Function NotificationStatusECG(ValueStatus As Integer, NameStatus As String)
-        If ValueStatus > 140 Then
+        If ValueStatus > MonitoringDisplay.LabelEcgMax.Text Then
             MonitoringDisplay.ButtonRed.Text = NameStatus
             MonitoringDisplay.ButtonYellow.Visible = False
             SendNotifFormAlarm(NameStatus)
             RedButton()
-        ElseIf ValueStatus > 120
+        ElseIf ValueStatus > MonitoringDisplay.LabelEcgMin.Text
             MonitoringDisplay.ButtonYellow.Text = NameStatus
             MonitoringDisplay.ButtonRed.Visible = False
             SendNotifFormAlarm(NameStatus)
@@ -25,17 +25,17 @@
         Return NameStatus
     End Function
     Function NotificationStatusSPO2(ValueStatus As Integer, NameStatus As String)
-        If ValueStatus < 60 Then
+        If ValueStatus < MonitoringDisplay.LabelSpo2Min.Text Then
             MonitoringDisplay.ButtonRed.Text = NameStatus
             MonitoringDisplay.ButtonYellow.Visible = False
             SendNotifFormAlarm(NameStatus)
             RedButton()
-        ElseIf ValueStatus < 95
+        ElseIf ValueStatus < MonitoringDisplay.LabelSpo2Max.Text
             MonitoringDisplay.ButtonYellow.Text = NameStatus
             MonitoringDisplay.ButtonRed.Visible = False
             SendNotifFormAlarm(NameStatus)
             YellowButton()
-        ElseIf ValueStatus > 95
+        ElseIf ValueStatus > MonitoringDisplay.LabelSpo2Max.Text
             MonitoringDisplay.ButtonRed.Visible = False
             MonitoringDisplay.ButtonYellow.Visible = False
             If MonitoringDisplay.LabelStatusSpo2.Text = "Module working properly" Then
@@ -48,13 +48,13 @@
     End Function
     Function NotificationStatusRR(ValueStatus As Integer)
         Dim StatusName As String
-        If ValueStatus > 40 Then
+        If ValueStatus > MonitoringDisplay.LabelRRMax.Text Then
             StatusName = "RR HIGH"
             MonitoringDisplay.ButtonRed.Text = StatusName
             MonitoringDisplay.ButtonYellow.Visible = False
             SendNotifFormAlarm(StatusName)
             RedButton()
-        ElseIf ValueStatus < 5
+        ElseIf ValueStatus < MonitoringDisplay.LabelRRMin.Text
             StatusName = "RR LOW"
             MonitoringDisplay.ButtonYellow.Text = StatusName
             MonitoringDisplay.ButtonRed.Visible = False

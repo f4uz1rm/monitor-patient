@@ -39,20 +39,42 @@ Partial Class Mdi
         Me.btn_soundlevel = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelLampBrightness = New System.Windows.Forms.Panel()
         Me.btn_default_led = New System.Windows.Forms.Button()
-        Me.TrackbarBrightLed = New Bunifu.Framework.UI.BunifuTrackbar()
         Me.btn_save_bright_led = New System.Windows.Forms.Button()
         Me.LabelBrightnessLed = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.btn_lampbrightness = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelAlarmLimits = New System.Windows.Forms.Panel()
-        Me.BunifuTrackbar9 = New Bunifu.Framework.UI.BunifuTrackbar()
-        Me.BunifuTrackbar8 = New Bunifu.Framework.UI.BunifuTrackbar()
-        Me.BunifuTrackbar7 = New Bunifu.Framework.UI.BunifuTrackbar()
-        Me.BunifuTrackbar6 = New Bunifu.Framework.UI.BunifuTrackbar()
-        Me.BunifuTrackbar5 = New Bunifu.Framework.UI.BunifuTrackbar()
+        Me.btn_default_alarm = New System.Windows.Forms.Button()
+        Me.TextBoxRRMax = New System.Windows.Forms.TextBox()
+        Me.TextBoxRRMin = New System.Windows.Forms.TextBox()
+        Me.TextBoxNIBPMax = New System.Windows.Forms.TextBox()
+        Me.TextBoxNIBPMin = New System.Windows.Forms.TextBox()
+        Me.TextBoxSPO2Max = New System.Windows.Forms.TextBox()
+        Me.TextBoxSPO2Min = New System.Windows.Forms.TextBox()
+        Me.TextBoxECGMax = New System.Windows.Forms.TextBox()
+        Me.TextBoxECGMin = New System.Windows.Forms.TextBox()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.btn_max_rr_min = New System.Windows.Forms.Button()
+        Me.btn_max_rr_plus = New System.Windows.Forms.Button()
+        Me.btn_min_rr_min = New System.Windows.Forms.Button()
+        Me.btn_min_rr_plus = New System.Windows.Forms.Button()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.btn_max_nibp_min = New System.Windows.Forms.Button()
+        Me.btn_max_nibp_plus = New System.Windows.Forms.Button()
+        Me.btn_min_nibp_min = New System.Windows.Forms.Button()
+        Me.btn_min_nibp_plus = New System.Windows.Forms.Button()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.btn_max_spo2_min = New System.Windows.Forms.Button()
+        Me.btn_max_spo2_plus = New System.Windows.Forms.Button()
+        Me.btn_min_spo2_min = New System.Windows.Forms.Button()
+        Me.btn_min_spo2_plus = New System.Windows.Forms.Button()
+        Me.btn_max_ecg_min = New System.Windows.Forms.Button()
+        Me.btn_max_ecg_plus = New System.Windows.Forms.Button()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.btn_min_ecg_min = New System.Windows.Forms.Button()
+        Me.btn_min_ecg_plus = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btn_alarmlimits = New Bunifu.Framework.UI.BunifuFlatButton()
@@ -73,14 +95,15 @@ Partial Class Mdi
         Me.btn_screenbrightness = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btn_parametersetup = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelSound = New System.Windows.Forms.Panel()
+        Me.btn_min_tochscreen = New System.Windows.Forms.Button()
+        Me.btn_plus_tochscreen = New System.Windows.Forms.Button()
+        Me.LabelTochscreen = New System.Windows.Forms.Label()
         Me.btn_min_hb = New System.Windows.Forms.Button()
         Me.tbn_plus_hb = New System.Windows.Forms.Button()
         Me.btn_min_alarm = New System.Windows.Forms.Button()
         Me.btn_plus_alarm = New System.Windows.Forms.Button()
-        Me.LabelSoundTochscreen = New System.Windows.Forms.Label()
         Me.LabelSoundHeartBeat = New System.Windows.Forms.Label()
         Me.LabelSoundAlarm = New System.Windows.Forms.Label()
-        Me.Trackbar_Sound_Tochscreen = New Bunifu.Framework.UI.BunifuTrackbar()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -161,6 +184,8 @@ Partial Class Mdi
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.btn_lamp_min = New System.Windows.Forms.Button()
+        Me.btn_lamp_plus = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.PanelAlarmSetup.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -308,14 +333,14 @@ Partial Class Mdi
         Me.PanelSoundLevel.Controls.Add(Me.ButtonDown)
         Me.PanelSoundLevel.Controls.Add(Me.Label16)
         Me.PanelSoundLevel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelSoundLevel.Location = New System.Drawing.Point(0, 635)
+        Me.PanelSoundLevel.Location = New System.Drawing.Point(0, 621)
         Me.PanelSoundLevel.Name = "PanelSoundLevel"
         Me.PanelSoundLevel.Size = New System.Drawing.Size(300, 114)
         Me.PanelSoundLevel.TabIndex = 5
         '
         'ButtonUP
         '
-        Me.ButtonUP.Location = New System.Drawing.Point(128, 42)
+        Me.ButtonUP.Location = New System.Drawing.Point(153, 42)
         Me.ButtonUP.Name = "ButtonUP"
         Me.ButtonUP.Size = New System.Drawing.Size(25, 23)
         Me.ButtonUP.TabIndex = 4
@@ -362,14 +387,14 @@ Partial Class Mdi
         Me.btn_soundlevel.IconVisible = True
         Me.btn_soundlevel.IconZoom = 50.0R
         Me.btn_soundlevel.IsTab = False
-        Me.btn_soundlevel.Location = New System.Drawing.Point(0, 587)
+        Me.btn_soundlevel.Location = New System.Drawing.Point(0, 573)
         Me.btn_soundlevel.Name = "btn_soundlevel"
         Me.btn_soundlevel.Normalcolor = System.Drawing.Color.Transparent
         Me.btn_soundlevel.OnHovercolor = System.Drawing.Color.DarkGray
         Me.btn_soundlevel.OnHoverTextColor = System.Drawing.Color.Black
         Me.btn_soundlevel.selected = False
         Me.btn_soundlevel.Size = New System.Drawing.Size(300, 48)
-        Me.btn_soundlevel.TabIndex = 4
+        Me.btn_soundlevel.TabIndex = 3
         Me.btn_soundlevel.Text = "Sound Level"
         Me.btn_soundlevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btn_soundlevel.Textcolor = System.Drawing.Color.Black
@@ -377,15 +402,16 @@ Partial Class Mdi
         '
         'PanelLampBrightness
         '
+        Me.PanelLampBrightness.Controls.Add(Me.btn_lamp_min)
         Me.PanelLampBrightness.Controls.Add(Me.btn_default_led)
-        Me.PanelLampBrightness.Controls.Add(Me.TrackbarBrightLed)
+        Me.PanelLampBrightness.Controls.Add(Me.btn_lamp_plus)
         Me.PanelLampBrightness.Controls.Add(Me.btn_save_bright_led)
         Me.PanelLampBrightness.Controls.Add(Me.LabelBrightnessLed)
         Me.PanelLampBrightness.Controls.Add(Me.Label20)
         Me.PanelLampBrightness.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelLampBrightness.Location = New System.Drawing.Point(0, 446)
+        Me.PanelLampBrightness.Location = New System.Drawing.Point(0, 433)
         Me.PanelLampBrightness.Name = "PanelLampBrightness"
-        Me.PanelLampBrightness.Size = New System.Drawing.Size(300, 141)
+        Me.PanelLampBrightness.Size = New System.Drawing.Size(300, 140)
         Me.PanelLampBrightness.TabIndex = 3
         '
         'btn_default_led
@@ -399,21 +425,6 @@ Partial Class Mdi
         Me.btn_default_led.TabIndex = 16
         Me.btn_default_led.Text = "Default"
         Me.btn_default_led.UseVisualStyleBackColor = False
-        '
-        'TrackbarBrightLed
-        '
-        Me.TrackbarBrightLed.BackColor = System.Drawing.Color.Transparent
-        Me.TrackbarBrightLed.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.TrackbarBrightLed.BorderRadius = 10
-        Me.TrackbarBrightLed.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.TrackbarBrightLed.Location = New System.Drawing.Point(58, 42)
-        Me.TrackbarBrightLed.MaximumValue = 100
-        Me.TrackbarBrightLed.MinimumValue = 0
-        Me.TrackbarBrightLed.Name = "TrackbarBrightLed"
-        Me.TrackbarBrightLed.Size = New System.Drawing.Size(151, 30)
-        Me.TrackbarBrightLed.SliderRadius = 50
-        Me.TrackbarBrightLed.TabIndex = 12
-        Me.TrackbarBrightLed.Value = 0
         '
         'btn_save_bright_led
         '
@@ -430,7 +441,7 @@ Partial Class Mdi
         'LabelBrightnessLed
         '
         Me.LabelBrightnessLed.AutoSize = True
-        Me.LabelBrightnessLed.Location = New System.Drawing.Point(215, 50)
+        Me.LabelBrightnessLed.Location = New System.Drawing.Point(122, 50)
         Me.LabelBrightnessLed.Name = "LabelBrightnessLed"
         Me.LabelBrightnessLed.Size = New System.Drawing.Size(13, 13)
         Me.LabelBrightnessLed.TabIndex = 3
@@ -467,7 +478,7 @@ Partial Class Mdi
         Me.btn_lampbrightness.IconVisible = True
         Me.btn_lampbrightness.IconZoom = 50.0R
         Me.btn_lampbrightness.IsTab = False
-        Me.btn_lampbrightness.Location = New System.Drawing.Point(0, 398)
+        Me.btn_lampbrightness.Location = New System.Drawing.Point(0, 385)
         Me.btn_lampbrightness.Name = "btn_lampbrightness"
         Me.btn_lampbrightness.Normalcolor = System.Drawing.Color.Transparent
         Me.btn_lampbrightness.OnHovercolor = System.Drawing.Color.DarkGray
@@ -482,141 +493,365 @@ Partial Class Mdi
         '
         'PanelAlarmLimits
         '
-        Me.PanelAlarmLimits.Controls.Add(Me.BunifuTrackbar9)
-        Me.PanelAlarmLimits.Controls.Add(Me.BunifuTrackbar8)
-        Me.PanelAlarmLimits.Controls.Add(Me.BunifuTrackbar7)
-        Me.PanelAlarmLimits.Controls.Add(Me.BunifuTrackbar6)
-        Me.PanelAlarmLimits.Controls.Add(Me.BunifuTrackbar5)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_default_alarm)
+        Me.PanelAlarmLimits.Controls.Add(Me.TextBoxRRMax)
+        Me.PanelAlarmLimits.Controls.Add(Me.TextBoxRRMin)
+        Me.PanelAlarmLimits.Controls.Add(Me.TextBoxNIBPMax)
+        Me.PanelAlarmLimits.Controls.Add(Me.TextBoxNIBPMin)
+        Me.PanelAlarmLimits.Controls.Add(Me.TextBoxSPO2Max)
+        Me.PanelAlarmLimits.Controls.Add(Me.TextBoxSPO2Min)
+        Me.PanelAlarmLimits.Controls.Add(Me.TextBoxECGMax)
+        Me.PanelAlarmLimits.Controls.Add(Me.TextBoxECGMin)
+        Me.PanelAlarmLimits.Controls.Add(Me.Label42)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_max_rr_min)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_max_rr_plus)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_min_rr_min)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_min_rr_plus)
+        Me.PanelAlarmLimits.Controls.Add(Me.Label39)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_max_nibp_min)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_max_nibp_plus)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_min_nibp_min)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_min_nibp_plus)
+        Me.PanelAlarmLimits.Controls.Add(Me.Label37)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_max_spo2_min)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_max_spo2_plus)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_min_spo2_min)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_min_spo2_plus)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_max_ecg_min)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_max_ecg_plus)
+        Me.PanelAlarmLimits.Controls.Add(Me.Label34)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_min_ecg_min)
+        Me.PanelAlarmLimits.Controls.Add(Me.btn_min_ecg_plus)
         Me.PanelAlarmLimits.Controls.Add(Me.Label15)
         Me.PanelAlarmLimits.Controls.Add(Me.Label14)
-        Me.PanelAlarmLimits.Controls.Add(Me.Label13)
         Me.PanelAlarmLimits.Controls.Add(Me.Label12)
         Me.PanelAlarmLimits.Controls.Add(Me.Label11)
         Me.PanelAlarmLimits.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelAlarmLimits.Location = New System.Drawing.Point(0, 48)
         Me.PanelAlarmLimits.Name = "PanelAlarmLimits"
-        Me.PanelAlarmLimits.Size = New System.Drawing.Size(300, 350)
+        Me.PanelAlarmLimits.Size = New System.Drawing.Size(300, 337)
         Me.PanelAlarmLimits.TabIndex = 1
         '
-        'BunifuTrackbar9
+        'btn_default_alarm
         '
-        Me.BunifuTrackbar9.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTrackbar9.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.BunifuTrackbar9.BorderRadius = 10
-        Me.BunifuTrackbar9.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.BunifuTrackbar9.Location = New System.Drawing.Point(67, 30)
-        Me.BunifuTrackbar9.MaximumValue = 100
-        Me.BunifuTrackbar9.MinimumValue = 0
-        Me.BunifuTrackbar9.Name = "BunifuTrackbar9"
-        Me.BunifuTrackbar9.Size = New System.Drawing.Size(151, 30)
-        Me.BunifuTrackbar9.SliderRadius = 100
-        Me.BunifuTrackbar9.TabIndex = 17
-        Me.BunifuTrackbar9.Value = 0
+        Me.btn_default_alarm.Location = New System.Drawing.Point(81, 293)
+        Me.btn_default_alarm.Name = "btn_default_alarm"
+        Me.btn_default_alarm.Size = New System.Drawing.Size(75, 23)
+        Me.btn_default_alarm.TabIndex = 53
+        Me.btn_default_alarm.Text = "Default"
+        Me.btn_default_alarm.UseVisualStyleBackColor = True
         '
-        'BunifuTrackbar8
+        'TextBoxRRMax
         '
-        Me.BunifuTrackbar8.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTrackbar8.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.BunifuTrackbar8.BorderRadius = 10
-        Me.BunifuTrackbar8.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.BunifuTrackbar8.Location = New System.Drawing.Point(67, 104)
-        Me.BunifuTrackbar8.MaximumValue = 100
-        Me.BunifuTrackbar8.MinimumValue = 0
-        Me.BunifuTrackbar8.Name = "BunifuTrackbar8"
-        Me.BunifuTrackbar8.Size = New System.Drawing.Size(151, 30)
-        Me.BunifuTrackbar8.SliderRadius = 50
-        Me.BunifuTrackbar8.TabIndex = 16
-        Me.BunifuTrackbar8.Value = 0
+        Me.TextBoxRRMax.Location = New System.Drawing.Point(153, 257)
+        Me.TextBoxRRMax.Name = "TextBoxRRMax"
+        Me.TextBoxRRMax.Size = New System.Drawing.Size(35, 20)
+        Me.TextBoxRRMax.TabIndex = 52
+        Me.TextBoxRRMax.Text = "40"
+        Me.TextBoxRRMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'BunifuTrackbar7
+        'TextBoxRRMin
         '
-        Me.BunifuTrackbar7.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTrackbar7.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.BunifuTrackbar7.BorderRadius = 10
-        Me.BunifuTrackbar7.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.BunifuTrackbar7.Location = New System.Drawing.Point(67, 169)
-        Me.BunifuTrackbar7.MaximumValue = 100
-        Me.BunifuTrackbar7.MinimumValue = 0
-        Me.BunifuTrackbar7.Name = "BunifuTrackbar7"
-        Me.BunifuTrackbar7.Size = New System.Drawing.Size(151, 30)
-        Me.BunifuTrackbar7.SliderRadius = 50
-        Me.BunifuTrackbar7.TabIndex = 15
-        Me.BunifuTrackbar7.Value = 0
+        Me.TextBoxRRMin.Location = New System.Drawing.Point(52, 257)
+        Me.TextBoxRRMin.Name = "TextBoxRRMin"
+        Me.TextBoxRRMin.Size = New System.Drawing.Size(35, 20)
+        Me.TextBoxRRMin.TabIndex = 51
+        Me.TextBoxRRMin.Text = "5"
+        Me.TextBoxRRMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'BunifuTrackbar6
+        'TextBoxNIBPMax
         '
-        Me.BunifuTrackbar6.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTrackbar6.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.BunifuTrackbar6.BorderRadius = 10
-        Me.BunifuTrackbar6.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.BunifuTrackbar6.Location = New System.Drawing.Point(65, 247)
-        Me.BunifuTrackbar6.MaximumValue = 100
-        Me.BunifuTrackbar6.MinimumValue = 0
-        Me.BunifuTrackbar6.Name = "BunifuTrackbar6"
-        Me.BunifuTrackbar6.Size = New System.Drawing.Size(151, 30)
-        Me.BunifuTrackbar6.SliderRadius = 50
-        Me.BunifuTrackbar6.TabIndex = 14
-        Me.BunifuTrackbar6.Value = 0
+        Me.TextBoxNIBPMax.Location = New System.Drawing.Point(153, 184)
+        Me.TextBoxNIBPMax.Name = "TextBoxNIBPMax"
+        Me.TextBoxNIBPMax.Size = New System.Drawing.Size(35, 20)
+        Me.TextBoxNIBPMax.TabIndex = 50
+        Me.TextBoxNIBPMax.Text = "0"
+        Me.TextBoxNIBPMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'BunifuTrackbar5
+        'TextBoxNIBPMin
         '
-        Me.BunifuTrackbar5.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTrackbar5.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.BunifuTrackbar5.BorderRadius = 10
-        Me.BunifuTrackbar5.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.BunifuTrackbar5.Location = New System.Drawing.Point(67, 314)
-        Me.BunifuTrackbar5.MaximumValue = 100
-        Me.BunifuTrackbar5.MinimumValue = 0
-        Me.BunifuTrackbar5.Name = "BunifuTrackbar5"
-        Me.BunifuTrackbar5.Size = New System.Drawing.Size(151, 30)
-        Me.BunifuTrackbar5.SliderRadius = 50
-        Me.BunifuTrackbar5.TabIndex = 13
-        Me.BunifuTrackbar5.Value = 0
+        Me.TextBoxNIBPMin.Location = New System.Drawing.Point(52, 184)
+        Me.TextBoxNIBPMin.Name = "TextBoxNIBPMin"
+        Me.TextBoxNIBPMin.Size = New System.Drawing.Size(35, 20)
+        Me.TextBoxNIBPMin.TabIndex = 49
+        Me.TextBoxNIBPMin.Text = "0"
+        Me.TextBoxNIBPMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBoxSPO2Max
+        '
+        Me.TextBoxSPO2Max.Location = New System.Drawing.Point(153, 116)
+        Me.TextBoxSPO2Max.Name = "TextBoxSPO2Max"
+        Me.TextBoxSPO2Max.Size = New System.Drawing.Size(35, 20)
+        Me.TextBoxSPO2Max.TabIndex = 48
+        Me.TextBoxSPO2Max.Text = "95"
+        Me.TextBoxSPO2Max.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBoxSPO2Min
+        '
+        Me.TextBoxSPO2Min.Location = New System.Drawing.Point(54, 116)
+        Me.TextBoxSPO2Min.Name = "TextBoxSPO2Min"
+        Me.TextBoxSPO2Min.Size = New System.Drawing.Size(35, 20)
+        Me.TextBoxSPO2Min.TabIndex = 47
+        Me.TextBoxSPO2Min.Text = "60"
+        Me.TextBoxSPO2Min.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBoxECGMax
+        '
+        Me.TextBoxECGMax.Location = New System.Drawing.Point(153, 38)
+        Me.TextBoxECGMax.Name = "TextBoxECGMax"
+        Me.TextBoxECGMax.Size = New System.Drawing.Size(35, 20)
+        Me.TextBoxECGMax.TabIndex = 46
+        Me.TextBoxECGMax.Text = "140"
+        Me.TextBoxECGMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBoxECGMin
+        '
+        Me.TextBoxECGMin.Location = New System.Drawing.Point(54, 36)
+        Me.TextBoxECGMin.Name = "TextBoxECGMin"
+        Me.TextBoxECGMin.Size = New System.Drawing.Size(35, 20)
+        Me.TextBoxECGMin.TabIndex = 45
+        Me.TextBoxECGMin.Text = "120"
+        Me.TextBoxECGMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.Location = New System.Drawing.Point(129, 234)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(55, 13)
+        Me.Label42.TabIndex = 44
+        Me.Label42.Text = "RR MAX"
+        '
+        'btn_max_rr_min
+        '
+        Me.btn_max_rr_min.Location = New System.Drawing.Point(125, 255)
+        Me.btn_max_rr_min.Name = "btn_max_rr_min"
+        Me.btn_max_rr_min.Size = New System.Drawing.Size(22, 23)
+        Me.btn_max_rr_min.TabIndex = 42
+        Me.btn_max_rr_min.Text = "-"
+        Me.btn_max_rr_min.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_max_rr_min.UseVisualStyleBackColor = True
+        '
+        'btn_max_rr_plus
+        '
+        Me.btn_max_rr_plus.Location = New System.Drawing.Point(194, 255)
+        Me.btn_max_rr_plus.Name = "btn_max_rr_plus"
+        Me.btn_max_rr_plus.Size = New System.Drawing.Size(22, 23)
+        Me.btn_max_rr_plus.TabIndex = 41
+        Me.btn_max_rr_plus.Text = "+"
+        Me.btn_max_rr_plus.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_max_rr_plus.UseVisualStyleBackColor = True
+        '
+        'btn_min_rr_min
+        '
+        Me.btn_min_rr_min.Location = New System.Drawing.Point(26, 255)
+        Me.btn_min_rr_min.Name = "btn_min_rr_min"
+        Me.btn_min_rr_min.Size = New System.Drawing.Size(22, 23)
+        Me.btn_min_rr_min.TabIndex = 39
+        Me.btn_min_rr_min.Text = "-"
+        Me.btn_min_rr_min.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_min_rr_min.UseVisualStyleBackColor = True
+        '
+        'btn_min_rr_plus
+        '
+        Me.btn_min_rr_plus.Location = New System.Drawing.Point(95, 255)
+        Me.btn_min_rr_plus.Name = "btn_min_rr_plus"
+        Me.btn_min_rr_plus.Size = New System.Drawing.Size(22, 23)
+        Me.btn_min_rr_plus.TabIndex = 38
+        Me.btn_min_rr_plus.Text = "+"
+        Me.btn_min_rr_plus.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_min_rr_plus.UseVisualStyleBackColor = True
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.Location = New System.Drawing.Point(129, 156)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(66, 13)
+        Me.Label39.TabIndex = 37
+        Me.Label39.Text = "NIBP MAX"
+        '
+        'btn_max_nibp_min
+        '
+        Me.btn_max_nibp_min.Location = New System.Drawing.Point(125, 181)
+        Me.btn_max_nibp_min.Name = "btn_max_nibp_min"
+        Me.btn_max_nibp_min.Size = New System.Drawing.Size(22, 23)
+        Me.btn_max_nibp_min.TabIndex = 35
+        Me.btn_max_nibp_min.Text = "-"
+        Me.btn_max_nibp_min.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_max_nibp_min.UseVisualStyleBackColor = True
+        '
+        'btn_max_nibp_plus
+        '
+        Me.btn_max_nibp_plus.Location = New System.Drawing.Point(194, 181)
+        Me.btn_max_nibp_plus.Name = "btn_max_nibp_plus"
+        Me.btn_max_nibp_plus.Size = New System.Drawing.Size(22, 23)
+        Me.btn_max_nibp_plus.TabIndex = 34
+        Me.btn_max_nibp_plus.Text = "+"
+        Me.btn_max_nibp_plus.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_max_nibp_plus.UseVisualStyleBackColor = True
+        '
+        'btn_min_nibp_min
+        '
+        Me.btn_min_nibp_min.Location = New System.Drawing.Point(26, 181)
+        Me.btn_min_nibp_min.Name = "btn_min_nibp_min"
+        Me.btn_min_nibp_min.Size = New System.Drawing.Size(22, 23)
+        Me.btn_min_nibp_min.TabIndex = 32
+        Me.btn_min_nibp_min.Text = "-"
+        Me.btn_min_nibp_min.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_min_nibp_min.UseVisualStyleBackColor = True
+        '
+        'btn_min_nibp_plus
+        '
+        Me.btn_min_nibp_plus.Location = New System.Drawing.Point(95, 181)
+        Me.btn_min_nibp_plus.Name = "btn_min_nibp_plus"
+        Me.btn_min_nibp_plus.Size = New System.Drawing.Size(22, 23)
+        Me.btn_min_nibp_plus.TabIndex = 31
+        Me.btn_min_nibp_plus.Text = "+"
+        Me.btn_min_nibp_plus.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_min_nibp_plus.UseVisualStyleBackColor = True
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label37.Location = New System.Drawing.Point(129, 93)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(69, 13)
+        Me.Label37.TabIndex = 30
+        Me.Label37.Text = "SPO2 MAX"
+        '
+        'btn_max_spo2_min
+        '
+        Me.btn_max_spo2_min.Location = New System.Drawing.Point(126, 113)
+        Me.btn_max_spo2_min.Name = "btn_max_spo2_min"
+        Me.btn_max_spo2_min.Size = New System.Drawing.Size(22, 23)
+        Me.btn_max_spo2_min.TabIndex = 28
+        Me.btn_max_spo2_min.Text = "-"
+        Me.btn_max_spo2_min.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_max_spo2_min.UseVisualStyleBackColor = True
+        '
+        'btn_max_spo2_plus
+        '
+        Me.btn_max_spo2_plus.Location = New System.Drawing.Point(195, 113)
+        Me.btn_max_spo2_plus.Name = "btn_max_spo2_plus"
+        Me.btn_max_spo2_plus.Size = New System.Drawing.Size(22, 23)
+        Me.btn_max_spo2_plus.TabIndex = 27
+        Me.btn_max_spo2_plus.Text = "+"
+        Me.btn_max_spo2_plus.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_max_spo2_plus.UseVisualStyleBackColor = True
+        '
+        'btn_min_spo2_min
+        '
+        Me.btn_min_spo2_min.Location = New System.Drawing.Point(27, 113)
+        Me.btn_min_spo2_min.Name = "btn_min_spo2_min"
+        Me.btn_min_spo2_min.Size = New System.Drawing.Size(22, 23)
+        Me.btn_min_spo2_min.TabIndex = 25
+        Me.btn_min_spo2_min.Text = "-"
+        Me.btn_min_spo2_min.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_min_spo2_min.UseVisualStyleBackColor = True
+        '
+        'btn_min_spo2_plus
+        '
+        Me.btn_min_spo2_plus.Location = New System.Drawing.Point(96, 113)
+        Me.btn_min_spo2_plus.Name = "btn_min_spo2_plus"
+        Me.btn_min_spo2_plus.Size = New System.Drawing.Size(22, 23)
+        Me.btn_min_spo2_plus.TabIndex = 24
+        Me.btn_min_spo2_plus.Text = "+"
+        Me.btn_min_spo2_plus.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_min_spo2_plus.UseVisualStyleBackColor = True
+        '
+        'btn_max_ecg_min
+        '
+        Me.btn_max_ecg_min.Location = New System.Drawing.Point(125, 35)
+        Me.btn_max_ecg_min.Name = "btn_max_ecg_min"
+        Me.btn_max_ecg_min.Size = New System.Drawing.Size(22, 23)
+        Me.btn_max_ecg_min.TabIndex = 22
+        Me.btn_max_ecg_min.Text = "-"
+        Me.btn_max_ecg_min.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_max_ecg_min.UseVisualStyleBackColor = True
+        '
+        'btn_max_ecg_plus
+        '
+        Me.btn_max_ecg_plus.Location = New System.Drawing.Point(194, 35)
+        Me.btn_max_ecg_plus.Name = "btn_max_ecg_plus"
+        Me.btn_max_ecg_plus.Size = New System.Drawing.Size(22, 23)
+        Me.btn_max_ecg_plus.TabIndex = 21
+        Me.btn_max_ecg_plus.Text = "+"
+        Me.btn_max_ecg_plus.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_max_ecg_plus.UseVisualStyleBackColor = True
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(124, 12)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(84, 13)
+        Me.Label34.TabIndex = 20
+        Me.Label34.Text = "HR ECG MAX"
+        '
+        'btn_min_ecg_min
+        '
+        Me.btn_min_ecg_min.Location = New System.Drawing.Point(26, 35)
+        Me.btn_min_ecg_min.Name = "btn_min_ecg_min"
+        Me.btn_min_ecg_min.Size = New System.Drawing.Size(22, 23)
+        Me.btn_min_ecg_min.TabIndex = 18
+        Me.btn_min_ecg_min.Text = "-"
+        Me.btn_min_ecg_min.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_min_ecg_min.UseVisualStyleBackColor = True
+        '
+        'btn_min_ecg_plus
+        '
+        Me.btn_min_ecg_plus.Location = New System.Drawing.Point(95, 35)
+        Me.btn_min_ecg_plus.Name = "btn_min_ecg_plus"
+        Me.btn_min_ecg_plus.Size = New System.Drawing.Size(22, 23)
+        Me.btn_min_ecg_plus.TabIndex = 17
+        Me.btn_min_ecg_plus.Text = "+"
+        Me.btn_min_ecg_plus.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_min_ecg_plus.UseVisualStyleBackColor = True
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(73, 295)
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(29, 234)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(23, 13)
+        Me.Label15.Size = New System.Drawing.Size(52, 13)
         Me.Label15.TabIndex = 9
-        Me.Label15.Text = "RR"
+        Me.Label15.Text = "RR MIN"
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(73, 216)
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(29, 156)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(32, 13)
+        Me.Label14.Size = New System.Drawing.Size(63, 13)
         Me.Label14.TabIndex = 7
-        Me.Label14.Text = "NIBP"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(73, 137)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(35, 13)
-        Me.Label13.TabIndex = 5
-        Me.Label13.Text = "SPO2"
+        Me.Label14.Text = "NIBP MIN"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(73, 76)
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(29, 93)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(54, 13)
+        Me.Label12.Size = New System.Drawing.Size(66, 13)
         Me.Label12.TabIndex = 3
-        Me.Label12.Text = "RR SPO2"
+        Me.Label12.Text = "SPO2 MIN"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(73, 3)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(24, 12)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(48, 13)
+        Me.Label11.Size = New System.Drawing.Size(81, 13)
         Me.Label11.TabIndex = 1
-        Me.Label11.Text = "HR ECG"
+        Me.Label11.Text = "HR ECG MIN"
         '
         'btn_alarmlimits
         '
@@ -648,7 +883,7 @@ Partial Class Mdi
         Me.btn_alarmlimits.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btn_alarmlimits.selected = False
         Me.btn_alarmlimits.Size = New System.Drawing.Size(300, 48)
-        Me.btn_alarmlimits.TabIndex = 0
+        Me.btn_alarmlimits.TabIndex = 1
         Me.btn_alarmlimits.Text = "Alarm Limits"
         Me.btn_alarmlimits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btn_alarmlimits.Textcolor = System.Drawing.Color.Black
@@ -902,14 +1137,15 @@ Partial Class Mdi
         '
         'PanelSound
         '
+        Me.PanelSound.Controls.Add(Me.btn_min_tochscreen)
+        Me.PanelSound.Controls.Add(Me.btn_plus_tochscreen)
+        Me.PanelSound.Controls.Add(Me.LabelTochscreen)
         Me.PanelSound.Controls.Add(Me.btn_min_hb)
         Me.PanelSound.Controls.Add(Me.tbn_plus_hb)
         Me.PanelSound.Controls.Add(Me.btn_min_alarm)
         Me.PanelSound.Controls.Add(Me.btn_plus_alarm)
-        Me.PanelSound.Controls.Add(Me.LabelSoundTochscreen)
         Me.PanelSound.Controls.Add(Me.LabelSoundHeartBeat)
         Me.PanelSound.Controls.Add(Me.LabelSoundAlarm)
-        Me.PanelSound.Controls.Add(Me.Trackbar_Sound_Tochscreen)
         Me.PanelSound.Controls.Add(Me.Label33)
         Me.PanelSound.Controls.Add(Me.Label32)
         Me.PanelSound.Controls.Add(Me.Label17)
@@ -918,6 +1154,36 @@ Partial Class Mdi
         Me.PanelSound.Name = "PanelSound"
         Me.PanelSound.Size = New System.Drawing.Size(300, 200)
         Me.PanelSound.TabIndex = 5
+        '
+        'btn_min_tochscreen
+        '
+        Me.btn_min_tochscreen.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_min_tochscreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_min_tochscreen.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btn_min_tochscreen.Location = New System.Drawing.Point(46, 149)
+        Me.btn_min_tochscreen.Name = "btn_min_tochscreen"
+        Me.btn_min_tochscreen.Size = New System.Drawing.Size(61, 23)
+        Me.btn_min_tochscreen.TabIndex = 24
+        Me.btn_min_tochscreen.Text = "-"
+        Me.btn_min_tochscreen.UseVisualStyleBackColor = False
+        '
+        'btn_plus_tochscreen
+        '
+        Me.btn_plus_tochscreen.Location = New System.Drawing.Point(165, 149)
+        Me.btn_plus_tochscreen.Name = "btn_plus_tochscreen"
+        Me.btn_plus_tochscreen.Size = New System.Drawing.Size(61, 23)
+        Me.btn_plus_tochscreen.TabIndex = 23
+        Me.btn_plus_tochscreen.Text = "+"
+        Me.btn_plus_tochscreen.UseVisualStyleBackColor = True
+        '
+        'LabelTochscreen
+        '
+        Me.LabelTochscreen.AutoSize = True
+        Me.LabelTochscreen.Location = New System.Drawing.Point(129, 154)
+        Me.LabelTochscreen.Name = "LabelTochscreen"
+        Me.LabelTochscreen.Size = New System.Drawing.Size(13, 13)
+        Me.LabelTochscreen.TabIndex = 22
+        Me.LabelTochscreen.Text = "0"
         '
         'btn_min_hb
         '
@@ -961,15 +1227,6 @@ Partial Class Mdi
         Me.btn_plus_alarm.Text = "+"
         Me.btn_plus_alarm.UseVisualStyleBackColor = True
         '
-        'LabelSoundTochscreen
-        '
-        Me.LabelSoundTochscreen.AutoSize = True
-        Me.LabelSoundTochscreen.Location = New System.Drawing.Point(211, 145)
-        Me.LabelSoundTochscreen.Name = "LabelSoundTochscreen"
-        Me.LabelSoundTochscreen.Size = New System.Drawing.Size(13, 13)
-        Me.LabelSoundTochscreen.TabIndex = 17
-        Me.LabelSoundTochscreen.Text = "0"
-        '
         'LabelSoundHeartBeat
         '
         Me.LabelSoundHeartBeat.AutoSize = True
@@ -987,21 +1244,6 @@ Partial Class Mdi
         Me.LabelSoundAlarm.Size = New System.Drawing.Size(13, 13)
         Me.LabelSoundAlarm.TabIndex = 13
         Me.LabelSoundAlarm.Text = "0"
-        '
-        'Trackbar_Sound_Tochscreen
-        '
-        Me.Trackbar_Sound_Tochscreen.BackColor = System.Drawing.Color.Transparent
-        Me.Trackbar_Sound_Tochscreen.BackgroudColor = System.Drawing.Color.DarkGray
-        Me.Trackbar_Sound_Tochscreen.BorderRadius = 0
-        Me.Trackbar_Sound_Tochscreen.IndicatorColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Trackbar_Sound_Tochscreen.Location = New System.Drawing.Point(55, 139)
-        Me.Trackbar_Sound_Tochscreen.MaximumValue = 100
-        Me.Trackbar_Sound_Tochscreen.MinimumValue = 0
-        Me.Trackbar_Sound_Tochscreen.Name = "Trackbar_Sound_Tochscreen"
-        Me.Trackbar_Sound_Tochscreen.Size = New System.Drawing.Size(151, 30)
-        Me.Trackbar_Sound_Tochscreen.SliderRadius = 50
-        Me.Trackbar_Sound_Tochscreen.TabIndex = 15
-        Me.Trackbar_Sound_Tochscreen.Value = 0
         '
         'Label33
         '
@@ -1874,7 +2116,7 @@ Partial Class Mdi
         Me.BunifuDropdownPatientType.Name = "BunifuDropdownPatientType"
         Me.BunifuDropdownPatientType.NomalColor = System.Drawing.Color.Transparent
         Me.BunifuDropdownPatientType.onHoverColor = System.Drawing.Color.Silver
-        Me.BunifuDropdownPatientType.selectedIndex = -1
+        Me.BunifuDropdownPatientType.selectedIndex = 0
         Me.BunifuDropdownPatientType.Size = New System.Drawing.Size(174, 35)
         Me.BunifuDropdownPatientType.TabIndex = 11
         '
@@ -1898,7 +2140,7 @@ Partial Class Mdi
         Me.BunifuDropdownDuration.Name = "BunifuDropdownDuration"
         Me.BunifuDropdownDuration.NomalColor = System.Drawing.Color.Transparent
         Me.BunifuDropdownDuration.onHoverColor = System.Drawing.Color.Silver
-        Me.BunifuDropdownDuration.selectedIndex = -1
+        Me.BunifuDropdownDuration.selectedIndex = 0
         Me.BunifuDropdownDuration.Size = New System.Drawing.Size(174, 35)
         Me.BunifuDropdownDuration.TabIndex = 9
         '
@@ -2042,6 +2284,26 @@ Partial Class Mdi
         Me.Panel9.Size = New System.Drawing.Size(300, 81)
         Me.Panel9.TabIndex = 4
         '
+        'btn_lamp_min
+        '
+        Me.btn_lamp_min.Location = New System.Drawing.Point(84, 44)
+        Me.btn_lamp_min.Name = "btn_lamp_min"
+        Me.btn_lamp_min.Size = New System.Drawing.Size(22, 23)
+        Me.btn_lamp_min.TabIndex = 55
+        Me.btn_lamp_min.Text = "-"
+        Me.btn_lamp_min.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_lamp_min.UseVisualStyleBackColor = True
+        '
+        'btn_lamp_plus
+        '
+        Me.btn_lamp_plus.Location = New System.Drawing.Point(153, 44)
+        Me.btn_lamp_plus.Name = "btn_lamp_plus"
+        Me.btn_lamp_plus.Size = New System.Drawing.Size(22, 23)
+        Me.btn_lamp_plus.TabIndex = 54
+        Me.btn_lamp_plus.Text = "+"
+        Me.btn_lamp_plus.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_lamp_plus.UseVisualStyleBackColor = True
+        '
         'Mdi
         '
         Me.AllowDrop = True
@@ -2151,7 +2413,6 @@ Partial Class Mdi
     Friend WithEvents PanelAlarmLimits As Panel
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents btn_alarmlimits As Bunifu.Framework.UI.BunifuFlatButton
@@ -2221,21 +2482,47 @@ Partial Class Mdi
     Friend WithEvents ButtonDown As Button
     Friend WithEvents LabelBrightnessLed As Label
     Friend WithEvents LabelScreenBrightness As Label
-    Friend WithEvents TrackbarBrightLed As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents BunifuTrackbarScreenBrightness As Bunifu.Framework.UI.BunifuTrackbar
-    Friend WithEvents LabelSoundTochscreen As Label
     Friend WithEvents LabelSoundHeartBeat As Label
     Friend WithEvents LabelSoundAlarm As Label
-    Friend WithEvents Trackbar_Sound_Tochscreen As Bunifu.Framework.UI.BunifuTrackbar
-    Friend WithEvents BunifuTrackbar9 As Bunifu.Framework.UI.BunifuTrackbar
-    Friend WithEvents BunifuTrackbar8 As Bunifu.Framework.UI.BunifuTrackbar
-    Friend WithEvents BunifuTrackbar7 As Bunifu.Framework.UI.BunifuTrackbar
-    Friend WithEvents BunifuTrackbar6 As Bunifu.Framework.UI.BunifuTrackbar
-    Friend WithEvents BunifuTrackbar5 As Bunifu.Framework.UI.BunifuTrackbar
     Friend WithEvents btn_save_bright_led As Button
     Friend WithEvents btn_default_led As Button
     Friend WithEvents btn_min_alarm As Button
     Friend WithEvents btn_plus_alarm As Button
     Friend WithEvents btn_min_hb As Button
     Friend WithEvents tbn_plus_hb As Button
+    Friend WithEvents btn_min_tochscreen As Button
+    Friend WithEvents btn_plus_tochscreen As Button
+    Friend WithEvents LabelTochscreen As Label
+    Friend WithEvents Label42 As Label
+    Friend WithEvents btn_max_rr_min As Button
+    Friend WithEvents btn_max_rr_plus As Button
+    Friend WithEvents btn_min_rr_min As Button
+    Friend WithEvents btn_min_rr_plus As Button
+    Friend WithEvents Label39 As Label
+    Friend WithEvents btn_max_nibp_min As Button
+    Friend WithEvents btn_max_nibp_plus As Button
+    Friend WithEvents btn_min_nibp_min As Button
+    Friend WithEvents btn_min_nibp_plus As Button
+    Friend WithEvents Label37 As Label
+    Friend WithEvents btn_max_spo2_min As Button
+    Friend WithEvents btn_max_spo2_plus As Button
+    Friend WithEvents btn_min_spo2_min As Button
+    Friend WithEvents btn_min_spo2_plus As Button
+    Friend WithEvents btn_max_ecg_min As Button
+    Friend WithEvents btn_max_ecg_plus As Button
+    Friend WithEvents Label34 As Label
+    Friend WithEvents btn_min_ecg_min As Button
+    Friend WithEvents btn_min_ecg_plus As Button
+    Friend WithEvents TextBoxRRMax As TextBox
+    Friend WithEvents TextBoxRRMin As TextBox
+    Friend WithEvents TextBoxNIBPMax As TextBox
+    Friend WithEvents TextBoxNIBPMin As TextBox
+    Friend WithEvents TextBoxSPO2Max As TextBox
+    Friend WithEvents TextBoxSPO2Min As TextBox
+    Friend WithEvents TextBoxECGMax As TextBox
+    Friend WithEvents TextBoxECGMin As TextBox
+    Friend WithEvents btn_default_alarm As Button
+    Friend WithEvents btn_lamp_min As Button
+    Friend WithEvents btn_lamp_plus As Button
 End Class

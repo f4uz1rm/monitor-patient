@@ -145,6 +145,7 @@
     <Compile Include="Module\File-Reader.vb" />
     <Compile Include="Module\Layout.vb" />
     <Compile Include="Module\LED.vb" />
+    <Compile Include="Module\M-Parameter-Setup.vb" />
     <Compile Include="Module\Navigation.vb" />
     <Compile Include="Module\Notification.vb" />
     <Compile Include="Module\Panel-Setting.vb" />
@@ -190,18 +191,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TEST DATABASE.Designer.vb">
-      <DependentUpon>TEST DATABASE.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TEST DATABASE.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TESTDLL.Designer.vb">
-      <DependentUpon>TESTDLL.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TESTDLL.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddPatient.resx">
@@ -233,12 +222,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TEST DATABASE.resx">
-      <DependentUpon>TEST DATABASE.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TESTDLL.resx">
-      <DependentUpon>TESTDLL.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
