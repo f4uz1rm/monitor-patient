@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GMed-PM01.exe" size="2227120">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GMed-PM01.exe" size="2225584">
       <assemblyIdentity name="GMed-PM01" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EhAOD1uLiuG0xUImcjiV/EdYwdunDRVyLw3NiQriHD4=</dsig:DigestValue>
+        <dsig:DigestValue>mDBwqEMcUi1O80Hcs8DnKfg9mwX8esMHfAgqMrbOImc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -77,6 +77,15 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="Database\monitor-patient.mdb" size="339968" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>WmAysJTgO5iKQ/+YETKhwjZT4aE5WMCtkoUmfSY8N2c=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="GMed-PM01.exe.config" size="188">
     <hash>
       <dsig:Transforms>

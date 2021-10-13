@@ -31,13 +31,8 @@ Partial Class MonitoringDisplay
         Dim Series11 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim ChartArea12 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Series12 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.LabelTanggal_Jam = New System.Windows.Forms.Label()
         Me.LabelPatientName = New System.Windows.Forms.Label()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.TimerReceivedData = New System.Windows.Forms.Timer(Me.components)
         Me.ButtonBlue = New System.Windows.Forms.Button()
         Me.ButtonYellow = New System.Windows.Forms.Button()
@@ -100,15 +95,9 @@ Partial Class MonitoringDisplay
         Me.Label10 = New System.Windows.Forms.Label()
         Me.ecgrr = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.TimerBlue = New System.Windows.Forms.Timer(Me.components)
         Me.TimerNotification = New System.Windows.Forms.Timer(Me.components)
-        Me.TimerCOM3 = New System.Windows.Forms.Timer(Me.components)
-        Me.TimerLedAll = New System.Windows.Forms.Timer(Me.components)
-        Me.TimerAudio = New System.Windows.Forms.Timer(Me.components)
         Me.LabelTypePatient = New System.Windows.Forms.Label()
         Me.TimerSpo2 = New System.Windows.Forms.Timer(Me.components)
-        Me.TimerMax = New System.Windows.Forms.Timer(Me.components)
-        Me.TimerMin = New System.Windows.Forms.Timer(Me.components)
         Me.LabelPatient = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -118,6 +107,7 @@ Partial Class MonitoringDisplay
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LabelKode = New System.Windows.Forms.Label()
+        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.PanelRR.SuspendLayout()
@@ -134,21 +124,17 @@ Partial Class MonitoringDisplay
         Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'LabelTanggal_Jam
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(809, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(162, 24)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "01-01-2021   00:00"
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 1000
+        Me.LabelTanggal_Jam.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelTanggal_Jam.AutoSize = True
+        Me.LabelTanggal_Jam.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTanggal_Jam.ForeColor = System.Drawing.Color.White
+        Me.LabelTanggal_Jam.Location = New System.Drawing.Point(809, 9)
+        Me.LabelTanggal_Jam.Name = "LabelTanggal_Jam"
+        Me.LabelTanggal_Jam.Size = New System.Drawing.Size(162, 24)
+        Me.LabelTanggal_Jam.TabIndex = 6
+        Me.LabelTanggal_Jam.Text = "01-01-2021   00:00"
         '
         'LabelPatientName
         '
@@ -160,19 +146,6 @@ Partial Class MonitoringDisplay
         Me.LabelPatientName.Size = New System.Drawing.Size(152, 24)
         Me.LabelPatientName.TabIndex = 7
         Me.LabelPatientName.Text = "Patient Name : "
-        '
-        'Timer2
-        '
-        Me.Timer2.Interval = 1000
-        '
-        'Timer3
-        '
-        Me.Timer3.Interval = 10
-        '
-        'Timer4
-        '
-        Me.Timer4.Enabled = True
-        Me.Timer4.Interval = 250
         '
         'TimerReceivedData
         '
@@ -1010,26 +983,10 @@ Partial Class MonitoringDisplay
         Me.Panel6.Size = New System.Drawing.Size(302, 216)
         Me.Panel6.TabIndex = 65
         '
-        'TimerBlue
-        '
-        Me.TimerBlue.Interval = 1000
-        '
         'TimerNotification
         '
         Me.TimerNotification.Enabled = True
         Me.TimerNotification.Interval = 1200
-        '
-        'TimerCOM3
-        '
-        Me.TimerCOM3.Interval = 500
-        '
-        'TimerLedAll
-        '
-        Me.TimerLedAll.Interval = 1000
-        '
-        'TimerAudio
-        '
-        Me.TimerAudio.Interval = 1500
         '
         'LabelTypePatient
         '
@@ -1046,14 +1003,6 @@ Partial Class MonitoringDisplay
         '
         Me.TimerSpo2.Enabled = True
         Me.TimerSpo2.Interval = 1
-        '
-        'TimerMax
-        '
-        Me.TimerMax.Interval = 1000
-        '
-        'TimerMin
-        '
-        Me.TimerMin.Interval = 1000
         '
         'LabelPatient
         '
@@ -1186,7 +1135,7 @@ Partial Class MonitoringDisplay
         Me.Controls.Add(Me.ButtonYellow)
         Me.Controls.Add(Me.ButtonBlue)
         Me.Controls.Add(Me.LabelPatientName)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LabelTanggal_Jam)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -1232,13 +1181,8 @@ Partial Class MonitoringDisplay
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents LabelTanggal_Jam As Label
     Friend WithEvents LabelPatientName As Label
-    Friend WithEvents Timer2 As Timer
-    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
-    Friend WithEvents Timer3 As Timer
-    Friend WithEvents Timer4 As Timer
     Friend WithEvents TimerReceivedData As Timer
     Friend WithEvents ButtonBlue As Button
     Friend WithEvents ButtonYellow As Button
@@ -1292,12 +1236,9 @@ Partial Class MonitoringDisplay
     Friend WithEvents PanelSPO2 As Panel
     Friend WithEvents Label32 As Label
     Friend WithEvents Label31 As Label
-    Friend WithEvents TimerBlue As Timer
     Friend WithEvents PanelECG2 As Panel
     Friend WithEvents TimerNotification As Timer
-    Friend WithEvents TimerCOM3 As Timer
     Friend WithEvents TimerLedAll As Timer
-    Friend WithEvents TimerAudio As Timer
     Friend WithEvents LabelTypePatient As Label
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents LabelStatusSpo2 As Label
@@ -1308,9 +1249,8 @@ Partial Class MonitoringDisplay
     Friend WithEvents Chart3 As DataVisualization.Charting.Chart
     Friend WithEvents LabelRrStatus As Label
     Friend WithEvents TimerSpo2 As Timer
-    Friend WithEvents TimerMax As Timer
-    Friend WithEvents TimerMin As Timer
     Friend WithEvents LabelPatient As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents LabelKode As Label
+    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
 End Class

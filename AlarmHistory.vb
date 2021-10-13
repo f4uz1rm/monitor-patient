@@ -15,7 +15,7 @@
         Me.Region = New Region(p)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
         DataGridView1.Rows.Add("Alarm NiBP", DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH : mm"))
     End Sub
 

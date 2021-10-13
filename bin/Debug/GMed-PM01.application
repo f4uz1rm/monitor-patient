@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="GMed-PM01.exe.manifest" size="5715">
+    <dependentAssembly dependencyType="install" codebase="GMed-PM01.exe.manifest" size="6155">
       <assemblyIdentity name="GMed-PM01.exe" version="1.0.0.11" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pYc18YBC1+ce1+ytffmlykwGaSFMnLYNvkr0JxxWPlU=</dsig:DigestValue>
+        <dsig:DigestValue>Vh1S/UiVGRy6p3j+o4BqAVXBGcpQghB6MbXYKEJ/IpM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

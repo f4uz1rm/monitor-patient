@@ -4,6 +4,7 @@ Imports System.Windows.Forms.DataVisualization.Charting
 Imports System.Xml
 Imports System.IO
 Imports System.Data.OleDb
+Imports System.Threading
 Imports System.Media
 Public Class MonitoringDisplay
     Public comport As String
@@ -44,17 +45,16 @@ Public Class MonitoringDisplay
         End Try
     End Sub
     Private Sub MonitoringDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Tampil_Nama_Patient()
         'OpenMultiParameter()
         HideButtonNaigation()
 
         'Connection - COM 5
-        COM5Connecting()
-
+        'COM5Connecting()
 
         'Batas
         Button4.Focus()
-        Timer1.Enabled = True
         'Try Connection For Button
         'Try
         'comport = "COM5"
@@ -220,8 +220,8 @@ Public Class MonitoringDisplay
         End If
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Label1.Text = DateTime.Now.ToString("dd-MM-yyyy  HH : mm")
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs)
+        LabelTanggal_Jam.Text = DateTime.Now.ToString("dd-MM-yyyy  HH : mm")
         Button1.TabIndex = 0
         TabIndex = +1
     End Sub
@@ -238,7 +238,7 @@ Public Class MonitoringDisplay
             SerialPort1.Encoding = System.Text.Encoding.Default 'very important!
             SerialPort1.ReadTimeout = 10000
             SerialPort1.Open()
-            Timer2.Enabled = True
+
             'MsgBox("Connection Success")
         Else
             MessageBox.Show("Select a Port", "Connect Port", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
@@ -259,7 +259,7 @@ Public Class MonitoringDisplay
         End Try
     End Function
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs)
         receivedData = ReceiveSerialData()
         LabelSpo2Min.Text = receivedData
         If receivedData.Contains("q") Then
@@ -553,15 +553,15 @@ Public Class MonitoringDisplay
             If detik < 249 Then
                 Chart3.Series("ecg1a").Points.RemoveAt(0)
                 Chart3.ChartAreas(0).AxisX.Maximum = 250
-                Timer4.Interval = 1
+                'Timer4.Interval = 1
             End If
 
             If detik = 249 Then
                 Chart3.Series("ecg1a").Points.Clear()
                 Chart3.ChartAreas(0).AxisX.Maximum = 250
-                Timer4.Enabled = False
-                Timer4.Interval = 1
-                Timer4.Enabled = True
+                'Timer4.Enabled = False
+                'Timer4.Interval = 1
+                'Timer4.Enabled = True
             End If
 
             If detik >= 250 Then
@@ -569,15 +569,15 @@ Public Class MonitoringDisplay
                 Chart3.Series("ecg1").Points.RemoveAt(0)
                 Chart3.Series("ecg1a").Points.AddXY(detik - 250, Val(ecg1))
                 Chart3.ChartAreas(0).AxisX.Maximum = 250
-                Timer4.Interval = 1
+                'Timer4.Interval = 1
             End If
 
             If detik >= 500 Then
                 Chart3.Series("ecg1").Points.Clear()
                 detik = 0
-                Timer4.Enabled = False
-                Timer4.Interval = 1
-                Timer4.Enabled = True
+                ' Timer4.Enabled = False
+                'Timer4.Interval = 1
+                ' Timer4.Enabled = True
                 Chart3.ChartAreas(0).AxisX.Maximum = 250
             End If
 
@@ -604,7 +604,7 @@ Public Class MonitoringDisplay
     End Sub
     '
 
-    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs)
         Try
             detik = detik + 1
             detiks = detiks + 1
@@ -636,10 +636,6 @@ Public Class MonitoringDisplay
         Catch ex As Exception
         End Try
     End Sub
-
-
-
-
     Dim MaxAxisX As Integer = 600
     Dim MinAxisX As Integer
     Sub setchart()
@@ -667,18 +663,9 @@ Public Class MonitoringDisplay
     Dim RR As String = "txt\m_uiRr.txt"
     'ECG Status
     Dim ECGStatus As String = "txt\statusEcg.txt"
-    Dim SetNormal As Integer = 90
-
-    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
-        'running ecg
-        Try
-            'SPO
-        Catch ex As Exception
-        End Try
-    End Sub
     Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles TimerReceivedData.Tick
+        LabelTanggal_Jam.Text = Today & " " & TimeOfDay
         'running rr
-
         Try
             'SPO2
             FileReaderInfo(PathLoc + SpO2, muispo2)
@@ -849,34 +836,9 @@ Public Class MonitoringDisplay
         End If
         Return {NameSeries, ValueChartSeries, ChartName}
     End Function
-    Private Sub TimerBlue_Tick(sender As Object, e As EventArgs) Handles TimerBlue.Tick
+    Private Sub TimerBlue_Tick(sender As Object, e As EventArgs)
         BlueButton()
     End Sub
-
-
-    Private Sub TimerCOM3_Tick(sender As Object, e As EventArgs) Handles TimerCOM3.Tick
-        COM3Connecting()
-    End Sub
-    Sub COM3Connecting()
-        SerialPort1.Close()
-        SerialPort1.PortName = "COM3"
-        SerialPort1.BaudRate = 1200
-        SerialPort1.DataBits = 8
-        SerialPort1.Parity = Parity.None
-        SerialPort1.StopBits = StopBits.One
-        SerialPort1.Handshake = Handshake.None
-        SerialPort1.Encoding = System.Text.Encoding.Default 'very important!
-        SerialPort1.ReadTimeout = 10000
-        SerialPort1.Open()
-        MsgBox("Connection Success COM 3")
-        SerialPort1.Close()
-        TimerCOM3.Stop()
-        MsgBox("Disconnection Success COM 3")
-
-    End Sub
-
-
-
     Private Sub MonitoringDisplay_DoubleClick(sender As Object, e As EventArgs) Handles Me.DoubleClick
         Mdi.WindowState = FormWindowState.Maximized
         Me.Dock = DockStyle.Fill
@@ -889,24 +851,12 @@ Public Class MonitoringDisplay
     Private Sub TimerSpo2_Tick(sender As Object, e As EventArgs) Handles TimerSpo2.Tick
         If muispo2.Text = "--" Then
             ChartActive("spo2", 80, Chart2)
-
         Else
+
             ChartActive("spo2", muispo2.Text, Chart2)
 
         End If
 
-    End Sub
-
-    Private Sub TimerMax_Tick(sender As Object, e As EventArgs) Handles TimerMax.Tick
-        ChartActive("spo2", 80, Chart2)
-    End Sub
-
-    Private Sub TimerMin_Tick(sender As Object, e As EventArgs) Handles TimerMin.Tick
-        If bprm1.Text = "--" Then
-            ChartActive("spo2", 80, Chart2)
-        Else
-            ChartActive("spo2", bprm1.Text, Chart2)
-        End If
     End Sub
     Dim StatusActive As Boolean
     Dim NameStatusECG As String = "ECG HIGH"
@@ -917,18 +867,18 @@ Public Class MonitoringDisplay
     Dim Spo2Value As Integer
     Private Sub TimerNotification_Tick(sender As Object, e As EventArgs) Handles TimerNotification.Tick
         If ecghr.Text = "--" Then
+            ecghr.Text = "--"
             EcgValue = 100
         Else
             EcgValue = ecghr.Text
             NotificationStatusECG(EcgValue, NameStatusECG)
         End If
 
-        If muispo2.Text = 127 Then
-
+        If muispo2.Text = "--" Then
             Spo2Value = 127
         Else
             Spo2Value = muispo2.Text
-            NotificationStatusSPO2(Spo2Value, NameStatusSPO2)
+            'NotificationStatusSPO2(Spo2Value, NameStatusSPO2)
         End If
 
         If ecgrr.Text = "--" Then
@@ -937,5 +887,7 @@ Public Class MonitoringDisplay
             RRValue = ecgrr.Text
             NotificationStatusRR(RRValue)
         End If
+
     End Sub
+
 End Class

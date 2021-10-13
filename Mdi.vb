@@ -21,6 +21,7 @@ Public Class Mdi
     Sub PanelHideAll()
         LedOffYellow()
         PanelAlarmSetup.Hide()
+        AlarmHistory.Close()
         PanelAlarmSetupHistory.Hide()
         PanelMonitorSetting.Hide()
         PanelPatientData.Hide()
@@ -430,7 +431,7 @@ Public Class Mdi
     End Sub
     Private Sub btn_default_led_Click(sender As Object, e As EventArgs) Handles btn_default_led.Click
         LedBrightness = 0
-        LabelBrightnessLed.Text = 0.9
+        LabelBrightnessLed.Text = 100
         KirimLed(LedBrightnessValue)
     End Sub
 
@@ -658,23 +659,24 @@ Public Class Mdi
     End Sub
     Dim LedBrightnessValue As Double
     Private Sub btn_lamp_plus_Click(sender As Object, e As EventArgs) Handles btn_lamp_plus.Click
-        If LabelBrightnessLed.Text >= 0.9 Then
+        If LabelBrightnessLed.Text >= 100 Then
             LedBrightnessValue = 0.9
+            LabelBrightnessLed.Text = 100
         Else
             LedBrightnessValue = LedBrightnessValue + 0.1
+            LabelBrightnessLed.Text = LabelBrightnessLed.Text + 10
         End If
-        LabelBrightnessLed.Text = LedBrightnessValue
     End Sub
 
     Private Sub btn_lamp_min_Click(sender As Object, e As EventArgs) Handles btn_lamp_min.Click
-        If LabelBrightnessLed.Text <= 0.1 Then
-            LedBrightnessValue = 0.1
+        If LabelBrightnessLed.Text <= 10 Then
+            LedBrightnessValue = 0.0
+            LabelBrightnessLed.Text = 10
         Else
             LedBrightnessValue = LedBrightnessValue - 0.1
+            LabelBrightnessLed.Text = LabelBrightnessLed.Text - 10
         End If
-        LabelBrightnessLed.Text = LedBrightnessValue
     End Sub
-
     Private Sub btn_plus_alarm_DoubleClick(sender As Object, e As EventArgs) Handles btn_plus_alarm.DoubleClick
         If SoundAlarm >= 0.9 Then
             SoundAlarm = 0.9
