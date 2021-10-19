@@ -45,6 +45,7 @@ Partial Class AddPatient
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button_Edit = New System.Windows.Forms.Button()
+        Me.btn_show_keyboard = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_cancle
@@ -377,12 +378,23 @@ Partial Class AddPatient
         Me.Button_Edit.Text = "Save"
         Me.Button_Edit.UseVisualStyleBackColor = True
         '
+        'btn_show_keyboard
+        '
+        Me.btn_show_keyboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_show_keyboard.Location = New System.Drawing.Point(330, 25)
+        Me.btn_show_keyboard.Name = "btn_show_keyboard"
+        Me.btn_show_keyboard.Size = New System.Drawing.Size(110, 23)
+        Me.btn_show_keyboard.TabIndex = 70
+        Me.btn_show_keyboard.Text = "Show Keyboard"
+        Me.btn_show_keyboard.UseVisualStyleBackColor = True
+        '
         'AddPatient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(500, 584)
+        Me.Controls.Add(Me.btn_show_keyboard)
         Me.Controls.Add(Me.Button_Edit)
         Me.Controls.Add(Me.cb_gender)
         Me.Controls.Add(Me.txt_nurse)
@@ -436,4 +448,5 @@ Partial Class AddPatient
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button_Edit As Button
+    Friend WithEvents btn_show_keyboard As Button
 End Class

@@ -1,4 +1,6 @@
-﻿Imports System.Data.OleDb
+﻿Option Strict Off
+Imports System.ComponentModel
+Imports System.Data.OleDb
 Public Class PatientInformation
     Private Sub PatientInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.DoubleBuffered = True
@@ -111,4 +113,12 @@ Finish:
         calculateAge = yearWord & monthWord & dayWord
         calculateAge = Trim(calculateAge)
     End Function
+
+    Private Sub btn_show_keyboard_Click(sender As Object, e As EventArgs) Handles btn_show_keyboard.Click
+        Keyboard_Screen_Open()
+    End Sub
+
+    Private Sub PatientInformation_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Keyboard_Screen_Close()
+    End Sub
 End Class

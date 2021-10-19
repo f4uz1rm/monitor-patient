@@ -265,4 +265,7 @@
   <data name="fix_yellow_alarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fix-yellow-alarm.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="fix_tochscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fix_tochscreen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

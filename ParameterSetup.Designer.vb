@@ -61,6 +61,7 @@ Partial Class ParameterSetup
         Me.Label_ID = New System.Windows.Forms.Label()
         Me.TextBoxT2Label = New System.Windows.Forms.TextBox()
         Me.TextBoxT1Label = New System.Windows.Forms.TextBox()
+        Me.btn_show_keyboard = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -276,7 +277,7 @@ Partial Class ParameterSetup
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(46, 323)
+        Me.Label12.Location = New System.Drawing.Point(46, 311)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(46, 18)
         Me.Label12.TabIndex = 20
@@ -289,7 +290,7 @@ Partial Class ParameterSetup
         Me.ComboBoxPressure.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBoxPressure.FormattingEnabled = True
         Me.ComboBoxPressure.Items.AddRange(New Object() {"Adult Mode", "Child Mode", "NewBorn Mode"})
-        Me.ComboBoxPressure.Location = New System.Drawing.Point(50, 374)
+        Me.ComboBoxPressure.Location = New System.Drawing.Point(50, 362)
         Me.ComboBoxPressure.Name = "ComboBoxPressure"
         Me.ComboBoxPressure.Size = New System.Drawing.Size(121, 21)
         Me.ComboBoxPressure.TabIndex = 22
@@ -297,7 +298,7 @@ Partial Class ParameterSetup
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(48, 358)
+        Me.Label13.Location = New System.Drawing.Point(48, 346)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(48, 13)
         Me.Label13.TabIndex = 21
@@ -310,7 +311,7 @@ Partial Class ParameterSetup
         Me.ComboBoxAutoMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBoxAutoMode.FormattingEnabled = True
         Me.ComboBoxAutoMode.Items.AddRange(New Object() {"1 Minute", "2 Minute", "3 Minute", "4 Minute", "5 Minute", "10 Minute", "15 Minute", "30 Minute", "60 Minute", "90 Minute", "2 HOurs", "3 Hours", "4 Hours", "8 Hours", ""})
-        Me.ComboBoxAutoMode.Location = New System.Drawing.Point(215, 374)
+        Me.ComboBoxAutoMode.Location = New System.Drawing.Point(215, 362)
         Me.ComboBoxAutoMode.Name = "ComboBoxAutoMode"
         Me.ComboBoxAutoMode.Size = New System.Drawing.Size(121, 21)
         Me.ComboBoxAutoMode.TabIndex = 24
@@ -318,7 +319,7 @@ Partial Class ParameterSetup
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(213, 358)
+        Me.Label14.Location = New System.Drawing.Point(213, 346)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(59, 13)
         Me.Label14.TabIndex = 23
@@ -328,7 +329,7 @@ Partial Class ParameterSetup
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(48, 413)
+        Me.Label15.Location = New System.Drawing.Point(43, 386)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(103, 18)
         Me.Label15.TabIndex = 25
@@ -341,7 +342,7 @@ Partial Class ParameterSetup
         Me.ComboBoxSetupT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBoxSetupT1.FormattingEnabled = True
         Me.ComboBoxSetupT1.Items.AddRange(New Object() {"Enable", "Disable"})
-        Me.ComboBoxSetupT1.Location = New System.Drawing.Point(51, 463)
+        Me.ComboBoxSetupT1.Location = New System.Drawing.Point(51, 441)
         Me.ComboBoxSetupT1.Name = "ComboBoxSetupT1"
         Me.ComboBoxSetupT1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBoxSetupT1.TabIndex = 27
@@ -349,7 +350,7 @@ Partial Class ParameterSetup
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(49, 447)
+        Me.Label16.Location = New System.Drawing.Point(49, 425)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(51, 13)
         Me.Label16.TabIndex = 26
@@ -362,7 +363,7 @@ Partial Class ParameterSetup
         Me.ComboBoxSetupT2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBoxSetupT2.FormattingEnabled = True
         Me.ComboBoxSetupT2.Items.AddRange(New Object() {"Enable", "Disable"})
-        Me.ComboBoxSetupT2.Location = New System.Drawing.Point(215, 463)
+        Me.ComboBoxSetupT2.Location = New System.Drawing.Point(215, 441)
         Me.ComboBoxSetupT2.Name = "ComboBoxSetupT2"
         Me.ComboBoxSetupT2.Size = New System.Drawing.Size(121, 21)
         Me.ComboBoxSetupT2.TabIndex = 29
@@ -370,7 +371,7 @@ Partial Class ParameterSetup
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(213, 447)
+        Me.Label17.Location = New System.Drawing.Point(213, 425)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(51, 13)
         Me.Label17.TabIndex = 28
@@ -379,7 +380,7 @@ Partial Class ParameterSetup
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(351, 447)
+        Me.Label18.Location = New System.Drawing.Point(351, 425)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(49, 13)
         Me.Label18.TabIndex = 30
@@ -392,7 +393,7 @@ Partial Class ParameterSetup
         Me.ComboBoxTDifference.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBoxTDifference.FormattingEnabled = True
         Me.ComboBoxTDifference.Items.AddRange(New Object() {"Enable", "Disable"})
-        Me.ComboBoxTDifference.Location = New System.Drawing.Point(215, 524)
+        Me.ComboBoxTDifference.Location = New System.Drawing.Point(51, 492)
         Me.ComboBoxTDifference.Name = "ComboBoxTDifference"
         Me.ComboBoxTDifference.Size = New System.Drawing.Size(121, 21)
         Me.ComboBoxTDifference.TabIndex = 35
@@ -400,7 +401,7 @@ Partial Class ParameterSetup
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(213, 508)
+        Me.Label19.Location = New System.Drawing.Point(49, 476)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(66, 13)
         Me.Label19.TabIndex = 34
@@ -409,7 +410,7 @@ Partial Class ParameterSetup
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(49, 508)
+        Me.Label20.Location = New System.Drawing.Point(351, 476)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(49, 13)
         Me.Label20.TabIndex = 32
@@ -437,7 +438,7 @@ Partial Class ParameterSetup
         '
         Me.Label_ID.AutoSize = True
         Me.Label_ID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_ID.Location = New System.Drawing.Point(456, 9)
+        Me.Label_ID.Location = New System.Drawing.Point(417, 15)
         Me.Label_ID.Name = "Label_ID"
         Me.Label_ID.Size = New System.Drawing.Size(44, 13)
         Me.Label_ID.TabIndex = 38
@@ -445,23 +446,34 @@ Partial Class ParameterSetup
         '
         'TextBoxT2Label
         '
-        Me.TextBoxT2Label.Location = New System.Drawing.Point(52, 525)
+        Me.TextBoxT2Label.Location = New System.Drawing.Point(354, 493)
         Me.TextBoxT2Label.Name = "TextBoxT2Label"
         Me.TextBoxT2Label.Size = New System.Drawing.Size(120, 20)
         Me.TextBoxT2Label.TabIndex = 39
         '
         'TextBoxT1Label
         '
-        Me.TextBoxT1Label.Location = New System.Drawing.Point(354, 464)
+        Me.TextBoxT1Label.Location = New System.Drawing.Point(354, 442)
         Me.TextBoxT1Label.Name = "TextBoxT1Label"
-        Me.TextBoxT1Label.Size = New System.Drawing.Size(100, 20)
+        Me.TextBoxT1Label.Size = New System.Drawing.Size(120, 20)
         Me.TextBoxT1Label.TabIndex = 40
+        '
+        'btn_show_keyboard
+        '
+        Me.btn_show_keyboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_show_keyboard.Location = New System.Drawing.Point(364, 9)
+        Me.btn_show_keyboard.Name = "btn_show_keyboard"
+        Me.btn_show_keyboard.Size = New System.Drawing.Size(110, 23)
+        Me.btn_show_keyboard.TabIndex = 71
+        Me.btn_show_keyboard.Text = "Show Keyboard"
+        Me.btn_show_keyboard.UseVisualStyleBackColor = True
         '
         'ParameterSetup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(507, 638)
+        Me.Controls.Add(Me.btn_show_keyboard)
         Me.Controls.Add(Me.TextBoxT1Label)
         Me.Controls.Add(Me.TextBoxT2Label)
         Me.Controls.Add(Me.Label_ID)
@@ -549,4 +561,5 @@ Partial Class ParameterSetup
     Friend WithEvents Label_ID As Label
     Friend WithEvents TextBoxT2Label As TextBox
     Friend WithEvents TextBoxT1Label As TextBox
+    Friend WithEvents btn_show_keyboard As Button
 End Class

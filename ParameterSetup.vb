@@ -1,4 +1,6 @@
-﻿Public Class ParameterSetup
+﻿Imports System.ComponentModel
+
+Public Class ParameterSetup
     Private Sub ParameterSetup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.DoubleBuffered = True
         Me.FormBorderStyle = FormBorderStyle.None
@@ -28,6 +30,7 @@
 
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
         Me.Close()
+        Keyboard_Screen_Close()
     End Sub
 
     Private Sub ButtonSave_Click(sender As Object, e As EventArgs) Handles ButtonSave.Click
@@ -52,5 +55,12 @@
             MonitoringDisplay.Label29.Visible = False
             MonitoringDisplay.muitemp2.Visible = False
         End If
+    End Sub
+
+    Private Sub btn_show_keyboard_Click(sender As Object, e As EventArgs) Handles btn_show_keyboard.Click
+        Keyboard_Screen_Open()
+    End Sub
+    Private Sub ParameterSetup_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Keyboard_Screen_Close()
     End Sub
 End Class

@@ -87,3 +87,4 @@ C:\Users\KQ\Documents\GitHub\monitor-patient\bin\Debug\NAudio.dll
 C:\Users\KQ\Documents\GitHub\monitor-patient\bin\Debug\NAudio.pdb
 C:\Users\KQ\Documents\GitHub\monitor-patient\bin\Debug\Database\monitor-patient.mdb
 C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed_PM01.TEST_CHART.resources
+C:\Users\KQ\Documents\GitHub\monitor-patient\obj\Debug\GMed-PM01.vbprojResolveAssemblyReference.cache

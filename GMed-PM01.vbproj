@@ -143,6 +143,7 @@
     <Compile Include="Module\Connection-COM.vb" />
     <Compile Include="Module\Data-Patient.vb" />
     <Compile Include="Module\File-Reader.vb" />
+    <Compile Include="Module\Keyboard-Screen.vb" />
     <Compile Include="Module\Layout.vb" />
     <Compile Include="Module\LED.vb" />
     <Compile Include="Module\M-Parameter-Setup.vb" />
@@ -413,6 +414,7 @@
     <Content Include="Database\monitor-patient.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\fix_tochscreen.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

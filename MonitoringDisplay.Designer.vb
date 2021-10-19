@@ -23,14 +23,14 @@ Partial Class MonitoringDisplay
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea10 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea11 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series11 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea12 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series12 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.LabelTanggal_Jam = New System.Windows.Forms.Label()
         Me.LabelPatientName = New System.Windows.Forms.Label()
         Me.TimerReceivedData = New System.Windows.Forms.Timer(Me.components)
@@ -252,26 +252,26 @@ Partial Class MonitoringDisplay
         Me.Chart1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chart1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea9.AxisX.LabelStyle.Enabled = False
-        ChartArea9.AxisX.LineColor = System.Drawing.Color.Transparent
-        ChartArea9.AxisX.MajorGrid.Enabled = False
-        ChartArea9.AxisY.LabelStyle.Enabled = False
-        ChartArea9.AxisY.LineColor = System.Drawing.Color.Transparent
-        ChartArea9.AxisY.MajorGrid.Enabled = False
-        ChartArea9.AxisY.MajorTickMark.Enabled = False
-        ChartArea9.BackColor = System.Drawing.Color.Transparent
-        ChartArea9.BorderColor = System.Drawing.Color.Transparent
-        ChartArea9.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea9)
+        ChartArea1.AxisX.LabelStyle.Enabled = False
+        ChartArea1.AxisX.LineColor = System.Drawing.Color.Transparent
+        ChartArea1.AxisX.MajorGrid.Enabled = False
+        ChartArea1.AxisY.LabelStyle.Enabled = False
+        ChartArea1.AxisY.LineColor = System.Drawing.Color.Transparent
+        ChartArea1.AxisY.MajorGrid.Enabled = False
+        ChartArea1.AxisY.MajorTickMark.Enabled = False
+        ChartArea1.BackColor = System.Drawing.Color.Transparent
+        ChartArea1.BorderColor = System.Drawing.Color.Transparent
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
         Me.Chart1.IsSoftShadows = False
         Me.Chart1.Location = New System.Drawing.Point(104, 18)
         Me.Chart1.Name = "Chart1"
-        Series9.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
-        Series9.ChartArea = "ChartArea1"
-        Series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series9.Color = System.Drawing.Color.Lime
-        Series9.Name = "rr"
-        Me.Chart1.Series.Add(Series9)
+        Series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series1.Color = System.Drawing.Color.Lime
+        Series1.Name = "rr"
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(573, 140)
         Me.Chart1.TabIndex = 63
         Me.Chart1.Text = "Chart1"
@@ -333,41 +333,41 @@ Partial Class MonitoringDisplay
         Me.Chart2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chart2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea10.AxisX.LabelStyle.Enabled = False
-        ChartArea10.AxisX.LineColor = System.Drawing.Color.Transparent
-        ChartArea10.AxisX.MajorGrid.Enabled = False
-        ChartArea10.AxisX.MajorTickMark.Enabled = False
-        ChartArea10.AxisY.LabelAutoFitStyle = CType((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) _
+        ChartArea2.AxisX.LabelStyle.Enabled = False
+        ChartArea2.AxisX.LineColor = System.Drawing.Color.Transparent
+        ChartArea2.AxisX.MajorGrid.Enabled = False
+        ChartArea2.AxisX.MajorTickMark.Enabled = False
+        ChartArea2.AxisY.LabelAutoFitStyle = CType((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) _
             Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) _
             Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) _
             Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) _
             Or System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap), System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)
-        ChartArea10.AxisY.LabelStyle.Enabled = False
-        ChartArea10.AxisY.LineColor = System.Drawing.Color.Transparent
-        ChartArea10.AxisY.MajorGrid.Enabled = False
-        ChartArea10.AxisY.MajorGrid.Interval = 0R
-        ChartArea10.AxisY.MajorGrid.IntervalOffset = 0R
-        ChartArea10.AxisY.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.[Auto]
-        ChartArea10.AxisY.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.[Auto]
-        ChartArea10.AxisY.MajorTickMark.Enabled = False
-        ChartArea10.AxisY.MajorTickMark.Interval = 0R
-        ChartArea10.AxisY.MajorTickMark.IntervalOffset = 0R
-        ChartArea10.AxisY.MajorTickMark.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds
-        ChartArea10.AxisY.MajorTickMark.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds
-        ChartArea10.AxisY.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.InsideArea
-        ChartArea10.BackColor = System.Drawing.Color.Transparent
-        ChartArea10.BorderColor = System.Drawing.Color.Transparent
-        ChartArea10.Name = "ChartArea1"
-        Me.Chart2.ChartAreas.Add(ChartArea10)
+        ChartArea2.AxisY.LabelStyle.Enabled = False
+        ChartArea2.AxisY.LineColor = System.Drawing.Color.Transparent
+        ChartArea2.AxisY.MajorGrid.Enabled = False
+        ChartArea2.AxisY.MajorGrid.Interval = 0R
+        ChartArea2.AxisY.MajorGrid.IntervalOffset = 0R
+        ChartArea2.AxisY.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.[Auto]
+        ChartArea2.AxisY.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.[Auto]
+        ChartArea2.AxisY.MajorTickMark.Enabled = False
+        ChartArea2.AxisY.MajorTickMark.Interval = 0R
+        ChartArea2.AxisY.MajorTickMark.IntervalOffset = 0R
+        ChartArea2.AxisY.MajorTickMark.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds
+        ChartArea2.AxisY.MajorTickMark.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds
+        ChartArea2.AxisY.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.InsideArea
+        ChartArea2.BackColor = System.Drawing.Color.Transparent
+        ChartArea2.BorderColor = System.Drawing.Color.Transparent
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart2.ChartAreas.Add(ChartArea2)
         Me.Chart2.IsSoftShadows = False
         Me.Chart2.Location = New System.Drawing.Point(104, 40)
         Me.Chart2.Name = "Chart2"
-        Series10.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
-        Series10.ChartArea = "ChartArea1"
-        Series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series10.Color = System.Drawing.Color.DeepSkyBlue
-        Series10.Name = "spo2"
-        Me.Chart2.Series.Add(Series10)
+        Series2.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series2.Color = System.Drawing.Color.DeepSkyBlue
+        Series2.Name = "spo2"
+        Me.Chart2.Series.Add(Series2)
         Me.Chart2.Size = New System.Drawing.Size(573, 140)
         Me.Chart2.TabIndex = 64
         Me.Chart2.Text = "Chart2"
@@ -414,27 +414,27 @@ Partial Class MonitoringDisplay
         Me.Chart4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chart4.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea11.AxisX.LabelStyle.Enabled = False
-        ChartArea11.AxisX.LineColor = System.Drawing.Color.Transparent
-        ChartArea11.AxisX.MajorGrid.Enabled = False
-        ChartArea11.AxisY.LabelStyle.Enabled = False
-        ChartArea11.AxisY.LineColor = System.Drawing.Color.Transparent
-        ChartArea11.AxisY.LineWidth = 50
-        ChartArea11.AxisY.MajorGrid.Enabled = False
-        ChartArea11.AxisY.MajorTickMark.Enabled = False
-        ChartArea11.BackColor = System.Drawing.Color.Transparent
-        ChartArea11.BorderColor = System.Drawing.Color.Transparent
-        ChartArea11.Name = "ChartArea1"
-        Me.Chart4.ChartAreas.Add(ChartArea11)
+        ChartArea3.AxisX.LabelStyle.Enabled = False
+        ChartArea3.AxisX.LineColor = System.Drawing.Color.Transparent
+        ChartArea3.AxisX.MajorGrid.Enabled = False
+        ChartArea3.AxisY.LabelStyle.Enabled = False
+        ChartArea3.AxisY.LineColor = System.Drawing.Color.Transparent
+        ChartArea3.AxisY.LineWidth = 50
+        ChartArea3.AxisY.MajorGrid.Enabled = False
+        ChartArea3.AxisY.MajorTickMark.Enabled = False
+        ChartArea3.BackColor = System.Drawing.Color.Transparent
+        ChartArea3.BorderColor = System.Drawing.Color.Transparent
+        ChartArea3.Name = "ChartArea1"
+        Me.Chart4.ChartAreas.Add(ChartArea3)
         Me.Chart4.IsSoftShadows = False
         Me.Chart4.Location = New System.Drawing.Point(104, 46)
         Me.Chart4.Name = "Chart4"
-        Series11.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
-        Series11.ChartArea = "ChartArea1"
-        Series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series11.Color = System.Drawing.Color.Lime
-        Series11.Name = "ecg2"
-        Me.Chart4.Series.Add(Series11)
+        Series3.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series3.Color = System.Drawing.Color.Lime
+        Series3.Name = "ecg2"
+        Me.Chart4.Series.Add(Series3)
         Me.Chart4.Size = New System.Drawing.Size(573, 140)
         Me.Chart4.TabIndex = 65
         Me.Chart4.Text = "Chart4"
@@ -497,28 +497,28 @@ Partial Class MonitoringDisplay
         Me.Chart3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chart3.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        ChartArea12.AxisX.LabelStyle.Enabled = False
-        ChartArea12.AxisX.LineColor = System.Drawing.Color.Transparent
-        ChartArea12.AxisX.MajorGrid.Enabled = False
-        ChartArea12.AxisY.LabelStyle.Enabled = False
-        ChartArea12.AxisY.LineColor = System.Drawing.Color.Transparent
-        ChartArea12.AxisY.LineWidth = 50
-        ChartArea12.AxisY.MajorGrid.Enabled = False
-        ChartArea12.AxisY.MajorTickMark.Enabled = False
-        ChartArea12.BackColor = System.Drawing.Color.Transparent
-        ChartArea12.BorderColor = System.Drawing.Color.Transparent
-        ChartArea12.Name = "ChartArea1"
-        Me.Chart3.ChartAreas.Add(ChartArea12)
+        ChartArea4.AxisX.LabelStyle.Enabled = False
+        ChartArea4.AxisX.LineColor = System.Drawing.Color.Transparent
+        ChartArea4.AxisX.MajorGrid.Enabled = False
+        ChartArea4.AxisY.LabelStyle.Enabled = False
+        ChartArea4.AxisY.LineColor = System.Drawing.Color.Transparent
+        ChartArea4.AxisY.LineWidth = 50
+        ChartArea4.AxisY.MajorGrid.Enabled = False
+        ChartArea4.AxisY.MajorTickMark.Enabled = False
+        ChartArea4.BackColor = System.Drawing.Color.Transparent
+        ChartArea4.BorderColor = System.Drawing.Color.Transparent
+        ChartArea4.Name = "ChartArea1"
+        Me.Chart3.ChartAreas.Add(ChartArea4)
         Me.Chart3.IsSoftShadows = False
         Me.Chart3.Location = New System.Drawing.Point(104, 70)
         Me.Chart3.Name = "Chart3"
-        Series12.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
-        Series12.ChartArea = "ChartArea1"
-        Series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series12.Color = System.Drawing.Color.Lime
-        Series12.Name = "ecg1"
-        Series12.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
-        Me.Chart3.Series.Add(Series12)
+        Series4.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
+        Series4.ChartArea = "ChartArea1"
+        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series4.Color = System.Drawing.Color.Lime
+        Series4.Name = "ecg1"
+        Series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
+        Me.Chart3.Series.Add(Series4)
         Me.Chart3.Size = New System.Drawing.Size(573, 140)
         Me.Chart3.TabIndex = 66
         Me.Chart3.Text = "Chart3"
@@ -1115,6 +1115,7 @@ Partial Class MonitoringDisplay
         Me.LabelKode.Size = New System.Drawing.Size(40, 23)
         Me.LabelKode.TabIndex = 71
         Me.LabelKode.Text = "DP001"
+        Me.LabelKode.Visible = False
         '
         'MonitoringDisplay
         '
@@ -1122,10 +1123,10 @@ Partial Class MonitoringDisplay
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1024, 768)
+        Me.Controls.Add(Me.LabelTypePatient)
         Me.Controls.Add(Me.LabelKode)
         Me.Controls.Add(Me.LabelPatient)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.LabelTypePatient)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)

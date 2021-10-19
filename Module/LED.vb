@@ -7,6 +7,7 @@
         Catch ex As Exception
             'MsgBox(ex.ToString)
         End Try
+        Return LedValue
     End Function
     'RED
     Sub LedOnRed()

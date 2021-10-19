@@ -1,5 +1,7 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.Management
+Imports System.ComponentModel
+
 Public Class Mdi
     'Lebar Me
     Dim WidthMe As Integer = 1024
@@ -45,43 +47,60 @@ Public Class Mdi
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        AudioTouchscreen()
         PanelHideAll()
         MonitorDisplayView(WidthMe - 5, HeightMe - 10)
         NavBottom("Home", True)
+
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        AudioTouchscreen()
         PanelHideAll()
         MonitorDisplayView(WidthMe - W, HeightMe - H)
         PanelAlarmSetup.Show()
         Button2.Select()
         NavBottom("Alarm-Setting", True)
+
+
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        AudioTouchscreen()
         PanelHideAll()
         PanelAlarmSetupHistory.Show()
         MonitorDisplayView(WidthMe - W, HeightMe - H)
         AlarmHistory.btn_close.Select()
         AlarmHistory.Show()
         NavBottom("Alarm-History", True)
+
+
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        AudioTouchscreen()
         PanelHideAll()
         PanelMonitorSetting.Show()
         MonitorDisplayView(WidthMe - W, HeightMe - H)
         NavBottom("Monitor-Setting", True)
+
+
     End Sub
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        AudioTouchscreen()
         PanelHideAll()
         PanelPatientData.Show()
         MonitorDisplayView(WidthMe - W, HeightMe - H)
         NavBottom("Patient-Data", True)
+
+
     End Sub
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        AudioTouchscreen()
         PanelHideAll()
         PanelNIBP.Show()
         MonitorDisplayView(WidthMe - W, HeightMe - H)
         NavBottom("NIBP", True)
+
+
     End Sub
 
     Private Sub btn_alarmlimits_Click(sender As Object, e As EventArgs)
@@ -495,6 +514,7 @@ Public Class Mdi
     Dim Wave1 As New NAudio.Wave.WaveOut 'Wave out device for playing the sound
     Dim redalarm() As Byte = IO.File.ReadAllBytes(PathAudio & "fix-red-alarm.wav") 'Your Buffer
     Dim HBalarm() As Byte = IO.File.ReadAllBytes(PathAudio & "fix-HB-sound.wav")
+    Dim AudioToch() As Byte = IO.File.ReadAllBytes(PathAudio & "fix_tochscreen.wav")
     Sub PlaySoundAlarm(value As Double, valueByte() As Byte)
 
         Dim data As New IO.MemoryStream(valueByte) 'Data stream for the buffer
@@ -503,7 +523,6 @@ Public Class Mdi
         Wave1.Play()
     End Sub
     Private Sub btn_plus_alarm_Click(sender As Object, e As EventArgs) Handles btn_plus_alarm.Click
-
         If SoundAlarm >= 0.9 Then
             SoundAlarm = 0.9
             PlaySoundAlarm(SoundAlarm, redalarm)
@@ -677,16 +696,41 @@ Public Class Mdi
             LabelBrightnessLed.Text = LabelBrightnessLed.Text - 10
         End If
     End Sub
-    Private Sub btn_plus_alarm_DoubleClick(sender As Object, e As EventArgs) Handles btn_plus_alarm.DoubleClick
-        If SoundAlarm >= 0.9 Then
-            SoundAlarm = 0.9
-            PlaySoundAlarm(SoundAlarm, redalarm)
+
+    Private Sub btn_min_tochscreen_Click(sender As Object, e As EventArgs) Handles btn_min_tochscreen.Click
+        If SoundTochscreen <= 0.1 Then
+            SoundTochscreen = 0.1
+            PlaySoundAlarm(SoundTochscreen, AudioToch)
         Else
-            SoundAlarm = SoundAlarm + 0.2
-            LabelSoundAlarm.Text = SoundAlarm
-            PlaySoundAlarm(SoundAlarm, redalarm)
+            SoundTochscreen = SoundTochscreen - 0.1
+            LabelTochscreen.Text = SoundTochscreen
+            PlaySoundAlarm(SoundTochscreen, AudioToch)
         End If
     End Sub
+    Private Sub btn_plus_tochscreen_Click(sender As Object, e As EventArgs) Handles btn_plus_tochscreen.Click
+        If SoundTochscreen >= 0.9 Then
+            SoundTochscreen = 0.9
+            PlaySoundAlarm(SoundTochscreen, AudioToch)
+        Else
+            SoundTochscreen = SoundTochscreen + 0.1
+            LabelTochscreen.Text = SoundTochscreen
+            PlaySoundAlarm(SoundTochscreen, AudioToch)
+        End If
+    End Sub
+
+
+    Private Sub LabelTochscreen_TextChanged(sender As Object, e As EventArgs) Handles LabelTochscreen.TextChanged
+        TextChange(LabelTochscreen)
+    End Sub
+
+    Private Sub Mdi_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
+        PlaySoundAlarm(SoundTochscreen, AudioToch)
+    End Sub
+
+    Private Sub btn_min_ecg_min_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
     Private Sub btn_min_alarm_Click(sender As Object, e As EventArgs) Handles btn_min_alarm.Click
         If SoundAlarm <= 0.1 Then
             SoundAlarm = 0.1
@@ -696,5 +740,9 @@ Public Class Mdi
             LabelSoundAlarm.Text = SoundAlarm
             PlaySoundAlarm(SoundAlarm, redalarm)
         End If
+    End Sub
+
+    Private Sub Mdi_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Wave1.Dispose()
     End Sub
 End Class

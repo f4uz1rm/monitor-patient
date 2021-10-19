@@ -1,4 +1,6 @@
-﻿Public Class AddPatient
+﻿Option Strict Off
+Imports System.ComponentModel
+Public Class AddPatient
     Private Sub AddPatient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.DoubleBuffered = True
         Me.FormBorderStyle = FormBorderStyle.None
@@ -17,15 +19,13 @@
 
     Private Sub btn_cancle_Click(sender As Object, e As EventArgs) Handles btn_cancle.Click
         Me.Close()
+        Keyboard_Screen_Close()
     End Sub
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub TextBox1_Click(sender As Object, e As EventArgs) Handles txt_nurse.Click, txt_doctor.Click, txt_profession.Click, txt_weight.Click, txt_height.Click, txt_age.Click, txt_last_name.Click, txt_first_name.Click
-        Keyboard_Show()
-    End Sub
     Private Sub Button_Edit_Click(sender As Object, e As EventArgs) Handles Button_Edit.Click
         Add_Patient_Update_Data_Patient()
         MonitoringDisplay.LabelPatient.Text = txt_first_name.Text & " " & txt_last_name.Text
@@ -73,4 +73,11 @@ Finish:
         calculateAge = yearWord & monthWord & dayWord
         calculateAge = Trim(calculateAge)
     End Function
+    Private Sub btn_show_keyboard_Click(sender As Object, e As EventArgs) Handles btn_show_keyboard.Click
+        Keyboard_Screen_Open()
+    End Sub
+
+    Private Sub AddPatient_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Keyboard_Screen_Close()
+    End Sub
 End Class

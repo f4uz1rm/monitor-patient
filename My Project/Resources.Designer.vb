@@ -110,6 +110,15 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         '''</summary>
+        Friend ReadOnly Property fix_tochscreen() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("fix_tochscreen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
         Friend ReadOnly Property fix_yellow_alarm() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("fix_yellow_alarm", resourceCulture)

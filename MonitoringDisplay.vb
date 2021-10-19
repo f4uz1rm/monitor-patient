@@ -51,7 +51,7 @@ Public Class MonitoringDisplay
         HideButtonNaigation()
 
         'Connection - COM 5
-        'COM5Connecting()
+        COM5Connecting()
 
         'Batas
         Button4.Focus()
@@ -529,6 +529,7 @@ Public Class MonitoringDisplay
             End If
         Catch ex As Exception
         End Try
+        Return 0
     End Function
     Sub ReadingFileChartECG()
 
@@ -782,6 +783,7 @@ Public Class MonitoringDisplay
         Console.WriteLine("Wave" & line)
         'ChartActive(NameSeries, line, ChartName)
         ChartName.Series(NameSeries).Points.AddXY(detik3, line)
+        Return 0
     End Function
     Public isMouseDown As Boolean = False
     Public mouseOffset As Point
@@ -878,7 +880,7 @@ Public Class MonitoringDisplay
             Spo2Value = 127
         Else
             Spo2Value = muispo2.Text
-            'NotificationStatusSPO2(Spo2Value, NameStatusSPO2)
+            NotificationStatusSPO2(Spo2Value, NameStatusSPO2)
         End If
 
         If ecgrr.Text = "--" Then

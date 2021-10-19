@@ -53,6 +53,7 @@ Partial Class PatientInformation
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btn_show_keyboard = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -95,7 +96,7 @@ Partial Class PatientInformation
         '
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Location = New System.Drawing.Point(15, 447)
+        Me.Panel1.Location = New System.Drawing.Point(28, 420)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(251, 100)
         Me.Panel1.TabIndex = 45
@@ -185,7 +186,7 @@ Partial Class PatientInformation
         Me.cb_gender.DisabledColor = System.Drawing.Color.Gray
         Me.cb_gender.ForeColor = System.Drawing.Color.Black
         Me.cb_gender.Items = New String() {"Male", "Famale"}
-        Me.cb_gender.Location = New System.Drawing.Point(30, 290)
+        Me.cb_gender.Location = New System.Drawing.Point(30, 306)
         Me.cb_gender.Name = "cb_gender"
         Me.cb_gender.NomalColor = System.Drawing.Color.Transparent
         Me.cb_gender.onHoverColor = System.Drawing.Color.Silver
@@ -205,7 +206,7 @@ Partial Class PatientInformation
         Me.txt_nurse.LineIdleColor = System.Drawing.Color.Gray
         Me.txt_nurse.LineMouseHoverColor = System.Drawing.Color.Lime
         Me.txt_nurse.LineThickness = 3
-        Me.txt_nurse.Location = New System.Drawing.Point(218, 364)
+        Me.txt_nurse.Location = New System.Drawing.Point(218, 380)
         Me.txt_nurse.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_nurse.Name = "txt_nurse"
         Me.txt_nurse.Size = New System.Drawing.Size(222, 33)
@@ -225,7 +226,7 @@ Partial Class PatientInformation
         Me.txt_doctor.LineIdleColor = System.Drawing.Color.Gray
         Me.txt_doctor.LineMouseHoverColor = System.Drawing.Color.Lime
         Me.txt_doctor.LineThickness = 3
-        Me.txt_doctor.Location = New System.Drawing.Point(30, 364)
+        Me.txt_doctor.Location = New System.Drawing.Point(30, 380)
         Me.txt_doctor.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_doctor.Name = "txt_doctor"
         Me.txt_doctor.Size = New System.Drawing.Size(143, 33)
@@ -245,7 +246,7 @@ Partial Class PatientInformation
         Me.txt_profession.LineIdleColor = System.Drawing.Color.Gray
         Me.txt_profession.LineMouseHoverColor = System.Drawing.Color.Lime
         Me.txt_profession.LineThickness = 3
-        Me.txt_profession.Location = New System.Drawing.Point(218, 290)
+        Me.txt_profession.Location = New System.Drawing.Point(218, 306)
         Me.txt_profession.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_profession.Name = "txt_profession"
         Me.txt_profession.Size = New System.Drawing.Size(222, 33)
@@ -265,7 +266,7 @@ Partial Class PatientInformation
         Me.txt_weight.LineIdleColor = System.Drawing.Color.Gray
         Me.txt_weight.LineMouseHoverColor = System.Drawing.Color.Lime
         Me.txt_weight.LineThickness = 3
-        Me.txt_weight.Location = New System.Drawing.Point(218, 213)
+        Me.txt_weight.Location = New System.Drawing.Point(218, 229)
         Me.txt_weight.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_weight.Name = "txt_weight"
         Me.txt_weight.Size = New System.Drawing.Size(222, 33)
@@ -285,7 +286,7 @@ Partial Class PatientInformation
         Me.txt_height.LineIdleColor = System.Drawing.Color.Gray
         Me.txt_height.LineMouseHoverColor = System.Drawing.Color.Lime
         Me.txt_height.LineThickness = 3
-        Me.txt_height.Location = New System.Drawing.Point(34, 213)
+        Me.txt_height.Location = New System.Drawing.Point(34, 229)
         Me.txt_height.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_height.Name = "txt_height"
         Me.txt_height.Size = New System.Drawing.Size(143, 33)
@@ -304,7 +305,7 @@ Partial Class PatientInformation
         Me.txt_age.LineIdleColor = System.Drawing.Color.Gray
         Me.txt_age.LineMouseHoverColor = System.Drawing.Color.Lime
         Me.txt_age.LineThickness = 3
-        Me.txt_age.Location = New System.Drawing.Point(218, 138)
+        Me.txt_age.Location = New System.Drawing.Point(218, 154)
         Me.txt_age.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_age.Name = "txt_age"
         Me.txt_age.Size = New System.Drawing.Size(222, 33)
@@ -319,7 +320,7 @@ Partial Class PatientInformation
         Me.Datetimepicker1.ForeColor = System.Drawing.Color.Black
         Me.Datetimepicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Datetimepicker1.FormatCustom = ""
-        Me.Datetimepicker1.Location = New System.Drawing.Point(30, 138)
+        Me.Datetimepicker1.Location = New System.Drawing.Point(30, 154)
         Me.Datetimepicker1.Name = "Datetimepicker1"
         Me.Datetimepicker1.Size = New System.Drawing.Size(147, 33)
         Me.Datetimepicker1.TabIndex = 85
@@ -337,7 +338,7 @@ Partial Class PatientInformation
         Me.txt_last_name.LineIdleColor = System.Drawing.Color.Gray
         Me.txt_last_name.LineMouseHoverColor = System.Drawing.Color.Lime
         Me.txt_last_name.LineThickness = 3
-        Me.txt_last_name.Location = New System.Drawing.Point(218, 59)
+        Me.txt_last_name.Location = New System.Drawing.Point(218, 75)
         Me.txt_last_name.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_last_name.Name = "txt_last_name"
         Me.txt_last_name.Size = New System.Drawing.Size(222, 33)
@@ -357,7 +358,7 @@ Partial Class PatientInformation
         Me.txt_first_name.LineIdleColor = System.Drawing.Color.Gray
         Me.txt_first_name.LineMouseHoverColor = System.Drawing.Color.Lime
         Me.txt_first_name.LineThickness = 3
-        Me.txt_first_name.Location = New System.Drawing.Point(30, 59)
+        Me.txt_first_name.Location = New System.Drawing.Point(30, 75)
         Me.txt_first_name.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_first_name.Name = "txt_first_name"
         Me.txt_first_name.Size = New System.Drawing.Size(143, 33)
@@ -370,7 +371,7 @@ Partial Class PatientInformation
         Me.Label21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label21.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label21.Location = New System.Drawing.Point(27, 263)
+        Me.Label21.Location = New System.Drawing.Point(27, 279)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(71, 23)
         Me.Label21.TabIndex = 82
@@ -381,7 +382,7 @@ Partial Class PatientInformation
         Me.Label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label19.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(215, 337)
+        Me.Label19.Location = New System.Drawing.Point(215, 353)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(71, 23)
         Me.Label19.TabIndex = 81
@@ -392,7 +393,7 @@ Partial Class PatientInformation
         Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label11.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(215, 263)
+        Me.Label11.Location = New System.Drawing.Point(215, 279)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(71, 23)
         Me.Label11.TabIndex = 80
@@ -403,7 +404,7 @@ Partial Class PatientInformation
         Me.Label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label13.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(215, 186)
+        Me.Label13.Location = New System.Drawing.Point(215, 202)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(71, 23)
         Me.Label13.TabIndex = 79
@@ -414,7 +415,7 @@ Partial Class PatientInformation
         Me.Label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label15.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label15.Location = New System.Drawing.Point(215, 112)
+        Me.Label15.Location = New System.Drawing.Point(215, 128)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(71, 23)
         Me.Label15.TabIndex = 78
@@ -425,7 +426,7 @@ Partial Class PatientInformation
         Me.Label17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label17.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label17.Location = New System.Drawing.Point(215, 43)
+        Me.Label17.Location = New System.Drawing.Point(215, 59)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(71, 23)
         Me.Label17.TabIndex = 77
@@ -436,7 +437,7 @@ Partial Class PatientInformation
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(27, 337)
+        Me.Label8.Location = New System.Drawing.Point(27, 353)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(71, 23)
         Me.Label8.TabIndex = 76
@@ -447,7 +448,7 @@ Partial Class PatientInformation
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label6.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(27, 186)
+        Me.Label6.Location = New System.Drawing.Point(27, 202)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(71, 23)
         Me.Label6.TabIndex = 75
@@ -458,7 +459,7 @@ Partial Class PatientInformation
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(27, 112)
+        Me.Label4.Location = New System.Drawing.Point(27, 128)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 23)
         Me.Label4.TabIndex = 74
@@ -469,11 +470,21 @@ Partial Class PatientInformation
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Nirmala UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(27, 43)
+        Me.Label2.Location = New System.Drawing.Point(27, 59)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 23)
         Me.Label2.TabIndex = 73
         Me.Label2.Text = "First Name"
+        '
+        'btn_show_keyboard
+        '
+        Me.btn_show_keyboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_show_keyboard.Location = New System.Drawing.Point(330, 12)
+        Me.btn_show_keyboard.Name = "btn_show_keyboard"
+        Me.btn_show_keyboard.Size = New System.Drawing.Size(110, 23)
+        Me.btn_show_keyboard.TabIndex = 96
+        Me.btn_show_keyboard.Text = "Show Keyboard"
+        Me.btn_show_keyboard.UseVisualStyleBackColor = True
         '
         'PatientInformation
         '
@@ -481,7 +492,8 @@ Partial Class PatientInformation
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(467, 561)
+        Me.ClientSize = New System.Drawing.Size(467, 657)
+        Me.Controls.Add(Me.btn_show_keyboard)
         Me.Controls.Add(Me.LabelKode)
         Me.Controls.Add(Me.cb_gender)
         Me.Controls.Add(Me.txt_nurse)
@@ -547,4 +559,5 @@ Partial Class PatientInformation
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btn_close As Button
+    Friend WithEvents btn_show_keyboard As Button
 End Class
