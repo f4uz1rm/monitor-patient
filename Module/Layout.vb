@@ -13,6 +13,7 @@
                 MonitoringDisplay.Label31.ForeColor = ColorSelect
                 MonitoringDisplay.Label32.ForeColor = ColorSelect
                 MonitoringDisplay.Chart2.Series("spo2").Color = ColorSelect
+                MonitoringDisplay.Chart2.Series("spo3").Color = ColorSelect
                 MonitoringDisplay.Label4.ForeColor = ColorSelect
                 MonitoringDisplay.Label5.ForeColor = ColorSelect
                 MonitoringDisplay.LabelSpo2Max.ForeColor = ColorSelect
@@ -32,8 +33,11 @@
                 MonitoringDisplay.LabelEcgMax.ForeColor = ColorSelect
                 MonitoringDisplay.LabelEcgMin.ForeColor = ColorSelect
                 MonitoringDisplay.ecghr.ForeColor = ColorSelect
-                MonitoringDisplay.Chart3.Series("ecg1").Color = ColorSelect
-                MonitoringDisplay.Chart4.Series("ecg2").Color = ColorSelect
+                MonitoringDisplay.Chart3.Series("ecg1a").Color = ColorSelect
+                MonitoringDisplay.Chart3.Series("ecg1b").Color = ColorSelect
+                MonitoringDisplay.Chart4.Series("ecg2a").Color = ColorSelect
+                MonitoringDisplay.Chart4.Series("ecg2b").Color = ColorSelect
+
             Case "NIBP"
                 MonitoringDisplay.Label20.ForeColor = ColorSelect
                 MonitoringDisplay.Label19.ForeColor = ColorSelect
@@ -49,7 +53,9 @@
                 MonitoringDisplay.LabelRRMax.ForeColor = ColorSelect
                 MonitoringDisplay.LabelRRMin.ForeColor = ColorSelect
                 MonitoringDisplay.ecgrr.ForeColor = ColorSelect
-                MonitoringDisplay.Chart1.Series("rr").Color = ColorSelect
+                MonitoringDisplay.Chart1.Series("rr1").Color = ColorSelect
+                MonitoringDisplay.Chart1.Series("rr2").Color = ColorSelect
+
             Case "TEMP"
                 MonitoringDisplay.Label24.ForeColor = ColorSelect
                 MonitoringDisplay.Label23.ForeColor = ColorSelect

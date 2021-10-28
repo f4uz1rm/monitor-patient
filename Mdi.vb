@@ -520,6 +520,7 @@ Public Class Mdi
         Dim data As New IO.MemoryStream(valueByte) 'Data stream for the buffer
         Wave1.Init(New NAudio.Wave.BlockAlignReductionStream(NAudio.Wave.WaveFormatConversionStream.CreatePcmStream(New NAudio.Wave.WaveFileReader(data))))
         Wave1.Volume = value 'Sets the Volume to 10%
+        Wave1.Stop()
         Wave1.Play()
     End Sub
     Private Sub btn_plus_alarm_Click(sender As Object, e As EventArgs) Handles btn_plus_alarm.Click
@@ -679,20 +680,20 @@ Public Class Mdi
     Dim LedBrightnessValue As Double
     Private Sub btn_lamp_plus_Click(sender As Object, e As EventArgs) Handles btn_lamp_plus.Click
         If LabelBrightnessLed.Text >= 100 Then
-            LedBrightnessValue = 0.9
+            LedBrightnessValue = 10
             LabelBrightnessLed.Text = 100
         Else
-            LedBrightnessValue = LedBrightnessValue + 0.1
+            LedBrightnessValue = LedBrightnessValue + 1
             LabelBrightnessLed.Text = LabelBrightnessLed.Text + 10
         End If
     End Sub
 
     Private Sub btn_lamp_min_Click(sender As Object, e As EventArgs) Handles btn_lamp_min.Click
         If LabelBrightnessLed.Text <= 10 Then
-            LedBrightnessValue = 0.0
+            LedBrightnessValue = 1
             LabelBrightnessLed.Text = 10
         Else
-            LedBrightnessValue = LedBrightnessValue - 0.1
+            LedBrightnessValue = LedBrightnessValue - 1
             LabelBrightnessLed.Text = LabelBrightnessLed.Text - 10
         End If
     End Sub

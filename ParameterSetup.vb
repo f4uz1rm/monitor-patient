@@ -63,4 +63,26 @@ Public Class ParameterSetup
     Private Sub ParameterSetup_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Keyboard_Screen_Close()
     End Sub
+
+    Private Sub ComboBoxECGSpeed_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxECGSpeed.SelectedIndexChanged
+        MonitoringDisplay.GainECG1a = 0
+        MonitoringDisplay.GainECG1b = 0
+        MonitoringDisplay.Chart3.Series("ecg1a").Points.Clear()
+        MonitoringDisplay.Chart3.Series("ecg1b").Points.Clear()
+        Select Case ComboBoxECGSpeed.SelectedIndex
+            Case 0
+                '500 dot/s
+                MonitoringDisplay.GainEcgSet = 5
+
+            Case 1
+                '250 dot/s
+                MonitoringDisplay.GainEcgSet = 2.5
+
+            Case 2
+                '100 dot/s
+                MonitoringDisplay.GainEcgSet = 1
+
+
+        End Select
+    End Sub
 End Class

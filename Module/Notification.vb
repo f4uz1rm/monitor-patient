@@ -1,19 +1,23 @@
 ﻿Module Notification
     Dim StatusActive As Boolean
+    Dim QeueuValue As Integer = 0
     Function NotificationStatusECG(ValueStatus As Integer, NameStatus As String)
         If ValueStatus > MonitoringDisplay.LabelEcgMax.Text Then
             MonitoringDisplay.ButtonRed.Text = NameStatus
             MonitoringDisplay.ButtonYellow.Visible = False
             SendNotifFormAlarm(NameStatus)
+            ' ColorScreen("ECG1", Color.Red)
             RedButton()
         ElseIf ValueStatus > MonitoringDisplay.LabelEcgMin.Text
             MonitoringDisplay.ButtonYellow.Text = NameStatus
             MonitoringDisplay.ButtonRed.Visible = False
             SendNotifFormAlarm(NameStatus)
+
             YellowButton()
         ElseIf ValueStatus < 120
             MonitoringDisplay.ButtonRed.Visible = False
             MonitoringDisplay.ButtonYellow.Visible = False
+
             StopBackgroundSound()
         End If
         'Send Alarm 
@@ -29,15 +33,18 @@
             MonitoringDisplay.ButtonRed.Text = NameStatus
             MonitoringDisplay.ButtonYellow.Visible = False
             SendNotifFormAlarm(NameStatus)
+            ' ColorScreen("SPO2", Color.Red)
             RedButton()
         ElseIf ValueStatus < MonitoringDisplay.LabelSpo2Max.Text
             MonitoringDisplay.ButtonYellow.Text = NameStatus
             MonitoringDisplay.ButtonRed.Visible = False
+
             SendNotifFormAlarm(NameStatus)
             YellowButton()
         ElseIf ValueStatus > MonitoringDisplay.LabelSpo2Max.Text
             MonitoringDisplay.ButtonRed.Visible = False
             MonitoringDisplay.ButtonYellow.Visible = False
+
             If MonitoringDisplay.LabelStatusSpo2.Text = "Module working properly" Then
                 AudioHBAlarm()
             End If
@@ -53,6 +60,7 @@
             MonitoringDisplay.ButtonRed.Text = StatusName
             MonitoringDisplay.ButtonYellow.Visible = False
             SendNotifFormAlarm(StatusName)
+            ' ColorScreen("RR", Color.Red)
             RedButton()
         ElseIf ValueStatus < MonitoringDisplay.LabelRRMin.Text
             StatusName = "RR LOW"
@@ -68,9 +76,16 @@
         Return ValueStatus
 
     End Function
-
+    Sub Qeueu()
+        If QeueuValue > 4 Then
+            QeueuValue = 0
+        End If
+        MonitoringDisplay.ButtonBlue.Text = QeueuValue
+        BlueButton()
+    End Sub
     Sub BlueButton()
         If MonitoringDisplay.ButtonBlue.Visible = True Then
+            QeueuValue = QeueuValue + 1
             MonitoringDisplay.ButtonBlue.Visible = False
             StatusActive = False
         ElseIf MonitoringDisplay.ButtonBlue.Visible = False
@@ -79,6 +94,20 @@
             AudioBlueAlarm()
         End If
         Application.DoEvents()
+    End Sub
+    Sub NameTxtBlue()
+        Select Case QeueuValue
+            Case 0
+                MonitoringDisplay.ButtonBlue.Text = "BATTERY FAILURE"
+            Case 1
+                MonitoringDisplay.ButtonBlue.Text = "CHECK SPO2 LEAD"
+            Case 2
+                MonitoringDisplay.ButtonBlue.Text = "CHECK ECG LEAD"
+            Case 3
+                MonitoringDisplay.ButtonBlue.Text = "CHECK TEMP 1 LEAD"
+            Case 4
+                MonitoringDisplay.ButtonBlue.Text = "CHECK TEMP 2 LEAD"
+        End Select
     End Sub
     Sub YellowButton()
         If MonitoringDisplay.ButtonYellow.Visible = True Then

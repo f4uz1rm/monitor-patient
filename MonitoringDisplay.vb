@@ -6,15 +6,22 @@ Imports System.IO
 Imports System.Data.OleDb
 Imports System.Threading
 Imports System.Media
+Imports System.Runtime.InteropServices
 Public Class MonitoringDisplay
+    Public Gain1 As Integer 'WaveSpo2
+    Public Gain2 As Integer 'WaveSpo2
+    Public GainECG1a As Integer
+    Public GainECG1b As Integer
+    Public GainResp1 As Integer
+    Public GainResp2 As Integer
     Public comport As String
     Dim receivedData As String
     Dim commandCount As Integer = 0
     Dim detik As Integer = 0
     Dim detiks As Integer = 0
-    Dim detik2 As Integer = 0
+    Public detik2 As Integer = 0
     Dim detik3 As Integer = 0
-    Dim detik3s As Integer = 0
+    Public detik3s As Integer = 0
     Dim awal As Integer = 0
     Dim tikrun1 As Integer = 0
     Public td2 As Double = 0
@@ -44,14 +51,14 @@ Public Class MonitoringDisplay
         Catch ex As Exception
         End Try
     End Sub
+
     Private Sub MonitoringDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Tampil_Nama_Patient()
-        'OpenMultiParameter()
         HideButtonNaigation()
 
         'Connection - COM 5
-        COM5Connecting()
+        'COM5Connecting()
 
         'Batas
         Button4.Focus()
@@ -66,15 +73,13 @@ Public Class MonitoringDisplay
         'Timer3.Enabled = False
         'Timer4.Enabled = False
         'Timer5.Enabled = False
-    End Sub
 
-    Sub OpenMultiParameter()
-        Dim myFile As New System.Diagnostics.Process
-        With myFile
-            .StartInfo.WorkingDirectory = "C:\Users\GAMING\Documents\GitHub\Multi_Para_Monitor\Debug\"
-            .StartInfo.FileName = "Multi_Para Monitor.exe"
-        End With
-        myFile.Start()
+    End Sub
+    Dim App As New Process
+    Sub OpenApp()
+        App.StartInfo.FileName = PathLoc + "Multi_Para Monitor.exe"
+        Thread.Sleep(5000)
+        App.Start()
     End Sub
     Sub CloseMultiParameter()
 
@@ -82,212 +87,17 @@ Public Class MonitoringDisplay
     Private Sub MonitoringDisplay_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         SplashScreen1.Close()
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If Button1.BackColor = Color.FromArgb(242, 242, 242) Then
-            Button1.BackColor = Color.FromArgb(102, 102, 102)
-            'incative other button
-            Button2.BackColor = Color.FromArgb(242, 242, 242)
-            Button2.Image = My.Resources.taskbar_alarm_setup
-            Button3.BackColor = Color.FromArgb(242, 242, 242)
-            Button3.Image = My.Resources.taskbar_alarm_history
-            Button4.BackColor = Color.FromArgb(242, 242, 242)
-            Button4.Image = My.Resources.taskbar_monitor_setting
-            Button5.BackColor = Color.FromArgb(242, 242, 242)
-            Button5.Image = My.Resources.taskbar_patient_data
-            Button6.BackColor = Color.FromArgb(242, 242, 242)
-            Button6.Image = My.Resources.taskbar_nibp
-            Button1.Image = My.Resources.taskbar_home_activated
-            AlarmHistory.Close()
-        ElseIf Button1.BackColor = Color.FromArgb(102, 102, 102) Then
-            'Button1.BackColor = Color.FromArgb(242, 242, 242)
-            'Button1.Image = My.Resources.taskbar_home
-        End If
-    End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Mdi.Show()
-        If Button2.BackColor = Color.FromArgb(242, 242, 242) Then
-            Button2.BackColor = Color.FromArgb(102, 102, 102)
-            Button2.Image = My.Resources.taskbar_alarm_setup_activated
-            'incative other button
-            Button1.BackColor = Color.FromArgb(242, 242, 242)
-            Button1.Image = My.Resources.taskbar_home
-            Button3.BackColor = Color.FromArgb(242, 242, 242)
-            Button3.Image = My.Resources.taskbar_alarm_history
-            Button4.BackColor = Color.FromArgb(242, 242, 242)
-            Button4.Image = My.Resources.taskbar_monitor_setting
-            Button5.BackColor = Color.FromArgb(242, 242, 242)
-            Button5.Image = My.Resources.taskbar_patient_data
-            Button6.BackColor = Color.FromArgb(242, 242, 242)
-            Button6.Image = My.Resources.taskbar_nibp
-            AlarmHistory.Close()
-
-        ElseIf Button2.BackColor = Color.FromArgb(102, 102, 102) Then
-            Button2.BackColor = Color.FromArgb(242, 242, 242)
-            Button2.Image = My.Resources.taskbar_alarm_setup
-            Button1.PerformClick()
-        End If
-    End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If Button3.BackColor = Color.FromArgb(242, 242, 242) Then
-            Button3.BackColor = Color.FromArgb(102, 102, 102)
-            Button3.Image = My.Resources.taskbar_alarm_history_activated
-            'incative other button
-            Button1.BackColor = Color.FromArgb(242, 242, 242)
-            Button1.Image = My.Resources.taskbar_home
-            Button2.BackColor = Color.FromArgb(242, 242, 242)
-            Button2.Image = My.Resources.taskbar_alarm_setup
-            Button4.BackColor = Color.FromArgb(242, 242, 242)
-            Button4.Image = My.Resources.taskbar_monitor_setting
-            Button5.BackColor = Color.FromArgb(242, 242, 242)
-            Button5.Image = My.Resources.taskbar_patient_data
-            Button6.BackColor = Color.FromArgb(242, 242, 242)
-            Button6.Image = My.Resources.taskbar_nibp
-            AlarmHistory.Show()
-        ElseIf Button3.BackColor = Color.FromArgb(102, 102, 102) Then
-            Button3.BackColor = Color.FromArgb(242, 242, 242)
-            Button3.Image = My.Resources.taskbar_alarm_history
-            AlarmHistory.Close()
-            Button1.PerformClick()
-        End If
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        If Button4.BackColor = Color.FromArgb(242, 242, 242) Then
-            Button4.BackColor = Color.FromArgb(102, 102, 102)
-            Button4.Image = My.Resources.taskbar_monitor_setting_activated
-            'incative other button
-            Button1.BackColor = Color.FromArgb(242, 242, 242)
-            Button1.Image = My.Resources.taskbar_home
-            Button2.BackColor = Color.FromArgb(242, 242, 242)
-            Button2.Image = My.Resources.taskbar_alarm_setup
-            Button3.BackColor = Color.FromArgb(242, 242, 242)
-            Button3.Image = My.Resources.taskbar_alarm_history
-            Button5.BackColor = Color.FromArgb(242, 242, 242)
-            Button5.Image = My.Resources.taskbar_patient_data
-            Button6.BackColor = Color.FromArgb(242, 242, 242)
-            Button6.Image = My.Resources.taskbar_nibp
-            AlarmHistory.Close()
-        ElseIf Button4.BackColor = Color.FromArgb(102, 102, 102) Then
-            Button4.BackColor = Color.FromArgb(242, 242, 242)
-            Button4.Image = My.Resources.taskbar_monitor_setting
-            Button1.PerformClick()
-        End If
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        If Button5.BackColor = Color.FromArgb(242, 242, 242) Then
-            Button5.BackColor = Color.FromArgb(102, 102, 102)
-            Button5.Image = My.Resources.taskbar_patient_data_activated
-            'incative other button
-            Button1.BackColor = Color.FromArgb(242, 242, 242)
-            Button1.Image = My.Resources.taskbar_home
-            Button2.BackColor = Color.FromArgb(242, 242, 242)
-            Button2.Image = My.Resources.taskbar_alarm_setup
-            Button3.BackColor = Color.FromArgb(242, 242, 242)
-            Button3.Image = My.Resources.taskbar_alarm_history
-            Button4.BackColor = Color.FromArgb(242, 242, 242)
-            Button4.Image = My.Resources.taskbar_monitor_setting
-            Button6.BackColor = Color.FromArgb(242, 242, 242)
-            Button6.Image = My.Resources.taskbar_nibp
-            AlarmHistory.Close()
-        ElseIf Button5.BackColor = Color.FromArgb(102, 102, 102) Then
-            Button5.BackColor = Color.FromArgb(242, 242, 242)
-            Button5.Image = My.Resources.taskbar_patient_data
-            Button1.PerformClick()
-        End If
-    End Sub
-
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        If Button6.BackColor = Color.FromArgb(242, 242, 242) Then
-            Button6.BackColor = Color.FromArgb(102, 102, 102)
-            Button6.Image = My.Resources.taskbar_nibp_activated
-            'incative other button
-            Button1.BackColor = Color.FromArgb(242, 242, 242)
-            Button1.Image = My.Resources.taskbar_home
-            Button2.BackColor = Color.FromArgb(242, 242, 242)
-            Button2.Image = My.Resources.taskbar_alarm_setup
-            Button3.BackColor = Color.FromArgb(242, 242, 242)
-            Button3.Image = My.Resources.taskbar_alarm_history
-            Button4.BackColor = Color.FromArgb(242, 242, 242)
-            Button4.Image = My.Resources.taskbar_monitor_setting
-            Button5.BackColor = Color.FromArgb(242, 242, 242)
-            Button5.Image = My.Resources.taskbar_patient_data
-            AlarmHistory.Close()
-        ElseIf Button6.BackColor = Color.FromArgb(102, 102, 102) Then
-            Button6.BackColor = Color.FromArgb(242, 242, 242)
-            Button6.Image = My.Resources.taskbar_nibp
-            Button1.PerformClick()
-        End If
-    End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs)
         LabelTanggal_Jam.Text = DateTime.Now.ToString("dd-MM-yyyy  HH : mm")
         Button1.TabIndex = 0
         TabIndex = +1
     End Sub
-
-    Sub KoneksiButton()
-        If (comport <> "") Then
-            SerialPort1.Close()
-            SerialPort1.PortName = comport
-            SerialPort1.BaudRate = 9600
-            SerialPort1.DataBits = 8
-            SerialPort1.Parity = Parity.None
-            SerialPort1.StopBits = StopBits.One
-            SerialPort1.Handshake = Handshake.None
-            SerialPort1.Encoding = System.Text.Encoding.Default 'very important!
-            SerialPort1.ReadTimeout = 10000
-            SerialPort1.Open()
-
-            'MsgBox("Connection Success")
-        Else
-            MessageBox.Show("Select a Port", "Connect Port", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-        End If
-    End Sub
-
-    Function ReceiveSerialData() As String
-        Dim Incoming As String
-        Try
-            Incoming = SerialPort1.ReadExisting()
-            If Incoming Is Nothing Then
-                Return "nothing" & vbCrLf
-            Else
-                Return Incoming
-            End If
-        Catch ex As TimeoutException
-            Return "Error: Serial Port read timed out."
-        End Try
-    End Function
-
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs)
-        receivedData = ReceiveSerialData()
-        LabelSpo2Min.Text = receivedData
-        If receivedData.Contains("q") Then
-            Button1.PerformClick()
-        ElseIf receivedData.Contains("w") Then
-            Button2.PerformClick()
-        ElseIf receivedData.Contains("e") Then
-            Button3.PerformClick()
-        ElseIf receivedData.Contains("r") Then
-            Button4.PerformClick()
-        ElseIf receivedData.Contains("t") Then
-            Button5.PerformClick()
-        ElseIf receivedData.Contains("y") Then
-            Button6.PerformClick()
-        ElseIf receivedData.Contains("u") Then
-            MsgBox("Button Pushed OK")
-        ElseIf receivedData.Contains("o") Then
-            MsgBox("Move Right OK")
-        ElseIf receivedData.Contains("p") Then
-            MsgBox("Move Left OK")
-        End If
-    End Sub
-
     Sub ReadingFileSPO2()
         Dim fileReader As String
-        Dim minimumspo2 As Integer = 9999
-        Dim maximumspo2 As Integer = 0
-        fileReader = My.Computer.FileSystem.ReadAllText("C:\Users\GAMING\Documents\GitHub\Multi_Para_Monitor\Debug\txt\m_uiSpO2.txt", System.Text.Encoding.Default)
+        Dim minimumspo2 As Integer = LabelSpo2Min.Text
+        Dim maximumspo2 As Integer = LabelSpo2Max.Text
+        fileReader = My.Computer.FileSystem.ReadAllText("C:\M001 - Copy\Multi_Para Monitor V3\tpoint.txt", System.Text.Encoding.Default)
         If fileReader <> "127" Then
             muispo2.Text = fileReader
             If fileReader < minimumspo2 Then
@@ -301,14 +111,12 @@ Public Class MonitoringDisplay
         Else
             muispo2.Text = "--"
         End If
-
-
     End Sub
     Sub ReadingFileTEMP1()
         Dim fileReader As String
         Dim minimumtemp1 As Integer = 9999
         Dim maximumtemp1 As Integer = 0
-        fileReader = My.Computer.FileSystem.ReadAllText("", System.Text.Encoding.Default)
+        fileReader = My.Computer.FileSystem.ReadAllText("C:\M001 - Copy\Multi_Para Monitor V3\temp1.txt", System.Text.Encoding.Default)
         If fileReader <> "555" Then
             muitemp1.Text = fileReader
             td2 = fileReader
@@ -478,38 +286,8 @@ Public Class MonitoringDisplay
             sysdys.Text = "---"
         End If
     End Sub
-    Sub ReadingFileCHART()
-        Try
-            Dim fileReader As String
-            Dim y1 As Double
 
-            fileReader = My.Computer.FileSystem.ReadAllText("C:\M001 - Copy\Multi_Para Monitor V3\y1.txt", System.Text.Encoding.Default)
-            y1 = Val(fileReader)
-            Chart2.Series("spo2").Points.AddXY(detik2, Val(y1))
-
-            If detik2 = 599 Then
-                detik3s = 0
-            End If
-
-            If detik2 >= 600 Then
-                Chart2.Series("spo2").Points.RemoveAt(0)
-                Chart2.Series("spo3").Points.AddXY(detik3s, Val(y1))
-            End If
-
-            If detik3s = 599 Then
-                Chart2.Series("spo2").Points.Clear()
-                detik2 = 0
-            End If
-
-            If detik3s >= 600 Then
-                Chart2.Series("spo3").Points.RemoveAt(0)
-                Chart2.Series("spo2").Points.AddXY(detik2, Val(y1))
-            End If
-
-        Catch ex As Exception
-        End Try
-    End Sub
-    Dim PathFileReader As String = "C:\Users\KQ\Documents\Visual Studio 2015\Projects\Multi_Para Monitor V3\ecgrr.text"
+    Dim PathFileReader As String = "C:\M001 - Copy\Multi_Para Monitor V3\ecgrr.text"
     Function ReadingFileChartRR(NameFile As String, NameChart As Chart)
         Try
             Dim fileReader4 As String
@@ -531,81 +309,10 @@ Public Class MonitoringDisplay
         End Try
         Return 0
     End Function
-    Sub ReadingFileChartECG()
 
-        Try
-            Dim fileReader2 As String
-            'Dim fileReader3 As String
-            Dim ecg1 As Double
-            'Dim ecg2 As Double
-
-
-            fileReader2 = My.Computer.FileSystem.ReadAllText("C:\Users\KQ\Documents\Visual Studio 2015\Projects\Multi_Para Monitor V3\ecgwave2.txt", System.Text.Encoding.Default)
-            'If fileReader2 <> "654" Then
-            ecg1 = Val(fileReader2)
-
-            Chart3.Series("ecg1").Points.AddXY(detik, Val(ecg1))
-            'Else
-            'Chart3.Series("ecg1").Points.AddXY(detik, Val(ecg1))
-            'End If
-            'If detiks Then
-            'Chart3.Series("ecg1a").Enabled = False
-
-            If detik < 249 Then
-                Chart3.Series("ecg1a").Points.RemoveAt(0)
-                Chart3.ChartAreas(0).AxisX.Maximum = 250
-                'Timer4.Interval = 1
-            End If
-
-            If detik = 249 Then
-                Chart3.Series("ecg1a").Points.Clear()
-                Chart3.ChartAreas(0).AxisX.Maximum = 250
-                'Timer4.Enabled = False
-                'Timer4.Interval = 1
-                'Timer4.Enabled = True
-            End If
-
-            If detik >= 250 Then
-                'Chart3.Series("ecg1a").Enabled = True
-                Chart3.Series("ecg1").Points.RemoveAt(0)
-                Chart3.Series("ecg1a").Points.AddXY(detik - 250, Val(ecg1))
-                Chart3.ChartAreas(0).AxisX.Maximum = 250
-                'Timer4.Interval = 1
-            End If
-
-            If detik >= 500 Then
-                Chart3.Series("ecg1").Points.Clear()
-                detik = 0
-                ' Timer4.Enabled = False
-                'Timer4.Interval = 1
-                ' Timer4.Enabled = True
-                Chart3.ChartAreas(0).AxisX.Maximum = 250
-            End If
-
-            'fileReader3 = My.Computer.FileSystem.ReadAllText("C:\M001 - Copy\Multi_Para Monitor V3\ecgwave.txt", System.Text.Encoding.Default)
-            'If fileReader3 <> "654" Then
-            '    ecg2 = Val(fileReader3)
-            '    Chart4.Series("ecg2").Points.AddXY(detik, Val(ecg2))
-            'Else
-            '    Chart4.Series("ecg2").Points.AddXY(detik, Val(ecg2))
-            'End If
-
-            'If detik >= 250 Then
-            '    Chart3.Series("ecg1").Points.Clear()
-            '    Chart4.Series("ecg2").Points.Clear()
-            '    detik = 0
-            '    Chart3.ChartAreas(0).AxisX.Minimum = 0
-            '    Chart3.ChartAreas(0).AxisX.Maximum = 250
-            '    Chart4.ChartAreas(0).AxisX.Minimum = 0
-            '    Chart4.ChartAreas(0).AxisX.Maximum = 250
-            'End If
-
-        Catch ex As Exception
-        End Try
-    End Sub
     '
 
-    Private Sub Timer3_Tick(sender As Object, e As EventArgs)
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
         Try
             detik = detik + 1
             detiks = detiks + 1
@@ -628,7 +335,8 @@ Public Class MonitoringDisplay
             ReadingFileDYS()
             ReadingFileSYS()
             Try
-                ReadingFileCHART()
+                ReadingFileChartSpo2()
+                ReadingFileChartECG()
             Catch ex As Exception
             End Try
             td1 = td2 - td3
@@ -637,18 +345,28 @@ Public Class MonitoringDisplay
         Catch ex As Exception
         End Try
     End Sub
-    Dim MaxAxisX As Integer = 600
-    Dim MinAxisX As Integer
+    Dim MaxAxisX As Integer = 500
+    Public MaxAxisXSpo2 As Integer = 1000
+    Public MaxAxisECG1 As Integer = 1000
+    Public MaxAxisResp As Integer = 1000
+    Dim MinAxisX As Integer = 0
     Sub setchart()
         'Chart RR
-        Chart1.ChartAreas(0).AxisX.Maximum = MaxAxisX
+        Chart1.ChartAreas(0).AxisX.Maximum = MaxAxisECG1
+        Chart1.ChartAreas(0).AxisX.Minimum = MinAxisX
+
         'Chart SPO
+        Chart2.ChartAreas(0).AxisX.Maximum = MaxAxisXSpo2
         Chart2.ChartAreas(0).AxisX.Minimum = MinAxisX
-        Chart2.ChartAreas(0).AxisX.Maximum = MaxAxisX
+        'Chart2.ChartAreas(0).AxisY.Interval = 50
         'CHART ECG L1
-        Chart3.ChartAreas(0).AxisX.Maximum = MaxAxisX
+        Chart3.ChartAreas(0).AxisX.Maximum = MaxAxisECG1
+        Chart3.ChartAreas(0).AxisX.Minimum = MinAxisX
+
         'CHART ECG L2
-        Chart4.ChartAreas(0).AxisX.Maximum = MaxAxisX
+        Chart4.ChartAreas(0).AxisX.Maximum = MaxAxisECG1
+        Chart4.ChartAreas(0).AxisX.Minimum = MinAxisX
+
 
     End Sub
     Dim NameTemp1 As String = "txt\temp1.txt"
@@ -657,6 +375,11 @@ Public Class MonitoringDisplay
     Dim SpO2 As String = "txt\m_uiSpO2.txt"
     'SPO2 Status
     Dim SpO2Status As String = "txt\statusSpo2.txt"
+    'Wave
+    Dim WaveSpo2 As String = "txt\waveSpo2.txt"
+    Dim WaveEcg As String = "txt\waveEcg.txt"
+    Dim WaveResp As String = "txt\waveResp.txt"
+
     Dim PulseRate As String = "txt\m_uiPulseRate.txt"
     Dim Pi As String = "txt\m_uiPi.txt"
     'ECG
@@ -664,24 +387,220 @@ Public Class MonitoringDisplay
     Dim RR As String = "txt\m_uiRr.txt"
     'ECG Status
     Dim ECGStatus As String = "txt\statusEcg.txt"
+    Sub TickTick()
+        Try
+            detik = detik + 1
+            detiks = detiks + 1
+            detik2 = detik2 + 5
+            detik3 = detik3 + 1
+            detik3s = detik3s + 5
+
+
+            'Label15.Text = Val(LabelEcgMin.Text) - Val(LabelEcgMax.Text)
+
+
+            Dim td1 As Double
+            ReadingFileSPO2()
+            ' ReadingFileTEMP1()
+            'ReadingFileTEMP2()
+            ReadingFileECGHR()
+            ReadingFileECGRR()
+            ReadingFileBPRM()
+            ReadingFilePI1()
+            'ReadingFileDYS()
+            'ReadingFileSYS()
+            Try
+
+            Catch ex As Exception
+            End Try
+            td1 = td2 - td3
+            td1 = td1.ToString("F1")
+            muitd.Text = Math.Abs(td1)
+        Catch ex As Exception
+        End Try
+    End Sub
+    Sub ReadingFileChartECG()
+
+        Try
+            Dim fileReader2 As String
+            Dim RRFile As String
+
+            'Dim fileReader3 As String
+            Dim ecg1 As Double
+            Dim RR As Double
+            'Dim ecg2 As Double
+            fileReader2 = My.Computer.FileSystem.ReadAllText(PathLoc + WaveEcg, System.Text.Encoding.Default)
+            RRFile = My.Computer.FileSystem.ReadAllText(PathLoc + WaveResp, System.Text.Encoding.Default)
+            'If fileReader2 <> "654" Then
+            ecg1 = fileReader2
+            RR = RRFile
+            LineWaveECG(ecg1)
+            'ECGChart(GainECG1a, GainECG1b, GainEcgSet, Chart3, "ecg1a", "ecg1b", ecg1, MaxAxisECG1)
+            ChartRead(GainECG1a, GainECG1b, GainEcgSet, Chart4, "ecg2a", "ecg2b", ecg1, MaxAxisECG1)
+            'RR
+            ChartRead(GainECG1a, GainECG1b, GainRespSet, Chart1, "rr1", "rr2", RR, MaxAxisResp)
+        Catch ex As Exception
+        End Try
+    End Sub
+    Public GainEcgSet As Integer = 5
+    Public GainRespSet As Integer = 5
+    Function ChartRead(G1 As Integer, G2 As Integer, GSet As Integer, NameChart As Chart, NameSeriesA As String, NameSeriesB As String, ValueReceived As Double, MaxValue As Integer)
+        G1 = G1 + GainEcgSet
+        G2 = G2 + GainEcgSet
+        NameChart.Series(NameSeriesA).Points.AddXY(G1, (ValueReceived))
+
+        'Line 1
+        Select Case G1
+            Case MaxValue
+                G1 = 0
+                NameChart.Series(NameSeriesA).Points.RemoveAt(0)
+                NameChart.Series(NameSeriesB).Points.Clear()
+                'Debug.WriteLine("SWITCH 1")
+        End Select
+
+        Select Case G1
+            Case > MaxValue
+                NameChart.Series(NameSeriesA).Points.RemoveAt(0)
+                NameChart.Series(NameSeriesB).Points.AddXY(G2, (ValueReceived))
+                'Debug.WriteLine("SWITCH 2")
+        End Select
+
+        'Line 2
+        Select Case G2
+            Case MaxValue
+                G1 = 0
+                NameChart.Series(NameSeriesB).Points.RemoveAt(0)
+                NameChart.Series(NameSeriesA).Points.Clear()
+                'Debug.WriteLine("SWITCH 3")
+        End Select
+        Select Case G2
+            Case > MaxValue
+                NameChart.Series(NameSeriesB).Points.RemoveAt(0)
+                'Debug.WriteLine("SWITCH 4")
+        End Select
+        Return {G1, G2, GSet, NameChart, NameSeriesA, NameSeriesB, ValueReceived, MaxValue}
+    End Function
+    Sub LineWaveECG(y1 As Integer)
+        GainECG1a = GainECG1a + GainEcgSet
+        GainECG1b = GainECG1b + GainEcgSet
+        Chart3.Series("ecg1a").Points.AddXY(GainECG1a, (y1))
+
+        'Line 1
+        Select Case GainECG1a
+            Case MaxAxisECG1
+                GainECG1b = 0
+                Chart3.Series("ecg1a").Points.RemoveAt(0)
+                Chart3.Series("ecg1b").Points.Clear()
+                'Debug.WriteLine("SWITCH 1")
+        End Select
+
+        Select Case GainECG1a
+            Case > MaxAxisECG1
+                Chart3.Series("ecg1a").Points.RemoveAt(0)
+                Chart3.Series("ecg1b").Points.AddXY(GainECG1b, (y1))
+                'Debug.WriteLine("SWITCH 2")
+        End Select
+
+        'Line 2
+        Select Case GainECG1b
+            Case MaxAxisECG1
+                GainECG1a = 0
+                Chart3.Series("ecg1b").Points.RemoveAt(0)
+                Chart3.Series("ecg1a").Points.Clear()
+                'Debug.WriteLine("SWITCH 3")
+        End Select
+        Select Case GainECG1b
+            Case > MaxAxisECG1
+                Chart3.Series("ecg1b").Points.RemoveAt(0)
+                'Debug.WriteLine("SWITCH 4")
+        End Select
+
+    End Sub
+    Dim GainSet As Double = 5 'spo2
+    Sub ReadingFileChartSpo2()
+        Try
+            Dim fileReader As String
+            Dim y1 As Double
+
+            fileReader = My.Computer.FileSystem.ReadAllText(PathLoc + WaveSpo2, System.Text.Encoding.Default)
+            y1 = fileReader
+            LineWaveSpo2(y1)
+            Debug.WriteLine("DATA SPO2 : " & y1)
+            'LabelGain1.Text = Gain1
+            'LabelGain2.Text = Gain2
+        Catch ex As Exception
+        End Try
+    End Sub
+    Sub LineWaveSpo2(y1 As Integer)
+        Gain1 = Gain1 + GainSet
+        Gain2 = Gain2 + GainSet
+        Chart2.Series("spo2").Points.AddXY(Gain1, (y1))
+
+        'Line 1
+        Select Case Gain1
+            Case MaxAxisXSpo2
+                Gain2 = 0
+                Chart2.Series("spo2").Points.RemoveAt(0)
+                Chart2.Series("spo3").Points.Clear()
+                'Debug.WriteLine("SWITCH 1")
+        End Select
+
+        Select Case Gain1
+            Case > MaxAxisXSpo2
+                Chart2.Series("spo2").Points.RemoveAt(0)
+                Chart2.Series("spo3").Points.AddXY(Gain2, (y1))
+                'Debug.WriteLine("SWITCH 2")
+        End Select
+
+        'Line 2
+        Select Case Gain2
+            Case MaxAxisXSpo2
+                Gain1 = 0
+                Chart2.Series("spo3").Points.RemoveAt(0)
+                Chart2.Series("spo2").Points.Clear()
+                'Debug.WriteLine("SWITCH 3")
+        End Select
+        Select Case Gain2
+            Case > MaxAxisXSpo2
+                Chart2.Series("spo3").Points.RemoveAt(0)
+                'Debug.WriteLine("SWITCH 4")
+        End Select
+
+    End Sub
     Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles TimerReceivedData.Tick
         LabelTanggal_Jam.Text = Today & " " & TimeOfDay
+
+
         'running rr
         Try
-            'SPO2
-            FileReaderInfo(PathLoc + SpO2, muispo2)
-            FileReaderInfo(PathLoc + PulseRate, bprm1)
-            FileReaderInfo(PathLoc + Pi, pi1)
+            'Wave
+            ReadingFileChartECG()
+            ReadingFileChartSpo2()
 
-            'TEMP
-            FileReaderInfo(PathLoc + NameTemp1, muitemp1)
-            FileReaderInfo(PathLoc + NameTemp2, muitemp2)
+            'INFO
+
             'ECG
             FileReaderInfo(PathLoc + ECG, ecghr)
             'RR
             FileReaderInfo(PathLoc + RR, ecgrr)
+            'Label Status SPO
+            FileReaderInfo(PathLoc + SpO2Status, LabelStatusSpo2) 'Statys SPO2
+            'SPO2
+            FileReaderInfo(PathLoc + SpO2, muispo2)
+            'BPRM
+            FileReaderInfo(PathLoc + PulseRate, bprm1)
+            'P1
+            FileReaderInfo(PathLoc + Pi, pi1)
+
+            'TEMP
+            FileReaderInfo(PathLoc + NameTemp1, muitemp1)
+
+            FileReaderInfo(PathLoc + NameTemp2, muitemp2)
+
+
             'Status SPO2
-            FileReaderInfo(PathLoc + SpO2Status, LabelStatusSpo2)
+
+
 
             'FileReaderInfo(PathLoc + SpO2Status, LabelStatusSpo2)
             'Status SPO2
@@ -690,9 +609,9 @@ Public Class MonitoringDisplay
             'Wave
             'ChartActive("spo2", muispo2.Text, Chart2)
             'WAVE ECG
-            ChartActive("ecg1", ecghr.Text, Chart3)
-            ChartActive("ecg2", ecghr.Text, Chart4)
-            ChartActive("rr", LabelRRMin.Text, Chart1)
+            'ChartActive("ecg1", ecghr.Text, Chart3)
+            'ChartActive("ecg2", ecghr.Text, Chart4)
+            'ChartActive("rr", LabelRRMin.Text, Chart1)
 
             'ECG
             'ChartActive("ecg1", ecghr.Text, Chart3)
@@ -701,7 +620,7 @@ Public Class MonitoringDisplay
             'ChartActive("spo2", muispo2.Text, Chart2)
             'ChartActive("spo2", SetNormal, Chart2)
 
-            FilterSet()
+            'FilterSet()
         Catch ex As Exception
 
         End Try
@@ -740,15 +659,26 @@ Public Class MonitoringDisplay
         Select Case muitemp1.Text
             Case 55
                 muitemp1.Text = "--"
+                muitd.Text = "--"
             Case Else
                 FileReaderInfo(PathLoc + NameTemp1, muitemp1)
+                muitd.Text = (muitemp1.Text - muitemp2.Text)
+                If muitd.Text < 0 Then
+                    muitd.Text = (muitemp2.Text - muitemp1.Text)
+                End If
+
         End Select
 
         Select Case muitemp2.Text
             Case 55
                 muitemp2.Text = "--"
+                muitd.Text = "--"
             Case Else
                 FileReaderInfo(PathLoc + NameTemp2, muitemp2)
+                muitd.Text = (muitemp1.Text - muitemp2.Text)
+                If muitd.Text < 0 Then
+                    muitd.Text = (muitemp2.Text - muitemp1.Text)
+                End If
         End Select
 
     End Sub
@@ -763,7 +693,7 @@ Public Class MonitoringDisplay
         End Using
 
         ' Write the line we read from "file.txt"
-        Console.WriteLine("Info :" & line)
+        'Console.WriteLine("Info :" & line)
         LabelName.Text = line
         Return {PathLoc}
     End Function
@@ -780,7 +710,7 @@ Public Class MonitoringDisplay
         End Using
 
         ' Write the line we read from "file.txt"
-        Console.WriteLine("Wave" & line)
+        'Console.WriteLine("Wave" & line)
         'ChartActive(NameSeries, line, ChartName)
         ChartName.Series(NameSeries).Points.AddXY(detik3, line)
         Return 0
@@ -814,21 +744,6 @@ Public Class MonitoringDisplay
     Dim NameSeries As String
     Dim ValueChartSeries As String
     Dim ChartValue As Chart
-
-    Private Sub TimerRandom_Tick(sender As Object, e As EventArgs)
-        ecghr.Text = MyValue.Next(110, 180)
-        muispo2.Text = MyValue.Next(110, 180)
-        muitd.Text = MyValue.Next(10, 70)
-        muitemp1.Text = MyValue.Next(10, 70)
-        muitemp2.Text = MyValue.Next(10, 70)
-        ecgrr.Text = MyValue.Next(50, 60)
-        sysdys.Text = MyValue.Next(10, 70) & "/" & MyValue.Next(10, 70)
-        ChartActive("rr", ecgrr.Text, Chart1)
-        ChartActive("spo2", muispo2.Text, Chart2)
-        ChartActive("ecg1", ecghr.Text, Chart3)
-        ChartActive("ecg2", ecghr.Text, Chart4)
-        AudioHBAlarm()
-    End Sub
     Function ChartActive(NameSeries As String, ValueChartSeries As Integer, ChartName As Chart)
         If ChartName.Series(NameSeries).Points.AddXY(detik3, ValueChartSeries) >= ChartName.Size.Width Then
             ChartName.Series(NameSeries).Points.RemoveAt(0)
@@ -849,17 +764,6 @@ Public Class MonitoringDisplay
     Private Sub MonitoringDisplay_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         StopBackgroundSound()
     End Sub
-
-    Private Sub TimerSpo2_Tick(sender As Object, e As EventArgs) Handles TimerSpo2.Tick
-        If muispo2.Text = "--" Then
-            ChartActive("spo2", 80, Chart2)
-        Else
-
-            ChartActive("spo2", muispo2.Text, Chart2)
-
-        End If
-
-    End Sub
     Dim StatusActive As Boolean
     Dim NameStatusECG As String = "ECG HIGH"
     Dim NameStatusSPO2 As String = "SPO2 LOW"
@@ -869,27 +773,35 @@ Public Class MonitoringDisplay
     Dim Spo2Value As Integer
     Private Sub TimerNotification_Tick(sender As Object, e As EventArgs) Handles TimerNotification.Tick
         If ecghr.Text = "--" Then
-            ecghr.Text = "--"
-            EcgValue = 100
+            'ecghr.Text = "--"
+            'EcgValue = 100
         Else
-            EcgValue = ecghr.Text
-            NotificationStatusECG(EcgValue, NameStatusECG)
+            'EcgValue = ecghr.Text
+            'NotificationStatusECG(EcgValue, NameStatusECG)
         End If
 
-        If muispo2.Text = "--" Then
-            Spo2Value = 127
-        Else
-            Spo2Value = muispo2.Text
-            NotificationStatusSPO2(Spo2Value, NameStatusSPO2)
-        End If
+        'If muispo2.Text = "--" Then
+        'Spo2Value = 127
+        'Else
+        'Spo2Value = muispo2.Text
+        'NotificationStatusSPO2(Spo2Value, NameStatusSPO2)
+        'End If
 
         If ecgrr.Text = "--" Then
-            RRValue = 20
+            'RRValue = 20
         Else
-            RRValue = ecgrr.Text
-            NotificationStatusRR(RRValue)
+            'RRValue = ecgrr.Text
+            'NotificationStatusRR(RRValue)
         End If
 
+    End Sub
+
+    Private Sub ButtonBlue_TextChanged(sender As Object, e As EventArgs) Handles ButtonBlue.TextChanged
+        NameTxtBlue()
+    End Sub
+
+    Private Sub MonitoringDisplay_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        CloseMultiParameter()
     End Sub
 
 End Class

@@ -1,5 +1,8 @@
 ﻿Imports System.InvalidCastException
 Module Navigation
+
+
+
     'Side Bar Navigation
     Sub PanelHideAll()
         Mdi.CloseFormAll()
